@@ -91,7 +91,45 @@ Trigger → API → Case → Domain ← Infrastructure
 
 ---
 
-### 6. AI 产品技能
+### 6. QA 测试技能
+**来源:** [petrkindlmann/qa-skills](https://github.com/petrkindlmann/qa-skills)
+
+40个 QA 与测试自动化技能，涵盖测试策略、Playwright、CI/CD 等。
+
+**精选技能：**
+- `test-strategy` - 测试策略制定
+- `test-planning` - 测试计划制定
+- `playwright-automation` - Playwright 端到端测试
+- `api-testing` - API 测试
+- `unit-testing` - 单元测试
+- `security-testing` - 安全测试
+- `performance-testing` - 性能测试
+- `test-migration` - 测试迁移
+
+---
+
+### 7. 测试策略技能
+**来源:** [magallon/testing-toolkit](https://github.com/magallon/testing-toolkit)
+
+与技术栈无关的测试策略和 E2E 测试方法论。
+
+**包含技能：**
+- `testing-strategy` - 通用测试策略
+- `e2e-testing` - 端到端测试最佳实践
+
+---
+
+### 8. API 设计技能
+**来源:** [smouj/api-generator-skill](https://github.com/smouj/api-generator-skill)
+
+从规范生成 REST 和 GraphQL API 的技能。
+
+**包含技能：**
+- `api-generator` - 从 OpenAPI 定义生成生产级 API
+
+---
+
+### 9. AI 产品技能
 **来源:** [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
 
 AI 产品开发最佳实践。
@@ -114,6 +152,8 @@ AI 产品开发最佳实践。
 | `scrum-skills/` | 14 | Scrum 团队 |
 | `ddd-skills/` | 1 | DDD 架构 |
 | `dev-quality-skills/` | 4 | 开发质量 |
+| `qa-testing-skills/` | 10 | QA 测试 |
+| `api-design-skills/` | 1 | API 设计 |
 | `ai-product-skills/` | 1 | AI 产品 |
 
 ---
