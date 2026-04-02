@@ -63,6 +63,12 @@ CATEGORIES = {
         "description": "AI产品 - 大模型应用、Prompt工程、生产级AI",
         "sources": ["ai-product-skills"],
         "color": "🩵"
+    },
+    "ai-safety": {
+        "name": "AI Safety",
+        "description": "AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试",
+        "sources": ["ai-safety-skills"],
+        "color": "🚨"
     }
 }
 

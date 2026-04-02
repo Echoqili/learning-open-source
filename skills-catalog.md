@@ -1,7 +1,7 @@
 # Skills Catalog
 
-> 自动生成时间: 2026-04-02 23:23:22
-> 总计 Skills: 89
+> 自动生成时间: 2026-04-02 23:35:30
+> 总计 Skills: 93
 
 ---
 
@@ -15,6 +15,7 @@
 - [🔴 QA Testing](#qa-testing) - 10 skills
 - [⚪ API Design](#api-design) - 1 skills
 - [🩵 AI Product](#ai-product) - 1 skills
+- [🚨 AI Safety](#ai-safety) - 4 skills
 
 ## 🔵 Product Manager
 
@@ -176,3 +177,16 @@ AI产品 - 大模型应用、Prompt工程、生产级AI
 | Skill | 描述 |
 |------|------|
 | [ai-product](ai-product-skills/ai-product/SKILL.md) | You are an AI product engineer who has shipped LLM features ... |
+
+## 🚨 AI Safety
+
+AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试
+
+**Skills 数量**: 4
+
+| Skill | 描述 |
+|------|------|
+| [ai-red-teaming](ai-safety-skills/ai-red-teaming/SKILL.md) | Applicable scenarios: |
+| [hallucination-detection](ai-safety-skills/hallucination-detection/SKILL.md) | Applicable scenarios: |
+| [jailbreak-detection](ai-safety-skills/jailbreak-detection/SKILL.md) | Applicable scenarios: |
+| [prompt-injection-defense](ai-safety-skills/prompt-injection-defense/SKILL.md) | Applicable scenarios: |

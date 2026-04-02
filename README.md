@@ -143,6 +143,26 @@ AI 产品开发最佳实践。
 
 ---
 
+### 10. AI 安全技能
+**来源:** 整合自 OWASP、MITRE ATLAS、Basilisk 等权威资源
+
+AI 安全与防护技能集，覆盖 Prompt 注入防御、越狱检测、幻觉检测、AI 红队等。
+
+**包含技能：**
+- `prompt-injection-defense` - Prompt 注入攻击检测与防御
+- `jailbreak-detection` - 越狱尝试检测与阻断
+- `hallucination-detection` - LLM 幻觉检测与缓解
+- `ai-red-teaming` - AI 系统红队渗透测试
+
+**核心概念：**
+- OWASP LLM Top 10 对齐
+- MITRE ATLAS 框架
+- 防御纵深架构
+- 输入验证与输出过滤
+- 不确定性信号
+
+---
+
 ## 快速导航
 
 | 目录 | 技能数 | 用途 |
@@ -155,6 +175,7 @@ AI 产品开发最佳实践。
 | `qa-testing-skills/` | 10 | QA 测试 |
 | `api-design-skills/` | 1 | API 设计 |
 | `ai-product-skills/` | 1 | AI 产品 |
+| `ai-safety-skills/` | 4 | AI 安全 |
 
 ---
 

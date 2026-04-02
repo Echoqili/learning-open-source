@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-02T23:23:22.957134",
-  "total_count": 89,
+  "generated_at": "2026-04-02T23:35:30.140708",
+  "total_count": 93,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -592,6 +592,37 @@
           "purpose": ""
         }
       ]
+    },
+    "ai-safety": {
+      "name": "AI Safety",
+      "description": "AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试",
+      "color": "🚨",
+      "skills": [
+        {
+          "name": "ai-red-teaming",
+          "path": "ai-safety-skills\\ai-red-teaming\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Systematically test AI systems for security vulnerabilities through adversarial red teaming. Use this skill when evaluating AI applications before production deployment, validating security measures, "
+        },
+        {
+          "name": "hallucination-detection",
+          "path": "ai-safety-skills\\hallucination-detection\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect and mitigate hallucinations in LLM outputs. Use this skill when building AI applications where factual accuracy is critical, integrating model outputs with external systems, or requiring high-r"
+        },
+        {
+          "name": "jailbreak-detection",
+          "path": "ai-safety-skills\\jailbreak-detection\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect and block jailbreak attempts against LLM systems. Use this skill when protecting AI applications from users attempting to bypass safety guardrails, extract system prompts, or enable restricted "
+        },
+        {
+          "name": "prompt-injection-defense",
+          "path": "ai-safety-skills\\prompt-injection-defense\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect, prevent, and mitigate prompt injection attacks in LLM applications. Use this skill when building AI systems that process untrusted user input, integrating external data sources, or enabling ag"
+        }
+      ]
     }
   },
   "by_name": {
@@ -1039,6 +1070,26 @@
       "category": "ai-product",
       "path": "ai-product-skills\\ai-product\\SKILL.md",
       "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard."
+    },
+    "ai-red-teaming": {
+      "category": "ai-safety",
+      "path": "ai-safety-skills\\ai-red-teaming\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "hallucination-detection": {
+      "category": "ai-safety",
+      "path": "ai-safety-skills\\hallucination-detection\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "jailbreak-detection": {
+      "category": "ai-safety",
+      "path": "ai-safety-skills\\jailbreak-detection\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "prompt-injection-defense": {
+      "category": "ai-safety",
+      "path": "ai-safety-skills\\prompt-injection-defense\\SKILL.md",
+      "description": "Applicable scenarios:"
     }
   }
 }
