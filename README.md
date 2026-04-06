@@ -163,19 +163,82 @@ AI 安全与防护技能集，覆盖 Prompt 注入防御、越狱检测、幻觉
 
 ---
 
+### 11. Superpowers 开发框架 ⭐ 136k Stars
+**来源:** [obra/superpowers](https://github.com/obra/superpowers)
+
+完整开发工作流框架，TDD 强制执行者。
+
+**精选技能（6个）：**
+- `test-driven-development` - 红-绿-重构 TDD 循环
+- `systematic-debugging` - 4阶段系统调试法
+- `brainstorming` - 苏格拉底式需求探索
+- `writing-plans` - 可执行实现计划
+- `requesting-code-review` - 提交前审查流程
+- `using-git-worktrees` - Git Worktree 隔离开发
+
+---
+
+### 12. Dev Workflow 开发工作流 ⭐ 140k Stars
+**来源:** [knibals/everything-claude-code](https://github.com/knibals/everything-claude-code)
+
+Everything Claude Code 核心工作流技能集。
+
+**精选技能（6个）：**
+- `tdd-workflow` - 测试驱动开发工作流
+- `coding-standards` - 团队编码规范执行
+- `git-workflow` - Git 分支策略与协作
+- `agentic-engineering` - Agent 工程最佳实践
+- `continuous-learning` - 上下文持续学习机制
+- `context-budget` - 上下文预算管理
+
+---
+
+### 13. Design System 设计系统 ⭐ 59k Stars
+**来源:** [ui-ux-pro-max-skill](https://github.com/ui-ux-pro-max-skill)
+
+专业设计系统生成器，覆盖 161 种行业色板 + 67 种 UI 风格。
+
+**精选技能（2个）：**
+- `ui-ux-pro-max` - 全栈设计系统
+- `design-system` - 设计系统规范
+
+**特色功能：**
+- 161 种行业色板（医疗、金融、电商等）
+- 67 种 UI 风格（Material、Flat、Glassmorphism 等）
+- 自动输出符合行业规范的设计方案
+
+---
+
+### 14. Skill Authoring 技能开发 ⭐ 官方
+**来源:** [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
+
+Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程。
+
+**核心功能：**
+- 意图捕获与需求分析
+- Skill 测试与验证
+- 可视化效果对比
+- subagent 协作模式
+
+---
+
 ## 快速导航
 
-| 目录 | 技能数 | 用途 |
-|------|--------|------|
-| `skills/` | 47+ | 产品经理技能 |
-| `agile-skills/` | 11 | 敏捷交付 |
-| `scrum-skills/` | 14 | Scrum 团队 |
-| `ddd-skills/` | 1 | DDD 架构 |
-| `dev-quality-skills/` | 4 | 开发质量 |
-| `qa-testing-skills/` | 10 | QA 测试 |
-| `api-design-skills/` | 1 | API 设计 |
-| `ai-product-skills/` | 1 | AI 产品 |
-| `ai-safety-skills/` | 4 | AI 安全 |
+| 目录 | 技能数 | 用途 | Stars |
+|------|--------|------|-------|
+| `skills/` | 47+ | 产品经理技能 | - |
+| `agile-skills/` | 11 | 敏捷交付 | - |
+| `scrum-skills/` | 14 | Scrum 团队 | - |
+| `ddd-skills/` | 1 | DDD 架构 | - |
+| `dev-quality-skills/` | 4 | 开发质量 | - |
+| `qa-testing-skills/` | 10 | QA 测试 | - |
+| `api-design-skills/` | 1 | API 设计 | - |
+| `ai-product-skills/` | 1 | AI 产品 | - |
+| `ai-safety-skills/` | 4 | AI 安全 | - |
+| `superpowers-skills/` | 6 | TDD/调试/重构 | ⭐ 136k |
+| `dev-workflow-skills/` | 6 | 开发工作流 | ⭐ 140k |
+| `design-skills/` | 2 | 设计系统 | ⭐ 59k |
+| `skill-creation/` | 1 | Skill开发 | 🛠️ 官方 |
 
 ---
 

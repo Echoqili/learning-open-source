@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-02T23:35:30.140708",
-  "total_count": 93,
+  "generated_at": "2026-04-06T22:10:11.011687",
+  "total_count": 108,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -623,6 +623,124 @@
           "purpose": "Detect, prevent, and mitigate prompt injection attacks in LLM applications. Use this skill when building AI systems that process untrusted user input, integrating external data sources, or enabling ag"
         }
       ]
+    },
+    "superpowers": {
+      "name": "Superpowers",
+      "description": "Superpowers开发框架 - TDD、红绿重构、Git Worktree、系统调试",
+      "color": "⚡",
+      "skills": [
+        {
+          "name": "brainstorming",
+          "path": "superpowers-skills\\brainstorming\\SKILL.md",
+          "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+          "purpose": ""
+        },
+        {
+          "name": "requesting-code-review",
+          "path": "superpowers-skills\\requesting-code-review\\SKILL.md",
+          "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+          "purpose": ""
+        },
+        {
+          "name": "systematic-debugging",
+          "path": "superpowers-skills\\systematic-debugging\\SKILL.md",
+          "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+          "purpose": ""
+        },
+        {
+          "name": "test-driven-development",
+          "path": "superpowers-skills\\test-driven-development\\SKILL.md",
+          "description": "Use when implementing any feature or bugfix, before writing implementation code",
+          "purpose": ""
+        },
+        {
+          "name": "using-git-worktrees",
+          "path": "superpowers-skills\\using-git-worktrees\\SKILL.md",
+          "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
+          "purpose": ""
+        },
+        {
+          "name": "writing-plans",
+          "path": "superpowers-skills\\writing-plans\\SKILL.md",
+          "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+          "purpose": ""
+        }
+      ]
+    },
+    "dev-workflow": {
+      "name": "Dev Workflow",
+      "description": "开发工作流 - TDD流程、编码规范、Git工作流、Agent工程、持续学习",
+      "color": "🔧",
+      "skills": [
+        {
+          "name": "agentic-engineering",
+          "path": "dev-workflow-skills\\agentic-engineering\\SKILL.md",
+          "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing.",
+          "purpose": ""
+        },
+        {
+          "name": "coding-standards",
+          "path": "dev-workflow-skills\\coding-standards\\SKILL.md",
+          "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
+          "purpose": ""
+        },
+        {
+          "name": "context-budget",
+          "path": "dev-workflow-skills\\context-budget\\SKILL.md",
+          "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.",
+          "purpose": ""
+        },
+        {
+          "name": "continuous-learning",
+          "path": "dev-workflow-skills\\continuous-learning\\SKILL.md",
+          "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use.",
+          "purpose": ""
+        },
+        {
+          "name": "git-workflow",
+          "path": "dev-workflow-skills\\git-workflow\\SKILL.md",
+          "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes.",
+          "purpose": ""
+        },
+        {
+          "name": "tdd-workflow",
+          "path": "dev-workflow-skills\\tdd-workflow\\SKILL.md",
+          "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.",
+          "purpose": ""
+        }
+      ]
+    },
+    "design": {
+      "name": "Design System",
+      "description": "设计系统 - UI/UX Pro Max行业色板、67种UI风格、设计规范",
+      "color": "🎨",
+      "skills": [
+        {
+          "name": "ckm:design-system",
+          "path": "design-skills\\design-system\\SKILL.md",
+          "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.",
+          "purpose": ""
+        },
+        {
+          "name": "ui-ux-pro-max",
+          "path": "design-skills\\ui-ux-pro-max\\SKILL.md",
+          "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
+          "purpose": ""
+        }
+      ]
+    },
+    "skill-authoring": {
+      "name": "Skill Authoring",
+      "description": "Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化",
+      "color": "🛠️",
+      "skills": [
+        {
+          "name": "skill-creator",
+          "path": "skill-creation\\skill-creator\\SKILL.md",
+          "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+          "purpose": ""
+        }
+      ]
     }
   },
   "by_name": {
@@ -1090,6 +1208,81 @@
       "category": "ai-safety",
       "path": "ai-safety-skills\\prompt-injection-defense\\SKILL.md",
       "description": "Applicable scenarios:"
+    },
+    "brainstorming": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\brainstorming\\SKILL.md",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+    },
+    "requesting-code-review": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\requesting-code-review\\SKILL.md",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+    },
+    "systematic-debugging": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\systematic-debugging\\SKILL.md",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+    },
+    "test-driven-development": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\test-driven-development\\SKILL.md",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code"
+    },
+    "using-git-worktrees": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\using-git-worktrees\\SKILL.md",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
+    },
+    "writing-plans": {
+      "category": "superpowers",
+      "path": "superpowers-skills\\writing-plans\\SKILL.md",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
+    },
+    "agentic-engineering": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\agentic-engineering\\SKILL.md",
+      "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
+    },
+    "coding-standards": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\coding-standards\\SKILL.md",
+      "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development."
+    },
+    "context-budget": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\context-budget\\SKILL.md",
+      "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations."
+    },
+    "continuous-learning": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\continuous-learning\\SKILL.md",
+      "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use."
+    },
+    "git-workflow": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\git-workflow\\SKILL.md",
+      "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes."
+    },
+    "tdd-workflow": {
+      "category": "dev-workflow",
+      "path": "dev-workflow-skills\\tdd-workflow\\SKILL.md",
+      "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests."
+    },
+    "ckm:design-system": {
+      "category": "design",
+      "path": "design-skills\\design-system\\SKILL.md",
+      "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations."
+    },
+    "ui-ux-pro-max": {
+      "category": "design",
+      "path": "design-skills\\ui-ux-pro-max\\SKILL.md",
+      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples."
+    },
+    "skill-creator": {
+      "category": "skill-authoring",
+      "path": "skill-creation\\skill-creator\\SKILL.md",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
     }
   }
 }

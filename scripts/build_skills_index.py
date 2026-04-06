@@ -69,6 +69,30 @@ CATEGORIES = {
         "description": "AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试",
         "sources": ["ai-safety-skills"],
         "color": "🚨"
+    },
+    "superpowers": {
+        "name": "Superpowers",
+        "description": "Superpowers开发框架 - TDD、红绿重构、Git Worktree、系统调试",
+        "sources": ["superpowers-skills"],
+        "color": "⚡"
+    },
+    "dev-workflow": {
+        "name": "Dev Workflow",
+        "description": "开发工作流 - TDD流程、编码规范、Git工作流、Agent工程、持续学习",
+        "sources": ["dev-workflow-skills"],
+        "color": "🔧"
+    },
+    "design": {
+        "name": "Design System",
+        "description": "设计系统 - UI/UX Pro Max行业色板、67种UI风格、设计规范",
+        "sources": ["design-skills"],
+        "color": "🎨"
+    },
+    "skill-authoring": {
+        "name": "Skill Authoring",
+        "description": "Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化",
+        "sources": ["skill-creation"],
+        "color": "🛠️"
     }
 }
 

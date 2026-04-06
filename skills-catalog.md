@@ -1,7 +1,7 @@
 # Skills Catalog
 
-> 自动生成时间: 2026-04-02 23:35:30
-> 总计 Skills: 93
+> 自动生成时间: 2026-04-06 22:10:11
+> 总计 Skills: 108
 
 ---
 
@@ -16,6 +16,10 @@
 - [⚪ API Design](#api-design) - 1 skills
 - [🩵 AI Product](#ai-product) - 1 skills
 - [🚨 AI Safety](#ai-safety) - 4 skills
+- [⚡ Superpowers](#superpowers) - 6 skills
+- [🔧 Dev Workflow](#dev-workflow) - 6 skills
+- [🎨 Design System](#design) - 2 skills
+- [🛠️ Skill Authoring](#skill-authoring) - 1 skills
 
 ## 🔵 Product Manager
 
@@ -190,3 +194,54 @@ AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试
 | [hallucination-detection](ai-safety-skills/hallucination-detection/SKILL.md) | Applicable scenarios: |
 | [jailbreak-detection](ai-safety-skills/jailbreak-detection/SKILL.md) | Applicable scenarios: |
 | [prompt-injection-defense](ai-safety-skills/prompt-injection-defense/SKILL.md) | Applicable scenarios: |
+
+## ⚡ Superpowers
+
+Superpowers开发框架 - TDD、红绿重构、Git Worktree、系统调试
+
+**Skills 数量**: 6
+
+| Skill | 描述 |
+|------|------|
+| [brainstorming](superpowers-skills/brainstorming/SKILL.md) | You MUST use this before any creative work - creating featur... |
+| [requesting-code-review](superpowers-skills/requesting-code-review/SKILL.md) | Use when completing tasks, implementing major features, or b... |
+| [systematic-debugging](superpowers-skills/systematic-debugging/SKILL.md) | Use when encountering any bug, test failure, or unexpected b... |
+| [test-driven-development](superpowers-skills/test-driven-development/SKILL.md) | Use when implementing any feature or bugfix, before writing ... |
+| [using-git-worktrees](superpowers-skills/using-git-worktrees/SKILL.md) | Use when starting feature work that needs isolation from cur... |
+| [writing-plans](superpowers-skills/writing-plans/SKILL.md) | Use when you have a spec or requirements for a multi-step ta... |
+
+## 🔧 Dev Workflow
+
+开发工作流 - TDD流程、编码规范、Git工作流、Agent工程、持续学习
+
+**Skills 数量**: 6
+
+| Skill | 描述 |
+|------|------|
+| [agentic-engineering](dev-workflow-skills/agentic-engineering/SKILL.md) | Operate as an agentic engineer using eval-first execution, d... |
+| [coding-standards](dev-workflow-skills/coding-standards/SKILL.md) | Universal coding standards, best practices, and patterns for... |
+| [context-budget](dev-workflow-skills/context-budget/SKILL.md) | Audits Claude Code context window consumption across agents,... |
+| [continuous-learning](dev-workflow-skills/continuous-learning/SKILL.md) | Automatically extract reusable patterns from Claude Code ses... |
+| [git-workflow](dev-workflow-skills/git-workflow/SKILL.md) | Git workflow patterns including branching strategies, commit... |
+| [tdd-workflow](dev-workflow-skills/tdd-workflow/SKILL.md) | Use this skill when writing new features, fixing bugs, or re... |
+
+## 🎨 Design System
+
+设计系统 - UI/UX Pro Max行业色板、67种UI风格、设计规范
+
+**Skills 数量**: 2
+
+| Skill | 描述 |
+|------|------|
+| [ckm:design-system](design-skills/design-system/SKILL.md) | Token architecture, component specifications, and slide gene... |
+| [ui-ux-pro-max](design-skills/ui-ux-pro-max/SKILL.md) | UI/UX design intelligence for web and mobile. Includes 50+ s... |
+
+## 🛠️ Skill Authoring
+
+Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化
+
+**Skills 数量**: 1
+
+| Skill | 描述 |
+|------|------|
+| [skill-creator](skill-creation/skill-creator/SKILL.md) | Create new skills, modify and improve existing skills, and m... |
