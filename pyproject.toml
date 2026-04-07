@@ -1,0 +1,26 @@
+[project]
+name = "learning-open-source"
+version = "1.0.0"
+description = "AI-Powered Skills Repository for Software Product Development"
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=3.0.0",
+    "watchdog>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
