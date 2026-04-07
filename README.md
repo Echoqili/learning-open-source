@@ -264,4 +264,49 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 
 ---
 
+## 🛡️ 安全扫描与客户端
+
+### 安全扫描引擎
+
+基于 Agent Skills Guard 的安全扫描逻辑，检测 **22 项硬触发规则** 和 **8 大风险类别**：
+
+| 风险类别 | 检测内容 | 硬触发 |
+|---------|---------|--------|
+| 破坏性操作 | rm -rf /、磁盘擦除 | ✅ |
+| 远程代码执行 | curl \| bash、反弹Shell | ✅ |
+| 命令注入 | eval()、os.system() | ❌ |
+| 网络外传 | 数据外传到远程服务器 | ❌ |
+| 权限提升 | sudoers 修改、提权 | ✅ |
+| 持久化后门 | crontab、SSH密钥注入 | ✅ |
+| 敏感信息泄露 | API Key、Token、密码 | ❌ |
+| 敏感文件访问 | ~/.ssh、/etc/shadow | ✅ |
+
+**评分规则：**
+- 90-100: ✅ 安全
+- 70-89: ⚠️ 低风险
+- 50-69: ⚠️ 中等风险
+- 30-49: 🔴 高风险
+- 0-29: 🚨 严重风险
+
+### 工具脚本
+
+| 脚本 | 功能 |
+|------|------|
+| `scripts/skill_index_manager.py` | 交互式客户端（浏览/扫描/统计） |
+| `scripts/skills_security_scanner.py` | 安全扫描引擎 |
+| `scripts/build_skills_index.py` | 索引构建脚本 |
+| `scripts/scan_github_skills.py` | GitHub Skills 发现 |
+
+**运行客户端：**
+```bash
+python scripts/skill_index_manager.py
+```
+
+**快速扫描：**
+```bash
+python scripts/skill_index_manager.py --scan
+```
+
+---
+
 *学习开源项目，记录成长轨迹*
