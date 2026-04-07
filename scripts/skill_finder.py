@@ -364,7 +364,10 @@ class SkillPackager:
         self.skills_root = skills_root
 
     def get_skill_path(self, skill: Dict) -> Path:
-        return Path(__file__).parent.parent / skill.get("path", "")
+        skill_path = Path(__file__).parent.parent / skill.get("path", "")
+        if skill_path.is_file():
+            skill_path = skill_path.parent
+        return skill_path
 
     def package_skills(self, skills: List[Dict], output_name: str = None) -> Path:
         if output_name is None:
@@ -600,6 +603,136 @@ def browse_by_category(finder: SmartSkillFinder):
 
                 input(f"\n按 Enter 键继续...")
 
+def packaging_menu(finder: SmartSkillFinder):
+    packager = SkillPackager()
+
+    while True:
+        print_header("📦 Skills 打包下载")
+
+        print("  选择打包方式：\n")
+        print(f"  {Colors.GREEN}1{Colors.RESET}. 打包全部 Skills ({len(finder.all_skills)} 个)")
+        print(f"  {Colors.GREEN}2{Colors.RESET}. 按场景打包")
+        print(f"  {Colors.GREEN}3{Colors.RESET}. 按分类打包")
+        print(f"  {Colors.GREEN}4{Colors.RESET}. 搜索后打包")
+        print(f"  {Colors.GREEN}5{Colors.RESET}. 查看已打包文件")
+        print(f"\n  {Colors.YELLOW}0{Colors.RESET}. 返回")
+
+        choice = input(f"\n{Colors.BOLD}请选择: {Colors.RESET}").strip()
+
+        if choice == '0':
+            break
+        elif choice == '1':
+            print(f"\n{Colors.YELLOW}正在打包全部 Skills...{Colors.RESET}")
+            output_path = packager.package_all()
+            size_kb = output_path.stat().st_size / 1024
+            print(f"\n{Colors.GREEN}✅ 打包完成！{Colors.RESET}")
+            print(f"  文件: {output_path.name}")
+            print(f"  大小: {size_kb:.1f} KB")
+            print(f"  路径: {output_path}")
+            input("\n按 Enter 键继续...")
+
+        elif choice == '2':
+            print_header("🎯 按场景打包")
+            for i, (key, scenario) in enumerate(SCENARIO_TEMPLATES.items(), 1):
+                emoji = scenario["emoji"]
+                skills = finder.get_by_scenario(key)
+                print(f"  {Colors.GREEN}{i}{Colors.RESET}. {emoji} {scenario['name']} ({len(skills)} 个)")
+
+            print(f"\n  {Colors.YELLOW}0{Colors.RESET}. 返回")
+            choice = input(f"\n{Colors.BOLD}请选择场景: {Colors.RESET}").strip()
+
+            if choice.isdigit():
+                idx = int(choice) - 1
+                scenarios = list(SCENARIO_TEMPLATES.items())
+                if 0 <= idx < len(scenarios):
+                    key, scenario = scenarios[idx]
+                    print(f"\n{Colors.YELLOW}正在打包 {scenario['name']}...{Colors.RESET}")
+                    output_path = packager.package_scenario(key, finder)
+                    if output_path:
+                        size_kb = output_path.stat().st_size / 1024
+                        print(f"\n{Colors.GREEN}✅ 打包完成！{Colors.RESET}")
+                        print(f"  文件: {output_path.name}")
+                        print(f"  大小: {size_kb:.1f} KB")
+                    else:
+                        print(f"\n{Colors.RED}打包失败{Colors.RESET}")
+                    input("\n按 Enter 键继续...")
+
+        elif choice == '3':
+            print_header("📂 按分类打包")
+            categories = list(finder.skills_by_category.items())
+            for i, (key, skills) in enumerate(categories, 1):
+                emoji = CATEGORIES_EMOJI.get(key, "⚪")
+                print(f"  {Colors.GREEN}{i}{Colors.RESET}. {emoji} {key.title()} ({len(skills)} 个)")
+
+            print(f"\n  {Colors.YELLOW}0{Colors.RESET}. 返回")
+            choice = input(f"\n{Colors.BOLD}请选择分类: {Colors.RESET}").strip()
+
+            if choice.isdigit():
+                idx = int(choice) - 1
+                if 0 <= idx < len(categories):
+                    key, skills = categories[idx]
+                    print(f"\n{Colors.YELLOW}正在打包 {key}...{Colors.RESET}")
+                    output_path = packager.package_category(key, finder)
+                    if output_path:
+                        size_kb = output_path.stat().st_size / 1024
+                        print(f"\n{Colors.GREEN}✅ 打包完成！{Colors.RESET}")
+                        print(f"  文件: {output_path.name}")
+                        print(f"  大小: {size_kb:.1f} KB")
+                    else:
+                        print(f"\n{Colors.RED}打包失败{Colors.RESET}")
+                    input("\n按 Enter 键继续...")
+
+        elif choice == '4':
+            query = input(f"\n{Colors.BOLD}输入搜索关键词: {Colors.RESET}").strip()
+            if query:
+                results = finder.search_by_keywords(query, top_k=20)
+                if results:
+                    selected = []
+                    print_header(f"🔍 搜索: '{query}' ({len(results)} 个结果)")
+                    print("  输入要打包的编号（用逗号分隔，如：1,3,5），或输入 'all' 打包全部\n")
+                    for i, r in enumerate(results, 1):
+                        print(f"  {Colors.GREEN}{i}{Colors.RESET}. {r.category_emoji} {r.skill['name']}")
+                        print(f"      {r.skill.get('description', '')[:50]}...")
+
+                    sel = input(f"\n{Colors.BOLD}请选择: {Colors.RESET}").strip()
+                    if sel.lower() == 'all':
+                        selected = [r.skill for r in results]
+                    else:
+                        try:
+                            indices = [int(x.strip()) - 1 for x in sel.split(',')]
+                            selected = [results[i].skill for i in indices if 0 <= i < len(results)]
+                        except:
+                            selected = []
+
+                    if selected:
+                        print(f"\n{Colors.YELLOW}正在打包 {len(selected)} 个 Skills...{Colors.RESET}")
+                        output_path = packager.package_skills(selected)
+                        size_kb = output_path.stat().st_size / 1024
+                        print(f"\n{Colors.GREEN}✅ 打包完成！{Colors.RESET}")
+                        print(f"  文件: {output_path.name}")
+                        print(f"  大小: {size_kb:.1f} KB")
+                    else:
+                        print(f"\n{Colors.YELLOW}未选择任何 Skills{Colors.RESET}")
+                else:
+                    print(f"\n{Colors.YELLOW}未找到匹配 '{query}' 的 Skills{Colors.RESET}")
+                input("\n按 Enter 键继续...")
+
+        elif choice == '5':
+            archives = packager.list_archives()
+            print_header("📦 已打包文件")
+            if archives:
+                print(f"  {'文件名':<45} {'大小':>10} {'修改时间'}")
+                print(f"  {'-'*70}")
+                for arch in archives:
+                    size_kb = arch.stat().st_size / 1024
+                    mtime = datetime.fromtimestamp(arch.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+                    print(f"  {arch.name:<45} {size_kb:>8.1f} KB  {mtime}")
+            else:
+                print(f"  {Colors.YELLOW}暂无已打包文件{Colors.RESET}")
+            print()
+            input("按 Enter 键继续...")
+
+
 def main():
     if len(sys.argv) > 1:
         if sys.argv[1] == "--search" and len(sys.argv) > 2:
@@ -652,6 +785,7 @@ def main():
                 ("🔍", "关键词搜索", "输入描述快速找到所需 Skills"),
                 ("🎯", "场景化推荐", "按工作场景获取推荐 Skills"),
                 ("📂", "分类浏览", "按分类查看所有 Skills"),
+                ("📦", "打包下载", "一键打包所需 Skills"),
                 ("📊", "Skills 统计", "查看 Skills 分布情况"),
                 ("❓", "使用帮助", "查看使用说明"),
             ]
@@ -676,6 +810,8 @@ def main():
             elif choice == '3':
                 browse_by_category(finder)
             elif choice == '4':
+                packaging_menu(finder)
+            elif choice == '5':
                 print_header("📊 Skills 统计")
                 print(f"  {Colors.BOLD}总 Skills 数量:{Colors.RESET} {len(finder.all_skills)}\n")
                 print(f"  {Colors.BOLD}分类分布:{Colors.RESET}\n")
@@ -685,7 +821,7 @@ def main():
                     print(f"  {emoji} {cat_key.title():<15} {bar} {len(skills)}")
                 print()
                 input("按 Enter 键继续...")
-            elif choice == '5':
+            elif choice == '6':
                 print_header("❓ 使用帮助")
                 help_text = """
   Smart Skills Finder 使用指南:
