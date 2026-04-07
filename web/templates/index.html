@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Skills Manager - 智能 Skills 导航</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Skills Manager</h1>
+            <p class="subtitle">智能 Skills 搜索引擎 | 118+ Skills 覆盖 15 个分类</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 输入关键词搜索（如：Sprint规划、用户故事、AI安全）...">
+            <button onclick="searchSkills()">搜索</button>
+        </div>
+
+        <nav class="tabs">
+            <button class="tab active" data-tab="search">🔍 搜索结果</button>
+            <button class="tab" data-tab="scenarios">🎯 场景推荐</button>
+            <button class="tab" data-tab="categories">📂 分类浏览</button>
+            <button class="tab" data-tab="cart">📦 打包清单 <span id="cartCount">0</span></button>
+        </nav>
+
+        <main>
+            <section id="searchSection" class="tab-content active">
+                <div class="section-header">
+                    <h2>🔍 搜索结果</h2>
+                    <p id="searchTip">输入关键词开始搜索</p>
+                </div>
+                <div id="searchResults" class="skills-grid"></div>
+            </section>
+
+            <section id="scenariosSection" class="tab-content">
+                <div class="section-header">
+                    <h2>🎯 场景化推荐</h2>
+                    <p>选择工作场景，获取推荐 Skills</p>
+                </div>
+                <div id="scenariosList" class="scenarios-grid"></div>
+            </section>
+
+            <section id="categoriesSection" class="tab-content">
+                <div class="section-header">
+                    <h2>📂 分类浏览</h2>
+                    <p>按分类查看所有 Skills</p>
+                </div>
+                <div id="categoriesList" class="categories-grid"></div>
+            </section>
+
+            <section id="cartSection" class="tab-content">
+                <div class="section-header">
+                    <h2>📦 打包清单</h2>
+                    <p>选择要打包下载的 Skills</p>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-primary" onclick="packageSelected()">📦 打包下载选中项</button>
+                    <button class="btn-secondary" onclick="packageAll()">📦 打包全部</button>
+                    <button class="btn-text" onclick="clearCart()">清空清单</button>
+                </div>
+                <div id="cartList" class="skills-grid"></div>
+            </section>
+
+            <section id="detailSection" class="tab-content">
+                <button class="btn-back" onclick="showSection('search')">← 返回</button>
+                <div id="skillDetail"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Skills Manager | <span id="totalSkills">0</span> 个 Skills</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        let cart = [];
+        let allSkills = {};
+        let currentView = 'search';
+
+        const categoriesEmoji = {
+            "product": "🔵", "agile": "🟢", "scrum": "🟡", "ddd": "🟠",
+            "dev-quality": "🟣", "qa-testing": "🔴", "api-design": "⚪",
+            "ai-product": "🩵", "ai-safety": "🚨", "superpowers": "⚡",
+            "dev-workflow": "🔧", "design": "🎨", "skill-authoring": "🛠️", "indie-hacker": "💰"
+        };
+
+        async function init() {
+            await loadStats();
+            loadCart();
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => showSection(tab.dataset.tab));
+            });
+            document.getElementById('searchInput').addEventListener('keypress', e => {
+                if (e.key === 'Enter') searchSkills();
+            });
+        }
+
+        async function loadStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                document.getElementById('totalSkills').textContent = data.total;
+            } catch (e) {
+                console.error('Failed to load stats:', e);
+            }
+        }
+
+        function showSection(section) {
+            currentView = section;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelector(`[data-tab="${section}"]`)?.classList.add('active');
+            document.getElementById(`${section}Section`)?.classList.add('active');
+        }
+
+        async function searchSkills() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (!query) return;
+
+            document.getElementById('searchTip').textContent = `正在搜索: "${query}"`;
+
+            try {
+                const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+                const data = await res.json();
+                document.getElementById('searchTip').textContent = `找到 ${data.count} 个匹配的 Skills`;
+                renderSkills('searchResults', data.results);
+                showSection('search');
+            } catch (e) {
+                showToast('搜索失败: ' + e.message, 'error');
+            }
+        }
+
+        function renderSkills(containerId, skills) {
+            const container = document.getElementById(containerId);
+            if (!skills || skills.length === 0) {
+                container.innerHTML = '<div class="empty">暂无数据</div>';
+                return;
+            }
+
+            container.innerHTML = skills.map(skill => `
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-emoji">${skill.category_emoji || '📦'}</span>
+                        <h3>${skill.name}</h3>
+                    </div>
+                    <p class="skill-desc">${(skill.description || '').substring(0, 100)}...</p>
+                    <div class="skill-meta">
+                        <span class="skill-category">${skill.category_name || ''}</span>
+                    </div>
+                    <div class="skill-actions">
+                        <button onclick="showSkillDetail('${skill.name}')">查看详情</button>
+                        <button onclick="addToCart('${skill.name}')">加入清单</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function showSkillDetail(name) {
+            try {
+                const res = await fetch(`/api/skill/${encodeURIComponent(name)}`);
+                const skill = await res.json();
+
+                document.getElementById('skillDetail').innerHTML = `
+                    <div class="detail-header">
+                        <span class="detail-emoji">${skill.emoji}</span>
+                        <h2>${skill.name}</h2>
+                    </div>
+                    <div class="detail-meta">
+                        <span>分类: ${skill.category}</span>
+                        <span>文件数: ${skill.files?.length || 0}</span>
+                    </div>
+                    <p class="detail-desc">${skill.description || '无描述'}</p>
+                    <div class="detail-files">
+                        <h4>📁 文件结构</h4>
+                        <ul>
+                            ${(skill.files || []).map(f => `<li>${f.path} (${formatSize(f.size)})</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="detail-actions">
+                        <button class="btn-primary" onclick="addToCart('${skill.name}')">加入清单</button>
+                        <button class="btn-secondary" onclick="packageSingle('${skill.name}')">单独打包</button>
+                    </div>
+                `;
+                showSection('detail');
+            } catch (e) {
+                showToast('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        async function loadScenarios() {
+            const container = document.getElementById('scenariosList');
+            const scenarios = [
+                {key: "pm_basics", name: "产品经理基础", emoji: "📋", desc: "PRD、用户故事、需求分析"},
+                {key: "pm_advanced", name: "高级产品经理", emoji: "🎯", desc: "战略、指标、商业化"},
+                {key: "customer_discovery", name: "客户探索验证", emoji: "🔍", desc: "访谈准备、发现流程"},
+                {key: "agile_dev", name: "敏捷开发团队", emoji: "🏃", desc: "Sprint规划、回顾"},
+                {key: "scrum_team", name: "Scrum团队", emoji: "🎯", desc: "14个Scrum仪式"},
+                {key: "qa_testing", name: "QA与测试", emoji: "🧪", desc: "E2E、Playwright"},
+                {key: "architecture", name: "架构设计", emoji: "🏗️", desc: "DDD、API设计"},
+                {key: "dev_quality", name: "开发质量", emoji: "💎", desc: "整洁代码、调试"},
+                {key: "tdd_workflow", name: "TDD测试驱动", emoji: "⚡", desc: "红绿重构"},
+                {key: "indie_hacker", name: "独立开发者", emoji: "💰", desc: "MVP、获客、增长"},
+                {key: "ai_product", name: "AI产品开发", emoji: "🤖", desc: "Prompt、安全"},
+                {key: "design_system", name: "设计系统", emoji: "🎨", desc: "UI/UX组件库"},
+                {key: "skill_creation", name: "Skill开发", emoji: "🛠️", desc: "官方创建工具"}
+            ];
+
+            container.innerHTML = scenarios.map(s => `
+                <div class="scenario-card" onclick="loadScenario('${s.key}')">
+                    <span class="scenario-emoji">${s.emoji}</span>
+                    <h3>${s.name}</h3>
+                    <p>${s.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        async function loadScenario(key) {
+            try {
+                const res = await fetch(`/api/scenario/${key}`);
+                const data = await res.json();
+                renderSkills('scenariosList', data.skills);
+                document.querySelector('#scenariosSection .section-header p').textContent =
+                    `${data.name} - ${data.count} 个 Skills`;
+                showSection('scenarios');
+            } catch (e) {
+                showToast('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        async function loadCategories() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                const container = document.getElementById('categoriesList');
+
+                container.innerHTML = data.categories.map(cat => `
+                    <div class="category-card" onclick="loadCategory('${cat.key}')">
+                        <span class="cat-emoji">${cat.emoji}</span>
+                        <h3>${cat.name}</h3>
+                        <p>${cat.count} 个 Skills</p>
+                    </div>
+                `).join('');
+            } catch (e) {
+                showToast('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        async function loadCategory(key) {
+            try {
+                const res = await fetch(`/api/category/${key}`);
+                const data = await res.json();
+                renderSkills('categoriesList', data.skills);
+                showSection('categories');
+            } catch (e) {
+                showToast('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        function addToCart(name) {
+            if (!cart.includes(name)) {
+                cart.push(name);
+                updateCart();
+                showToast(`已加入清单: ${name}`, 'success');
+            } else {
+                showToast('已在清单中', 'info');
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(n => n !== name);
+            updateCart();
+            renderCart();
+        }
+
+        function updateCart() {
+            document.getElementById('cartCount').textContent = cart.length;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function loadCart() {
+            const stored = localStorage.getItem('cart');
+            if (stored) {
+                cart = JSON.parse(stored);
+                updateCart();
+            }
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+            renderCart();
+            showToast('清单已清空', 'info');
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartList');
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="empty">清单为空，请先添加 Skills</div>';
+                return;
+            }
+
+            let skills = [];
+            cart.forEach(name => {
+                allSkills[name] = allSkills[name] || {name, category_emoji: '📦', category_name: '', description: ''};
+                skills.push(allSkills[name]);
+            });
+
+            container.innerHTML = skills.map(s => `
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-emoji">${s.category_emoji || '📦'}</span>
+                        <h3>${s.name}</h3>
+                    </div>
+                    <div class="skill-actions">
+                        <button class="btn-remove" onclick="removeFromCart('${s.name}')">移除</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function packageSelected() {
+            if (cart.length === 0) {
+                showToast('请先选择要打包的 Skills', 'warning');
+                return;
+            }
+
+            try {
+                showToast('正在打包...', 'info');
+                const res = await fetch('/api/package', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({skills: cart, type: 'custom'})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    window.location.href = `/download/${data.filename}`;
+                    showToast(`打包完成！${data.count} 个 Skills`, 'success');
+                }
+            } catch (e) {
+                showToast('打包失败: ' + e.message, 'error');
+            }
+        }
+
+        async function packageAll() {
+            try {
+                showToast('正在打包全部 Skills...', 'info');
+                const res = await fetch('/api/package-all', {method: 'POST'});
+                const data = await res.json();
+                if (data.success) {
+                    window.location.href = `/download/${data.filename}`;
+                    showToast(`全部打包完成！${data.count} 个 Skills`, 'success');
+                }
+            } catch (e) {
+                showToast('打包失败: ' + e.message, 'error');
+            }
+        }
+
+        async function packageSingle(name) {
+            try {
+                showToast('正在打包...', 'info');
+                const res = await fetch('/api/package', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({skills: [name], type: 'single'})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    window.location.href = `/download/${data.filename}`;
+                    showToast(`打包完成！`, 'success');
+                }
+            } catch (e) {
+                showToast('打包失败: ' + e.message, 'error');
+            }
+        }
+
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show ' + type;
+            setTimeout(() => toast.className = 'toast', 3000);
+        }
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const section = tab.dataset.tab;
+                showSection(section);
+                if (section === 'scenarios') loadScenarios();
+                if (section === 'categories') loadCategories();
+                if (section === 'cart') renderCart();
+            });
+        });
+
+        init();
+    </script>
+</body>
+</html>
