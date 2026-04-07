@@ -19,85 +19,85 @@ CATEGORIES = {
     "product": {
         "name": "Product Manager",
         "description": "产品经理技能 - 需求分析、PRD、用户故事、路线图等",
-        "sources": ["skills"],
+        "sources": ["all-skills/skills"],
         "color": "🔵"
     },
     "agile": {
         "name": "Agile Delivery",
         "description": "敏捷交付 - Sprint规划、Backlog梳理、回顾会议等",
-        "sources": ["agile-skills/skills"],
+        "sources": ["all-skills/agile-skills/skills"],
         "color": "🟢"
     },
     "scrum": {
         "name": "Scrum Team",
         "description": "Scrum团队 - 14个Scrum仪式技能",
-        "sources": ["scrum-skills/skills"],
+        "sources": ["all-skills/scrum-skills/skills"],
         "color": "🟡"
     },
     "ddd": {
         "name": "DDD Architecture",
         "description": "DDD六边形架构 - 领域建模、聚合、策略模式等",
-        "sources": ["ddd-skills"],
+        "sources": ["all-skills/ddd-skills"],
         "color": "🟠"
     },
     "dev-quality": {
         "name": "Dev Quality",
         "description": "开发质量 - 整洁代码、调试、数据库、GitHub操作",
-        "sources": ["dev-quality-skills"],
+        "sources": ["all-skills/dev-quality-skills"],
         "color": "🟣"
     },
     "qa-testing": {
         "name": "QA Testing",
         "description": "QA测试 - 测试策略、Playwright、安全/性能测试",
-        "sources": ["qa-testing-skills"],
+        "sources": ["all-skills/qa-testing-skills"],
         "color": "🔴"
     },
     "api-design": {
         "name": "API Design",
         "description": "API设计 - REST/GraphQL、OpenAPI",
-        "sources": ["api-design-skills"],
+        "sources": ["all-skills/api-design-skills"],
         "color": "⚪"
     },
     "ai-product": {
         "name": "AI Product",
         "description": "AI产品 - 大模型应用、Prompt工程、生产级AI",
-        "sources": ["ai-product-skills"],
+        "sources": ["all-skills/ai-product-skills"],
         "color": "🩵"
     },
     "ai-safety": {
         "name": "AI Safety",
         "description": "AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试",
-        "sources": ["ai-safety-skills"],
+        "sources": ["all-skills/ai-safety-skills"],
         "color": "🚨"
     },
     "superpowers": {
         "name": "Superpowers",
         "description": "Superpowers开发框架 - TDD、红绿重构、Git Worktree、系统调试",
-        "sources": ["superpowers-skills"],
+        "sources": ["all-skills/superpowers-skills"],
         "color": "⚡"
     },
     "dev-workflow": {
         "name": "Dev Workflow",
         "description": "开发工作流 - TDD流程、编码规范、Git工作流、Agent工程、持续学习",
-        "sources": ["dev-workflow-skills"],
+        "sources": ["all-skills/dev-workflow-skills"],
         "color": "🔧"
     },
     "design": {
         "name": "Design System",
         "description": "设计系统 - UI/UX Pro Max行业色板、67种UI风格、设计规范",
-        "sources": ["design-skills"],
+        "sources": ["all-skills/design-skills"],
         "color": "🎨"
     },
     "skill-authoring": {
         "name": "Skill Authoring",
         "description": "Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化",
-        "sources": ["skill-creation"],
+        "sources": ["all-skills/skill-creation"],
         "color": "🛠️"
     },
     "indie-hacker": {
         "name": "Indie Hacker",
         "description": "独立开发者创业 - 发现社群、验证想法、MVP、冷启动、定价、营销、增长",
-        "sources": ["indie-hacker-skills"],
+        "sources": ["all-skills/indie-hacker-skills"],
         "color": "💰"
     }
 }
