@@ -275,7 +275,7 @@ def api_package():
     })
 
 
-@app.route('/download/<filename:filename>')
+@app.route('/download/<path:filename>')
 def download(filename):
     if not filename.endswith('.zip'):
         filename += '.zip'

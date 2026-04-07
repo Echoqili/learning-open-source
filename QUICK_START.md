@@ -55,6 +55,32 @@ python scripts/skill_finder.py --category product
 | 🎨 设计系统 | UI/UX、组件库 |
 | 🛠️ Skill开发 | 官方创建工具 |
 
+## 🌐 Web 可视化界面
+
+通过浏览器可视化操作 Skills：
+
+```bash
+cd d:\pyworkplace\github\learning-open-source/web
+python app.py
+```
+
+然后访问 http://127.0.0.1:5555
+
+### 功能特性
+
+| Tab | 功能 |
+|-----|------|
+| 🔍 搜索结果 | 中英文关键词搜索 Skills |
+| 🎯 场景推荐 | 13种场景一键获取推荐 |
+| 📂 分类浏览 | 按15个分类查看 |
+| 📦 打包清单 | 选择 Skills 打包下载 |
+
+### 支持操作
+- 搜索和浏览 Skills
+- 查看 Skill 详情和文件结构
+- 添加 Skills 到打包清单
+- 一键打包下载（单个/批量/全部）
+
 ## ⚡ 快速命令
 
 ### 交互式客户端（带菜单）

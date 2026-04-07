@@ -1,0 +1,1405 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-07T22:23:20.742770",
+  "total_count": 118,
+  "by_category": {
+    "product": {
+      "name": "Product Manager",
+      "description": "产品经理技能 - 需求分析、PRD、用户故事、路线图等",
+      "color": "🔵",
+      "skills": [
+        {
+          "name": "acquisition-channel-advisor",
+          "path": "all-skills\\skills\\acquisition-channel-advisor\\SKILL.md",
+          "description": "Evaluate acquisition channels using unit economics, customer quality, and scalability. Use when deciding whether to scale, test, or kill a growth channel.",
+          "purpose": "Guide product managers through evaluating whether to scale, test, or kill an acquisition channel based on unit economics (CAC, LTV, payback), customer quality (retention, NRR), and scalability (magic "
+        },
+        {
+          "name": "ai-shaped-readiness-advisor",
+          "path": "all-skills\\skills\\ai-shaped-readiness-advisor\\SKILL.md",
+          "description": "Assess whether your product work is AI-first or AI-shaped. Use when evaluating AI maturity and choosing the next team capability to build.",
+          "purpose": "Assess whether your product work is **\"AI-first\"** (using AI to automate existing tasks faster) or **\"AI-shaped\"** (fundamentally redesigning how product teams operate around AI capabilities). Use thi"
+        },
+        {
+          "name": "altitude-horizon-framework",
+          "path": "all-skills\\skills\\altitude-horizon-framework\\SKILL.md",
+          "description": "Understand the PM-to-Director transition through altitude and horizon thinking. Use when diagnosing scope, time-horizon, or leadership-level gaps.",
+          "purpose": "Defines the two-axis mental model that distinguishes Director-level thinking from PM thinking: **Altitude** (how wide you zoom out) and **Horizon** (how far ahead you look). Use this to understand wha"
+        },
+        {
+          "name": "business-health-diagnostic",
+          "path": "all-skills\\skills\\business-health-diagnostic\\SKILL.md",
+          "description": "Diagnose SaaS business health across growth, retention, efficiency, and capital. Use when preparing a business review or prioritizing urgent fixes.",
+          "purpose": "Diagnose overall SaaS business health by analyzing growth, retention, unit economics, and capital efficiency metrics together. Use this to identify problems early, prioritize actions by urgency, and d"
+        },
+        {
+          "name": "company-research",
+          "path": "all-skills\\skills\\company-research\\SKILL.md",
+          "description": "Create a company research brief with executive quotes, product strategy, and org context. Use when preparing for interviews, competitive analysis, partnerships, or market-entry work.",
+          "purpose": "Create a comprehensive company profile that extracts executive insights, product strategy, transformation initiatives, and organizational dynamics from publicly available sources. Use this to understa"
+        },
+        {
+          "name": "context-engineering-advisor",
+          "path": "all-skills\\skills\\context-engineering-advisor\\SKILL.md",
+          "description": "Diagnose context stuffing vs. context engineering. Use when an AI workflow feels bloated, brittle, or hard to steer reliably.",
+          "purpose": "Guide product managers through diagnosing whether they're doing **context stuffing** (jamming volume without intent) or **context engineering** (shaping structure for attention). Use this to identify "
+        },
+        {
+          "name": "customer-journey-map",
+          "path": "all-skills\\skills\\customer-journey-map\\SKILL.md",
+          "description": "Create a customer journey map across stages, touchpoints, actions, emotions, and metrics. Use when diagnosing a broken experience or aligning a team on the full customer flow.",
+          "purpose": "Create a comprehensive customer journey map that visualizes how customers interact with your brand across all stages—from awareness to loyalty—documenting their actions, touchpoints, emotions, KPIs, b"
+        },
+        {
+          "name": "customer-journey-mapping-workshop",
+          "path": "all-skills\\skills\\customer-journey-mapping-workshop\\SKILL.md",
+          "description": "Run a customer journey mapping workshop with adaptive questions and outputs. Use when you need to map stages, actions, emotions, pain points, and opportunities for a persona and scenario.",
+          "purpose": "Guide product managers through creating a customer journey map by asking adaptive questions about the actor (persona), scenario/goal, journey phases, actions/emotions, and opportunities for improvemen"
+        },
+        {
+          "name": "director-readiness-advisor",
+          "path": "all-skills\\skills\\director-readiness-advisor\\SKILL.md",
+          "description": "Guide the PM-to-Director transition across preparing, interviewing, landing, and recalibrating. Use when leadership scope is changing and you need practical coaching.",
+          "purpose": "Guide PMs and Directors through the specific challenges of the PM-to-Director transition using adaptive questions and targeted coaching. Diagnoses where you are in the journey and delivers practical, "
+        },
+        {
+          "name": "discovery-interview-prep",
+          "path": "all-skills\\skills\\discovery-interview-prep\\SKILL.md",
+          "description": "Plan customer discovery interviews with the right goal, segment, constraints, and method. Use when preparing interviews for problem validation, churn research, or new product ideas.",
+          "purpose": "Guide product managers through preparing for customer discovery interviews by asking adaptive questions about research goals, customer segments, constraints, and methodologies. Use this to design effe"
+        },
+        {
+          "name": "discovery-process",
+          "path": "all-skills\\skills\\discovery-process\\SKILL.md",
+          "description": "Run a full discovery cycle from problem hypothesis to validated solution. Use when a team needs a structured path through framing, interviews, synthesis, and experiments.",
+          "purpose": "Guide product managers through a complete discovery cycle—from initial problem hypothesis to validated solution—by orchestrating problem framing, customer interviews, synthesis, and experimentation sk"
+        },
+        {
+          "name": "eol-message",
+          "path": "all-skills\\skills\\eol-message\\SKILL.md",
+          "description": "Write a clear, empathetic EOL announcement with rationale, customer impact, and next steps. Use when retiring a product, feature, or plan without creating avoidable confusion.",
+          "purpose": "Craft a clear, empathetic End-of-Life (EOL) message that communicates product or feature discontinuation, explains the rationale, addresses customer impact, provides transition support, and positions "
+        },
+        {
+          "name": "epic-breakdown-advisor",
+          "path": "all-skills\\skills\\epic-breakdown-advisor\\SKILL.md",
+          "description": "Break down epics into user stories with Humanizing Work split patterns. Use when a backlog item is too large to estimate, sequence, or deliver safely.",
+          "purpose": "Guide product managers through breaking down epics into user stories using Richard Lawrence's complete Humanizing Work methodology—a systematic, flowchart-driven approach that applies 9 splitting patt"
+        },
+        {
+          "name": "epic-hypothesis",
+          "path": "all-skills\\skills\\epic-hypothesis\\SKILL.md",
+          "description": "Frame an epic as a testable hypothesis with target user, expected outcome, and validation method. Use when defining a major initiative before roadmap, discovery, or delivery planning.",
+          "purpose": "Frame epics as testable hypotheses using an if/then structure that articulates the action or solution, the target beneficiary, the expected outcome, and how you'll validate success. Use this to manage"
+        },
+        {
+          "name": "executive-onboarding-playbook",
+          "path": "all-skills\\skills\\executive-onboarding-playbook\\SKILL.md",
+          "description": "Plan a VP or CPO 30-60-90 day diagnostic onboarding path. Use when entering a new executive product role and avoiding premature change.",
+          "purpose": "Structure the first 90 days of a VP or CPO transition as a diagnostic process, not an execution sprint. The single most common failure in senior product leadership transitions is acting before underst"
+        },
+        {
+          "name": "feature-investment-advisor",
+          "path": "all-skills\\skills\\feature-investment-advisor\\SKILL.md",
+          "description": "Evaluate feature investments using revenue impact, cost structure, ROI, and strategy. Use when deciding whether a feature deserves investment.",
+          "purpose": "Guide product managers through evaluating whether to build a feature based on financial impact analysis. Use this to make data-driven prioritization decisions by assessing revenue connection (direct o"
+        },
+        {
+          "name": "finance-based-pricing-advisor",
+          "path": "all-skills\\skills\\finance-based-pricing-advisor\\SKILL.md",
+          "description": "Evaluate pricing changes using ARPU, conversion, churn risk, NRR, and payback. Use when deciding whether a pricing move should ship.",
+          "purpose": "Evaluate the **financial impact** of pricing changes (price increases, new tiers, add-ons, discounts) using ARPU/ARPA analysis, conversion impact, churn risk, NRR effects, and CAC payback implications"
+        },
+        {
+          "name": "finance-metrics-quickref",
+          "path": "all-skills\\skills\\finance-metrics-quickref\\SKILL.md",
+          "description": "Look up SaaS finance metrics, formulas, and benchmarks fast. Use when you need a quick metric definition, formula, or benchmark during analysis.",
+          "purpose": "Quick reference for any SaaS finance metric without deep teaching. Use this when you need a fast formula lookup, benchmark check, or decision framework reminder. For detailed explanations, calculation"
+        },
+        {
+          "name": "jobs-to-be-done",
+          "path": "all-skills\\skills\\jobs-to-be-done\\SKILL.md",
+          "description": "Uncover customer jobs, pains, and gains in a structured JTBD format. Use when clarifying unmet needs, repositioning a product, or improving discovery and messaging.",
+          "purpose": "Systematically explore what customers are trying to accomplish (functional, social, emotional jobs), the pains they experience, and the gains they seek. Use this framework to uncover unmet needs, vali"
+        },
+        {
+          "name": "lean-ux-canvas",
+          "path": "all-skills\\skills\\lean-ux-canvas\\SKILL.md",
+          "description": "Guide teams through Lean UX Canvas v2. Use when framing a business problem, surfacing assumptions, and defining what to learn next.",
+          "purpose": "Guide product managers through creating **Jeff Gothelf's Lean UX Canvas (v2)**—a one-page facilitation tool that frames work around a **business problem to solve**, not a **solution to implement**. Us"
+        },
+        {
+          "name": "opportunity-solution-tree",
+          "path": "all-skills\\skills\\opportunity-solution-tree\\SKILL.md",
+          "description": "Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests. Use when a stakeholder request needs problem framing before you decide what to build.",
+          "purpose": "Guide product managers through creating an Opportunity Solution Tree (OST) by extracting target outcomes from stakeholder requests, generating opportunity options (problems to solve), mapping potentia"
+        },
+        {
+          "name": "pestel-analysis",
+          "path": "all-skills\\skills\\pestel-analysis\\SKILL.md",
+          "description": "Analyze political, economic, social, technological, environmental, and legal forces. Use when external market shifts could materially affect a product, roadmap, or strategy.",
+          "purpose": "Conduct a systematic analysis of macro-environmental factors—Political, Economic, Social, Technological, Environmental, and Legal—that could impact your product or project. Use this to identify extern"
+        },
+        {
+          "name": "pol-probe",
+          "path": "all-skills\\skills\\pol-probe\\SKILL.md",
+          "description": "Define a Proof of Life probe to test a risky hypothesis cheaply. Use when you need harsh truth before building real product.",
+          "purpose": "Define and document a **Proof of Life (PoL) probe**—a lightweight, disposable validation artifact designed to surface harsh truths before expensive development. Use this when you need to eliminate a s"
+        },
+        {
+          "name": "pol-probe-advisor",
+          "path": "all-skills\\skills\\pol-probe-advisor\\SKILL.md",
+          "description": "Select the right Proof of Life (PoL) probe based on hypothesis, risk, and resources. Use this to match the validation method to the real learning goal, not tooling comfort.",
+          "purpose": "Guide product managers through selecting the right **Proof of Life (PoL) probe** type (of 5 flavors) based on their hypothesis, risk, and available resources. Use this when you need to eliminate a spe"
+        },
+        {
+          "name": "positioning-statement",
+          "path": "all-skills\\skills\\positioning-statement\\SKILL.md",
+          "description": "Create a Geoffrey Moore-style positioning statement. Use when clarifying who you serve, what problem you solve, your category, and why you're different from alternatives.",
+          "purpose": "Create a Geoffrey Moore-style positioning statement that clearly articulates who your product serves, what need it addresses, how it's categorized, what benefit it delivers, and how it differs from al"
+        },
+        {
+          "name": "positioning-workshop",
+          "path": "all-skills\\skills\\positioning-workshop\\SKILL.md",
+          "description": "Run a positioning workshop that surfaces target customer, unmet need, category, benefits, and differentiation. Use when your product messaging feels fuzzy, generic, or misaligned.",
+          "purpose": "Guide product managers through discovering and articulating product positioning by asking adaptive questions about target customers, unmet needs, product category, benefits, and competitive differenti"
+        },
+        {
+          "name": "prd-development",
+          "path": "all-skills\\skills\\prd-development\\SKILL.md",
+          "description": "Build a structured PRD that connects problem, users, solution, and success criteria. Use when turning discovery notes into an engineering-ready document for a major initiative.",
+          "purpose": "Guide product managers through structured PRD (Product Requirements Document) creation by orchestrating problem framing, user research synthesis, solution definition, and success criteria into a cohes"
+        },
+        {
+          "name": "press-release",
+          "path": "all-skills\\skills\\press-release\\SKILL.md",
+          "description": "Write an Amazon-style press release that defines customer value before building. Use when aligning stakeholders on a new product, feature, or strategic bet.",
+          "purpose": "Create a visionary press release following Amazon's \"Working Backwards\" methodology to define and communicate a product or feature before building it. Use this to align stakeholders on the customer va"
+        },
+        {
+          "name": "prioritization-advisor",
+          "path": "all-skills\\skills\\prioritization-advisor\\SKILL.md",
+          "description": "Choose a prioritization framework based on stage, team context, and stakeholder needs. Use when deciding between RICE, ICE, value/effort, or another scoring approach.",
+          "purpose": "Guide product managers in choosing the right prioritization framework by asking adaptive questions about product stage, team context, decision-making needs, and stakeholder dynamics. Use this to avoid"
+        },
+        {
+          "name": "problem-framing-canvas",
+          "path": "all-skills\\skills\\problem-framing-canvas\\SKILL.md",
+          "description": "Guide teams through MITRE's Problem Framing Canvas. Use when you need a clearer problem statement before jumping to solutions.",
+          "purpose": "Guide product managers through the MITRE Problem Framing Canvas process by asking structured questions across three phases: Look Inward (examine your own assumptions and biases), Look Outward (underst"
+        },
+        {
+          "name": "problem-statement",
+          "path": "all-skills\\skills\\problem-statement\\SKILL.md",
+          "description": "Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels. Use when framing discovery, prioritization, or a PRD.",
+          "purpose": "Articulate a problem from the user's perspective using an empathy-driven framework that captures who they are, what they're trying to do, what's blocking them, why, and how it makes them feel. Use thi"
+        },
+        {
+          "name": "product-sense-interview-answer",
+          "path": "all-skills\\skills\\product-sense-interview-answer\\SKILL.md",
+          "description": "Structure a spoken PM product-sense answer with assumptions, segmentation, pain-point prioritization, and MVP tradeoffs. Use when practicing design, improve, or build-next interview questions.",
+          "purpose": "Help PM candidates and interview coaches structure product-sense answers that sound strong out loud, not just on paper. Use this when practicing prompts like \"How would you improve X?\", \"Design a prod"
+        },
+        {
+          "name": "product-strategy-session",
+          "path": "all-skills\\skills\\product-strategy-session\\SKILL.md",
+          "description": "Run an end-to-end product strategy session across positioning, discovery, and roadmap planning. Use when a team needs validated direction before committing to execution.",
+          "purpose": "Guide product managers through a comprehensive product strategy session by orchestrating positioning, problem framing, customer discovery, and roadmap planning skills into a cohesive end-to-end proces"
+        },
+        {
+          "name": "proto-persona",
+          "path": "all-skills\\skills\\proto-persona\\SKILL.md",
+          "description": "Create a proto-persona from current research, market signals, and team knowledge. Use when you need a working customer profile before deeper validation.",
+          "purpose": "Create an initial, assumption-based persona profile that synthesizes available user research, market data, and stakeholder knowledge into a working hypothesis about your target user. Use this to align"
+        },
+        {
+          "name": "recommendation-canvas",
+          "path": "all-skills\\skills\\recommendation-canvas\\SKILL.md",
+          "description": "Evaluate an AI product idea across outcomes, hypotheses, risks, and positioning. Use when deciding whether an AI solution deserves investment or recommendation.",
+          "purpose": "Evaluate and propose AI product solutions using a structured canvas that assesses business outcomes, customer outcomes, problem framing, solution hypotheses, positioning, risks, and value justificatio"
+        },
+        {
+          "name": "roadmap-planning",
+          "path": "all-skills\\skills\\roadmap-planning\\SKILL.md",
+          "description": "Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing. Use when turning strategy into a release plan that teams can execute.",
+          "purpose": "Guide product managers through strategic roadmap planning by orchestrating prioritization, epic definition, stakeholder alignment, and release sequencing skills into a structured process. Use this to "
+        },
+        {
+          "name": "saas-economics-efficiency-metrics",
+          "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\SKILL.md",
+          "description": "Evaluate SaaS unit economics and capital efficiency. Use when deciding whether the business can scale efficiently or needs correction.",
+          "purpose": "Determine whether your SaaS business model is fundamentally viable and capital-efficient. Use this to calculate unit economics, assess profitability, manage cash runway, and decide when to scale vs. o"
+        },
+        {
+          "name": "saas-revenue-growth-metrics",
+          "path": "all-skills\\skills\\saas-revenue-growth-metrics\\SKILL.md",
+          "description": "Calculate SaaS revenue, retention, and growth metrics. Use when diagnosing momentum, churn, expansion, or product-market-fit signals.",
+          "purpose": "Master revenue and retention metrics to understand SaaS business momentum, evaluate product-market fit, and make data-driven decisions about growth investments. Use this to calculate key metrics, inte"
+        },
+        {
+          "name": "skill-authoring-workflow",
+          "path": "all-skills\\skills\\skill-authoring-workflow\\SKILL.md",
+          "description": "Turn raw PM content into a compliant, publish-ready skill. Use when creating or updating a repo skill without breaking standards.",
+          "purpose": "Create or update PM skills without chaos. This workflow turns rough notes, workshop content, or half-baked prompt dumps into compliant `skills/<skill-name>/SKILL.md` assets that actually pass validati"
+        },
+        {
+          "name": "storyboard",
+          "path": "all-skills\\skills\\storyboard\\SKILL.md",
+          "description": "Create a six-frame storyboard that shows a user's journey from problem to solution. Use when you need a fast narrative for alignment, concept reviews, or demos.",
+          "purpose": "Create a 6-frame visual narrative that tells the story of a user's journey from problem to solution, using the classic storytelling arc to build empathy, illustrate value, and make abstract product co"
+        },
+        {
+          "name": "tam-sam-som-calculator",
+          "path": "all-skills\\skills\\tam-sam-som-calculator\\SKILL.md",
+          "description": "Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats. Use when sizing a market for a product idea, business case, or executive review.",
+          "purpose": "Guide product managers through calculating Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM) for a product idea by asking adaptive, contextual"
+        },
+        {
+          "name": "user-story",
+          "path": "all-skills\\skills\\user-story\\SKILL.md",
+          "description": "Create user stories with Mike Cohn format and Gherkin acceptance criteria. Use when turning user needs into development-ready work with clear outcomes and testable conditions.",
+          "purpose": "Create clear, concise user stories that combine Mike Cohn's user story format with Gherkin-style acceptance criteria. Use this to translate user needs into actionable development work that focuses on "
+        },
+        {
+          "name": "user-story-mapping",
+          "path": "all-skills\\skills\\user-story-mapping\\SKILL.md",
+          "description": "Create a user story map that lays out activities, steps, tasks, and release slices. Use when planning a workflow, backlog, or MVP around the user journey.",
+          "purpose": "Visualize the user journey by creating a hierarchical map that breaks down high-level activities into steps and tasks, organized left-to-right as a narrative flow. Use this to build shared understandi"
+        },
+        {
+          "name": "user-story-mapping-workshop",
+          "path": "all-skills\\skills\\user-story-mapping-workshop\\SKILL.md",
+          "description": "Run a user story mapping workshop with adaptive questions and a structured map output. Use when you need backbone activities, tasks, and release slices for a workflow.",
+          "purpose": "Guide product managers through creating a user story map by asking adaptive questions about the system, users, workflow, and priorities—then generating a two-dimensional map with backbone (activities)"
+        },
+        {
+          "name": "user-story-splitting",
+          "path": "all-skills\\skills\\user-story-splitting\\SKILL.md",
+          "description": "Break a large story or epic into smaller deliverable stories using proven split patterns. Use when backlog items are too big for estimation, sequencing, or independent release.",
+          "purpose": "Break down large user stories, epics, or features into smaller, independently deliverable stories using systematic splitting patterns. Use this to make work more manageable, reduce risk, enable faster"
+        },
+        {
+          "name": "vp-cpo-readiness-advisor",
+          "path": "all-skills\\skills\\vp-cpo-readiness-advisor\\SKILL.md",
+          "description": "",
+          "purpose": "Guide Directors and senior product leaders through the specific challenges of the transition to VP or CPO using adaptive questions and targeted coaching. Diagnoses where you are in the journey and del"
+        },
+        {
+          "name": "workshop-facilitation",
+          "path": "all-skills\\skills\\workshop-facilitation\\SKILL.md",
+          "description": "Facilitate workshop sessions in a one-step, multi-turn flow. Use when an interactive skill needs consistent pacing, options, and progress tracking.",
+          "purpose": "Provide the canonical facilitation pattern for interactive skills: one step at a time, with clear progress, adaptive recommendations at decision points, and predictable interruption handling."
+        }
+      ]
+    },
+    "agile": {
+      "name": "Agile Delivery",
+      "description": "敏捷交付 - Sprint规划、Backlog梳理、回顾会议等",
+      "color": "🟢",
+      "skills": [
+        {
+          "name": "acceptance-driven-planner",
+          "path": "all-skills\\agile-skills\\skills\\acceptance-driven-planner\\SKILL.md",
+          "description": "acceptance-driven-planner",
+          "purpose": "Turn backlog items into acceptance-led implementation plans that anchor development and testing around observable outcomes."
+        },
+        {
+          "name": "backlog-groomer",
+          "path": "all-skills\\agile-skills\\skills\\backlog-groomer\\SKILL.md",
+          "description": "backlog-groomer",
+          "purpose": "Review and refine backlog items for clarity, readiness, priority, sequencing, and hidden ambiguity before sprint commitment."
+        },
+        {
+          "name": "blocker-escalation-advisor",
+          "path": "all-skills\\agile-skills\\skills\\blocker-escalation-advisor\\SKILL.md",
+          "description": "blocker-escalation-advisor",
+          "purpose": "Classify blockers and recommend the least-wasteful escalation path so the team does not silently absorb preventable delay."
+        },
+        {
+          "name": "cross-functional-team-checker",
+          "path": "all-skills\\agile-skills\\skills\\cross-functional-team-checker\\SKILL.md",
+          "description": "cross-functional-team-checker",
+          "purpose": "Review whether a team can actually deliver end-to-end value within an iteration or is bottlenecked by missing roles, approvals, or capabilities."
+        },
+        {
+          "name": "definition-of-done-enforcer",
+          "path": "all-skills\\agile-skills\\skills\\definition-of-done-enforcer\\SKILL.md",
+          "description": "definition-of-done-enforcer",
+          "purpose": "Evaluate whether backlog items or sprint outputs meet an explicit, requirement-aware definition of done."
+        },
+        {
+          "name": "iteration-outcome-reviewer",
+          "path": "all-skills\\agile-skills\\skills\\iteration-outcome-reviewer\\SKILL.md",
+          "description": "iteration-outcome-reviewer",
+          "purpose": "Assess what an iteration actually delivered against its goal, commitments, quality expectations, and unresolved spillover."
+        },
+        {
+          "name": "regression-discipline-checker",
+          "path": "all-skills\\agile-skills\\skills\\regression-discipline-checker\\SKILL.md",
+          "description": "regression-discipline-checker",
+          "purpose": "Check whether the team is preserving quality while iterating quickly, especially around repeated breakage and weak regression protection."
+        },
+        {
+          "name": "retrospective-pattern-finder",
+          "path": "all-skills\\agile-skills\\skills\\retrospective-pattern-finder\\SKILL.md",
+          "description": "retrospective-pattern-finder",
+          "purpose": "Find recurring patterns across retrospectives, incidents, and sprint outcomes so improvement work targets causes instead of symptoms."
+        },
+        {
+          "name": "self-organization-health-check",
+          "path": "all-skills\\agile-skills\\skills\\self-organization-health-check\\SKILL.md",
+          "description": "self-organization-health-check",
+          "purpose": "Assess whether the team is self-organizing effectively or is stalled by hidden control, poor clarity, overload, or coordination failure."
+        },
+        {
+          "name": "sprint-goal-writer",
+          "path": "all-skills\\agile-skills\\skills\\sprint-goal-writer\\SKILL.md",
+          "description": "sprint-goal-writer",
+          "purpose": "Write focused sprint goals that align backlog items to a coherent outcome instead of a random collection of tasks."
+        },
+        {
+          "name": "story-splitting-advisor",
+          "path": "all-skills\\agile-skills\\skills\\story-splitting-advisor\\SKILL.md",
+          "description": "story-splitting-advisor",
+          "purpose": "Split large stories into smaller, delivery-ready slices while preserving user value, testability, and sequencing logic."
+        }
+      ]
+    },
+    "scrum": {
+      "name": "Scrum Team",
+      "description": "Scrum团队 - 14个Scrum仪式技能",
+      "color": "🟡",
+      "skills": [
+        {
+          "name": "backlog-refinement",
+          "path": "all-skills\\scrum-skills\\skills\\backlog-refinement\\SKILL.md",
+          "description": "Refine coarse-grained PBIs into implementation-ready items",
+          "purpose": ""
+        },
+        {
+          "name": "change-process",
+          "path": "all-skills\\scrum-skills\\skills\\change-process\\SKILL.md",
+          "description": "FR-016 Change Process — modify frozen documents with user approval",
+          "purpose": ""
+        },
+        {
+          "name": "cross-review",
+          "path": "all-skills\\scrum-skills\\skills\\cross-review\\SKILL.md",
+          "description": "Cross-review process — Developers review each other's work",
+          "purpose": ""
+        },
+        {
+          "name": "design",
+          "path": "all-skills\\scrum-skills\\skills\\design\\SKILL.md",
+          "description": "Design phase — Developers author design documents and user-facing documentation",
+          "purpose": ""
+        },
+        {
+          "name": "implementation",
+          "path": "all-skills\\scrum-skills\\skills\\implementation\\SKILL.md",
+          "description": "Implementation phase — Developers implement PBIs per design documents",
+          "purpose": ""
+        },
+        {
+          "name": "install-subagents",
+          "path": "all-skills\\scrum-skills\\skills\\install-subagents\\SKILL.md",
+          "description": "Reproducible sub-agent selection from the awesome-claude-code-subagents catalog. Developers invoke after receiving PBI assignments to install relevant specialist sub-agents for their work.\n",
+          "purpose": ""
+        },
+        {
+          "name": "integration-sprint",
+          "path": "all-skills\\scrum-skills\\skills\\integration-sprint\\SKILL.md",
+          "description": "Integration Sprint — product-wide quality assurance with integration, E2E, regression testing, and user acceptance testing. Triggered when the Product Goal is achieved.\n",
+          "purpose": ""
+        },
+        {
+          "name": "requirements-sprint",
+          "path": "all-skills\\scrum-skills\\skills\\requirements-sprint\\SKILL.md",
+          "description": "Requirements Sprint ceremony. Spawns a single Developer to elicit requirements from the user through natural language dialogue, producing a requirements document and initial Product Backlog.\n",
+          "purpose": ""
+        },
+        {
+          "name": "retrospective",
+          "path": "all-skills\\scrum-skills\\skills\\retrospective\\SKILL.md",
+          "description": "Sprint Retrospective — record improvements, consolidate periodically",
+          "purpose": ""
+        },
+        {
+          "name": "scaffold-design-spec",
+          "path": "all-skills\\scrum-skills\\skills\\scaffold-design-spec\\SKILL.md",
+          "description": "Create template stub files for newly enabled catalog entries, including user-facing documentation",
+          "purpose": ""
+        },
+        {
+          "name": "smoke-test",
+          "path": "all-skills\\scrum-skills\\skills\\smoke-test\\SKILL.md",
+          "description": "Smoke Test — automated test execution for Integration Sprint. Detects test frameworks, runs all tests, performs HTTP smoke testing, optionally runs browser E2E via Playwright MCP, and records results to .scrum/test-results.json.\n",
+          "purpose": ""
+        },
+        {
+          "name": "spawn-teammates",
+          "path": "all-skills\\scrum-skills\\skills\\spawn-teammates\\SKILL.md",
+          "description": "Reproducible teammate creation during Sprint Planning. Reads Sprint and Backlog state, spawns Developer teammates via Agent Teams with consistent naming and assignment.\n",
+          "purpose": ""
+        },
+        {
+          "name": "sprint-planning",
+          "path": "all-skills\\scrum-skills\\skills\\sprint-planning\\SKILL.md",
+          "description": "Sprint Planning ceremony — select PBIs, assign developers, create Sprint",
+          "purpose": ""
+        },
+        {
+          "name": "sprint-review",
+          "path": "all-skills\\scrum-skills\\skills\\sprint-review\\SKILL.md",
+          "description": "Sprint Review ceremony — present Increment to user",
+          "purpose": ""
+        }
+      ]
+    },
+    "ddd": {
+      "name": "DDD Architecture",
+      "description": "DDD六边形架构 - 领域建模、聚合、策略模式等",
+      "color": "🟠",
+      "skills": [
+        {
+          "name": "ddd-skills",
+          "path": "all-skills\\ddd-skills\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "帮助 AI 编程助手具备完整的 DDD（领域驱动设计）六边形架构落地能力，涵盖项目创建、分层设计、代码规范到部署的完整工程生命周期。  **适用场景：** - 创建新的 DDD 项目 - 设计领域模型（Entity、Aggregate、VO） - 实现 Repository/Port-Adapter 模式 - 编排复杂业务（Case 层） - 配置 Docker/Docker-Compose 部署"
+        }
+      ]
+    },
+    "dev-quality": {
+      "name": "Dev Quality",
+      "description": "开发质量 - 整洁代码、调试、数据库、GitHub操作",
+      "color": "🟣",
+      "skills": [
+        {
+          "name": "clean-code",
+          "path": "all-skills\\dev-quality-skills\\clean-code\\SKILL.md",
+          "description": "This skill embodies the principles of \"Clean Code\" by Robert C. Martin (Uncle Bob). Use it to transform \"code that works\" into \"code that is clean.\"",
+          "purpose": ""
+        },
+        {
+          "name": "database",
+          "path": "all-skills\\dev-quality-skills\\database\\SKILL.md",
+          "description": "Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering.",
+          "purpose": ""
+        },
+        {
+          "name": "debugger",
+          "path": "all-skills\\dev-quality-skills\\debugger\\SKILL.md",
+          "description": "Debugging specialist for errors, test failures, and unexpected\nbehavior. Use proactively when encountering any issues.\n",
+          "purpose": ""
+        },
+        {
+          "name": "github",
+          "path": "all-skills\\dev-quality-skills\\github\\SKILL.md",
+          "description": "Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries.",
+          "purpose": ""
+        }
+      ]
+    },
+    "qa-testing": {
+      "name": "QA Testing",
+      "description": "QA测试 - 测试策略、Playwright、安全/性能测试",
+      "color": "🔴",
+      "skills": [
+        {
+          "name": "api-testing",
+          "path": "all-skills\\qa-testing-skills\\api-testing\\SKILL.md",
+          "description": "Test REST and GraphQL APIs with Playwright APIRequestContext, Supertest, or standalone HTTP clients. Covers schema validation with Zod/AJV, contract testing patterns, auth flow testing, CRUD lifecycle tests, error response validation, and performance assertions. Use when: \"API test,\" \"endpoint test,\" \"REST test,\" \"GraphQL test,\" \"schema validation,\" \"Postman replacement.\" Related: contract-testing, test-data-management, ci-cd-integration, playwright-automation.",
+          "purpose": ""
+        },
+        {
+          "name": "e2e-testing",
+          "path": "all-skills\\qa-testing-skills\\e2e-testing\\SKILL.md",
+          "description": "Generates and manages end-to-end tests for critical user flows in any web project. Covers test design, Page Object Model, selector strategy, wait patterns, auth state reuse, test data management, network mocking, visual regression, accessibility testing, flaky test diagnosis, and CI/CD pipeline configuration. Stack-agnostic — adapts to Playwright, Cypress, Selenium, Laravel Dusk, Capybara, or any browser automation framework. Use this skill when the user asks to write E2E tests, automate browser tests, test user flows end-to-end, fix flaky tests, set up visual regression testing, configure E2E in CI/CD, debug failing E2E tests, or test across multiple browsers. Also triggers when the user mentions Playwright, Cypress, browser testing, smoke tests, critical path testing, or end-to-end test automation. Works with testing-strategy — use testing-strategy first to decide WHAT to test, then this skill to implement the E2E tests.\n",
+          "purpose": ""
+        },
+        {
+          "name": "performance-testing",
+          "path": "all-skills\\qa-testing-skills\\performance-testing\\SKILL.md",
+          "description": "Test application performance with k6 load/stress/soak scripts, Lighthouse CI for Web Vitals, and performance budgets as CI gates. Covers load profiles, custom metrics, bottleneck identification, and Core Web Vitals monitoring. Use when: \"performance test,\" \"load test,\" \"k6,\" \"Lighthouse,\" \"Web Vitals,\" \"stress test,\" \"performance budget.\" Related: ci-cd-integration, qa-metrics, release-readiness.",
+          "purpose": ""
+        },
+        {
+          "name": "playwright-automation",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\SKILL.md",
+          "description": "Production-grade Playwright in TypeScript: Page Object Model, fixtures, auto-waiting, user-facing locators, parallel execution, CI integration, visual testing, accessibility. Includes explicit \"do not\" list for AI agents and 2025-2026 feature awareness. Use when: \"Playwright,\" \"browser testing,\" \"E2E test,\" \"end-to-end,\" \"page object.\" Related: visual-testing, ci-cd-integration, api-testing, test-reliability, accessibility-testing.",
+          "purpose": ""
+        },
+        {
+          "name": "security-testing",
+          "path": "all-skills\\qa-testing-skills\\security-testing\\SKILL.md",
+          "description": "Test application security against OWASP Top 10 vulnerabilities. Covers OWASP ZAP integration, dependency scanning (Snyk/Dependabot), SAST with ESLint security plugins, auth/session testing (JWT, OAuth), XSS/CSRF/SQLi patterns, and CI integration for continuous security validation. Use when: \"security test,\" \"OWASP,\" \"vulnerability,\" \"pen test,\" \"ZAP,\" \"XSS,\" \"dependency scan,\" \"auth testing.\" Related: ci-cd-integration, compliance-testing, api-testing.",
+          "purpose": ""
+        },
+        {
+          "name": "test-migration",
+          "path": "all-skills\\qa-testing-skills\\test-migration\\SKILL.md",
+          "description": "Migrate test suites between frameworks incrementally. Covers Selenium→Playwright, Cypress→Playwright, Jest→Vitest, Mocha→Jest, and Protractor→Playwright migrations with parallel running, locator translation, and incremental adoption strategies. Use when: \"migrate tests,\" \"switch framework,\" \"Selenium to Playwright,\" \"Jest to Vitest,\" \"framework migration,\" \"test modernization.\" Related: playwright-automation, cypress-automation, unit-testing, ci-cd-integration.",
+          "purpose": ""
+        },
+        {
+          "name": "test-planning",
+          "path": "all-skills\\qa-testing-skills\\test-planning\\SKILL.md",
+          "description": "Create sprint and release test plans. Covers feature decomposition into testable scenarios, requirements-to-test coverage mapping, effort estimation by test type, prioritization matrices (risk × effort), resource allocation, and scheduling with buffers. Use when: \"test plan,\" \"sprint testing,\" \"release plan,\" \"what to test,\" \"test estimation,\" \"coverage mapping.\" Related: test-strategy, risk-based-testing, release-readiness.",
+          "purpose": ""
+        },
+        {
+          "name": "test-strategy",
+          "path": "all-skills\\qa-testing-skills\\test-strategy\\SKILL.md",
+          "description": "Create a comprehensive QA strategy document. Covers scope definition, risk-based prioritization, test levels (unit/integration/E2E), test pyramid analysis, entry/exit criteria, quality KPIs, tool selection rationale, and timeline planning. Produces an actionable strategy document, not a shelf document. Use when: \"test strategy,\" \"QA plan,\" \"quality strategy,\" \"testing approach,\" \"QA roadmap.\" Related: risk-based-testing, qa-metrics, release-readiness, test-planning.",
+          "purpose": ""
+        },
+        {
+          "name": "testing-strategy",
+          "path": "all-skills\\qa-testing-skills\\testing-strategy\\SKILL.md",
+          "description": "Analyzes any web project and recommends a comprehensive testing strategy: what to test, which test type to use (unit, integration, component, E2E), how to prioritize coverage, and what mocking approach to follow. Can also generate tests based on its recommendations when the user asks. Use this skill when the user asks \"what should I test\", \"create a testing strategy\", \"what tests does this project need\", \"analyze test coverage gaps\", \"which parts of my code need tests\", \"help me prioritize testing\", \"review my tests\", \"generate tests for this module\", or any request to plan, evaluate, or create tests for a codebase. Also triggers when the user mentions testing pyramid, test coverage, TDD, test-driven development, or asks about the right type of test for a piece of code.\n",
+          "purpose": ""
+        },
+        {
+          "name": "unit-testing",
+          "path": "all-skills\\qa-testing-skills\\unit-testing\\SKILL.md",
+          "description": "Write effective unit tests with Jest, Vitest, or pytest. Covers mocking strategies (stubs, spies, mocks, fakes), coverage configuration and meaningful thresholds, snapshot testing, mutation testing with Stryker/mutmut, test doubles taxonomy, and the Arrange-Act-Assert pattern. Use when: \"unit test,\" \"Jest,\" \"Vitest,\" \"pytest,\" \"mock,\" \"coverage,\" \"test doubles,\" \"mutation testing.\" Related: coverage-analysis, ci-cd-integration, ai-test-generation, shift-left-testing.",
+          "purpose": ""
+        }
+      ]
+    },
+    "api-design": {
+      "name": "API Design",
+      "description": "API设计 - REST/GraphQL、OpenAPI",
+      "color": "⚪",
+      "skills": [
+        {
+          "name": "api-generator",
+          "path": "all-skills\\api-design-skills\\api-generator\\SKILL.md",
+          "description": "Generate REST and GraphQL APIs from specifications, code analysis, or OpenAPI definitions. This skill creates production-ready API code with best practices.\n",
+          "purpose": ""
+        }
+      ]
+    },
+    "ai-product": {
+      "name": "AI Product",
+      "description": "AI产品 - 大模型应用、Prompt工程、生产级AI",
+      "color": "🩵",
+      "skills": [
+        {
+          "name": "ai-product",
+          "path": "all-skills\\ai-product-skills\\ai-product\\SKILL.md",
+          "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard.",
+          "purpose": ""
+        }
+      ]
+    },
+    "ai-safety": {
+      "name": "AI Safety",
+      "description": "AI安全 - Prompt注入防御、越狱检测、幻觉检测、红队测试",
+      "color": "🚨",
+      "skills": [
+        {
+          "name": "ai-red-teaming",
+          "path": "all-skills\\ai-safety-skills\\ai-red-teaming\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Systematically test AI systems for security vulnerabilities through adversarial red teaming. Use this skill when evaluating AI applications before production deployment, validating security measures, "
+        },
+        {
+          "name": "hallucination-detection",
+          "path": "all-skills\\ai-safety-skills\\hallucination-detection\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect and mitigate hallucinations in LLM outputs. Use this skill when building AI applications where factual accuracy is critical, integrating model outputs with external systems, or requiring high-r"
+        },
+        {
+          "name": "jailbreak-detection",
+          "path": "all-skills\\ai-safety-skills\\jailbreak-detection\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect and block jailbreak attempts against LLM systems. Use this skill when protecting AI applications from users attempting to bypass safety guardrails, extract system prompts, or enable restricted "
+        },
+        {
+          "name": "prompt-injection-defense",
+          "path": "all-skills\\ai-safety-skills\\prompt-injection-defense\\SKILL.md",
+          "description": "Applicable scenarios:",
+          "purpose": "Detect, prevent, and mitigate prompt injection attacks in LLM applications. Use this skill when building AI systems that process untrusted user input, integrating external data sources, or enabling ag"
+        }
+      ]
+    },
+    "superpowers": {
+      "name": "Superpowers",
+      "description": "Superpowers开发框架 - TDD、红绿重构、Git Worktree、系统调试",
+      "color": "⚡",
+      "skills": [
+        {
+          "name": "brainstorming",
+          "path": "all-skills\\superpowers-skills\\brainstorming\\SKILL.md",
+          "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+          "purpose": ""
+        },
+        {
+          "name": "requesting-code-review",
+          "path": "all-skills\\superpowers-skills\\requesting-code-review\\SKILL.md",
+          "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+          "purpose": ""
+        },
+        {
+          "name": "systematic-debugging",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\SKILL.md",
+          "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+          "purpose": ""
+        },
+        {
+          "name": "test-driven-development",
+          "path": "all-skills\\superpowers-skills\\test-driven-development\\SKILL.md",
+          "description": "Use when implementing any feature or bugfix, before writing implementation code",
+          "purpose": ""
+        },
+        {
+          "name": "using-git-worktrees",
+          "path": "all-skills\\superpowers-skills\\using-git-worktrees\\SKILL.md",
+          "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
+          "purpose": ""
+        },
+        {
+          "name": "writing-plans",
+          "path": "all-skills\\superpowers-skills\\writing-plans\\SKILL.md",
+          "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+          "purpose": ""
+        }
+      ]
+    },
+    "dev-workflow": {
+      "name": "Dev Workflow",
+      "description": "开发工作流 - TDD流程、编码规范、Git工作流、Agent工程、持续学习",
+      "color": "🔧",
+      "skills": [
+        {
+          "name": "agentic-engineering",
+          "path": "all-skills\\dev-workflow-skills\\agentic-engineering\\SKILL.md",
+          "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing.",
+          "purpose": ""
+        },
+        {
+          "name": "coding-standards",
+          "path": "all-skills\\dev-workflow-skills\\coding-standards\\SKILL.md",
+          "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
+          "purpose": ""
+        },
+        {
+          "name": "context-budget",
+          "path": "all-skills\\dev-workflow-skills\\context-budget\\SKILL.md",
+          "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.",
+          "purpose": ""
+        },
+        {
+          "name": "continuous-learning",
+          "path": "all-skills\\dev-workflow-skills\\continuous-learning\\SKILL.md",
+          "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use.",
+          "purpose": ""
+        },
+        {
+          "name": "git-workflow",
+          "path": "all-skills\\dev-workflow-skills\\git-workflow\\SKILL.md",
+          "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes.",
+          "purpose": ""
+        },
+        {
+          "name": "tdd-workflow",
+          "path": "all-skills\\dev-workflow-skills\\tdd-workflow\\SKILL.md",
+          "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.",
+          "purpose": ""
+        }
+      ]
+    },
+    "design": {
+      "name": "Design System",
+      "description": "设计系统 - UI/UX Pro Max行业色板、67种UI风格、设计规范",
+      "color": "🎨",
+      "skills": [
+        {
+          "name": "ckm:design-system",
+          "path": "all-skills\\design-skills\\design-system\\SKILL.md",
+          "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.",
+          "purpose": ""
+        },
+        {
+          "name": "ui-ux-pro-max",
+          "path": "all-skills\\design-skills\\ui-ux-pro-max\\SKILL.md",
+          "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
+          "purpose": ""
+        }
+      ]
+    },
+    "skill-authoring": {
+      "name": "Skill Authoring",
+      "description": "Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化",
+      "color": "🛠️",
+      "skills": [
+        {
+          "name": "skill-creator",
+          "path": "all-skills\\skill-creation\\skill-creator\\SKILL.md",
+          "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+          "purpose": ""
+        }
+      ]
+    },
+    "indie-hacker": {
+      "name": "Indie Hacker",
+      "description": "独立开发者创业 - 发现社群、验证想法、MVP、冷启动、定价、营销、增长",
+      "color": "💰",
+      "skills": [
+        {
+          "name": "company-values",
+          "path": "all-skills\\indie-hacker-skills\\company-values\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用价值观筛选团队成员，确保团队高效协作。核心是**只招聘相信同样理念的人**，而非最聪明或最便宜的。  **适用场景：** - 开始考虑组建团队 - 远程团队协作效率低 - 需要明确\"我们是什么样的公司\" - 想要建立长期文化资产"
+        },
+        {
+          "name": "find-community",
+          "path": "all-skills\\indie-hacker-skills\\find-community\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "通过识别和分析目标用户社群，反向推导创业方向。用于发现未被满足的需求、验证市场规模、找到第一批种子用户。  **适用场景：** - 寻找创业方向，不知道该做什么 - 已有产品想法，需要验证目标用户是否存在 - 需要识别竞争对手忽略的用户群体 - 寻找小而美的 niche 市场机会"
+        },
+        {
+          "name": "first-customers",
+          "path": "all-skills\\indie-hacker-skills\\first-customers\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用逐个攻破的方式获取前100个种子用户。核心是**拒绝\"等流量来了再说\"的被动心态**，主动找到、联系、说服每一个潜在用户。  **适用场景：** - 产品刚上线，没有用户 - 不知道如何开始推广 - 等待自然增长太久 - 需要第一批忠实用户建立口碑"
+        },
+        {
+          "name": "grow-sustainably",
+          "path": "all-skills\\indie-hacker-skills\\grow-sustainably\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "追求利润驱动的健康增长，而非烧钱换规模的VC模式。核心是**让收入增长≥支出增长**，确保每个新增客户都是净正的。  **适用场景：** - 拿到投资，想保持独立 - 增长遇到瓶颈，考虑烧钱 - 不确定什么时候该加速 - 想要长期可持续的商业模式"
+        },
+        {
+          "name": "marketing-plan",
+          "path": "all-skills\\indie-hacker-skills\\marketing-plan\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最小投入获取最大可见度的内容营销策略。核心是**每周固定产出高质量内容**，而非追求病毒式传播或大量付费广告。  **适用场景：** - 没有预算做付费广告 - 不知道如何开始营销 - 想要建立长期品牌资产 - 需要可持续的增长渠道"
+        },
+        {
+          "name": "minimalist-review",
+          "path": "all-skills\\indie-hacker-skills\\minimalist-review\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最简单的方式做决策，避免过度思考和行动瘫痪。核心是**通过三个过滤问题快速判断是否值得做**。  **适用场景：** - 面对多个选择，不知道该做哪个 - 担心遗漏重要事项 - 决策疲劳 - 想要聚焦而非什么都做"
+        },
+        {
+          "name": "mvp",
+          "path": "all-skills\\indie-hacker-skills\\mvp\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "构建最小可行产品，砍掉所有非生存必需的功能。核心是**用最少的代码验证最大的假设**，快速迭代而非一步到位。  **适用场景：** - 第一次做产品，不知道用户真正需要什么 - 资源有限（时间/金钱/技术） - 需要快速验证市场反应 - 担心投入太多做出来没人用"
+        },
+        {
+          "name": "pricing",
+          "path": "all-skills\\indie-hacker-skills\\pricing\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "制定既能反映价值又能市场定位的定价策略。核心是**找到\"贵但值\"的最优解**，而非一味低价竞争。  **适用场景：** - 第一个产品，不知道定什么价 - 现有产品需要调整定价 - 增长遇到瓶颈，考虑提价 - 不知道怎么跟竞争对手比价"
+        },
+        {
+          "name": "processize",
+          "path": "all-skills\\indie-hacker-skills\\processize\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用人工模拟自动化流程，在规模化前验证流程有效性。核心是**先用人力跑通流程，再转化为代码**，避免过早自动化导致的方向错误。  **适用场景：** - 产品有重复性操作需求 - 不确定是否值得开发自动化 - 需要理解流程中的\"人的判断\" - 手动跑通100单后再考虑开发"
+        },
+        {
+          "name": "validate-idea",
+          "path": "all-skills\\indie-hacker-skills\\validate-idea\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最快、最便宜的方式验证创业想法是否值得投入。核心是用真实市场反馈（预售/众测）替代耗时耗力的传统市场调研。  **适用场景：** - 有一个产品想法，需要验证市场需求 - 不确定目标用户是否愿意付费 - 担心投入大量时间开发没人用 - 需要在 MVP 前确认方向正确"
+        }
+      ]
+    }
+  },
+  "by_name": {
+    "acquisition-channel-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\acquisition-channel-advisor\\SKILL.md",
+      "description": "Evaluate acquisition channels using unit economics, customer quality, and scalability. Use when deciding whether to scale, test, or kill a growth channel."
+    },
+    "ai-shaped-readiness-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\ai-shaped-readiness-advisor\\SKILL.md",
+      "description": "Assess whether your product work is AI-first or AI-shaped. Use when evaluating AI maturity and choosing the next team capability to build."
+    },
+    "altitude-horizon-framework": {
+      "category": "product",
+      "path": "all-skills\\skills\\altitude-horizon-framework\\SKILL.md",
+      "description": "Understand the PM-to-Director transition through altitude and horizon thinking. Use when diagnosing scope, time-horizon, or leadership-level gaps."
+    },
+    "business-health-diagnostic": {
+      "category": "product",
+      "path": "all-skills\\skills\\business-health-diagnostic\\SKILL.md",
+      "description": "Diagnose SaaS business health across growth, retention, efficiency, and capital. Use when preparing a business review or prioritizing urgent fixes."
+    },
+    "company-research": {
+      "category": "product",
+      "path": "all-skills\\skills\\company-research\\SKILL.md",
+      "description": "Create a company research brief with executive quotes, product strategy, and org context. Use when preparing for interviews, competitive analysis, partnerships, or market-entry work."
+    },
+    "context-engineering-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\context-engineering-advisor\\SKILL.md",
+      "description": "Diagnose context stuffing vs. context engineering. Use when an AI workflow feels bloated, brittle, or hard to steer reliably."
+    },
+    "customer-journey-map": {
+      "category": "product",
+      "path": "all-skills\\skills\\customer-journey-map\\SKILL.md",
+      "description": "Create a customer journey map across stages, touchpoints, actions, emotions, and metrics. Use when diagnosing a broken experience or aligning a team on the full customer flow."
+    },
+    "customer-journey-mapping-workshop": {
+      "category": "product",
+      "path": "all-skills\\skills\\customer-journey-mapping-workshop\\SKILL.md",
+      "description": "Run a customer journey mapping workshop with adaptive questions and outputs. Use when you need to map stages, actions, emotions, pain points, and opportunities for a persona and scenario."
+    },
+    "director-readiness-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\director-readiness-advisor\\SKILL.md",
+      "description": "Guide the PM-to-Director transition across preparing, interviewing, landing, and recalibrating. Use when leadership scope is changing and you need practical coaching."
+    },
+    "discovery-interview-prep": {
+      "category": "product",
+      "path": "all-skills\\skills\\discovery-interview-prep\\SKILL.md",
+      "description": "Plan customer discovery interviews with the right goal, segment, constraints, and method. Use when preparing interviews for problem validation, churn research, or new product ideas."
+    },
+    "discovery-process": {
+      "category": "product",
+      "path": "all-skills\\skills\\discovery-process\\SKILL.md",
+      "description": "Run a full discovery cycle from problem hypothesis to validated solution. Use when a team needs a structured path through framing, interviews, synthesis, and experiments."
+    },
+    "eol-message": {
+      "category": "product",
+      "path": "all-skills\\skills\\eol-message\\SKILL.md",
+      "description": "Write a clear, empathetic EOL announcement with rationale, customer impact, and next steps. Use when retiring a product, feature, or plan without creating avoidable confusion."
+    },
+    "epic-breakdown-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\epic-breakdown-advisor\\SKILL.md",
+      "description": "Break down epics into user stories with Humanizing Work split patterns. Use when a backlog item is too large to estimate, sequence, or deliver safely."
+    },
+    "epic-hypothesis": {
+      "category": "product",
+      "path": "all-skills\\skills\\epic-hypothesis\\SKILL.md",
+      "description": "Frame an epic as a testable hypothesis with target user, expected outcome, and validation method. Use when defining a major initiative before roadmap, discovery, or delivery planning."
+    },
+    "executive-onboarding-playbook": {
+      "category": "product",
+      "path": "all-skills\\skills\\executive-onboarding-playbook\\SKILL.md",
+      "description": "Plan a VP or CPO 30-60-90 day diagnostic onboarding path. Use when entering a new executive product role and avoiding premature change."
+    },
+    "feature-investment-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\feature-investment-advisor\\SKILL.md",
+      "description": "Evaluate feature investments using revenue impact, cost structure, ROI, and strategy. Use when deciding whether a feature deserves investment."
+    },
+    "finance-based-pricing-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\finance-based-pricing-advisor\\SKILL.md",
+      "description": "Evaluate pricing changes using ARPU, conversion, churn risk, NRR, and payback. Use when deciding whether a pricing move should ship."
+    },
+    "finance-metrics-quickref": {
+      "category": "product",
+      "path": "all-skills\\skills\\finance-metrics-quickref\\SKILL.md",
+      "description": "Look up SaaS finance metrics, formulas, and benchmarks fast. Use when you need a quick metric definition, formula, or benchmark during analysis."
+    },
+    "jobs-to-be-done": {
+      "category": "product",
+      "path": "all-skills\\skills\\jobs-to-be-done\\SKILL.md",
+      "description": "Uncover customer jobs, pains, and gains in a structured JTBD format. Use when clarifying unmet needs, repositioning a product, or improving discovery and messaging."
+    },
+    "lean-ux-canvas": {
+      "category": "product",
+      "path": "all-skills\\skills\\lean-ux-canvas\\SKILL.md",
+      "description": "Guide teams through Lean UX Canvas v2. Use when framing a business problem, surfacing assumptions, and defining what to learn next."
+    },
+    "opportunity-solution-tree": {
+      "category": "product",
+      "path": "all-skills\\skills\\opportunity-solution-tree\\SKILL.md",
+      "description": "Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests. Use when a stakeholder request needs problem framing before you decide what to build."
+    },
+    "pestel-analysis": {
+      "category": "product",
+      "path": "all-skills\\skills\\pestel-analysis\\SKILL.md",
+      "description": "Analyze political, economic, social, technological, environmental, and legal forces. Use when external market shifts could materially affect a product, roadmap, or strategy."
+    },
+    "pol-probe": {
+      "category": "product",
+      "path": "all-skills\\skills\\pol-probe\\SKILL.md",
+      "description": "Define a Proof of Life probe to test a risky hypothesis cheaply. Use when you need harsh truth before building real product."
+    },
+    "pol-probe-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\pol-probe-advisor\\SKILL.md",
+      "description": "Select the right Proof of Life (PoL) probe based on hypothesis, risk, and resources. Use this to match the validation method to the real learning goal, not tooling comfort."
+    },
+    "positioning-statement": {
+      "category": "product",
+      "path": "all-skills\\skills\\positioning-statement\\SKILL.md",
+      "description": "Create a Geoffrey Moore-style positioning statement. Use when clarifying who you serve, what problem you solve, your category, and why you're different from alternatives."
+    },
+    "positioning-workshop": {
+      "category": "product",
+      "path": "all-skills\\skills\\positioning-workshop\\SKILL.md",
+      "description": "Run a positioning workshop that surfaces target customer, unmet need, category, benefits, and differentiation. Use when your product messaging feels fuzzy, generic, or misaligned."
+    },
+    "prd-development": {
+      "category": "product",
+      "path": "all-skills\\skills\\prd-development\\SKILL.md",
+      "description": "Build a structured PRD that connects problem, users, solution, and success criteria. Use when turning discovery notes into an engineering-ready document for a major initiative."
+    },
+    "press-release": {
+      "category": "product",
+      "path": "all-skills\\skills\\press-release\\SKILL.md",
+      "description": "Write an Amazon-style press release that defines customer value before building. Use when aligning stakeholders on a new product, feature, or strategic bet."
+    },
+    "prioritization-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\prioritization-advisor\\SKILL.md",
+      "description": "Choose a prioritization framework based on stage, team context, and stakeholder needs. Use when deciding between RICE, ICE, value/effort, or another scoring approach."
+    },
+    "problem-framing-canvas": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-framing-canvas\\SKILL.md",
+      "description": "Guide teams through MITRE's Problem Framing Canvas. Use when you need a clearer problem statement before jumping to solutions."
+    },
+    "problem-statement": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-statement\\SKILL.md",
+      "description": "Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels. Use when framing discovery, prioritization, or a PRD."
+    },
+    "product-sense-interview-answer": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-sense-interview-answer\\SKILL.md",
+      "description": "Structure a spoken PM product-sense answer with assumptions, segmentation, pain-point prioritization, and MVP tradeoffs. Use when practicing design, improve, or build-next interview questions."
+    },
+    "product-strategy-session": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-strategy-session\\SKILL.md",
+      "description": "Run an end-to-end product strategy session across positioning, discovery, and roadmap planning. Use when a team needs validated direction before committing to execution."
+    },
+    "proto-persona": {
+      "category": "product",
+      "path": "all-skills\\skills\\proto-persona\\SKILL.md",
+      "description": "Create a proto-persona from current research, market signals, and team knowledge. Use when you need a working customer profile before deeper validation."
+    },
+    "recommendation-canvas": {
+      "category": "product",
+      "path": "all-skills\\skills\\recommendation-canvas\\SKILL.md",
+      "description": "Evaluate an AI product idea across outcomes, hypotheses, risks, and positioning. Use when deciding whether an AI solution deserves investment or recommendation."
+    },
+    "roadmap-planning": {
+      "category": "product",
+      "path": "all-skills\\skills\\roadmap-planning\\SKILL.md",
+      "description": "Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing. Use when turning strategy into a release plan that teams can execute."
+    },
+    "saas-economics-efficiency-metrics": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\SKILL.md",
+      "description": "Evaluate SaaS unit economics and capital efficiency. Use when deciding whether the business can scale efficiently or needs correction."
+    },
+    "saas-revenue-growth-metrics": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-revenue-growth-metrics\\SKILL.md",
+      "description": "Calculate SaaS revenue, retention, and growth metrics. Use when diagnosing momentum, churn, expansion, or product-market-fit signals."
+    },
+    "skill-authoring-workflow": {
+      "category": "product",
+      "path": "all-skills\\skills\\skill-authoring-workflow\\SKILL.md",
+      "description": "Turn raw PM content into a compliant, publish-ready skill. Use when creating or updating a repo skill without breaking standards."
+    },
+    "storyboard": {
+      "category": "product",
+      "path": "all-skills\\skills\\storyboard\\SKILL.md",
+      "description": "Create a six-frame storyboard that shows a user's journey from problem to solution. Use when you need a fast narrative for alignment, concept reviews, or demos."
+    },
+    "tam-sam-som-calculator": {
+      "category": "product",
+      "path": "all-skills\\skills\\tam-sam-som-calculator\\SKILL.md",
+      "description": "Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats. Use when sizing a market for a product idea, business case, or executive review."
+    },
+    "user-story": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story\\SKILL.md",
+      "description": "Create user stories with Mike Cohn format and Gherkin acceptance criteria. Use when turning user needs into development-ready work with clear outcomes and testable conditions."
+    },
+    "user-story-mapping": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-mapping\\SKILL.md",
+      "description": "Create a user story map that lays out activities, steps, tasks, and release slices. Use when planning a workflow, backlog, or MVP around the user journey."
+    },
+    "user-story-mapping-workshop": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-mapping-workshop\\SKILL.md",
+      "description": "Run a user story mapping workshop with adaptive questions and a structured map output. Use when you need backbone activities, tasks, and release slices for a workflow."
+    },
+    "user-story-splitting": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-splitting\\SKILL.md",
+      "description": "Break a large story or epic into smaller deliverable stories using proven split patterns. Use when backlog items are too big for estimation, sequencing, or independent release."
+    },
+    "vp-cpo-readiness-advisor": {
+      "category": "product",
+      "path": "all-skills\\skills\\vp-cpo-readiness-advisor\\SKILL.md",
+      "description": ""
+    },
+    "workshop-facilitation": {
+      "category": "product",
+      "path": "all-skills\\skills\\workshop-facilitation\\SKILL.md",
+      "description": "Facilitate workshop sessions in a one-step, multi-turn flow. Use when an interactive skill needs consistent pacing, options, and progress tracking."
+    },
+    "acceptance-driven-planner": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\acceptance-driven-planner\\SKILL.md",
+      "description": "acceptance-driven-planner"
+    },
+    "backlog-groomer": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\backlog-groomer\\SKILL.md",
+      "description": "backlog-groomer"
+    },
+    "blocker-escalation-advisor": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\blocker-escalation-advisor\\SKILL.md",
+      "description": "blocker-escalation-advisor"
+    },
+    "cross-functional-team-checker": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\cross-functional-team-checker\\SKILL.md",
+      "description": "cross-functional-team-checker"
+    },
+    "definition-of-done-enforcer": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\definition-of-done-enforcer\\SKILL.md",
+      "description": "definition-of-done-enforcer"
+    },
+    "iteration-outcome-reviewer": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\iteration-outcome-reviewer\\SKILL.md",
+      "description": "iteration-outcome-reviewer"
+    },
+    "regression-discipline-checker": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\regression-discipline-checker\\SKILL.md",
+      "description": "regression-discipline-checker"
+    },
+    "retrospective-pattern-finder": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\retrospective-pattern-finder\\SKILL.md",
+      "description": "retrospective-pattern-finder"
+    },
+    "self-organization-health-check": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\self-organization-health-check\\SKILL.md",
+      "description": "self-organization-health-check"
+    },
+    "sprint-goal-writer": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\sprint-goal-writer\\SKILL.md",
+      "description": "sprint-goal-writer"
+    },
+    "story-splitting-advisor": {
+      "category": "agile",
+      "path": "all-skills\\agile-skills\\skills\\story-splitting-advisor\\SKILL.md",
+      "description": "story-splitting-advisor"
+    },
+    "backlog-refinement": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\backlog-refinement\\SKILL.md",
+      "description": "Refine coarse-grained PBIs into implementation-ready items"
+    },
+    "change-process": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\change-process\\SKILL.md",
+      "description": "FR-016 Change Process — modify frozen documents with user approval"
+    },
+    "cross-review": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\cross-review\\SKILL.md",
+      "description": "Cross-review process — Developers review each other's work"
+    },
+    "design": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\design\\SKILL.md",
+      "description": "Design phase — Developers author design documents and user-facing documentation"
+    },
+    "implementation": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\implementation\\SKILL.md",
+      "description": "Implementation phase — Developers implement PBIs per design documents"
+    },
+    "install-subagents": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\install-subagents\\SKILL.md",
+      "description": "Reproducible sub-agent selection from the awesome-claude-code-subagents catalog. Developers invoke after receiving PBI assignments to install relevant specialist sub-agents for their work.\n"
+    },
+    "integration-sprint": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\integration-sprint\\SKILL.md",
+      "description": "Integration Sprint — product-wide quality assurance with integration, E2E, regression testing, and user acceptance testing. Triggered when the Product Goal is achieved.\n"
+    },
+    "requirements-sprint": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\requirements-sprint\\SKILL.md",
+      "description": "Requirements Sprint ceremony. Spawns a single Developer to elicit requirements from the user through natural language dialogue, producing a requirements document and initial Product Backlog.\n"
+    },
+    "retrospective": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\retrospective\\SKILL.md",
+      "description": "Sprint Retrospective — record improvements, consolidate periodically"
+    },
+    "scaffold-design-spec": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\scaffold-design-spec\\SKILL.md",
+      "description": "Create template stub files for newly enabled catalog entries, including user-facing documentation"
+    },
+    "smoke-test": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\smoke-test\\SKILL.md",
+      "description": "Smoke Test — automated test execution for Integration Sprint. Detects test frameworks, runs all tests, performs HTTP smoke testing, optionally runs browser E2E via Playwright MCP, and records results to .scrum/test-results.json.\n"
+    },
+    "spawn-teammates": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\spawn-teammates\\SKILL.md",
+      "description": "Reproducible teammate creation during Sprint Planning. Reads Sprint and Backlog state, spawns Developer teammates via Agent Teams with consistent naming and assignment.\n"
+    },
+    "sprint-planning": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\sprint-planning\\SKILL.md",
+      "description": "Sprint Planning ceremony — select PBIs, assign developers, create Sprint"
+    },
+    "sprint-review": {
+      "category": "scrum",
+      "path": "all-skills\\scrum-skills\\skills\\sprint-review\\SKILL.md",
+      "description": "Sprint Review ceremony — present Increment to user"
+    },
+    "ddd-skills": {
+      "category": "ddd",
+      "path": "all-skills\\ddd-skills\\SKILL.md",
+      "description": "适用场景："
+    },
+    "clean-code": {
+      "category": "dev-quality",
+      "path": "all-skills\\dev-quality-skills\\clean-code\\SKILL.md",
+      "description": "This skill embodies the principles of \"Clean Code\" by Robert C. Martin (Uncle Bob). Use it to transform \"code that works\" into \"code that is clean.\""
+    },
+    "database": {
+      "category": "dev-quality",
+      "path": "all-skills\\dev-quality-skills\\database\\SKILL.md",
+      "description": "Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering."
+    },
+    "debugger": {
+      "category": "dev-quality",
+      "path": "all-skills\\dev-quality-skills\\debugger\\SKILL.md",
+      "description": "Debugging specialist for errors, test failures, and unexpected\nbehavior. Use proactively when encountering any issues.\n"
+    },
+    "github": {
+      "category": "dev-quality",
+      "path": "all-skills\\dev-quality-skills\\github\\SKILL.md",
+      "description": "Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries."
+    },
+    "api-testing": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\api-testing\\SKILL.md",
+      "description": "Test REST and GraphQL APIs with Playwright APIRequestContext, Supertest, or standalone HTTP clients. Covers schema validation with Zod/AJV, contract testing patterns, auth flow testing, CRUD lifecycle tests, error response validation, and performance assertions. Use when: \"API test,\" \"endpoint test,\" \"REST test,\" \"GraphQL test,\" \"schema validation,\" \"Postman replacement.\" Related: contract-testing, test-data-management, ci-cd-integration, playwright-automation."
+    },
+    "e2e-testing": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\e2e-testing\\SKILL.md",
+      "description": "Generates and manages end-to-end tests for critical user flows in any web project. Covers test design, Page Object Model, selector strategy, wait patterns, auth state reuse, test data management, network mocking, visual regression, accessibility testing, flaky test diagnosis, and CI/CD pipeline configuration. Stack-agnostic — adapts to Playwright, Cypress, Selenium, Laravel Dusk, Capybara, or any browser automation framework. Use this skill when the user asks to write E2E tests, automate browser tests, test user flows end-to-end, fix flaky tests, set up visual regression testing, configure E2E in CI/CD, debug failing E2E tests, or test across multiple browsers. Also triggers when the user mentions Playwright, Cypress, browser testing, smoke tests, critical path testing, or end-to-end test automation. Works with testing-strategy — use testing-strategy first to decide WHAT to test, then this skill to implement the E2E tests.\n"
+    },
+    "performance-testing": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\performance-testing\\SKILL.md",
+      "description": "Test application performance with k6 load/stress/soak scripts, Lighthouse CI for Web Vitals, and performance budgets as CI gates. Covers load profiles, custom metrics, bottleneck identification, and Core Web Vitals monitoring. Use when: \"performance test,\" \"load test,\" \"k6,\" \"Lighthouse,\" \"Web Vitals,\" \"stress test,\" \"performance budget.\" Related: ci-cd-integration, qa-metrics, release-readiness."
+    },
+    "playwright-automation": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\SKILL.md",
+      "description": "Production-grade Playwright in TypeScript: Page Object Model, fixtures, auto-waiting, user-facing locators, parallel execution, CI integration, visual testing, accessibility. Includes explicit \"do not\" list for AI agents and 2025-2026 feature awareness. Use when: \"Playwright,\" \"browser testing,\" \"E2E test,\" \"end-to-end,\" \"page object.\" Related: visual-testing, ci-cd-integration, api-testing, test-reliability, accessibility-testing."
+    },
+    "security-testing": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\security-testing\\SKILL.md",
+      "description": "Test application security against OWASP Top 10 vulnerabilities. Covers OWASP ZAP integration, dependency scanning (Snyk/Dependabot), SAST with ESLint security plugins, auth/session testing (JWT, OAuth), XSS/CSRF/SQLi patterns, and CI integration for continuous security validation. Use when: \"security test,\" \"OWASP,\" \"vulnerability,\" \"pen test,\" \"ZAP,\" \"XSS,\" \"dependency scan,\" \"auth testing.\" Related: ci-cd-integration, compliance-testing, api-testing."
+    },
+    "test-migration": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\test-migration\\SKILL.md",
+      "description": "Migrate test suites between frameworks incrementally. Covers Selenium→Playwright, Cypress→Playwright, Jest→Vitest, Mocha→Jest, and Protractor→Playwright migrations with parallel running, locator translation, and incremental adoption strategies. Use when: \"migrate tests,\" \"switch framework,\" \"Selenium to Playwright,\" \"Jest to Vitest,\" \"framework migration,\" \"test modernization.\" Related: playwright-automation, cypress-automation, unit-testing, ci-cd-integration."
+    },
+    "test-planning": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\test-planning\\SKILL.md",
+      "description": "Create sprint and release test plans. Covers feature decomposition into testable scenarios, requirements-to-test coverage mapping, effort estimation by test type, prioritization matrices (risk × effort), resource allocation, and scheduling with buffers. Use when: \"test plan,\" \"sprint testing,\" \"release plan,\" \"what to test,\" \"test estimation,\" \"coverage mapping.\" Related: test-strategy, risk-based-testing, release-readiness."
+    },
+    "test-strategy": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\test-strategy\\SKILL.md",
+      "description": "Create a comprehensive QA strategy document. Covers scope definition, risk-based prioritization, test levels (unit/integration/E2E), test pyramid analysis, entry/exit criteria, quality KPIs, tool selection rationale, and timeline planning. Produces an actionable strategy document, not a shelf document. Use when: \"test strategy,\" \"QA plan,\" \"quality strategy,\" \"testing approach,\" \"QA roadmap.\" Related: risk-based-testing, qa-metrics, release-readiness, test-planning."
+    },
+    "testing-strategy": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\testing-strategy\\SKILL.md",
+      "description": "Analyzes any web project and recommends a comprehensive testing strategy: what to test, which test type to use (unit, integration, component, E2E), how to prioritize coverage, and what mocking approach to follow. Can also generate tests based on its recommendations when the user asks. Use this skill when the user asks \"what should I test\", \"create a testing strategy\", \"what tests does this project need\", \"analyze test coverage gaps\", \"which parts of my code need tests\", \"help me prioritize testing\", \"review my tests\", \"generate tests for this module\", or any request to plan, evaluate, or create tests for a codebase. Also triggers when the user mentions testing pyramid, test coverage, TDD, test-driven development, or asks about the right type of test for a piece of code.\n"
+    },
+    "unit-testing": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\unit-testing\\SKILL.md",
+      "description": "Write effective unit tests with Jest, Vitest, or pytest. Covers mocking strategies (stubs, spies, mocks, fakes), coverage configuration and meaningful thresholds, snapshot testing, mutation testing with Stryker/mutmut, test doubles taxonomy, and the Arrange-Act-Assert pattern. Use when: \"unit test,\" \"Jest,\" \"Vitest,\" \"pytest,\" \"mock,\" \"coverage,\" \"test doubles,\" \"mutation testing.\" Related: coverage-analysis, ci-cd-integration, ai-test-generation, shift-left-testing."
+    },
+    "api-generator": {
+      "category": "api-design",
+      "path": "all-skills\\api-design-skills\\api-generator\\SKILL.md",
+      "description": "Generate REST and GraphQL APIs from specifications, code analysis, or OpenAPI definitions. This skill creates production-ready API code with best practices.\n"
+    },
+    "ai-product": {
+      "category": "ai-product",
+      "path": "all-skills\\ai-product-skills\\ai-product\\SKILL.md",
+      "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard."
+    },
+    "ai-red-teaming": {
+      "category": "ai-safety",
+      "path": "all-skills\\ai-safety-skills\\ai-red-teaming\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "hallucination-detection": {
+      "category": "ai-safety",
+      "path": "all-skills\\ai-safety-skills\\hallucination-detection\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "jailbreak-detection": {
+      "category": "ai-safety",
+      "path": "all-skills\\ai-safety-skills\\jailbreak-detection\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "prompt-injection-defense": {
+      "category": "ai-safety",
+      "path": "all-skills\\ai-safety-skills\\prompt-injection-defense\\SKILL.md",
+      "description": "Applicable scenarios:"
+    },
+    "brainstorming": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\brainstorming\\SKILL.md",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+    },
+    "requesting-code-review": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\requesting-code-review\\SKILL.md",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+    },
+    "systematic-debugging": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\SKILL.md",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+    },
+    "test-driven-development": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\test-driven-development\\SKILL.md",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code"
+    },
+    "using-git-worktrees": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\using-git-worktrees\\SKILL.md",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
+    },
+    "writing-plans": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\writing-plans\\SKILL.md",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
+    },
+    "agentic-engineering": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\agentic-engineering\\SKILL.md",
+      "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
+    },
+    "coding-standards": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\coding-standards\\SKILL.md",
+      "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development."
+    },
+    "context-budget": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\context-budget\\SKILL.md",
+      "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations."
+    },
+    "continuous-learning": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\continuous-learning\\SKILL.md",
+      "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use."
+    },
+    "git-workflow": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\git-workflow\\SKILL.md",
+      "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes."
+    },
+    "tdd-workflow": {
+      "category": "dev-workflow",
+      "path": "all-skills\\dev-workflow-skills\\tdd-workflow\\SKILL.md",
+      "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests."
+    },
+    "ckm:design-system": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\SKILL.md",
+      "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations."
+    },
+    "ui-ux-pro-max": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\ui-ux-pro-max\\SKILL.md",
+      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples."
+    },
+    "skill-creator": {
+      "category": "skill-authoring",
+      "path": "all-skills\\skill-creation\\skill-creator\\SKILL.md",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+    },
+    "company-values": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\company-values\\SKILL.md",
+      "description": "适用场景："
+    },
+    "find-community": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\find-community\\SKILL.md",
+      "description": "适用场景："
+    },
+    "first-customers": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\first-customers\\SKILL.md",
+      "description": "适用场景："
+    },
+    "grow-sustainably": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\grow-sustainably\\SKILL.md",
+      "description": "适用场景："
+    },
+    "marketing-plan": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\marketing-plan\\SKILL.md",
+      "description": "适用场景："
+    },
+    "minimalist-review": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\minimalist-review\\SKILL.md",
+      "description": "适用场景："
+    },
+    "mvp": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\mvp\\SKILL.md",
+      "description": "适用场景："
+    },
+    "pricing": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\pricing\\SKILL.md",
+      "description": "适用场景："
+    },
+    "processize": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\processize\\SKILL.md",
+      "description": "适用场景："
+    },
+    "validate-idea": {
+      "category": "indie-hacker",
+      "path": "all-skills\\indie-hacker-skills\\validate-idea\\SKILL.md",
+      "description": "适用场景："
+    }
+  }
+}
