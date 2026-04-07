@@ -8,6 +8,8 @@ import os
 import sys
 import json
 import re
+import zipfile
+import shutil
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
@@ -353,6 +355,60 @@ class SmartSkillFinder:
 
     def get_usage_recommendations(self) -> List[Tuple[str, str]]:
         return USAGE_EXAMPLES
+
+
+class SkillPackager:
+    def __init__(self, skills_root: Optional[Path] = None):
+        if skills_root is None:
+            skills_root = Path(__file__).parent.parent / "all-skills"
+        self.skills_root = skills_root
+
+    def get_skill_path(self, skill: Dict) -> Path:
+        return Path(__file__).parent.parent / skill.get("path", "")
+
+    def package_skills(self, skills: List[Dict], output_name: str = None) -> Path:
+        if output_name is None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            output_name = f"skills_bundle_{timestamp}.zip"
+
+        output_path = Path(__file__).parent.parent / output_name
+
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+            for skill in skills:
+                skill_path = self.get_skill_path(skill)
+                if skill_path.exists() and skill_path.is_dir():
+                    for file_path in skill_path.rglob("*"):
+                        if file_path.is_file():
+                            arcname = f"{skill['name']}/{file_path.relative_to(skill_path)}"
+                            zf.write(file_path, arcname)
+
+        return output_path
+
+    def package_scenario(self, scenario_key: str, finder: SmartSkillFinder) -> Path:
+        skills = finder.get_by_scenario(scenario_key)
+        if not skills:
+            return None
+        scenario = SCENARIO_TEMPLATES.get(scenario_key, {})
+        output_name = f"scenario_{scenario_key}_{datetime.now().strftime('%Y%m%d')}.zip"
+        return self.package_skills(skills, output_name)
+
+    def package_category(self, category_key: str, finder: SmartSkillFinder) -> Path:
+        skills = finder.get_by_category(category_key)
+        if not skills:
+            return None
+        output_name = f"category_{category_key}_{datetime.now().strftime('%Y%m%d')}.zip"
+        return self.package_skills(skills, output_name)
+
+    def package_all(self) -> Path:
+        finder = SmartSkillFinder()
+        all_skills = finder.all_skills
+        output_name = f"all_skills_{datetime.now().strftime('%Y%m%d')}.zip"
+        return self.package_skills(all_skills, output_name)
+
+    def list_archives(self) -> List[Path]:
+        scripts_dir = Path(__file__).parent.parent
+        return sorted(scripts_dir.glob("*.zip"), key=lambda x: -x.stat().st_mtime)
+
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
