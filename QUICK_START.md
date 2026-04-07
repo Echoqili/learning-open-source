@@ -2,21 +2,58 @@
 
 ## 🚀 快速启动
 
+### 智能导航（新推荐）
+```bash
+cd d:\pyworkplace\github\learning-open-source
+python scripts/skill_finder.py
+```
+
+### 经典菜单客户端
 ```bash
 cd d:\pyworkplace\github\learning-open-source
 python scripts/skill_index_manager.py
 ```
 
-## 📋 功能菜单
+## 🧠 Smart Skills Finder - 智能搜索
+
+根据需求或场景快速找到合适的 Skills：
+
+```bash
+# 交互式搜索（推荐）
+python scripts/skill_finder.py
+
+# 命令行快速搜索
+python scripts/skill_finder.py --search "Sprint规划"
+python scripts/skill_finder.py --scenario scrum_team
+python scripts/skill_finder.py --category product
+```
+
+### 功能说明
 
 | 选项 | 功能 | 说明 |
 |------|------|------|
-| 1 | 📋 浏览目录 | 按分类查看所有 Skills |
-| 2 | 🔨 构建索引 | 重新扫描生成索引 |
-| 3 | 🛡️ 安全扫描 | 检测 Skills 安全风险 |
-| 4 | 📊 统计信息 | 查看 Skills 数量统计 |
-| 5 | ❓ 使用帮助 | 查看帮助文档 |
-| 0 | 退出 | 退出程序 |
+| 1 | 🔍 关键词搜索 | 输入描述快速找到所需 Skills |
+| 2 | 🎯 场景化推荐 | 按工作场景获取推荐 Skills |
+| 3 | 📂 分类浏览 | 按15个分类查看所有 Skills |
+| 4 | 📊 Skills统计 | 查看 Skills 分布情况 |
+
+### 场景化推荐覆盖
+
+| 场景 | 说明 |
+|------|------|
+| 📋 产品经理基础 | 需求分析、PRD、用户故事 |
+| 🎯 高级产品经理 | 战略、指标、商业化 |
+| 🔍 客户探索验证 | 访谈准备、发现流程 |
+| 🏃 敏捷开发团队 | Sprint规划、回顾 |
+| 🎯 Scrum团队 | 14个Scrum仪式 |
+| 🧪 QA与测试 | 自动化、E2E、性能 |
+| 🏗️ 架构设计 | DDD、API设计 |
+| 💎 开发质量 | 整洁代码、调试 |
+| ⚡ TDD测试驱动 | 红绿重构、单元测试 |
+| 💰 独立开发者 | MVP、获客、增长 |
+| 🤖 AI产品开发 | Prompt、安全、幻觉检测 |
+| 🎨 设计系统 | UI/UX、组件库 |
+| 🛠️ Skill开发 | 官方创建工具 |
 
 ## ⚡ 快速命令
 
