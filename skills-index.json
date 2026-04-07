@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-06T22:10:11.011687",
-  "total_count": 108,
+  "generated_at": "2026-04-07T21:23:17.578330",
+  "total_count": 118,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -741,6 +741,73 @@
           "purpose": ""
         }
       ]
+    },
+    "indie-hacker": {
+      "name": "Indie Hacker",
+      "description": "独立开发者创业 - 发现社群、验证想法、MVP、冷启动、定价、营销、增长",
+      "color": "💰",
+      "skills": [
+        {
+          "name": "company-values",
+          "path": "indie-hacker-skills\\company-values\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用价值观筛选团队成员，确保团队高效协作。核心是**只招聘相信同样理念的人**，而非最聪明或最便宜的。  **适用场景：** - 开始考虑组建团队 - 远程团队协作效率低 - 需要明确\"我们是什么样的公司\" - 想要建立长期文化资产"
+        },
+        {
+          "name": "find-community",
+          "path": "indie-hacker-skills\\find-community\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "通过识别和分析目标用户社群，反向推导创业方向。用于发现未被满足的需求、验证市场规模、找到第一批种子用户。  **适用场景：** - 寻找创业方向，不知道该做什么 - 已有产品想法，需要验证目标用户是否存在 - 需要识别竞争对手忽略的用户群体 - 寻找小而美的 niche 市场机会"
+        },
+        {
+          "name": "first-customers",
+          "path": "indie-hacker-skills\\first-customers\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用逐个攻破的方式获取前100个种子用户。核心是**拒绝\"等流量来了再说\"的被动心态**，主动找到、联系、说服每一个潜在用户。  **适用场景：** - 产品刚上线，没有用户 - 不知道如何开始推广 - 等待自然增长太久 - 需要第一批忠实用户建立口碑"
+        },
+        {
+          "name": "grow-sustainably",
+          "path": "indie-hacker-skills\\grow-sustainably\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "追求利润驱动的健康增长，而非烧钱换规模的VC模式。核心是**让收入增长≥支出增长**，确保每个新增客户都是净正的。  **适用场景：** - 拿到投资，想保持独立 - 增长遇到瓶颈，考虑烧钱 - 不确定什么时候该加速 - 想要长期可持续的商业模式"
+        },
+        {
+          "name": "marketing-plan",
+          "path": "indie-hacker-skills\\marketing-plan\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最小投入获取最大可见度的内容营销策略。核心是**每周固定产出高质量内容**，而非追求病毒式传播或大量付费广告。  **适用场景：** - 没有预算做付费广告 - 不知道如何开始营销 - 想要建立长期品牌资产 - 需要可持续的增长渠道"
+        },
+        {
+          "name": "minimalist-review",
+          "path": "indie-hacker-skills\\minimalist-review\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最简单的方式做决策，避免过度思考和行动瘫痪。核心是**通过三个过滤问题快速判断是否值得做**。  **适用场景：** - 面对多个选择，不知道该做哪个 - 担心遗漏重要事项 - 决策疲劳 - 想要聚焦而非什么都做"
+        },
+        {
+          "name": "mvp",
+          "path": "indie-hacker-skills\\mvp\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "构建最小可行产品，砍掉所有非生存必需的功能。核心是**用最少的代码验证最大的假设**，快速迭代而非一步到位。  **适用场景：** - 第一次做产品，不知道用户真正需要什么 - 资源有限（时间/金钱/技术） - 需要快速验证市场反应 - 担心投入太多做出来没人用"
+        },
+        {
+          "name": "pricing",
+          "path": "indie-hacker-skills\\pricing\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "制定既能反映价值又能市场定位的定价策略。核心是**找到\"贵但值\"的最优解**，而非一味低价竞争。  **适用场景：** - 第一个产品，不知道定什么价 - 现有产品需要调整定价 - 增长遇到瓶颈，考虑提价 - 不知道怎么跟竞争对手比价"
+        },
+        {
+          "name": "processize",
+          "path": "indie-hacker-skills\\processize\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用人工模拟自动化流程，在规模化前验证流程有效性。核心是**先用人力跑通流程，再转化为代码**，避免过早自动化导致的方向错误。  **适用场景：** - 产品有重复性操作需求 - 不确定是否值得开发自动化 - 需要理解流程中的\"人的判断\" - 手动跑通100单后再考虑开发"
+        },
+        {
+          "name": "validate-idea",
+          "path": "indie-hacker-skills\\validate-idea\\SKILL.md",
+          "description": "适用场景：",
+          "purpose": "用最快、最便宜的方式验证创业想法是否值得投入。核心是用真实市场反馈（预售/众测）替代耗时耗力的传统市场调研。  **适用场景：** - 有一个产品想法，需要验证市场需求 - 不确定目标用户是否愿意付费 - 担心投入大量时间开发没人用 - 需要在 MVP 前确认方向正确"
+        }
+      ]
     }
   },
   "by_name": {
@@ -1283,6 +1350,56 @@
       "category": "skill-authoring",
       "path": "skill-creation\\skill-creator\\SKILL.md",
       "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+    },
+    "company-values": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\company-values\\SKILL.md",
+      "description": "适用场景："
+    },
+    "find-community": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\find-community\\SKILL.md",
+      "description": "适用场景："
+    },
+    "first-customers": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\first-customers\\SKILL.md",
+      "description": "适用场景："
+    },
+    "grow-sustainably": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\grow-sustainably\\SKILL.md",
+      "description": "适用场景："
+    },
+    "marketing-plan": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\marketing-plan\\SKILL.md",
+      "description": "适用场景："
+    },
+    "minimalist-review": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\minimalist-review\\SKILL.md",
+      "description": "适用场景："
+    },
+    "mvp": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\mvp\\SKILL.md",
+      "description": "适用场景："
+    },
+    "pricing": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\pricing\\SKILL.md",
+      "description": "适用场景："
+    },
+    "processize": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\processize\\SKILL.md",
+      "description": "适用场景："
+    },
+    "validate-idea": {
+      "category": "indie-hacker",
+      "path": "indie-hacker-skills\\validate-idea\\SKILL.md",
+      "description": "适用场景："
     }
   }
 }

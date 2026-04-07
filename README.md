@@ -222,13 +222,34 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 
 ---
 
+### 15. Indie Hacker 独立开发者创业 💰
+**来源:** 基于 Sahil Lavingia《小而美》提炼
+
+独立开发者/Indie Hacker 创业技能包，覆盖发现→验证→启动→增长全流程。
+
+**包含技能（10个）：**
+- `find-community` - 通过社群需求反向推导创业方向
+- `validate-idea` - 用预售/众测替代市场调研（48小时验证法）
+- `mvp` - 砍掉所有非生存必需功能（Gumroad初期案例）
+- `processize` - 先人工模拟流程，手动处理100单后再自动化
+- `first-customers` - 逐个攻破前100个用户，拒绝等流量心态
+- `pricing` - 定价公式：成本×3 ≤ 定价 ≤ 替代方案价格×0.7
+- `marketing-plan` - 每周1篇深度内容+3次互动，极简内容公式
+- `grow-sustainably` - 利润增长率≥收入增长率，铁律拒绝烧钱换规模
+- `company-values` - 用价值观筛选团队，10x效率招聘过滤器
+- `minimalist-review` - 三问过滤器快速决策，极简复盘
+
+**底层逻辑：** 发现社群 → 验证需求 → 手动启动 → 量化增长
+
+---
+
 ## 快速导航
 
 | 目录 | 技能数 | 用途 | Stars |
 |------|--------|------|-------|
 | `skills/` | 47+ | 产品经理技能 | - |
 | `agile-skills/` | 11 | 敏捷交付 | - |
-| `scrum-skills/` | 14 | Scrum 团队 | - |
+| `scrumm-skills/` | 14 | Scrum 团队 | - |
 | `ddd-skills/` | 1 | DDD 架构 | - |
 | `dev-quality-skills/` | 4 | 开发质量 | - |
 | `qa-testing-skills/` | 10 | QA 测试 | - |
@@ -239,6 +260,7 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 | `dev-workflow-skills/` | 6 | 开发工作流 | ⭐ 140k |
 | `design-skills/` | 2 | 设计系统 | ⭐ 59k |
 | `skill-creation/` | 1 | Skill开发 | 🛠️ 官方 |
+| `indie-hacker-skills/` | 10 | 独立开发创业 | 💰 |
 
 ---
 

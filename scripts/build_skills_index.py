@@ -93,6 +93,12 @@ CATEGORIES = {
         "description": "Skill开发工具 - Anthropic官方skill-creator、意图捕获、测试、优化",
         "sources": ["skill-creation"],
         "color": "🛠️"
+    },
+    "indie-hacker": {
+        "name": "Indie Hacker",
+        "description": "独立开发者创业 - 发现社群、验证想法、MVP、冷启动、定价、营销、增长",
+        "sources": ["indie-hacker-skills"],
+        "color": "💰"
     }
 }
 
