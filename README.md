@@ -247,9 +247,9 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 
 | 目录 | 技能数 | 用途 | Stars |
 |------|--------|------|-------|
-| `skills/` | 47+ | 产品经理技能 | - |
+| `skills/` | 47+31 | 产品经理技能 + 工具类技能 | - |
 | `agile-skills/` | 11 | 敏捷交付 | - |
-| `scrumm-skills/` | 14 | Scrum 团队 | - |
+| `scrum-skills/` | 14 | Scrum 团队 | - |
 | `ddd-skills/` | 1 | DDD 架构 | - |
 | `dev-quality-skills/` | 4 | 开发质量 | - |
 | `qa-testing-skills/` | 10 | QA 测试 | - |
@@ -261,6 +261,12 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 | `design-skills/` | 2 | 设计系统 | ⭐ 59k |
 | `skill-creation/` | 1 | Skill开发 | 🛠️ 官方 |
 | `indie-hacker-skills/` | 10 | 独立开发创业 | 💰 |
+| **新增：搜索 & 研究** | 5 | Tavily/深度研究/百度搜索/Apify | 🔍 |
+| **新增：开发工具** | 8 | GitHub/Jira/n8n/SQLite/安全扫描 | ⚙️ |
+| **新增：AI 工具** | 3 | Prompt优化/RAG检索/AI代码审查 | 🤖 |
+| **新增：数据 & 分析** | 5 | GA4/GSC/Excel/股票/B站 | 📊 |
+| **新增：生产力** | 10 | Notion/Slack/飞书/LinkedIn等 | ⚡ |
+| **总计** | **149** | | |
 
 ---
 

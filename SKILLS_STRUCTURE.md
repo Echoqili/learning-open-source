@@ -4,21 +4,53 @@
 
 ```
 learning-open-source/
-├── all-skills/          # 主技能文件夹 (所有技能的统一入口)
-│   ├── agile-skills/    # 敏捷开发技能
-│   ├── ai-product-skills/  # AI产品技能
-│   ├── ai-safety-skills/   # AI安全技能
-│   ├── api-design-skills/  # API设计技能
-│   ├── ddd-skills/         # DDD领域驱动设计
-│   ├── design-skills/       # 设计技能
-│   ├── dev-quality-skills/  # 开发质量技能
-│   ├── dev-workflow-skills/ # 开发工作流技能
-│   ├── indie-hacker-skills/ # 独立开发者技能
-│   ├── qa-testing-skills/  # QA测试技能
-│   ├── scrum-skills/        # Scrum敏捷技能
-│   ├── skill-creation/      # 技能创建
-│   ├── skills/              # 产品管理技能
-│   ├── superpowers-skills/  # 超级能力技能
+├── all-skills/          # 主技能文件夹 (所有技能的统一入口，共 149 个)
+│   ├── agile-skills/    # 敏捷开发技能 (11)
+│   ├── ai-product-skills/  # AI产品技能 (1)
+│   ├── ai-safety-skills/   # AI安全技能 (4)
+│   ├── api-design-skills/  # API设计技能 (1)
+│   ├── ddd-skills/         # DDD领域驱动设计 (1)
+│   ├── design-skills/       # 设计技能 (2)
+│   ├── dev-quality-skills/  # 开发质量技能 (4)
+│   ├── dev-workflow-skills/ # 开发工作流技能 (6)
+│   ├── indie-hacker-skills/ # 独立开发者技能 (10)
+│   ├── qa-testing-skills/  # QA测试技能 (10)
+│   ├── scrum-skills/        # Scrum敏捷技能 (14)
+│   ├── skill-creation/      # 技能创建 (1)
+│   ├── superpowers-skills/  # 超级能力技能 (6)
+│   ├── skills/              # 产品管理 + 工具类技能 (78)
+│   │   ├── [47 个产品经理技能]
+│   │   ├── tavily-search/        # 搜索 & 研究 (5)
+│   │   ├── web-search-pro/
+│   │   ├── deep-research/
+│   │   ├── baidu-search/
+│   │   ├── apify-scraper/
+│   │   ├── github-api/           # 开发工具 (8)
+│   │   ├── git-commit-automation/
+│   │   ├── copilot-cli/
+│   │   ├── security-audit-toolkit/
+│   │   ├── web-deploy-github/
+│   │   ├── n8n-workflow/
+│   │   ├── sqlite-agent/
+│   │   ├── jira-skill/
+│   │   ├── prompt-optimizer/     # AI 工具 (3)
+│   │   ├── rag-search/
+│   │   ├── ai-code-review/
+│   │   ├── excel-analyzer/       # 数据 & 分析 (5)
+│   │   ├── google-search-console/
+│   │   ├── ga4-analytics/
+│   │   ├── stock-analysis/
+│   │   ├── bilibili-analytics/
+│   │   ├── notion-api/           # 生产力 (10)
+│   │   ├── slack-api/
+│   │   ├── todoist-api/
+│   │   ├── imap-email/
+│   │   ├── youtube-analytics/
+│   │   ├── wechat-publisher/
+│   │   ├── feishu-bitable-api/
+│   │   ├── linkedin-lead-gen/
+│   │   ├── changelog-generator/
+│   │   └── pentest-skill/
 │   └── README.md
 ├── scripts/              # 辅助脚本
 │   ├── skill_finder.py           # 技能查找器

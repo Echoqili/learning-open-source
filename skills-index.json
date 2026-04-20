@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-07T22:23:20.742770",
-  "total_count": 118,
+  "generated_at": "2026-04-20T23:41:00.100587",
+  "total_count": 149,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -13,6 +13,12 @@
           "path": "all-skills\\skills\\acquisition-channel-advisor\\SKILL.md",
           "description": "Evaluate acquisition channels using unit economics, customer quality, and scalability. Use when deciding whether to scale, test, or kill a growth channel.",
           "purpose": "Guide product managers through evaluating whether to scale, test, or kill an acquisition channel based on unit economics (CAC, LTV, payback), customer quality (retention, NRR), and scalability (magic "
+        },
+        {
+          "name": "Ai Code Review",
+          "path": "all-skills\\skills\\ai-code-review\\SKILL.md",
+          "description": "AI 驱动的代码审查技能，自动检测代码质量、性能瓶颈、安全漏洞和架构问题，给出可执行的改进建议。",
+          "purpose": ""
         },
         {
           "name": "ai-shaped-readiness-advisor",
@@ -27,10 +33,34 @@
           "purpose": "Defines the two-axis mental model that distinguishes Director-level thinking from PM thinking: **Altitude** (how wide you zoom out) and **Horizon** (how far ahead you look). Use this to understand wha"
         },
         {
+          "name": "Apify Scraper",
+          "path": "all-skills\\skills\\apify-scraper\\SKILL.md",
+          "description": "Apify 平台集成的网页抓取工具，支持 JavaScript 渲染、反爬绕过、数据提取和结构化存储，覆盖主流平台。",
+          "purpose": ""
+        },
+        {
+          "name": "Baidu Search",
+          "path": "all-skills\\skills\\baidu-search\\SKILL.md",
+          "description": "利用百度 AI 搜索引擎进行网页搜索，适合中文内容检索，支持新闻、学术、百科多源聚合。",
+          "purpose": ""
+        },
+        {
+          "name": "Bilibili Analytics",
+          "path": "all-skills\\skills\\bilibili-analytics\\SKILL.md",
+          "description": "Bilibili 视频搜索与数据分析，抓取关键词搜索结果，生成统计报告，支持多页抓取和可视化。",
+          "purpose": ""
+        },
+        {
           "name": "business-health-diagnostic",
           "path": "all-skills\\skills\\business-health-diagnostic\\SKILL.md",
           "description": "Diagnose SaaS business health across growth, retention, efficiency, and capital. Use when preparing a business review or prioritizing urgent fixes.",
           "purpose": "Diagnose overall SaaS business health by analyzing growth, retention, unit economics, and capital efficiency metrics together. Use this to identify problems early, prioritize actions by urgency, and d"
+        },
+        {
+          "name": "Changelog Generator",
+          "path": "all-skills\\skills\\changelog-generator\\SKILL.md",
+          "description": "分析 git 提交历史，按 Conventional Commits 规范自动生成格式化的更新日志，支持中英文输出。",
+          "purpose": ""
         },
         {
           "name": "company-research",
@@ -45,6 +75,12 @@
           "purpose": "Guide product managers through diagnosing whether they're doing **context stuffing** (jamming volume without intent) or **context engineering** (shaping structure for attention). Use this to identify "
         },
         {
+          "name": "Copilot Cli",
+          "path": "all-skills\\skills\\copilot-cli\\SKILL.md",
+          "description": "通过 GitHub Copilot CLI 分析代码、探索项目结构、生成文档和自动化开发任务，提高开发效率。",
+          "purpose": ""
+        },
+        {
           "name": "customer-journey-map",
           "path": "all-skills\\skills\\customer-journey-map\\SKILL.md",
           "description": "Create a customer journey map across stages, touchpoints, actions, emotions, and metrics. Use when diagnosing a broken experience or aligning a team on the full customer flow.",
@@ -55,6 +91,12 @@
           "path": "all-skills\\skills\\customer-journey-mapping-workshop\\SKILL.md",
           "description": "Run a customer journey mapping workshop with adaptive questions and outputs. Use when you need to map stages, actions, emotions, pain points, and opportunities for a persona and scenario.",
           "purpose": "Guide product managers through creating a customer journey map by asking adaptive questions about the actor (persona), scenario/goal, journey phases, actions/emotions, and opportunities for improvemen"
+        },
+        {
+          "name": "Deep Research",
+          "path": "all-skills\\skills\\deep-research\\SKILL.md",
+          "description": "自动化深度研究工具，针对任意主题进行多轮搜索、信息聚合、去重和结构化报告生成。",
+          "purpose": ""
         },
         {
           "name": "director-readiness-advisor",
@@ -93,6 +135,12 @@
           "purpose": "Frame epics as testable hypotheses using an if/then structure that articulates the action or solution, the target beneficiary, the expected outcome, and how you'll validate success. Use this to manage"
         },
         {
+          "name": "Excel Analyzer",
+          "path": "all-skills\\skills\\excel-analyzer\\SKILL.md",
+          "description": "Excel/CSV 数据智能分析技能，支持自然语言查询、自动图表生成、数据清洗和透视表操作。",
+          "purpose": ""
+        },
+        {
           "name": "executive-onboarding-playbook",
           "path": "all-skills\\skills\\executive-onboarding-playbook\\SKILL.md",
           "description": "Plan a VP or CPO 30-60-90 day diagnostic onboarding path. Use when entering a new executive product role and avoiding premature change.",
@@ -103,6 +151,12 @@
           "path": "all-skills\\skills\\feature-investment-advisor\\SKILL.md",
           "description": "Evaluate feature investments using revenue impact, cost structure, ROI, and strategy. Use when deciding whether a feature deserves investment.",
           "purpose": "Guide product managers through evaluating whether to build a feature based on financial impact analysis. Use this to make data-driven prioritization decisions by assessing revenue connection (direct o"
+        },
+        {
+          "name": "Feishu Bitable Api",
+          "path": "all-skills\\skills\\feishu-bitable-api\\SKILL.md",
+          "description": "飞书多维表格(Bitable)API 技能，支持记录的增删改查、视图筛选、字段管理和数据同步自动化。",
+          "purpose": ""
         },
         {
           "name": "finance-based-pricing-advisor",
@@ -117,6 +171,42 @@
           "purpose": "Quick reference for any SaaS finance metric without deep teaching. Use this when you need a fast formula lookup, benchmark check, or decision framework reminder. For detailed explanations, calculation"
         },
         {
+          "name": "Ga4 Analytics",
+          "path": "all-skills\\skills\\ga4-analytics\\SKILL.md",
+          "description": "Google Analytics 4 API 集成，支持流量分析、用户行为追踪、转化漏斗、事件分析和自动化报告。",
+          "purpose": ""
+        },
+        {
+          "name": "Git Commit Automation",
+          "path": "all-skills\\skills\\git-commit-automation\\SKILL.md",
+          "description": "智能 Git 提交助手，自动分析代码变更、生成规范的 Conventional Commits 提交消息并执行提交。",
+          "purpose": ""
+        },
+        {
+          "name": "Github Api",
+          "path": "all-skills\\skills\\github-api\\SKILL.md",
+          "description": "完整的 GitHub API 集成技能，支持 Issues、PR、仓库管理、搜索和 GitHub Actions 操作。",
+          "purpose": ""
+        },
+        {
+          "name": "Google Search Console",
+          "path": "all-skills\\skills\\google-search-console\\SKILL.md",
+          "description": "Google Search Console API 集成，获取网站搜索表现数据、关键词排名、点击率分析和 SEO 优化建议。",
+          "purpose": ""
+        },
+        {
+          "name": "Imap Email",
+          "path": "all-skills\\skills\\imap-email\\SKILL.md",
+          "description": "IMAP 邮件读取和处理技能，支持多账户邮件监控、规则过滤、内容提取和自动回复工作流。",
+          "purpose": ""
+        },
+        {
+          "name": "Jira Skill",
+          "path": "all-skills\\skills\\jira-skill\\SKILL.md",
+          "description": "Jira REST API 完整集成，支持 Issue 创建/更新/查询、Sprint 管理、工作流转换和自动化报告生成。",
+          "purpose": ""
+        },
+        {
           "name": "jobs-to-be-done",
           "path": "all-skills\\skills\\jobs-to-be-done\\SKILL.md",
           "description": "Uncover customer jobs, pains, and gains in a structured JTBD format. Use when clarifying unmet needs, repositioning a product, or improving discovery and messaging.",
@@ -129,10 +219,34 @@
           "purpose": "Guide product managers through creating **Jeff Gothelf's Lean UX Canvas (v2)**—a one-page facilitation tool that frames work around a **business problem to solve**, not a **solution to implement**. Us"
         },
         {
+          "name": "Linkedin Lead Gen",
+          "path": "all-skills\\skills\\linkedin-lead-gen\\SKILL.md",
+          "description": "LinkedIn 潜在客户挖掘和分析技能，支持目标用户搜索、公司信息提取、联系人触达和销售线索管理。",
+          "purpose": ""
+        },
+        {
+          "name": "N8N Workflow",
+          "path": "all-skills\\skills\\n8n-workflow\\SKILL.md",
+          "description": "n8n 无代码工作流自动化集成，支持 400+ 应用连接，构建自动化流水线，替代 Zapier/Make。",
+          "purpose": ""
+        },
+        {
+          "name": "Notion Api",
+          "path": "all-skills\\skills\\notion-api\\SKILL.md",
+          "description": "Notion 完整 API 集成，支持数据库查询、页面创建、内容同步和自动化工作流，构建 Notion 驱动的知识系统。",
+          "purpose": ""
+        },
+        {
           "name": "opportunity-solution-tree",
           "path": "all-skills\\skills\\opportunity-solution-tree\\SKILL.md",
           "description": "Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests. Use when a stakeholder request needs problem framing before you decide what to build.",
           "purpose": "Guide product managers through creating an Opportunity Solution Tree (OST) by extracting target outcomes from stakeholder requests, generating opportunity options (problems to solve), mapping potentia"
+        },
+        {
+          "name": "Pentest Skill",
+          "path": "all-skills\\skills\\pentest-skill\\SKILL.md",
+          "description": "渗透测试辅助技能，提供 OWASP Top 10 测试方法、常用工具命令、漏洞验证和报告模板。",
+          "purpose": ""
         },
         {
           "name": "pestel-analysis",
@@ -207,10 +321,22 @@
           "purpose": "Guide product managers through a comprehensive product strategy session by orchestrating positioning, problem framing, customer discovery, and roadmap planning skills into a cohesive end-to-end proces"
         },
         {
+          "name": "Prompt Optimizer",
+          "path": "all-skills\\skills\\prompt-optimizer\\SKILL.md",
+          "description": "分析和优化 AI Prompt，识别模糊表达、角色缺失、约束不足等问题，输出经过验证的高质量提示词。",
+          "purpose": ""
+        },
+        {
           "name": "proto-persona",
           "path": "all-skills\\skills\\proto-persona\\SKILL.md",
           "description": "Create a proto-persona from current research, market signals, and team knowledge. Use when you need a working customer profile before deeper validation.",
           "purpose": "Create an initial, assumption-based persona profile that synthesizes available user research, market data, and stakeholder knowledge into a working hypothesis about your target user. Use this to align"
+        },
+        {
+          "name": "Rag Search",
+          "path": "all-skills\\skills\\rag-search\\SKILL.md",
+          "description": "基于向量检索的本地知识库搜索技能，支持文档嵌入、语义搜索、混合检索和答案生成。",
+          "purpose": ""
         },
         {
           "name": "recommendation-canvas",
@@ -237,10 +363,34 @@
           "purpose": "Master revenue and retention metrics to understand SaaS business momentum, evaluate product-market fit, and make data-driven decisions about growth investments. Use this to calculate key metrics, inte"
         },
         {
+          "name": "Security Audit Toolkit",
+          "path": "all-skills\\skills\\security-audit-toolkit\\SKILL.md",
+          "description": "代码安全审计工具，自动扫描 SQL 注入、XSS、硬编码密钥、不安全依赖等常见安全漏洞。",
+          "purpose": ""
+        },
+        {
           "name": "skill-authoring-workflow",
           "path": "all-skills\\skills\\skill-authoring-workflow\\SKILL.md",
           "description": "Turn raw PM content into a compliant, publish-ready skill. Use when creating or updating a repo skill without breaking standards.",
           "purpose": "Create or update PM skills without chaos. This workflow turns rough notes, workshop content, or half-baked prompt dumps into compliant `skills/<skill-name>/SKILL.md` assets that actually pass validati"
+        },
+        {
+          "name": "Slack Api",
+          "path": "all-skills\\skills\\slack-api\\SKILL.md",
+          "description": "Slack API 完整集成，支持消息发送、频道管理、Bot 创建、Slash 命令和工作流自动化通知。",
+          "purpose": ""
+        },
+        {
+          "name": "Sqlite Agent",
+          "path": "all-skills\\skills\\sqlite-agent\\SKILL.md",
+          "description": "SQLite 数据库操作技能，支持自然语言转 SQL 查询、数据分析、表结构探索和结果可视化。",
+          "purpose": ""
+        },
+        {
+          "name": "Stock Analysis",
+          "path": "all-skills\\skills\\stock-analysis\\SKILL.md",
+          "description": "股票和金融数据分析技能，支持 A股/美股实时行情、技术指标计算、基本面数据获取和可视化报告。",
+          "purpose": ""
         },
         {
           "name": "storyboard",
@@ -253,6 +403,18 @@
           "path": "all-skills\\skills\\tam-sam-som-calculator\\SKILL.md",
           "description": "Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats. Use when sizing a market for a product idea, business case, or executive review.",
           "purpose": "Guide product managers through calculating Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM) for a product idea by asking adaptive, contextual"
+        },
+        {
+          "name": "Tavily Search",
+          "path": "all-skills\\skills\\tavily-search\\SKILL.md",
+          "description": "Tavily AI 搜索引擎集成，专为 AI Agent 优化，支持实时网页搜索、摘要提取和来源引用。",
+          "purpose": ""
+        },
+        {
+          "name": "Todoist Api",
+          "path": "all-skills\\skills\\todoist-api\\SKILL.md",
+          "description": "Todoist API 集成，支持任务创建、项目管理、优先级设置、自然语言时间解析和跨工具同步。",
+          "purpose": ""
         },
         {
           "name": "user-story",
@@ -285,10 +447,34 @@
           "purpose": "Guide Directors and senior product leaders through the specific challenges of the transition to VP or CPO using adaptive questions and targeted coaching. Diagnoses where you are in the journey and del"
         },
         {
+          "name": "Web Deploy Github",
+          "path": "all-skills\\skills\\web-deploy-github\\SKILL.md",
+          "description": "一键部署静态网站到 GitHub Pages，支持自定义域名、HTTPS 配置和自动化 CI/CD 流水线。",
+          "purpose": ""
+        },
+        {
+          "name": "Web Search Pro",
+          "path": "all-skills\\skills\\web-search-pro\\SKILL.md",
+          "description": "多引擎聚合网页搜索技能，支持 DuckDuckGo/Bing/Google，无需 API key 即可使用，适合快速信息检索。",
+          "purpose": ""
+        },
+        {
+          "name": "Wechat Publisher",
+          "path": "all-skills\\skills\\wechat-publisher\\SKILL.md",
+          "description": "一键发布 Markdown 到微信公众号草稿箱，支持自动排版、代码高亮、图片上传和多主题渲染。",
+          "purpose": ""
+        },
+        {
           "name": "workshop-facilitation",
           "path": "all-skills\\skills\\workshop-facilitation\\SKILL.md",
           "description": "Facilitate workshop sessions in a one-step, multi-turn flow. Use when an interactive skill needs consistent pacing, options, and progress tracking.",
           "purpose": "Provide the canonical facilitation pattern for interactive skills: one step at a time, with clear progress, adaptive recommendations at decision points, and predictable interruption handling."
+        },
+        {
+          "name": "Youtube Analytics",
+          "path": "all-skills\\skills\\youtube-analytics\\SKILL.md",
+          "description": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。",
+          "purpose": ""
         }
       ]
     },
@@ -816,6 +1002,11 @@
       "path": "all-skills\\skills\\acquisition-channel-advisor\\SKILL.md",
       "description": "Evaluate acquisition channels using unit economics, customer quality, and scalability. Use when deciding whether to scale, test, or kill a growth channel."
     },
+    "Ai Code Review": {
+      "category": "product",
+      "path": "all-skills\\skills\\ai-code-review\\SKILL.md",
+      "description": "AI 驱动的代码审查技能，自动检测代码质量、性能瓶颈、安全漏洞和架构问题，给出可执行的改进建议。"
+    },
     "ai-shaped-readiness-advisor": {
       "category": "product",
       "path": "all-skills\\skills\\ai-shaped-readiness-advisor\\SKILL.md",
@@ -826,10 +1017,30 @@
       "path": "all-skills\\skills\\altitude-horizon-framework\\SKILL.md",
       "description": "Understand the PM-to-Director transition through altitude and horizon thinking. Use when diagnosing scope, time-horizon, or leadership-level gaps."
     },
+    "Apify Scraper": {
+      "category": "product",
+      "path": "all-skills\\skills\\apify-scraper\\SKILL.md",
+      "description": "Apify 平台集成的网页抓取工具，支持 JavaScript 渲染、反爬绕过、数据提取和结构化存储，覆盖主流平台。"
+    },
+    "Baidu Search": {
+      "category": "product",
+      "path": "all-skills\\skills\\baidu-search\\SKILL.md",
+      "description": "利用百度 AI 搜索引擎进行网页搜索，适合中文内容检索，支持新闻、学术、百科多源聚合。"
+    },
+    "Bilibili Analytics": {
+      "category": "product",
+      "path": "all-skills\\skills\\bilibili-analytics\\SKILL.md",
+      "description": "Bilibili 视频搜索与数据分析，抓取关键词搜索结果，生成统计报告，支持多页抓取和可视化。"
+    },
     "business-health-diagnostic": {
       "category": "product",
       "path": "all-skills\\skills\\business-health-diagnostic\\SKILL.md",
       "description": "Diagnose SaaS business health across growth, retention, efficiency, and capital. Use when preparing a business review or prioritizing urgent fixes."
+    },
+    "Changelog Generator": {
+      "category": "product",
+      "path": "all-skills\\skills\\changelog-generator\\SKILL.md",
+      "description": "分析 git 提交历史，按 Conventional Commits 规范自动生成格式化的更新日志，支持中英文输出。"
     },
     "company-research": {
       "category": "product",
@@ -841,6 +1052,11 @@
       "path": "all-skills\\skills\\context-engineering-advisor\\SKILL.md",
       "description": "Diagnose context stuffing vs. context engineering. Use when an AI workflow feels bloated, brittle, or hard to steer reliably."
     },
+    "Copilot Cli": {
+      "category": "product",
+      "path": "all-skills\\skills\\copilot-cli\\SKILL.md",
+      "description": "通过 GitHub Copilot CLI 分析代码、探索项目结构、生成文档和自动化开发任务，提高开发效率。"
+    },
     "customer-journey-map": {
       "category": "product",
       "path": "all-skills\\skills\\customer-journey-map\\SKILL.md",
@@ -850,6 +1066,11 @@
       "category": "product",
       "path": "all-skills\\skills\\customer-journey-mapping-workshop\\SKILL.md",
       "description": "Run a customer journey mapping workshop with adaptive questions and outputs. Use when you need to map stages, actions, emotions, pain points, and opportunities for a persona and scenario."
+    },
+    "Deep Research": {
+      "category": "product",
+      "path": "all-skills\\skills\\deep-research\\SKILL.md",
+      "description": "自动化深度研究工具，针对任意主题进行多轮搜索、信息聚合、去重和结构化报告生成。"
     },
     "director-readiness-advisor": {
       "category": "product",
@@ -881,6 +1102,11 @@
       "path": "all-skills\\skills\\epic-hypothesis\\SKILL.md",
       "description": "Frame an epic as a testable hypothesis with target user, expected outcome, and validation method. Use when defining a major initiative before roadmap, discovery, or delivery planning."
     },
+    "Excel Analyzer": {
+      "category": "product",
+      "path": "all-skills\\skills\\excel-analyzer\\SKILL.md",
+      "description": "Excel/CSV 数据智能分析技能，支持自然语言查询、自动图表生成、数据清洗和透视表操作。"
+    },
     "executive-onboarding-playbook": {
       "category": "product",
       "path": "all-skills\\skills\\executive-onboarding-playbook\\SKILL.md",
@@ -890,6 +1116,11 @@
       "category": "product",
       "path": "all-skills\\skills\\feature-investment-advisor\\SKILL.md",
       "description": "Evaluate feature investments using revenue impact, cost structure, ROI, and strategy. Use when deciding whether a feature deserves investment."
+    },
+    "Feishu Bitable Api": {
+      "category": "product",
+      "path": "all-skills\\skills\\feishu-bitable-api\\SKILL.md",
+      "description": "飞书多维表格(Bitable)API 技能，支持记录的增删改查、视图筛选、字段管理和数据同步自动化。"
     },
     "finance-based-pricing-advisor": {
       "category": "product",
@@ -901,6 +1132,36 @@
       "path": "all-skills\\skills\\finance-metrics-quickref\\SKILL.md",
       "description": "Look up SaaS finance metrics, formulas, and benchmarks fast. Use when you need a quick metric definition, formula, or benchmark during analysis."
     },
+    "Ga4 Analytics": {
+      "category": "product",
+      "path": "all-skills\\skills\\ga4-analytics\\SKILL.md",
+      "description": "Google Analytics 4 API 集成，支持流量分析、用户行为追踪、转化漏斗、事件分析和自动化报告。"
+    },
+    "Git Commit Automation": {
+      "category": "product",
+      "path": "all-skills\\skills\\git-commit-automation\\SKILL.md",
+      "description": "智能 Git 提交助手，自动分析代码变更、生成规范的 Conventional Commits 提交消息并执行提交。"
+    },
+    "Github Api": {
+      "category": "product",
+      "path": "all-skills\\skills\\github-api\\SKILL.md",
+      "description": "完整的 GitHub API 集成技能，支持 Issues、PR、仓库管理、搜索和 GitHub Actions 操作。"
+    },
+    "Google Search Console": {
+      "category": "product",
+      "path": "all-skills\\skills\\google-search-console\\SKILL.md",
+      "description": "Google Search Console API 集成，获取网站搜索表现数据、关键词排名、点击率分析和 SEO 优化建议。"
+    },
+    "Imap Email": {
+      "category": "product",
+      "path": "all-skills\\skills\\imap-email\\SKILL.md",
+      "description": "IMAP 邮件读取和处理技能，支持多账户邮件监控、规则过滤、内容提取和自动回复工作流。"
+    },
+    "Jira Skill": {
+      "category": "product",
+      "path": "all-skills\\skills\\jira-skill\\SKILL.md",
+      "description": "Jira REST API 完整集成，支持 Issue 创建/更新/查询、Sprint 管理、工作流转换和自动化报告生成。"
+    },
     "jobs-to-be-done": {
       "category": "product",
       "path": "all-skills\\skills\\jobs-to-be-done\\SKILL.md",
@@ -911,10 +1172,30 @@
       "path": "all-skills\\skills\\lean-ux-canvas\\SKILL.md",
       "description": "Guide teams through Lean UX Canvas v2. Use when framing a business problem, surfacing assumptions, and defining what to learn next."
     },
+    "Linkedin Lead Gen": {
+      "category": "product",
+      "path": "all-skills\\skills\\linkedin-lead-gen\\SKILL.md",
+      "description": "LinkedIn 潜在客户挖掘和分析技能，支持目标用户搜索、公司信息提取、联系人触达和销售线索管理。"
+    },
+    "N8N Workflow": {
+      "category": "product",
+      "path": "all-skills\\skills\\n8n-workflow\\SKILL.md",
+      "description": "n8n 无代码工作流自动化集成，支持 400+ 应用连接，构建自动化流水线，替代 Zapier/Make。"
+    },
+    "Notion Api": {
+      "category": "product",
+      "path": "all-skills\\skills\\notion-api\\SKILL.md",
+      "description": "Notion 完整 API 集成，支持数据库查询、页面创建、内容同步和自动化工作流，构建 Notion 驱动的知识系统。"
+    },
     "opportunity-solution-tree": {
       "category": "product",
       "path": "all-skills\\skills\\opportunity-solution-tree\\SKILL.md",
       "description": "Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests. Use when a stakeholder request needs problem framing before you decide what to build."
+    },
+    "Pentest Skill": {
+      "category": "product",
+      "path": "all-skills\\skills\\pentest-skill\\SKILL.md",
+      "description": "渗透测试辅助技能，提供 OWASP Top 10 测试方法、常用工具命令、漏洞验证和报告模板。"
     },
     "pestel-analysis": {
       "category": "product",
@@ -976,10 +1257,20 @@
       "path": "all-skills\\skills\\product-strategy-session\\SKILL.md",
       "description": "Run an end-to-end product strategy session across positioning, discovery, and roadmap planning. Use when a team needs validated direction before committing to execution."
     },
+    "Prompt Optimizer": {
+      "category": "product",
+      "path": "all-skills\\skills\\prompt-optimizer\\SKILL.md",
+      "description": "分析和优化 AI Prompt，识别模糊表达、角色缺失、约束不足等问题，输出经过验证的高质量提示词。"
+    },
     "proto-persona": {
       "category": "product",
       "path": "all-skills\\skills\\proto-persona\\SKILL.md",
       "description": "Create a proto-persona from current research, market signals, and team knowledge. Use when you need a working customer profile before deeper validation."
+    },
+    "Rag Search": {
+      "category": "product",
+      "path": "all-skills\\skills\\rag-search\\SKILL.md",
+      "description": "基于向量检索的本地知识库搜索技能，支持文档嵌入、语义搜索、混合检索和答案生成。"
     },
     "recommendation-canvas": {
       "category": "product",
@@ -1001,10 +1292,30 @@
       "path": "all-skills\\skills\\saas-revenue-growth-metrics\\SKILL.md",
       "description": "Calculate SaaS revenue, retention, and growth metrics. Use when diagnosing momentum, churn, expansion, or product-market-fit signals."
     },
+    "Security Audit Toolkit": {
+      "category": "product",
+      "path": "all-skills\\skills\\security-audit-toolkit\\SKILL.md",
+      "description": "代码安全审计工具，自动扫描 SQL 注入、XSS、硬编码密钥、不安全依赖等常见安全漏洞。"
+    },
     "skill-authoring-workflow": {
       "category": "product",
       "path": "all-skills\\skills\\skill-authoring-workflow\\SKILL.md",
       "description": "Turn raw PM content into a compliant, publish-ready skill. Use when creating or updating a repo skill without breaking standards."
+    },
+    "Slack Api": {
+      "category": "product",
+      "path": "all-skills\\skills\\slack-api\\SKILL.md",
+      "description": "Slack API 完整集成，支持消息发送、频道管理、Bot 创建、Slash 命令和工作流自动化通知。"
+    },
+    "Sqlite Agent": {
+      "category": "product",
+      "path": "all-skills\\skills\\sqlite-agent\\SKILL.md",
+      "description": "SQLite 数据库操作技能，支持自然语言转 SQL 查询、数据分析、表结构探索和结果可视化。"
+    },
+    "Stock Analysis": {
+      "category": "product",
+      "path": "all-skills\\skills\\stock-analysis\\SKILL.md",
+      "description": "股票和金融数据分析技能，支持 A股/美股实时行情、技术指标计算、基本面数据获取和可视化报告。"
     },
     "storyboard": {
       "category": "product",
@@ -1015,6 +1326,16 @@
       "category": "product",
       "path": "all-skills\\skills\\tam-sam-som-calculator\\SKILL.md",
       "description": "Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats. Use when sizing a market for a product idea, business case, or executive review."
+    },
+    "Tavily Search": {
+      "category": "product",
+      "path": "all-skills\\skills\\tavily-search\\SKILL.md",
+      "description": "Tavily AI 搜索引擎集成，专为 AI Agent 优化，支持实时网页搜索、摘要提取和来源引用。"
+    },
+    "Todoist Api": {
+      "category": "product",
+      "path": "all-skills\\skills\\todoist-api\\SKILL.md",
+      "description": "Todoist API 集成，支持任务创建、项目管理、优先级设置、自然语言时间解析和跨工具同步。"
     },
     "user-story": {
       "category": "product",
@@ -1041,10 +1362,30 @@
       "path": "all-skills\\skills\\vp-cpo-readiness-advisor\\SKILL.md",
       "description": ""
     },
+    "Web Deploy Github": {
+      "category": "product",
+      "path": "all-skills\\skills\\web-deploy-github\\SKILL.md",
+      "description": "一键部署静态网站到 GitHub Pages，支持自定义域名、HTTPS 配置和自动化 CI/CD 流水线。"
+    },
+    "Web Search Pro": {
+      "category": "product",
+      "path": "all-skills\\skills\\web-search-pro\\SKILL.md",
+      "description": "多引擎聚合网页搜索技能，支持 DuckDuckGo/Bing/Google，无需 API key 即可使用，适合快速信息检索。"
+    },
+    "Wechat Publisher": {
+      "category": "product",
+      "path": "all-skills\\skills\\wechat-publisher\\SKILL.md",
+      "description": "一键发布 Markdown 到微信公众号草稿箱，支持自动排版、代码高亮、图片上传和多主题渲染。"
+    },
     "workshop-facilitation": {
       "category": "product",
       "path": "all-skills\\skills\\workshop-facilitation\\SKILL.md",
       "description": "Facilitate workshop sessions in a one-step, multi-turn flow. Use when an interactive skill needs consistent pacing, options, and progress tracking."
+    },
+    "Youtube Analytics": {
+      "category": "product",
+      "path": "all-skills\\skills\\youtube-analytics\\SKILL.md",
+      "description": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。"
     },
     "acceptance-driven-planner": {
       "category": "agile",

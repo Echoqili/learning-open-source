@@ -9,6 +9,7 @@ import sys
 import json
 import re
 import zipfile
+import requests
 from pathlib import Path
 from datetime import datetime
 from functools import lru_cache
@@ -20,6 +21,15 @@ app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 
 SKILLS_ROOT = Path(__file__).parent.parent
 INDEX_PATH = SKILLS_ROOT / "skills-index.json"
+
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+GITHUB_HEADERS = {
+    "Accept": "application/vnd.github.v3+json",
+    "User-Agent": "Skills-Manager/1.0"
+}
+if GITHUB_TOKEN:
+    GITHUB_HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 CATEGORIES_EMOJI = {
     "product": "🔵", "agile": "🟢", "scrum": "🟡", "ddd": "🟠",
@@ -110,6 +120,127 @@ def search_skills(query, top_k=20):
     return [s for _, s in results[:top_k]]
 
 
+def search_github_repos(query: str, per_page: int = 10):
+    """Search GitHub repositories for skills"""
+    url = "https://api.github.com/search/repositories"
+    params = {"q": query, "per_page": per_page, "sort": "stars", "order": "desc"}
+
+    try:
+        resp = requests.get(url, headers=GITHUB_HEADERS, params=params, timeout=30)
+        if resp.status_code == 200:
+            return resp.json().get("items", [])
+        elif resp.status_code == 403:
+            return {"error": "rate_limited", "message": "GitHub API rate limit exceeded"}
+        elif resp.status_code == 422:
+            return {"error": "invalid_query", "message": "Invalid search query"}
+        return {"error": "unknown", "message": f"GitHub API returned {resp.status_code}"}
+    except Exception as e:
+        return {"error": "network", "message": str(e)}
+
+
+def get_ai_recommendation(query: str, local_results: list):
+    """Get AI-powered recommendation based on query and local results"""
+    if not query:
+        return {
+            "recommendation": "请输入关键词，我会为您推荐合适的 Skills",
+            "suggestions": []
+        }
+
+    query_lower = query.lower()
+
+    recommendations = {
+        "sprint": {
+            "name": "Sprint 规划与管理",
+            "emoji": "🏃",
+            "skills": ["sprint-planning", "backlog-refinement", "retrospective", "sprint-review"],
+            "reason": "您似乎在关注 Sprint 相关的工作流程"
+        },
+        "test": {
+            "name": "测试与质量保障",
+            "emoji": "🧪",
+            "skills": ["playwright-automation", "e2e-testing", "unit-testing", "test-strategy"],
+            "reason": "您似乎需要测试相关的技能"
+        },
+        "prd": {
+            "name": "产品需求文档",
+            "emoji": "📋",
+            "skills": ["prd-development", "user-story", "discovery-process"],
+            "reason": "您似乎在准备 PRD 或产品需求文档"
+        },
+        "api": {
+            "name": "API 设计",
+            "emoji": "🌐",
+            "skills": ["api-generator", "rest-api-design", "graphql-api"],
+            "reason": "您似乎在关注 API 设计与开发"
+        },
+        "ddd": {
+            "name": "领域驱动设计",
+            "emoji": "🏗️",
+            "skills": ["ddd-skills", "hexagonal-architecture", "domain-modeling"],
+            "reason": "您似乎在关注 DDD 架构设计"
+        },
+        "安全": {
+            "name": "AI 安全",
+            "emoji": "🚨",
+            "skills": ["prompt-injection-defense", "jailbreak-detection", "hallucination-detection"],
+            "reason": "您似乎在关注 AI 安全问题"
+        },
+        "ai": {
+            "name": "AI 产品开发",
+            "emoji": "🤖",
+            "skills": ["ai-product", "prompt-engineering", "llm-integration"],
+            "reason": "您似乎在开发 AI 相关产品"
+        },
+        "tdd": {
+            "name": "测试驱动开发",
+            "emoji": "⚡",
+            "skills": ["tdd-workflow", "test-driven-development", "red-green-refactor"],
+            "reason": "您似乎在实践 TDD 开发流程"
+        },
+        "mvp": {
+            "name": "快速 MVP 开发",
+            "emoji": "💰",
+            "skills": ["validate-idea", "mvp", "first-customers", "pricing"],
+            "reason": "您似乎在准备独立开发或创业"
+        },
+        "design": {
+            "name": "设计系统",
+            "emoji": "🎨",
+            "skills": ["design-system", "ui-ux-pro-max", "component-library"],
+            "reason": "您似乎在关注设计与用户体验"
+        }
+    }
+
+    matched = []
+    for key, rec in recommendations.items():
+        if key in query_lower:
+            matched.append(rec)
+
+    if matched:
+        best_match = matched[0]
+        return {
+            "recommendation": f"🤖 {best_match['reason']}",
+            "category": best_match["name"],
+            "emoji": best_match["emoji"],
+            "suggestions": best_match["skills"],
+            "source": "ai_recommendation"
+        }
+
+    if local_results:
+        top_result = local_results[0]
+        return {
+            "recommendation": f"🤖 根据您的搜索 '{query}'，我们推荐 {top_result.get('category_name', '相关')} 类别的 Skills",
+            "suggestions": [s["name"] for s in local_results[:5]],
+            "source": "ai_recommendation"
+        }
+
+    return {
+        "recommendation": f"🤖 未能理解您的需求。请尝试：Sprint规划、测试策略、API设计、AI安全等关键词",
+        "suggestions": ["sprint-planning", "test-strategy", "api-generator", "prompt-injection-defense"],
+        "source": "ai_recommendation"
+    }
+
+
 def get_skill_dir(skill):
     skill_path = SKILLS_ROOT / skill.get("path", "")
     if skill_path.is_file():
@@ -155,6 +286,89 @@ def api_search():
         "query": query,
         "count": len(results),
         "results": results[:20]
+    })
+
+
+@app.route('/api/search/github')
+def api_search_github():
+    query = request.args.get('q', '')
+    per_page = request.args.get('per_page', 10, type=int)
+
+    if not query:
+        return jsonify({"error": "Query is required"}), 400
+
+    enhanced_query = f"{query} skills site:github.com"
+    repos = search_github_repos(enhanced_query, per_page)
+
+    if isinstance(repos, dict) and "error" in repos:
+        return jsonify(repos), 429 if repos["error"] == "rate_limited" else 400
+
+    formatted = []
+    for repo in repos:
+        formatted.append({
+            "name": repo.get("full_name", ""),
+            "description": repo.get("description", ""),
+            "stars": repo.get("stargazers_count", 0),
+            "url": repo.get("html_url", ""),
+            "language": repo.get("language", ""),
+            "updated": repo.get("updated_at", "")[:10]
+        })
+
+    return jsonify({
+        "query": query,
+        "count": len(formatted),
+        "repos": formatted
+    })
+
+
+@app.route('/api/search/ai')
+def api_search_ai():
+    query = request.args.get('q', '')
+
+    local_results = search_skills(query)
+    recommendation = get_ai_recommendation(query, local_results)
+
+    return jsonify({
+        "query": query,
+        "recommendation": recommendation,
+        "local_results_count": len(local_results)
+    })
+
+
+@app.route('/api/search/all')
+def api_search_all():
+    query = request.args.get('q', '')
+
+    if not query:
+        return jsonify({"error": "Query is required"}), 400
+
+    local_results = search_skills(query)
+    recommendation = get_ai_recommendation(query, local_results)
+
+    enhanced_query = f"{query} skills site:github.com"
+    github_repos = search_github_repos(enhanced_query, 5)
+
+    github_data = []
+    if isinstance(github_repos, list):
+        for repo in github_repos[:5]:
+            github_data.append({
+                "name": repo.get("full_name", ""),
+                "description": repo.get("description", ""),
+                "stars": repo.get("stargazers_count", 0),
+                "url": repo.get("html_url", ""),
+            })
+
+    return jsonify({
+        "query": query,
+        "recommendation": recommendation,
+        "local": {
+            "count": len(local_results),
+            "results": local_results[:5]
+        },
+        "github": {
+            "count": len(github_data),
+            "repos": github_data
+        }
     })
 
 
@@ -323,10 +537,10 @@ def api_package_all():
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("🧠 Skills Manager Web - 可视化 Skills 导航")
+    print("Skills Manager Web - 可视化 Skills 导航")
     print("=" * 60)
-    print(f"\n📦 Skills 索引: {INDEX_PATH}")
-    print(f"🌐 访问地址: http://127.0.0.1:5555")
+    print(f"\nSkills 索引: {INDEX_PATH}")
+    print(f"访问地址: http://127.0.0.1:5555")
     print("\n按 Ctrl+C 停止服务器\n")
 
     app.run(host='0.0.0.0', port=5555, debug=True)

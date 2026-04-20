@@ -1,13 +1,13 @@
 # Skills Catalog
 
-> 自动生成时间: 2026-04-07 22:23:20
-> 总计 Skills: 118
+> 自动生成时间: 2026-04-20 23:41:00
+> 总计 Skills: 149
 
 ---
 
 ## 分类索引
 
-- [🔵 Product Manager](#product) - 47 skills
+- [🔵 Product Manager](#product) - 78 skills
 - [🟢 Agile Delivery](#agile) - 11 skills
 - [🟡 Scrum Team](#scrum) - 14 skills
 - [🟠 DDD Architecture](#ddd) - 1 skills
@@ -26,10 +26,41 @@
 
 产品经理技能 - 需求分析、PRD、用户故事、路线图等
 
-**Skills 数量**: 47
+**Skills 数量**: 78
 
 | Skill | 描述 |
 |------|------|
+| [Ai Code Review](all-skills/skills/ai-code-review/SKILL.md) | AI 驱动的代码审查技能，自动检测代码质量、性能瓶颈、安全漏洞和架构问题，给出可执行的改进建议。 |
+| [Apify Scraper](all-skills/skills/apify-scraper/SKILL.md) | Apify 平台集成的网页抓取工具，支持 JavaScript 渲染、反爬绕过、数据提取和结构化存储，覆盖主流平台。 |
+| [Baidu Search](all-skills/skills/baidu-search/SKILL.md) | 利用百度 AI 搜索引擎进行网页搜索，适合中文内容检索，支持新闻、学术、百科多源聚合。 |
+| [Bilibili Analytics](all-skills/skills/bilibili-analytics/SKILL.md) | Bilibili 视频搜索与数据分析，抓取关键词搜索结果，生成统计报告，支持多页抓取和可视化。 |
+| [Changelog Generator](all-skills/skills/changelog-generator/SKILL.md) | 分析 git 提交历史，按 Conventional Commits 规范自动生成格式化的更新日志，支持中英文输出。 |
+| [Copilot Cli](all-skills/skills/copilot-cli/SKILL.md) | 通过 GitHub Copilot CLI 分析代码、探索项目结构、生成文档和自动化开发任务，提高开发效率。 |
+| [Deep Research](all-skills/skills/deep-research/SKILL.md) | 自动化深度研究工具，针对任意主题进行多轮搜索、信息聚合、去重和结构化报告生成。 |
+| [Excel Analyzer](all-skills/skills/excel-analyzer/SKILL.md) | Excel/CSV 数据智能分析技能，支持自然语言查询、自动图表生成、数据清洗和透视表操作。 |
+| [Feishu Bitable Api](all-skills/skills/feishu-bitable-api/SKILL.md) | 飞书多维表格(Bitable)API 技能，支持记录的增删改查、视图筛选、字段管理和数据同步自动化。 |
+| [Ga4 Analytics](all-skills/skills/ga4-analytics/SKILL.md) | Google Analytics 4 API 集成，支持流量分析、用户行为追踪、转化漏斗、事件分析和自动化报告。 |
+| [Git Commit Automation](all-skills/skills/git-commit-automation/SKILL.md) | 智能 Git 提交助手，自动分析代码变更、生成规范的 Conventional Commits 提交消息并执行提交。 |
+| [Github Api](all-skills/skills/github-api/SKILL.md) | 完整的 GitHub API 集成技能，支持 Issues、PR、仓库管理、搜索和 GitHub Actions 操作。 |
+| [Google Search Console](all-skills/skills/google-search-console/SKILL.md) | Google Search Console API 集成，获取网站搜索表现数据、关键词排名、点击率分析和 SEO 优化建... |
+| [Imap Email](all-skills/skills/imap-email/SKILL.md) | IMAP 邮件读取和处理技能，支持多账户邮件监控、规则过滤、内容提取和自动回复工作流。 |
+| [Jira Skill](all-skills/skills/jira-skill/SKILL.md) | Jira REST API 完整集成，支持 Issue 创建/更新/查询、Sprint 管理、工作流转换和自动化报告生成... |
+| [Linkedin Lead Gen](all-skills/skills/linkedin-lead-gen/SKILL.md) | LinkedIn 潜在客户挖掘和分析技能，支持目标用户搜索、公司信息提取、联系人触达和销售线索管理。 |
+| [N8N Workflow](all-skills/skills/n8n-workflow/SKILL.md) | n8n 无代码工作流自动化集成，支持 400+ 应用连接，构建自动化流水线，替代 Zapier/Make。 |
+| [Notion Api](all-skills/skills/notion-api/SKILL.md) | Notion 完整 API 集成，支持数据库查询、页面创建、内容同步和自动化工作流，构建 Notion 驱动的知识系统。 |
+| [Pentest Skill](all-skills/skills/pentest-skill/SKILL.md) | 渗透测试辅助技能，提供 OWASP Top 10 测试方法、常用工具命令、漏洞验证和报告模板。 |
+| [Prompt Optimizer](all-skills/skills/prompt-optimizer/SKILL.md) | 分析和优化 AI Prompt，识别模糊表达、角色缺失、约束不足等问题，输出经过验证的高质量提示词。 |
+| [Rag Search](all-skills/skills/rag-search/SKILL.md) | 基于向量检索的本地知识库搜索技能，支持文档嵌入、语义搜索、混合检索和答案生成。 |
+| [Security Audit Toolkit](all-skills/skills/security-audit-toolkit/SKILL.md) | 代码安全审计工具，自动扫描 SQL 注入、XSS、硬编码密钥、不安全依赖等常见安全漏洞。 |
+| [Slack Api](all-skills/skills/slack-api/SKILL.md) | Slack API 完整集成，支持消息发送、频道管理、Bot 创建、Slash 命令和工作流自动化通知。 |
+| [Sqlite Agent](all-skills/skills/sqlite-agent/SKILL.md) | SQLite 数据库操作技能，支持自然语言转 SQL 查询、数据分析、表结构探索和结果可视化。 |
+| [Stock Analysis](all-skills/skills/stock-analysis/SKILL.md) | 股票和金融数据分析技能，支持 A股/美股实时行情、技术指标计算、基本面数据获取和可视化报告。 |
+| [Tavily Search](all-skills/skills/tavily-search/SKILL.md) | Tavily AI 搜索引擎集成，专为 AI Agent 优化，支持实时网页搜索、摘要提取和来源引用。 |
+| [Todoist Api](all-skills/skills/todoist-api/SKILL.md) | Todoist API 集成，支持任务创建、项目管理、优先级设置、自然语言时间解析和跨工具同步。 |
+| [Web Deploy Github](all-skills/skills/web-deploy-github/SKILL.md) | 一键部署静态网站到 GitHub Pages，支持自定义域名、HTTPS 配置和自动化 CI/CD 流水线。 |
+| [Web Search Pro](all-skills/skills/web-search-pro/SKILL.md) | 多引擎聚合网页搜索技能，支持 DuckDuckGo/Bing/Google，无需 API key 即可使用，适合快速信息... |
+| [Wechat Publisher](all-skills/skills/wechat-publisher/SKILL.md) | 一键发布 Markdown 到微信公众号草稿箱，支持自动排版、代码高亮、图片上传和多主题渲染。 |
+| [Youtube Analytics](all-skills/skills/youtube-analytics/SKILL.md) | YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。 |
 | [acquisition-channel-advisor](all-skills/skills/acquisition-channel-advisor/SKILL.md) | Evaluate acquisition channels using unit economics, customer... |
 | [ai-shaped-readiness-advisor](all-skills/skills/ai-shaped-readiness-advisor/SKILL.md) | Assess whether your product work is AI-first or AI-shaped. U... |
 | [altitude-horizon-framework](all-skills/skills/altitude-horizon-framework/SKILL.md) | Understand the PM-to-Director transition through altitude an... |

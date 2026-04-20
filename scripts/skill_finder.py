@@ -135,6 +135,12 @@ SCENARIO_TEMPLATES = {
         "emoji": "🛠️",
         "keywords": ["Skill", "开发", "创建", "测试", "优化"],
         "recommended": ["skill-creator"]
+    },
+    "qiushi_thinking": {
+        "name": "求是方法论",
+        "emoji": "🎯",
+        "keywords": ["求是", "实事求是", "矛盾分析", "调查研究", "实践论"],
+        "recommended": ["seek-truth-from-facts", "contradiction-analysis", "practice-cognition", "investigation", "mass-line", "criticism-self-criticism", "protracted-strategy", "concentrate-forces", "spark-prairie-fire", "overall-planning"]
     }
 }
 
