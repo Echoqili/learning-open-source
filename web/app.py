@@ -105,6 +105,11 @@ def search_skills(query, top_k=20):
         if is_chinese:
             if query_lower in name_lower or query_lower in desc_lower:
                 score = 50
+            elif any(c in name_lower for c in query_lower):
+                score = 30
+                match_count = sum(1 for c in query_lower if c in name_lower)
+                if match_count >= 2:
+                    score += 10
         else:
             query_words = re.findall(r'[\w]+', query_lower)
             for word in query_words:

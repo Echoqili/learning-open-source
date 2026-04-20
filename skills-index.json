@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-20T23:41:00.100587",
-  "total_count": 149,
+  "generated_at": "2026-04-20T23:52:58.367495",
+  "total_count": 273,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -475,6 +475,450 @@
           "path": "all-skills\\skills\\youtube-analytics\\SKILL.md",
           "description": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。",
           "purpose": ""
+        },
+        {
+          "name": "Company Research Template",
+          "path": "all-skills\\skills\\company-research\\template.md",
+          "description": "Basic Information:",
+          "purpose": ""
+        },
+        {
+          "name": "Customer Journey Map Template",
+          "path": "all-skills\\skills\\customer-journey-map\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Discovery Process Summary Template",
+          "path": "all-skills\\skills\\discovery-process\\template.md",
+          "description": "Discovery Summary",
+          "purpose": ""
+        },
+        {
+          "name": "EOL Message Template",
+          "path": "all-skills\\skills\\eol-message\\template.md",
+          "description": "We are:",
+          "purpose": ""
+        },
+        {
+          "name": "Epic Hypothesis Template",
+          "path": "all-skills\\skills\\epic-hypothesis\\template.md",
+          "description": "If we",
+          "purpose": ""
+        },
+        {
+          "name": "Jobs-to-be-Done Template",
+          "path": "all-skills\\skills\\jobs-to-be-done\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Lean UX Canvas Template",
+          "path": "all-skills\\skills\\lean-ux-canvas\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Opportunity Solution Tree Template",
+          "path": "all-skills\\skills\\opportunity-solution-tree\\template.md",
+          "description": "Opportunity 1 Solutions:",
+          "purpose": ""
+        },
+        {
+          "name": "PESTEL Analysis Template",
+          "path": "all-skills\\skills\\pestel-analysis\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "PoL Probe Template",
+          "path": "all-skills\\skills\\pol-probe\\template.md",
+          "description": "PoL Probe: [Descriptive Name]",
+          "purpose": ""
+        },
+        {
+          "name": "Positioning Statement Template",
+          "path": "all-skills\\skills\\positioning-statement\\template.md",
+          "description": "For",
+          "purpose": ""
+        },
+        {
+          "name": "PRD Template",
+          "path": "all-skills\\skills\\prd-development\\template.md",
+          "description": "[Feature/Product Name] PRD",
+          "purpose": ""
+        },
+        {
+          "name": "Press Release Template",
+          "path": "all-skills\\skills\\press-release\\template.md",
+          "description": "Headline:",
+          "purpose": ""
+        },
+        {
+          "name": "Problem Framing Canvas Template",
+          "path": "all-skills\\skills\\problem-framing-canvas\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Problem Statement Template",
+          "path": "all-skills\\skills\\problem-statement\\template.md",
+          "description": "I am:",
+          "purpose": ""
+        },
+        {
+          "name": "Product Sense Interview Answer Template",
+          "path": "all-skills\\skills\\product-sense-interview-answer\\template.md",
+          "description": "Question:",
+          "purpose": ""
+        },
+        {
+          "name": "Product Strategy Session Template",
+          "path": "all-skills\\skills\\product-strategy-session\\template.md",
+          "description": "Product Strategy Session Summary",
+          "purpose": ""
+        },
+        {
+          "name": "Proto-Persona Template",
+          "path": "all-skills\\skills\\proto-persona\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "实事求是",
+          "path": "all-skills\\skills\\qiushi\\01-seek-truth-from-facts.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "矛盾分析法",
+          "path": "all-skills\\skills\\qiushi\\02-contradiction-analysis.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "实践认识论",
+          "path": "all-skills\\skills\\qiushi\\03-practice-cognition.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "调查研究",
+          "path": "all-skills\\skills\\qiushi\\04-investigation.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "群众路线",
+          "path": "all-skills\\skills\\qiushi\\05-mass-line.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "批评与自我批评",
+          "path": "all-skills\\skills\\qiushi\\06-criticism-self-criticism.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "持久战略",
+          "path": "all-skills\\skills\\qiushi\\07-protracted-strategy.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "集中兵力",
+          "path": "all-skills\\skills\\qiushi\\08-concentrate-forces.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "星火燎原",
+          "path": "all-skills\\skills\\qiushi\\09-spark-prairie-fire.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "统筹兼顾",
+          "path": "all-skills\\skills\\qiushi\\10-overall-planning.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Recommendation Canvas Template",
+          "path": "all-skills\\skills\\recommendation-canvas\\template.md",
+          "description": "If we",
+          "purpose": ""
+        },
+        {
+          "name": "Roadmap Template",
+          "path": "all-skills\\skills\\roadmap-planning\\template.md",
+          "description": "Product Roadmap",
+          "purpose": ""
+        },
+        {
+          "name": "SaaS Economics & Efficiency Metrics Calculator",
+          "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "SaaS Revenue & Growth Metrics Calculator",
+          "path": "all-skills\\skills\\saas-revenue-growth-metrics\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Storyboard Template",
+          "path": "all-skills\\skills\\storyboard\\template.md",
+          "description": "Frame 1: Introducing the Main Character",
+          "purpose": ""
+        },
+        {
+          "name": "TAM/SAM/SOM Template",
+          "path": "all-skills\\skills\\tam-sam-som-calculator\\template.md",
+          "description": "Problem Space:",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Template",
+          "path": "all-skills\\skills\\user-story\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Map Template",
+          "path": "all-skills\\skills\\user-story-mapping\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Mapping Workshop Template",
+          "path": "all-skills\\skills\\user-story-mapping-workshop\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Splitting Template",
+          "path": "all-skills\\skills\\user-story-splitting\\template.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Example: VP/CPO Readiness Advisor Conversation Flow",
+          "path": "all-skills\\skills\\vp-cpo-readiness-advisor\\examples\\conversation-flow.md",
+          "description": "User:",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Splitting Examples",
+          "path": "all-skills\\skills\\user-story-splitting\\examples\\sample.md",
+          "description": "Original Story:",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Mapping Example",
+          "path": "all-skills\\skills\\user-story-mapping\\examples\\sample.md",
+          "description": "For Activity 1: Negotiate project scope and pricing",
+          "purpose": ""
+        },
+        {
+          "name": "User Story Examples",
+          "path": "all-skills\\skills\\user-story\\examples\\sample.md",
+          "description": "Why this works:",
+          "purpose": ""
+        },
+        {
+          "name": "TAM/SAM/SOM Examples",
+          "path": "all-skills\\skills\\tam-sam-som-calculator\\examples\\sample.md",
+          "description": "Step 0 - Context Provided:",
+          "purpose": ""
+        },
+        {
+          "name": "Storyboard Examples",
+          "path": "all-skills\\skills\\storyboard\\examples\\sample.md",
+          "description": "Frame 1: Meet Sarah",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Healthy SaaS Metrics",
+          "path": "all-skills\\skills\\saas-revenue-growth-metrics\\examples\\healthy-saas.md",
+          "description": "Company:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Warning Signs (Leaky Bucket)",
+          "path": "all-skills\\skills\\saas-revenue-growth-metrics\\examples\\warning-signs.md",
+          "description": "Company:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Cash Trap (Good LTV:CAC, Terrible Payback)",
+          "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\examples\\cash-trap.md",
+          "description": "Company:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Healthy Unit Economics & Efficient Scaling",
+          "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\examples\\healthy-unit-economics.md",
+          "description": "Company:",
+          "purpose": ""
+        },
+        {
+          "name": "Roadmap Examples",
+          "path": "all-skills\\skills\\roadmap-planning\\examples\\sample.md",
+          "description": "Context:",
+          "purpose": ""
+        },
+        {
+          "name": "Recommendation Canvas Example",
+          "path": "all-skills\\skills\\recommendation-canvas\\examples\\sample.md",
+          "description": "If we",
+          "purpose": ""
+        },
+        {
+          "name": "Proto-Persona Examples",
+          "path": "all-skills\\skills\\proto-persona\\examples\\sample.md",
+          "description": "Why this works:",
+          "purpose": ""
+        },
+        {
+          "name": "Product Strategy Session Examples",
+          "path": "all-skills\\skills\\product-strategy-session\\examples\\sample.md",
+          "description": "Context:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Improve YouTube",
+          "path": "all-skills\\skills\\product-sense-interview-answer\\examples\\improve-youtube.md",
+          "description": "Prompt:",
+          "purpose": ""
+        },
+        {
+          "name": "Problem Statement Examples",
+          "path": "all-skills\\skills\\problem-statement\\examples\\sample.md",
+          "description": "Problem Framing Narrative:",
+          "purpose": ""
+        },
+        {
+          "name": "Problem Framing Canvas Examples",
+          "path": "all-skills\\skills\\problem-framing-canvas\\examples\\sample.md",
+          "description": "Q1 Response:",
+          "purpose": ""
+        },
+        {
+          "name": "Press Release Examples",
+          "path": "all-skills\\skills\\press-release\\examples\\sample.md",
+          "description": "Headline:",
+          "purpose": ""
+        },
+        {
+          "name": "PRD Examples",
+          "path": "all-skills\\skills\\prd-development\\examples\\sample.md",
+          "description": "Why this works:",
+          "purpose": ""
+        },
+        {
+          "name": "Positioning Statement Examples",
+          "path": "all-skills\\skills\\positioning-statement\\examples\\sample.md",
+          "description": "Value Proposition:",
+          "purpose": ""
+        },
+        {
+          "name": "PoL Probe Examples",
+          "path": "all-skills\\skills\\pol-probe\\examples\\sample.md",
+          "description": "Hypothesis:",
+          "purpose": ""
+        },
+        {
+          "name": "PESTEL Analysis Examples",
+          "path": "all-skills\\skills\\pestel-analysis\\examples\\sample.md",
+          "description": "Government Policies:",
+          "purpose": ""
+        },
+        {
+          "name": "Opportunity Solution Tree Examples",
+          "path": "all-skills\\skills\\opportunity-solution-tree\\examples\\sample.md",
+          "description": "Step 0 - Context:",
+          "purpose": ""
+        },
+        {
+          "name": "Lean UX Canvas Examples",
+          "path": "all-skills\\skills\\lean-ux-canvas\\examples\\sample.md",
+          "description": "Context:",
+          "purpose": ""
+        },
+        {
+          "name": "Jobs-to-be-Done Examples",
+          "path": "all-skills\\skills\\jobs-to-be-done\\examples\\sample.md",
+          "description": "Functional Jobs:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Feature Investment Advisor Conversation Flow",
+          "path": "all-skills\\skills\\feature-investment-advisor\\examples\\conversation-flow.md",
+          "description": "User:",
+          "purpose": ""
+        },
+        {
+          "name": "Executive Onboarding Playbook Example (30-60-90)",
+          "path": "all-skills\\skills\\executive-onboarding-playbook\\examples\\sample.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Epic Hypothesis Examples",
+          "path": "all-skills\\skills\\epic-hypothesis\\examples\\sample.md",
+          "description": "If we",
+          "purpose": ""
+        },
+        {
+          "name": "EOL Message Examples",
+          "path": "all-skills\\skills\\eol-message\\examples\\sample.md",
+          "description": "We are:",
+          "purpose": ""
+        },
+        {
+          "name": "Discovery Process Examples",
+          "path": "all-skills\\skills\\discovery-process\\examples\\sample.md",
+          "description": "Context:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Director Readiness Advisor Conversation Flow",
+          "path": "all-skills\\skills\\director-readiness-advisor\\examples\\conversation-flow.md",
+          "description": "User:",
+          "purpose": ""
+        },
+        {
+          "name": "Customer Journey Map Example",
+          "path": "all-skills\\skills\\customer-journey-map\\examples\\meta-product-manager-skills.md",
+          "description": "Top 3 Priority Opportunities:",
+          "purpose": ""
+        },
+        {
+          "name": "Customer Journey Map Example",
+          "path": "all-skills\\skills\\customer-journey-map\\examples\\sample.md",
+          "description": "Top Pain Points:",
+          "purpose": ""
+        },
+        {
+          "name": "Company Research Example",
+          "path": "all-skills\\skills\\company-research\\examples\\sample.md",
+          "description": "Basic Information:",
+          "purpose": ""
+        },
+        {
+          "name": "Altitude-Horizon Framework Examples",
+          "path": "all-skills\\skills\\altitude-horizon-framework\\examples\\sample.md",
+          "description": "Company Priority:",
+          "purpose": ""
+        },
+        {
+          "name": "Example: Channel Evaluation Conversation Flow",
+          "path": "all-skills\\skills\\acquisition-channel-advisor\\examples\\conversation-flow.md",
+          "description": "User:",
+          "purpose": ""
         }
       ]
     },
@@ -648,7 +1092,7 @@
       "color": "🟠",
       "skills": [
         {
-          "name": "ddd-skills",
+          "name": "DDD 六边形架构技能",
           "path": "all-skills\\ddd-skills\\SKILL.md",
           "description": "适用场景：",
           "purpose": "帮助 AI 编程助手具备完整的 DDD（领域驱动设计）六边形架构落地能力，涵盖项目创建、分层设计、代码规范到部署的完整工程生命周期。  **适用场景：** - 创建新的 DDD 项目 - 设计领域模型（Entity、Aggregate、VO） - 实现 Repository/Port-Adapter 模式 - 编排复杂业务（Case 层） - 配置 Docker/Docker-Compose 部署"
@@ -661,13 +1105,13 @@
       "color": "🟣",
       "skills": [
         {
-          "name": "clean-code",
+          "name": "Clean Code Skill",
           "path": "all-skills\\dev-quality-skills\\clean-code\\SKILL.md",
           "description": "This skill embodies the principles of \"Clean Code\" by Robert C. Martin (Uncle Bob). Use it to transform \"code that works\" into \"code that is clean.\"",
           "purpose": ""
         },
         {
-          "name": "database",
+          "name": "Database Workflow Bundle",
           "path": "all-skills\\dev-quality-skills\\database\\SKILL.md",
           "description": "Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering.",
           "purpose": ""
@@ -679,7 +1123,7 @@
           "purpose": ""
         },
         {
-          "name": "github",
+          "name": "GitHub Skill",
           "path": "all-skills\\dev-quality-skills\\github\\SKILL.md",
           "description": "Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries.",
           "purpose": ""
@@ -750,6 +1194,102 @@
           "path": "all-skills\\qa-testing-skills\\unit-testing\\SKILL.md",
           "description": "Write effective unit tests with Jest, Vitest, or pytest. Covers mocking strategies (stubs, spies, mocks, fakes), coverage configuration and meaningful thresholds, snapshot testing, mutation testing with Stryker/mutmut, test doubles taxonomy, and the Arrange-Act-Assert pattern. Use when: \"unit test,\" \"Jest,\" \"Vitest,\" \"pytest,\" \"mock,\" \"coverage,\" \"test doubles,\" \"mutation testing.\" Related: coverage-analysis, ci-cd-integration, ai-test-generation, shift-left-testing.",
           "purpose": ""
+        },
+        {
+          "name": "Testing Anti-Patterns",
+          "path": "all-skills\\qa-testing-skills\\testing-strategy\\references\\anti-patterns.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Coverage Strategy",
+          "path": "all-skills\\qa-testing-skills\\testing-strategy\\references\\coverage-strategy.md",
+          "description": "Useful coverage metrics",
+          "purpose": ""
+        },
+        {
+          "name": "Test Type Guide",
+          "path": "all-skills\\qa-testing-skills\\testing-strategy\\references\\test-type-guide.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Test Strategy Templates",
+          "path": "all-skills\\qa-testing-skills\\test-strategy\\references\\strategy-templates.md",
+          "description": "In scope:",
+          "purpose": ""
+        },
+        {
+          "name": "Anti-Patterns: BAD vs GOOD Playwright Code",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\anti-patterns.md",
+          "description": "Why it is wrong:",
+          "purpose": ""
+        },
+        {
+          "name": "Authentication Patterns",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\auth-patterns.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "CI Recipes",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\ci-recipes.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Debugging and Triage",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\debugging-and-triage.md",
+          "description": "From a local trace file",
+          "purpose": ""
+        },
+        {
+          "name": "Fixtures and Projects",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\fixtures-and-projects.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Multi-Site Architecture",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\multi-site-architecture.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Network Interception and Mocking",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\network-and-mocking.md",
+          "description": "Important:",
+          "purpose": ""
+        },
+        {
+          "name": "Selector Strategies",
+          "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\selector-strategies.md",
+          "description": "Priority order:",
+          "purpose": ""
+        },
+        {
+          "name": "CI/CD Pipeline Templates for E2E Tests",
+          "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\ci-pipeline-templates.md",
+          "description": "CI-specific configuration:",
+          "purpose": ""
+        },
+        {
+          "name": "E2E Framework Selection Guide",
+          "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\framework-guide.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Page Object Model Patterns",
+          "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\page-object-patterns.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "E2E Patterns and Anti-Patterns",
+          "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\patterns-and-anti-patterns.md",
+          "description": "",
+          "purpose": ""
         }
       ]
     },
@@ -772,7 +1312,7 @@
       "color": "🩵",
       "skills": [
         {
-          "name": "ai-product",
+          "name": "AI Product Development",
           "path": "all-skills\\ai-product-skills\\ai-product\\SKILL.md",
           "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard.",
           "purpose": ""
@@ -785,25 +1325,25 @@
       "color": "🚨",
       "skills": [
         {
-          "name": "ai-red-teaming",
+          "name": "AI Red Teaming",
           "path": "all-skills\\ai-safety-skills\\ai-red-teaming\\SKILL.md",
           "description": "Applicable scenarios:",
           "purpose": "Systematically test AI systems for security vulnerabilities through adversarial red teaming. Use this skill when evaluating AI applications before production deployment, validating security measures, "
         },
         {
-          "name": "hallucination-detection",
+          "name": "Hallucination Detection",
           "path": "all-skills\\ai-safety-skills\\hallucination-detection\\SKILL.md",
           "description": "Applicable scenarios:",
           "purpose": "Detect and mitigate hallucinations in LLM outputs. Use this skill when building AI applications where factual accuracy is critical, integrating model outputs with external systems, or requiring high-r"
         },
         {
-          "name": "jailbreak-detection",
+          "name": "Jailbreak Detection",
           "path": "all-skills\\ai-safety-skills\\jailbreak-detection\\SKILL.md",
           "description": "Applicable scenarios:",
           "purpose": "Detect and block jailbreak attempts against LLM systems. Use this skill when protecting AI applications from users attempting to bypass safety guardrails, extract system prompts, or enable restricted "
         },
         {
-          "name": "prompt-injection-defense",
+          "name": "Prompt Injection Defense",
           "path": "all-skills\\ai-safety-skills\\prompt-injection-defense\\SKILL.md",
           "description": "Applicable scenarios:",
           "purpose": "Detect, prevent, and mitigate prompt injection attacks in LLM applications. Use this skill when building AI systems that process untrusted user input, integrating external data sources, or enabling ag"
@@ -816,39 +1356,117 @@
       "color": "⚡",
       "skills": [
         {
-          "name": "brainstorming",
+          "name": "Brainstorming Ideas Into Designs",
           "path": "all-skills\\superpowers-skills\\brainstorming\\SKILL.md",
           "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
           "purpose": ""
         },
         {
-          "name": "requesting-code-review",
+          "name": "Requesting Code Review",
           "path": "all-skills\\superpowers-skills\\requesting-code-review\\SKILL.md",
           "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
           "purpose": ""
         },
         {
-          "name": "systematic-debugging",
+          "name": "Systematic Debugging",
           "path": "all-skills\\superpowers-skills\\systematic-debugging\\SKILL.md",
           "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
           "purpose": ""
         },
         {
-          "name": "test-driven-development",
+          "name": "Test-Driven Development (TDD)",
           "path": "all-skills\\superpowers-skills\\test-driven-development\\SKILL.md",
           "description": "Use when implementing any feature or bugfix, before writing implementation code",
           "purpose": ""
         },
         {
-          "name": "using-git-worktrees",
+          "name": "Using Git Worktrees",
           "path": "all-skills\\superpowers-skills\\using-git-worktrees\\SKILL.md",
           "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
           "purpose": ""
         },
         {
-          "name": "writing-plans",
+          "name": "Writing Plans",
           "path": "all-skills\\superpowers-skills\\writing-plans\\SKILL.md",
           "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+          "purpose": ""
+        },
+        {
+          "name": "Spec Document Reviewer Prompt Template",
+          "path": "all-skills\\superpowers-skills\\brainstorming\\spec-document-reviewer-prompt.md",
+          "description": "Purpose:",
+          "purpose": ""
+        },
+        {
+          "name": "Visual Companion Guide",
+          "path": "all-skills\\superpowers-skills\\brainstorming\\visual-companion.md",
+          "description": "Use the browser",
+          "purpose": ""
+        },
+        {
+          "name": "Code Review Agent",
+          "path": "all-skills\\superpowers-skills\\requesting-code-review\\code-reviewer.md",
+          "description": "Your task:",
+          "purpose": ""
+        },
+        {
+          "name": "Condition-Based Waiting",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\condition-based-waiting.md",
+          "description": "Core principle:",
+          "purpose": ""
+        },
+        {
+          "name": "Creation Log: Systematic Debugging Skill",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\CREATION-LOG.md",
+          "description": "What to include:",
+          "purpose": ""
+        },
+        {
+          "name": "Defense-in-Depth Validation",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\defense-in-depth.md",
+          "description": "Core principle:",
+          "purpose": ""
+        },
+        {
+          "name": "Root Cause Tracing",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\root-cause-tracing.md",
+          "description": "Core principle:",
+          "purpose": ""
+        },
+        {
+          "name": "Academic Test: Systematic Debugging Skill",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-academic.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Pressure Test 1: Emergency Production Fix",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-1.md",
+          "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision.",
+          "purpose": ""
+        },
+        {
+          "name": "Pressure Test 2: Sunk Cost + Exhaustion",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-2.md",
+          "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision.",
+          "purpose": ""
+        },
+        {
+          "name": "Pressure Test 3: Authority + Social Pressure",
+          "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-3.md",
+          "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision.",
+          "purpose": ""
+        },
+        {
+          "name": "Testing Anti-Patterns",
+          "path": "all-skills\\superpowers-skills\\test-driven-development\\testing-anti-patterns.md",
+          "description": "Load this reference when:",
+          "purpose": ""
+        },
+        {
+          "name": "Plan Document Reviewer Prompt Template",
+          "path": "all-skills\\superpowers-skills\\writing-plans\\plan-document-reviewer-prompt.md",
+          "description": "Purpose:",
           "purpose": ""
         }
       ]
@@ -859,37 +1477,37 @@
       "color": "🔧",
       "skills": [
         {
-          "name": "agentic-engineering",
+          "name": "Agentic Engineering",
           "path": "all-skills\\dev-workflow-skills\\agentic-engineering\\SKILL.md",
           "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing.",
           "purpose": ""
         },
         {
-          "name": "coding-standards",
+          "name": "Coding Standards & Best Practices",
           "path": "all-skills\\dev-workflow-skills\\coding-standards\\SKILL.md",
           "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
           "purpose": ""
         },
         {
-          "name": "context-budget",
+          "name": "Context Budget",
           "path": "all-skills\\dev-workflow-skills\\context-budget\\SKILL.md",
           "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.",
           "purpose": ""
         },
         {
-          "name": "continuous-learning",
+          "name": "Continuous Learning Skill",
           "path": "all-skills\\dev-workflow-skills\\continuous-learning\\SKILL.md",
           "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use.",
           "purpose": ""
         },
         {
-          "name": "git-workflow",
+          "name": "Git Workflow Patterns",
           "path": "all-skills\\dev-workflow-skills\\git-workflow\\SKILL.md",
           "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes.",
           "purpose": ""
         },
         {
-          "name": "tdd-workflow",
+          "name": "Test-Driven Development Workflow",
           "path": "all-skills\\dev-workflow-skills\\tdd-workflow\\SKILL.md",
           "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.",
           "purpose": ""
@@ -908,9 +1526,51 @@
           "purpose": ""
         },
         {
-          "name": "ui-ux-pro-max",
+          "name": "UI/UX Pro Max - Design Intelligence",
           "path": "all-skills\\design-skills\\ui-ux-pro-max\\SKILL.md",
           "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
+          "purpose": ""
+        },
+        {
+          "name": "Component Specifications",
+          "path": "all-skills\\design-skills\\design-system\\references\\component-specs.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Component Tokens",
+          "path": "all-skills\\design-skills\\design-system\\references\\component-tokens.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Primitive Tokens",
+          "path": "all-skills\\design-skills\\design-system\\references\\primitive-tokens.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Semantic Tokens",
+          "path": "all-skills\\design-skills\\design-system\\references\\semantic-tokens.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "States and Variants",
+          "path": "all-skills\\design-skills\\design-system\\references\\states-and-variants.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Tailwind Integration",
+          "path": "all-skills\\design-skills\\design-system\\references\\tailwind-integration.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Token Architecture",
+          "path": "all-skills\\design-skills\\design-system\\references\\token-architecture.md",
+          "description": "",
           "purpose": ""
         }
       ]
@@ -921,9 +1581,33 @@
       "color": "🛠️",
       "skills": [
         {
-          "name": "skill-creator",
+          "name": "Skill Creator",
           "path": "all-skills\\skill-creation\\skill-creator\\SKILL.md",
           "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+          "purpose": ""
+        },
+        {
+          "name": "Post-hoc Analyzer Agent",
+          "path": "all-skills\\skill-creation\\skill-creator\\agents\\analyzer.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "Blind Comparator Agent",
+          "path": "all-skills\\skill-creation\\skill-creator\\agents\\comparator.md",
+          "description": "Content Rubric",
+          "purpose": ""
+        },
+        {
+          "name": "Grader Agent",
+          "path": "all-skills\\skill-creation\\skill-creator\\agents\\grader.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "JSON Schemas",
+          "path": "all-skills\\skill-creation\\skill-creator\\references\\schemas.md",
+          "description": "Fields:",
           "purpose": ""
         }
       ]
@@ -934,64 +1618,131 @@
       "color": "💰",
       "skills": [
         {
-          "name": "company-values",
+          "name": "Company Values",
           "path": "all-skills\\indie-hacker-skills\\company-values\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用价值观筛选团队成员，确保团队高效协作。核心是**只招聘相信同样理念的人**，而非最聪明或最便宜的。  **适用场景：** - 开始考虑组建团队 - 远程团队协作效率低 - 需要明确\"我们是什么样的公司\" - 想要建立长期文化资产"
         },
         {
-          "name": "find-community",
+          "name": "Find Community",
           "path": "all-skills\\indie-hacker-skills\\find-community\\SKILL.md",
           "description": "适用场景：",
           "purpose": "通过识别和分析目标用户社群，反向推导创业方向。用于发现未被满足的需求、验证市场规模、找到第一批种子用户。  **适用场景：** - 寻找创业方向，不知道该做什么 - 已有产品想法，需要验证目标用户是否存在 - 需要识别竞争对手忽略的用户群体 - 寻找小而美的 niche 市场机会"
         },
         {
-          "name": "first-customers",
+          "name": "First Customers",
           "path": "all-skills\\indie-hacker-skills\\first-customers\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用逐个攻破的方式获取前100个种子用户。核心是**拒绝\"等流量来了再说\"的被动心态**，主动找到、联系、说服每一个潜在用户。  **适用场景：** - 产品刚上线，没有用户 - 不知道如何开始推广 - 等待自然增长太久 - 需要第一批忠实用户建立口碑"
         },
         {
-          "name": "grow-sustainably",
+          "name": "Grow Sustainably",
           "path": "all-skills\\indie-hacker-skills\\grow-sustainably\\SKILL.md",
           "description": "适用场景：",
           "purpose": "追求利润驱动的健康增长，而非烧钱换规模的VC模式。核心是**让收入增长≥支出增长**，确保每个新增客户都是净正的。  **适用场景：** - 拿到投资，想保持独立 - 增长遇到瓶颈，考虑烧钱 - 不确定什么时候该加速 - 想要长期可持续的商业模式"
         },
         {
-          "name": "marketing-plan",
+          "name": "Marketing Plan",
           "path": "all-skills\\indie-hacker-skills\\marketing-plan\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用最小投入获取最大可见度的内容营销策略。核心是**每周固定产出高质量内容**，而非追求病毒式传播或大量付费广告。  **适用场景：** - 没有预算做付费广告 - 不知道如何开始营销 - 想要建立长期品牌资产 - 需要可持续的增长渠道"
         },
         {
-          "name": "minimalist-review",
+          "name": "Minimalist Review",
           "path": "all-skills\\indie-hacker-skills\\minimalist-review\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用最简单的方式做决策，避免过度思考和行动瘫痪。核心是**通过三个过滤问题快速判断是否值得做**。  **适用场景：** - 面对多个选择，不知道该做哪个 - 担心遗漏重要事项 - 决策疲劳 - 想要聚焦而非什么都做"
         },
         {
-          "name": "mvp",
+          "name": "MVP",
           "path": "all-skills\\indie-hacker-skills\\mvp\\SKILL.md",
           "description": "适用场景：",
           "purpose": "构建最小可行产品，砍掉所有非生存必需的功能。核心是**用最少的代码验证最大的假设**，快速迭代而非一步到位。  **适用场景：** - 第一次做产品，不知道用户真正需要什么 - 资源有限（时间/金钱/技术） - 需要快速验证市场反应 - 担心投入太多做出来没人用"
         },
         {
-          "name": "pricing",
+          "name": "Pricing",
           "path": "all-skills\\indie-hacker-skills\\pricing\\SKILL.md",
           "description": "适用场景：",
           "purpose": "制定既能反映价值又能市场定位的定价策略。核心是**找到\"贵但值\"的最优解**，而非一味低价竞争。  **适用场景：** - 第一个产品，不知道定什么价 - 现有产品需要调整定价 - 增长遇到瓶颈，考虑提价 - 不知道怎么跟竞争对手比价"
         },
         {
-          "name": "processize",
+          "name": "Processize",
           "path": "all-skills\\indie-hacker-skills\\processize\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用人工模拟自动化流程，在规模化前验证流程有效性。核心是**先用人力跑通流程，再转化为代码**，避免过早自动化导致的方向错误。  **适用场景：** - 产品有重复性操作需求 - 不确定是否值得开发自动化 - 需要理解流程中的\"人的判断\" - 手动跑通100单后再考虑开发"
         },
         {
-          "name": "validate-idea",
+          "name": "Validate Idea",
           "path": "all-skills\\indie-hacker-skills\\validate-idea\\SKILL.md",
           "description": "适用场景：",
           "purpose": "用最快、最便宜的方式验证创业想法是否值得投入。核心是用真实市场反馈（预售/众测）替代耗时耗力的传统市场调研。  **适用场景：** - 有一个产品想法，需要验证市场需求 - 不确定目标用户是否愿意付费 - 担心投入大量时间开发没人用 - 需要在 MVP 前确认方向正确"
+        }
+      ]
+    },
+    "qiushi": {
+      "name": "Qiushi Thinking",
+      "description": "求是方法论 - 实事求是、矛盾分析、调查研究等经典方法论",
+      "color": "🎯",
+      "skills": [
+        {
+          "name": "实事求是",
+          "path": "all-skills\\skills\\qiushi\\01-seek-truth-from-facts.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "矛盾分析法",
+          "path": "all-skills\\skills\\qiushi\\02-contradiction-analysis.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "实践认识论",
+          "path": "all-skills\\skills\\qiushi\\03-practice-cognition.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "调查研究",
+          "path": "all-skills\\skills\\qiushi\\04-investigation.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "群众路线",
+          "path": "all-skills\\skills\\qiushi\\05-mass-line.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "批评与自我批评",
+          "path": "all-skills\\skills\\qiushi\\06-criticism-self-criticism.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "持久战略",
+          "path": "all-skills\\skills\\qiushi\\07-protracted-strategy.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "集中兵力",
+          "path": "all-skills\\skills\\qiushi\\08-concentrate-forces.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "星火燎原",
+          "path": "all-skills\\skills\\qiushi\\09-spark-prairie-fire.md",
+          "description": "",
+          "purpose": ""
+        },
+        {
+          "name": "统筹兼顾",
+          "path": "all-skills\\skills\\qiushi\\10-overall-planning.md",
+          "description": "",
+          "purpose": ""
         }
       ]
     }
@@ -1387,6 +2138,371 @@
       "path": "all-skills\\skills\\youtube-analytics\\SKILL.md",
       "description": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。"
     },
+    "Company Research Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\company-research\\template.md",
+      "description": "Basic Information:"
+    },
+    "Customer Journey Map Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\customer-journey-map\\template.md",
+      "description": ""
+    },
+    "Discovery Process Summary Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\discovery-process\\template.md",
+      "description": "Discovery Summary"
+    },
+    "EOL Message Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\eol-message\\template.md",
+      "description": "We are:"
+    },
+    "Epic Hypothesis Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\epic-hypothesis\\template.md",
+      "description": "If we"
+    },
+    "Jobs-to-be-Done Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\jobs-to-be-done\\template.md",
+      "description": ""
+    },
+    "Lean UX Canvas Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\lean-ux-canvas\\template.md",
+      "description": ""
+    },
+    "Opportunity Solution Tree Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\opportunity-solution-tree\\template.md",
+      "description": "Opportunity 1 Solutions:"
+    },
+    "PESTEL Analysis Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\pestel-analysis\\template.md",
+      "description": ""
+    },
+    "PoL Probe Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\pol-probe\\template.md",
+      "description": "PoL Probe: [Descriptive Name]"
+    },
+    "Positioning Statement Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\positioning-statement\\template.md",
+      "description": "For"
+    },
+    "PRD Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\prd-development\\template.md",
+      "description": "[Feature/Product Name] PRD"
+    },
+    "Press Release Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\press-release\\template.md",
+      "description": "Headline:"
+    },
+    "Problem Framing Canvas Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-framing-canvas\\template.md",
+      "description": ""
+    },
+    "Problem Statement Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-statement\\template.md",
+      "description": "I am:"
+    },
+    "Product Sense Interview Answer Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-sense-interview-answer\\template.md",
+      "description": "Question:"
+    },
+    "Product Strategy Session Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-strategy-session\\template.md",
+      "description": "Product Strategy Session Summary"
+    },
+    "Proto-Persona Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\proto-persona\\template.md",
+      "description": ""
+    },
+    "实事求是": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\01-seek-truth-from-facts.md",
+      "description": ""
+    },
+    "矛盾分析法": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\02-contradiction-analysis.md",
+      "description": ""
+    },
+    "实践认识论": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\03-practice-cognition.md",
+      "description": ""
+    },
+    "调查研究": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\04-investigation.md",
+      "description": ""
+    },
+    "群众路线": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\05-mass-line.md",
+      "description": ""
+    },
+    "批评与自我批评": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\06-criticism-self-criticism.md",
+      "description": ""
+    },
+    "持久战略": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\07-protracted-strategy.md",
+      "description": ""
+    },
+    "集中兵力": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\08-concentrate-forces.md",
+      "description": ""
+    },
+    "星火燎原": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\09-spark-prairie-fire.md",
+      "description": ""
+    },
+    "统筹兼顾": {
+      "category": "qiushi",
+      "path": "all-skills\\skills\\qiushi\\10-overall-planning.md",
+      "description": ""
+    },
+    "Recommendation Canvas Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\recommendation-canvas\\template.md",
+      "description": "If we"
+    },
+    "Roadmap Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\roadmap-planning\\template.md",
+      "description": "Product Roadmap"
+    },
+    "SaaS Economics & Efficiency Metrics Calculator": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\template.md",
+      "description": ""
+    },
+    "SaaS Revenue & Growth Metrics Calculator": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-revenue-growth-metrics\\template.md",
+      "description": ""
+    },
+    "Storyboard Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\storyboard\\template.md",
+      "description": "Frame 1: Introducing the Main Character"
+    },
+    "TAM/SAM/SOM Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\tam-sam-som-calculator\\template.md",
+      "description": "Problem Space:"
+    },
+    "User Story Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story\\template.md",
+      "description": ""
+    },
+    "User Story Map Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-mapping\\template.md",
+      "description": ""
+    },
+    "User Story Mapping Workshop Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-mapping-workshop\\template.md",
+      "description": ""
+    },
+    "User Story Splitting Template": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-splitting\\template.md",
+      "description": ""
+    },
+    "Example: VP/CPO Readiness Advisor Conversation Flow": {
+      "category": "product",
+      "path": "all-skills\\skills\\vp-cpo-readiness-advisor\\examples\\conversation-flow.md",
+      "description": "User:"
+    },
+    "User Story Splitting Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-splitting\\examples\\sample.md",
+      "description": "Original Story:"
+    },
+    "User Story Mapping Example": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story-mapping\\examples\\sample.md",
+      "description": "For Activity 1: Negotiate project scope and pricing"
+    },
+    "User Story Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\user-story\\examples\\sample.md",
+      "description": "Why this works:"
+    },
+    "TAM/SAM/SOM Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\tam-sam-som-calculator\\examples\\sample.md",
+      "description": "Step 0 - Context Provided:"
+    },
+    "Storyboard Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\storyboard\\examples\\sample.md",
+      "description": "Frame 1: Meet Sarah"
+    },
+    "Example: Healthy SaaS Metrics": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-revenue-growth-metrics\\examples\\healthy-saas.md",
+      "description": "Company:"
+    },
+    "Example: Warning Signs (Leaky Bucket)": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-revenue-growth-metrics\\examples\\warning-signs.md",
+      "description": "Company:"
+    },
+    "Example: Cash Trap (Good LTV:CAC, Terrible Payback)": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\examples\\cash-trap.md",
+      "description": "Company:"
+    },
+    "Example: Healthy Unit Economics & Efficient Scaling": {
+      "category": "product",
+      "path": "all-skills\\skills\\saas-economics-efficiency-metrics\\examples\\healthy-unit-economics.md",
+      "description": "Company:"
+    },
+    "Roadmap Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\roadmap-planning\\examples\\sample.md",
+      "description": "Context:"
+    },
+    "Recommendation Canvas Example": {
+      "category": "product",
+      "path": "all-skills\\skills\\recommendation-canvas\\examples\\sample.md",
+      "description": "If we"
+    },
+    "Proto-Persona Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\proto-persona\\examples\\sample.md",
+      "description": "Why this works:"
+    },
+    "Product Strategy Session Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-strategy-session\\examples\\sample.md",
+      "description": "Context:"
+    },
+    "Example: Improve YouTube": {
+      "category": "product",
+      "path": "all-skills\\skills\\product-sense-interview-answer\\examples\\improve-youtube.md",
+      "description": "Prompt:"
+    },
+    "Problem Statement Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-statement\\examples\\sample.md",
+      "description": "Problem Framing Narrative:"
+    },
+    "Problem Framing Canvas Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\problem-framing-canvas\\examples\\sample.md",
+      "description": "Q1 Response:"
+    },
+    "Press Release Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\press-release\\examples\\sample.md",
+      "description": "Headline:"
+    },
+    "PRD Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\prd-development\\examples\\sample.md",
+      "description": "Why this works:"
+    },
+    "Positioning Statement Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\positioning-statement\\examples\\sample.md",
+      "description": "Value Proposition:"
+    },
+    "PoL Probe Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\pol-probe\\examples\\sample.md",
+      "description": "Hypothesis:"
+    },
+    "PESTEL Analysis Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\pestel-analysis\\examples\\sample.md",
+      "description": "Government Policies:"
+    },
+    "Opportunity Solution Tree Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\opportunity-solution-tree\\examples\\sample.md",
+      "description": "Step 0 - Context:"
+    },
+    "Lean UX Canvas Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\lean-ux-canvas\\examples\\sample.md",
+      "description": "Context:"
+    },
+    "Jobs-to-be-Done Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\jobs-to-be-done\\examples\\sample.md",
+      "description": "Functional Jobs:"
+    },
+    "Example: Feature Investment Advisor Conversation Flow": {
+      "category": "product",
+      "path": "all-skills\\skills\\feature-investment-advisor\\examples\\conversation-flow.md",
+      "description": "User:"
+    },
+    "Executive Onboarding Playbook Example (30-60-90)": {
+      "category": "product",
+      "path": "all-skills\\skills\\executive-onboarding-playbook\\examples\\sample.md",
+      "description": ""
+    },
+    "Epic Hypothesis Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\epic-hypothesis\\examples\\sample.md",
+      "description": "If we"
+    },
+    "EOL Message Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\eol-message\\examples\\sample.md",
+      "description": "We are:"
+    },
+    "Discovery Process Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\discovery-process\\examples\\sample.md",
+      "description": "Context:"
+    },
+    "Example: Director Readiness Advisor Conversation Flow": {
+      "category": "product",
+      "path": "all-skills\\skills\\director-readiness-advisor\\examples\\conversation-flow.md",
+      "description": "User:"
+    },
+    "Customer Journey Map Example": {
+      "category": "product",
+      "path": "all-skills\\skills\\customer-journey-map\\examples\\sample.md",
+      "description": "Top Pain Points:"
+    },
+    "Company Research Example": {
+      "category": "product",
+      "path": "all-skills\\skills\\company-research\\examples\\sample.md",
+      "description": "Basic Information:"
+    },
+    "Altitude-Horizon Framework Examples": {
+      "category": "product",
+      "path": "all-skills\\skills\\altitude-horizon-framework\\examples\\sample.md",
+      "description": "Company Priority:"
+    },
+    "Example: Channel Evaluation Conversation Flow": {
+      "category": "product",
+      "path": "all-skills\\skills\\acquisition-channel-advisor\\examples\\conversation-flow.md",
+      "description": "User:"
+    },
     "acceptance-driven-planner": {
       "category": "agile",
       "path": "all-skills\\agile-skills\\skills\\acceptance-driven-planner\\SKILL.md",
@@ -1512,17 +2628,17 @@
       "path": "all-skills\\scrum-skills\\skills\\sprint-review\\SKILL.md",
       "description": "Sprint Review ceremony — present Increment to user"
     },
-    "ddd-skills": {
+    "DDD 六边形架构技能": {
       "category": "ddd",
       "path": "all-skills\\ddd-skills\\SKILL.md",
       "description": "适用场景："
     },
-    "clean-code": {
+    "Clean Code Skill": {
       "category": "dev-quality",
       "path": "all-skills\\dev-quality-skills\\clean-code\\SKILL.md",
       "description": "This skill embodies the principles of \"Clean Code\" by Robert C. Martin (Uncle Bob). Use it to transform \"code that works\" into \"code that is clean.\""
     },
-    "database": {
+    "Database Workflow Bundle": {
       "category": "dev-quality",
       "path": "all-skills\\dev-quality-skills\\database\\SKILL.md",
       "description": "Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering."
@@ -1532,7 +2648,7 @@
       "path": "all-skills\\dev-quality-skills\\debugger\\SKILL.md",
       "description": "Debugging specialist for errors, test failures, and unexpected\nbehavior. Use proactively when encountering any issues.\n"
     },
-    "github": {
+    "GitHub Skill": {
       "category": "dev-quality",
       "path": "all-skills\\dev-quality-skills\\github\\SKILL.md",
       "description": "Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries."
@@ -1587,92 +2703,232 @@
       "path": "all-skills\\qa-testing-skills\\unit-testing\\SKILL.md",
       "description": "Write effective unit tests with Jest, Vitest, or pytest. Covers mocking strategies (stubs, spies, mocks, fakes), coverage configuration and meaningful thresholds, snapshot testing, mutation testing with Stryker/mutmut, test doubles taxonomy, and the Arrange-Act-Assert pattern. Use when: \"unit test,\" \"Jest,\" \"Vitest,\" \"pytest,\" \"mock,\" \"coverage,\" \"test doubles,\" \"mutation testing.\" Related: coverage-analysis, ci-cd-integration, ai-test-generation, shift-left-testing."
     },
+    "Testing Anti-Patterns": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\test-driven-development\\testing-anti-patterns.md",
+      "description": "Load this reference when:"
+    },
+    "Coverage Strategy": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\testing-strategy\\references\\coverage-strategy.md",
+      "description": "Useful coverage metrics"
+    },
+    "Test Type Guide": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\testing-strategy\\references\\test-type-guide.md",
+      "description": ""
+    },
+    "Test Strategy Templates": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\test-strategy\\references\\strategy-templates.md",
+      "description": "In scope:"
+    },
+    "Anti-Patterns: BAD vs GOOD Playwright Code": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\anti-patterns.md",
+      "description": "Why it is wrong:"
+    },
+    "Authentication Patterns": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\auth-patterns.md",
+      "description": ""
+    },
+    "CI Recipes": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\ci-recipes.md",
+      "description": ""
+    },
+    "Debugging and Triage": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\debugging-and-triage.md",
+      "description": "From a local trace file"
+    },
+    "Fixtures and Projects": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\fixtures-and-projects.md",
+      "description": ""
+    },
+    "Multi-Site Architecture": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\multi-site-architecture.md",
+      "description": ""
+    },
+    "Network Interception and Mocking": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\network-and-mocking.md",
+      "description": "Important:"
+    },
+    "Selector Strategies": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\playwright-automation\\references\\selector-strategies.md",
+      "description": "Priority order:"
+    },
+    "CI/CD Pipeline Templates for E2E Tests": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\ci-pipeline-templates.md",
+      "description": "CI-specific configuration:"
+    },
+    "E2E Framework Selection Guide": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\framework-guide.md",
+      "description": ""
+    },
+    "Page Object Model Patterns": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\page-object-patterns.md",
+      "description": ""
+    },
+    "E2E Patterns and Anti-Patterns": {
+      "category": "qa-testing",
+      "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\patterns-and-anti-patterns.md",
+      "description": ""
+    },
     "api-generator": {
       "category": "api-design",
       "path": "all-skills\\api-design-skills\\api-generator\\SKILL.md",
       "description": "Generate REST and GraphQL APIs from specifications, code analysis, or OpenAPI definitions. This skill creates production-ready API code with best practices.\n"
     },
-    "ai-product": {
+    "AI Product Development": {
       "category": "ai-product",
       "path": "all-skills\\ai-product-skills\\ai-product\\SKILL.md",
       "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard."
     },
-    "ai-red-teaming": {
+    "AI Red Teaming": {
       "category": "ai-safety",
       "path": "all-skills\\ai-safety-skills\\ai-red-teaming\\SKILL.md",
       "description": "Applicable scenarios:"
     },
-    "hallucination-detection": {
+    "Hallucination Detection": {
       "category": "ai-safety",
       "path": "all-skills\\ai-safety-skills\\hallucination-detection\\SKILL.md",
       "description": "Applicable scenarios:"
     },
-    "jailbreak-detection": {
+    "Jailbreak Detection": {
       "category": "ai-safety",
       "path": "all-skills\\ai-safety-skills\\jailbreak-detection\\SKILL.md",
       "description": "Applicable scenarios:"
     },
-    "prompt-injection-defense": {
+    "Prompt Injection Defense": {
       "category": "ai-safety",
       "path": "all-skills\\ai-safety-skills\\prompt-injection-defense\\SKILL.md",
       "description": "Applicable scenarios:"
     },
-    "brainstorming": {
+    "Brainstorming Ideas Into Designs": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\brainstorming\\SKILL.md",
       "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
     },
-    "requesting-code-review": {
+    "Requesting Code Review": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\requesting-code-review\\SKILL.md",
       "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
     },
-    "systematic-debugging": {
+    "Systematic Debugging": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\systematic-debugging\\SKILL.md",
       "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
     },
-    "test-driven-development": {
+    "Test-Driven Development (TDD)": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\test-driven-development\\SKILL.md",
       "description": "Use when implementing any feature or bugfix, before writing implementation code"
     },
-    "using-git-worktrees": {
+    "Using Git Worktrees": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\using-git-worktrees\\SKILL.md",
       "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
     },
-    "writing-plans": {
+    "Writing Plans": {
       "category": "superpowers",
       "path": "all-skills\\superpowers-skills\\writing-plans\\SKILL.md",
       "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
     },
-    "agentic-engineering": {
+    "Spec Document Reviewer Prompt Template": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\brainstorming\\spec-document-reviewer-prompt.md",
+      "description": "Purpose:"
+    },
+    "Visual Companion Guide": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\brainstorming\\visual-companion.md",
+      "description": "Use the browser"
+    },
+    "Code Review Agent": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\requesting-code-review\\code-reviewer.md",
+      "description": "Your task:"
+    },
+    "Condition-Based Waiting": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\condition-based-waiting.md",
+      "description": "Core principle:"
+    },
+    "Creation Log: Systematic Debugging Skill": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\CREATION-LOG.md",
+      "description": "What to include:"
+    },
+    "Defense-in-Depth Validation": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\defense-in-depth.md",
+      "description": "Core principle:"
+    },
+    "Root Cause Tracing": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\root-cause-tracing.md",
+      "description": "Core principle:"
+    },
+    "Academic Test: Systematic Debugging Skill": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-academic.md",
+      "description": ""
+    },
+    "Pressure Test 1: Emergency Production Fix": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-1.md",
+      "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision."
+    },
+    "Pressure Test 2: Sunk Cost + Exhaustion": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-2.md",
+      "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision."
+    },
+    "Pressure Test 3: Authority + Social Pressure": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\systematic-debugging\\test-pressure-3.md",
+      "description": "IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision."
+    },
+    "Plan Document Reviewer Prompt Template": {
+      "category": "superpowers",
+      "path": "all-skills\\superpowers-skills\\writing-plans\\plan-document-reviewer-prompt.md",
+      "description": "Purpose:"
+    },
+    "Agentic Engineering": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\agentic-engineering\\SKILL.md",
       "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
     },
-    "coding-standards": {
+    "Coding Standards & Best Practices": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\coding-standards\\SKILL.md",
       "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development."
     },
-    "context-budget": {
+    "Context Budget": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\context-budget\\SKILL.md",
       "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations."
     },
-    "continuous-learning": {
+    "Continuous Learning Skill": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\continuous-learning\\SKILL.md",
       "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use."
     },
-    "git-workflow": {
+    "Git Workflow Patterns": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\git-workflow\\SKILL.md",
       "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes."
     },
-    "tdd-workflow": {
+    "Test-Driven Development Workflow": {
       "category": "dev-workflow",
       "path": "all-skills\\dev-workflow-skills\\tdd-workflow\\SKILL.md",
       "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests."
@@ -1682,62 +2938,117 @@
       "path": "all-skills\\design-skills\\design-system\\SKILL.md",
       "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations."
     },
-    "ui-ux-pro-max": {
+    "UI/UX Pro Max - Design Intelligence": {
       "category": "design",
       "path": "all-skills\\design-skills\\ui-ux-pro-max\\SKILL.md",
       "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples."
     },
-    "skill-creator": {
+    "Component Specifications": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\component-specs.md",
+      "description": ""
+    },
+    "Component Tokens": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\component-tokens.md",
+      "description": ""
+    },
+    "Primitive Tokens": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\primitive-tokens.md",
+      "description": ""
+    },
+    "Semantic Tokens": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\semantic-tokens.md",
+      "description": ""
+    },
+    "States and Variants": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\states-and-variants.md",
+      "description": ""
+    },
+    "Tailwind Integration": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\tailwind-integration.md",
+      "description": ""
+    },
+    "Token Architecture": {
+      "category": "design",
+      "path": "all-skills\\design-skills\\design-system\\references\\token-architecture.md",
+      "description": ""
+    },
+    "Skill Creator": {
       "category": "skill-authoring",
       "path": "all-skills\\skill-creation\\skill-creator\\SKILL.md",
       "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
     },
-    "company-values": {
+    "Post-hoc Analyzer Agent": {
+      "category": "skill-authoring",
+      "path": "all-skills\\skill-creation\\skill-creator\\agents\\analyzer.md",
+      "description": ""
+    },
+    "Blind Comparator Agent": {
+      "category": "skill-authoring",
+      "path": "all-skills\\skill-creation\\skill-creator\\agents\\comparator.md",
+      "description": "Content Rubric"
+    },
+    "Grader Agent": {
+      "category": "skill-authoring",
+      "path": "all-skills\\skill-creation\\skill-creator\\agents\\grader.md",
+      "description": ""
+    },
+    "JSON Schemas": {
+      "category": "skill-authoring",
+      "path": "all-skills\\skill-creation\\skill-creator\\references\\schemas.md",
+      "description": "Fields:"
+    },
+    "Company Values": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\company-values\\SKILL.md",
       "description": "适用场景："
     },
-    "find-community": {
+    "Find Community": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\find-community\\SKILL.md",
       "description": "适用场景："
     },
-    "first-customers": {
+    "First Customers": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\first-customers\\SKILL.md",
       "description": "适用场景："
     },
-    "grow-sustainably": {
+    "Grow Sustainably": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\grow-sustainably\\SKILL.md",
       "description": "适用场景："
     },
-    "marketing-plan": {
+    "Marketing Plan": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\marketing-plan\\SKILL.md",
       "description": "适用场景："
     },
-    "minimalist-review": {
+    "Minimalist Review": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\minimalist-review\\SKILL.md",
       "description": "适用场景："
     },
-    "mvp": {
+    "MVP": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\mvp\\SKILL.md",
       "description": "适用场景："
     },
-    "pricing": {
+    "Pricing": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\pricing\\SKILL.md",
       "description": "适用场景："
     },
-    "processize": {
+    "Processize": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\processize\\SKILL.md",
       "description": "适用场景："
     },
-    "validate-idea": {
+    "Validate Idea": {
       "category": "indie-hacker",
       "path": "all-skills\\indie-hacker-skills\\validate-idea\\SKILL.md",
       "description": "适用场景："

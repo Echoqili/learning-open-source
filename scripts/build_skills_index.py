@@ -99,6 +99,12 @@ CATEGORIES = {
         "description": "独立开发者创业 - 发现社群、验证想法、MVP、冷启动、定价、营销、增长",
         "sources": ["all-skills/indie-hacker-skills"],
         "color": "💰"
+    },
+    "qiushi": {
+        "name": "Qiushi Thinking",
+        "description": "求是方法论 - 实事求是、矛盾分析、调查研究等经典方法论",
+        "sources": ["all-skills/skills/qiushi"],
+        "color": "🎯"
     }
 }
 
@@ -170,6 +176,12 @@ def parse_skill_md(skill_path: Path) -> Dict:
                 if line.startswith('# ') and not metadata["description"]:
                     metadata["description"] = line[2:].strip()
 
+        if metadata["name"] == skill_path.parent.name or not metadata["name"]:
+            for line in lines[:20]:
+                if line.startswith('# ') and line.strip():
+                    metadata["name"] = line[1:].strip()
+                    break
+
     except Exception as e:
         print(f"Warning: Failed to parse {skill_path}: {e}")
 
@@ -206,6 +218,15 @@ def scan_skills() -> List[Dict]:
             else:
                 for skill_dir in source_path.rglob("SKILL.md"):
                     skill_info = parse_skill_md(skill_dir)
+                    skill_info["category"] = category
+                    skill_info["source"] = info["name"]
+                    skill_info["color"] = info["color"]
+                    skills.append(skill_info)
+
+                for md_file in source_path.rglob("*.md"):
+                    if md_file.name == "SKILL.md" or md_file.name.startswith("_"):
+                        continue
+                    skill_info = parse_skill_md(md_file)
                     skill_info["category"] = category
                     skill_info["source"] = info["name"]
                     skill_info["color"] = info["color"]
