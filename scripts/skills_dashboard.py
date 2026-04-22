@@ -105,6 +105,9 @@ class CategoryTree(Tree):
     }
     """
 
+    def __init__(self, **kwargs):
+        super().__init__("📂 Skills Browser", **kwargs)
+
     def on_mount(self) -> None:
         self.show_root = False
         self.update_content()
@@ -126,7 +129,8 @@ class CategoryTree(Tree):
                 cat_node.add(f"  📄 {skill_name}", data={"type": "skill", "key": skill_name, "data": skill})
 
         if self.root.children:
-            self.expand(self.root)
+            for child in self.root.children:
+                child.expand = True
 
 
 class SearchInput(Input):
@@ -304,7 +308,7 @@ class SkillsDashboard(App):
             for skill in results:
                 emoji = CATEGORIES_EMOJI.get(skill.get("category_key", ""), "📦")
                 result_root.add(f"  {emoji} {skill.get('name', 'unknown')}", data={"type": "skill", "key": skill.get("name"), "data": skill})
-            tree.expand(result_root)
+            result_root.expand = True
         else:
             tree.root.add(f"🔍 No results for '{query}'")
 

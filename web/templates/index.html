@@ -1408,6 +1408,414 @@
                 max-width: none;
             }
         }
+
+        /* ========== 发现页面样式 ========== */
+        .discover-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 0;
+        }
+
+        .discover-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            color: var(--text-secondary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .discover-tab:hover {
+            color: var(--text);
+            background: var(--bg-secondary);
+        }
+
+        .discover-tab.active {
+            color: var(--primary);
+            background: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        .discover-panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .ai-discover-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .ai-discover-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .ai-discover-header .ai-icon {
+            font-size: 1.5rem;
+        }
+
+        .ai-discover-header .ai-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .ai-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            resize: vertical;
+            margin-bottom: 16px;
+        }
+
+        .ai-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .ai-textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .ai-discover-footer {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-ai {
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+        }
+
+        .btn-ai:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #7c3aed);
+        }
+
+        .discover-controls {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .discover-filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .discover-filters .select-input {
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            min-width: 160px;
+        }
+
+        .discover-filters input[type="number"] {
+            width: 120px;
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+        }
+
+        .discover-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .discover-actions .btn {
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .stat-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            flex: 1;
+            min-width: 140px;
+            transition: all 0.2s;
+        }
+
+        .stat-badge:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+        }
+
+        .stat-num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .stat-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-total {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .stat-pending {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 88, 12, 0.1));
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .stat-approved {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .stat-rejected {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .repo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .candidate-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            transition: all 0.2s;
+        }
+
+        .candidate-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+        }
+
+        .candidate-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .candidate-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .candidate-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .candidate-name:hover {
+            text-decoration: underline;
+        }
+
+        .candidate-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .candidate-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-stars {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+        }
+
+        .tag-lang {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+        }
+
+        .tag-score {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+        }
+
+        .candidate-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-approve, .btn-reject {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-approve {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+        }
+
+        .btn-approve:hover {
+            background: #10b981;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .btn-reject {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .btn-reject:hover {
+            background: #ef4444;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .empty-discover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border);
+            border-radius: var(--radius-xl);
+            text-align: center;
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .empty-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .empty-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .discover-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .discover-filters {
+                flex-direction: column;
+            }
+
+            .discover-actions {
+                flex-direction: column;
+            }
+
+            .candidate-main {
+                flex-direction: column;
+            }
+
+            .candidate-actions {
+                width: 100%;
+                justify-content: stretch;
+            }
+
+            .btn-approve, .btn-reject {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .stats-row {
+                flex-direction: column;
+            }
+
+            .stat-badge {
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1460,6 +1868,9 @@
             </button>
             <button class="nav-tab" data-tab="cart">
                 📦 打包清单 <span class="count" id="cartCount">0</span>
+            </button>
+            <button class="nav-tab" data-tab="discover">
+                🔍 发现新 Skills
             </button>
         </nav>
 
@@ -1529,6 +1940,63 @@
                     </button>
                 </div>
                 <div id="cartList"></div>
+            </section>
+
+            <!-- 发现新 Skills -->
+            <section id="discoverSection" class="content-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>🔍 发现新 Skills</h2>
+                        <span class="tag" id="discoverTag">从 GitHub 发现优质 Skills</span>
+                    </div>
+                </div>
+                <div class="discover-controls">
+                    <div class="discover-tabs">
+                        <button class="discover-tab active" data-mode="keyword" onclick="switchDiscoverMode('keyword')">🔍 关键词搜索</button>
+                        <button class="discover-tab" data-mode="ai" onclick="switchDiscoverMode('ai')">🤖 AI 智能推荐</button>
+                    </div>
+                </div>
+
+                <div id="keywordPanel" class="discover-panel">
+                    <div class="discover-filters">
+                        <select id="discoverCategory" class="select-input">
+                            <option value="">全部分类</option>
+                            <option value="ai_agent">🤖 AI Agent</option>
+                            <option value="product">📋 产品经理</option>
+                            <option value="agile">🏃 敏捷开发</option>
+                            <option value="qa_testing">🧪 QA测试</option>
+                            <option value="architecture">🏗️ 架构设计</option>
+                            <option value="dev_workflow">⚡ 开发工作流</option>
+                        </select>
+                        <input type="number" id="minStars" class="select-input" placeholder="最低 Stars" value="50" min="10">
+                    </div>
+                    <div class="discover-actions">
+                        <button class="btn btn-primary" onclick="runDiscovery()">
+                            🚀 开始发现
+                        </button>
+                        <button class="btn btn-outline" onclick="loadCandidates()">
+                            📋 候选列表
+                        </button>
+                    </div>
+                </div>
+
+                <div id="aiPanel" class="discover-panel" style="display:none;">
+                    <div class="ai-discover-box">
+                        <div class="ai-discover-header">
+                            <span class="ai-icon">🤖</span>
+                            <span class="ai-title">智谱 AI 智能推荐</span>
+                        </div>
+                        <textarea id="aiRequirement" class="ai-textarea" placeholder="描述你需要的 Skills，例如：&#10;• 我需要一个帮助代码审查的 Skills&#10;• 想要提高团队敏捷开发效率的技能&#10;• 需要产品需求文档编写的最佳实践"></textarea>
+                        <div class="ai-discover-footer">
+                            <input type="number" id="aiMinStars" class="select-input" placeholder="最低 Stars" value="50" min="10">
+                            <button class="btn btn-primary btn-ai" onclick="runAIDiscovery()">
+                                🚀 AI 发现
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="discoverStats" class="stats-cards"></div>
+                <div id="discoverResults" class="repo-list"></div>
             </section>
 
             <!-- 详情页 -->
@@ -2218,6 +2686,217 @@
             if (days < 30) return `${Math.floor(days / 7)} 周前`;
             if (days < 365) return `${Math.floor(days / 30)} 个月前`;
             return `${Math.floor(days / 365)} 年前`;
+        }
+
+        // ========== 发现新 Skills ==========
+        async function loadDiscoverStats() {
+            try {
+                const res = await fetch('/api/discover/stats');
+                const data = await res.json();
+
+                document.getElementById('discoverStats').innerHTML = `
+                    <div class="stats-row">
+                        <div class="stat-badge stat-total">
+                            <span class="stat-icon">📦</span>
+                            <span class="stat-num">${data.total || 0}</span>
+                            <span class="stat-text">候选总数</span>
+                        </div>
+                        <div class="stat-badge stat-pending">
+                            <span class="stat-icon">⏳</span>
+                            <span class="stat-num">${data.by_status?.pending || 0}</span>
+                            <span class="stat-text">待审批</span>
+                        </div>
+                        <div class="stat-badge stat-approved">
+                            <span class="stat-icon">✅</span>
+                            <span class="stat-num">${data.by_status?.approved || 0}</span>
+                            <span class="stat-text">已批准</span>
+                        </div>
+                        <div class="stat-badge stat-rejected">
+                            <span class="stat-icon">❌</span>
+                            <span class="stat-num">${data.by_status?.rejected || 0}</span>
+                            <span class="stat-text">已拒绝</span>
+                        </div>
+                    </div>
+                `;
+            } catch (e) {
+                console.error('Failed to load stats:', e);
+            }
+        }
+
+        function switchDiscoverMode(mode) {
+            document.querySelectorAll('.discover-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
+            document.getElementById('keywordPanel').style.display = mode === 'keyword' ? 'block' : 'none';
+            document.getElementById('aiPanel').style.display = mode === 'ai' ? 'block' : 'none';
+        }
+
+        async function runAIDiscovery() {
+            const requirement = document.getElementById('aiRequirement').value.trim();
+            const minStars = parseInt(document.getElementById('aiMinStars').value) || 50;
+
+            if (!requirement) {
+                showToast('请输入您需要的 Skills 描述', 'warning');
+                return;
+            }
+
+            showToast('🤖 智谱 AI 正在分析需求...', 'info');
+
+            try {
+                const res = await fetch('/api/discover/ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ requirement, min_stars: minStars })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showToast(`✅ AI 推荐了 ${data.found} 个 Skills`, 'success');
+                    renderDiscoverResults(data.candidates);
+                    loadDiscoverStats();
+                } else {
+                    showToast('AI 发现失败: ' + data.error, 'error');
+                }
+            } catch (e) {
+                showToast('AI 发现失败: ' + e.message, 'error');
+            }
+        }
+
+        async function runDiscovery() {
+            const category = document.getElementById('discoverCategory').value;
+            const minStars = parseInt(document.getElementById('minStars').value) || 50;
+
+            const body = { min_stars: minStars };
+            if (category) body.categories = [category];
+
+            showToast('🔍 正在搜索 GitHub...', 'info');
+
+            try {
+                const res = await fetch('/api/discover/run', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showToast(`✅ 发现 ${data.found} 个新候选 Skills`, 'success');
+                    renderDiscoverResults(data.candidates);
+                    loadDiscoverStats();
+                } else {
+                    showToast('发现失败: ' + data.error, 'error');
+                }
+            } catch (e) {
+                showToast('发现失败: ' + e.message, 'error');
+            }
+        }
+
+        async function loadCandidates() {
+            try {
+                const res = await fetch('/api/discover/candidates');
+                const data = await res.json();
+                renderDiscoverResults(data.candidates);
+                showToast(`📋 ${data.count} 个待审批候选`, 'info');
+            } catch (e) {
+                showToast('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        function renderDiscoverResults(candidates) {
+            const container = document.getElementById('discoverResults');
+
+            if (!candidates || candidates.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-discover">
+                        <div class="empty-icon">🔍</div>
+                        <div class="empty-title">暂无候选 Skills</div>
+                        <div class="empty-desc">点击「🚀 开始发现」从 GitHub 搜索优质 Skills</div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = candidates.map(c => `
+                <div class="candidate-card">
+                    <div class="candidate-main">
+                        <div class="candidate-info">
+                            <a href="${c.url}" target="_blank" class="candidate-name">${c.name}</a>
+                            <p class="candidate-desc">${c.description || '暂无描述'}</p>
+                            <div class="candidate-tags">
+                                <span class="tag tag-stars">⭐ ${c.stars}</span>
+                                ${c.language ? `<span class="tag tag-lang">${c.language}</span>` : ''}
+                                <span class="tag tag-score" title="质量评分">📊 ${c.quality_score}分</span>
+                            </div>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-approve" onclick="approveCandidate('${c.full_name}')">
+                                <span class="btn-icon">✅</span>
+                                <span class="btn-text">批准</span>
+                            </button>
+                            <button class="btn-reject" onclick="rejectCandidate('${c.full_name}')">
+                                <span class="btn-icon">🗑️</span>
+                                <span class="btn-text">拒绝</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function approveCandidate(fullName) {
+            try {
+                const res = await fetch('/api/discover/approve', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ full_name: fullName })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showToast(`✅ 已批准: ${fullName}`, 'success');
+                    loadCandidates();
+                    loadDiscoverStats();
+                } else {
+                    showToast('批准失败', 'error');
+                }
+            } catch (e) {
+                showToast('批准失败: ' + e.message, 'error');
+            }
+        }
+
+        async function rejectCandidate(fullName) {
+            try {
+                const res = await fetch('/api/discover/reject', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ full_name: fullName, reason: 'manual' })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showToast(`❌ 已拒绝: ${fullName}`, 'info');
+                    loadCandidates();
+                    loadDiscoverStats();
+                } else {
+                    showToast('拒绝失败', 'error');
+                }
+            } catch (e) {
+                showToast('拒绝失败: ' + e.message, 'error');
+            }
+        }
+
+        // 标签页切换时加载数据
+        const originalShowSection = window.showSection;
+        if (!originalShowSection) {
+            window.showSection = function(section) {
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.getElementById(section + 'Section')?.classList.add('active');
+                document.querySelector(`[data-tab="${section}"]`)?.classList.add('active');
+
+                if (section === 'discover') {
+                    loadDiscoverStats();
+                }
+            };
         }
 
         // ========== 启动 ==========

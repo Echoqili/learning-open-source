@@ -10,17 +10,23 @@ import json
 import re
 import zipfile
 import requests
+import subprocess
 from pathlib import Path
 from datetime import datetime
 from functools import lru_cache
 
 from flask import Flask, render_template, request, jsonify, send_file, Response
 
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+from github_skills_discoverer import SkillsDiscoverer
+
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 
-SKILLS_ROOT = Path(__file__).parent.parent
-INDEX_PATH = SKILLS_ROOT / "skills-index.json"
+PROJECT_ROOT = Path(__file__).parent.parent
+SKILLS_ROOT = PROJECT_ROOT / "all-skills"
+INDEX_PATH = PROJECT_ROOT / "skills-index.json"
+CANDIDATES_FILE = PROJECT_ROOT / "candidates.json"
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
@@ -35,7 +41,8 @@ CATEGORIES_EMOJI = {
     "product": "🔵", "agile": "🟢", "scrum": "🟡", "ddd": "🟠",
     "dev-quality": "🟣", "qa-testing": "🔴", "api-design": "⚪",
     "ai-product": "🩵", "ai-safety": "🚨", "superpowers": "⚡",
-    "dev-workflow": "🔧", "design": "🎨", "skill-authoring": "🛠️", "indie-hacker": "💰"
+    "dev-workflow": "🔧", "design": "🎨", "skill-authoring": "🛠️", "indie-hacker": "💰",
+    "qiushi": "🎯"
 }
 
 SCENARIOS = {
@@ -51,57 +58,37 @@ SCENARIOS = {
     "indie_hacker": {"name": "独立开发者创业", "emoji": "💰"},
     "ai_product": {"name": "AI产品开发", "emoji": "🤖"},
     "design_system": {"name": "设计系统", "emoji": "🎨"},
-    "skill_creation": {"name": "Skill开发", "emoji": "🛠️"}
+    "skill_creation": {"name": "Skill开发", "emoji": "🛠️"},
+    "qiushi_thinking": {"name": "求是方法论", "emoji": "🎯"}
 }
 
 
-@lru_cache(maxsize=1)
-def load_index():
-    if INDEX_PATH.exists():
-        with open(INDEX_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return {"by_category": {}, "total_count": 0}
-
-
+@lru_cache()
 def build_skills_cache():
-    index = load_index()
-    all_skills = []
-    skills_by_name = {}
-    skills_by_category = {}
-
-    for cat_key, cat_info in index.get("by_category", {}).items():
-        emoji = CATEGORIES_EMOJI.get(cat_key, "⚪")
-        skills_by_category[cat_key] = []
-
-        for skill in cat_info.get("skills", []):
-            skill_entry = {
-                **skill,
-                "category_key": cat_key,
-                "category_name": cat_info["name"],
-                "category_emoji": emoji
-            }
-            all_skills.append(skill_entry)
-            skills_by_name[skill["name"]] = skill_entry
-            skills_by_category[cat_key].append(skill_entry)
-
-    return all_skills, skills_by_name, skills_by_category
+    if not INDEX_PATH.exists():
+        return [], {}, {}
+    data = json.loads(INDEX_PATH.read_text(encoding='utf-8'))
+    skills = data.get("skills", [])
+    by_category = {}
+    by_name = {}
+    for s in skills:
+        cat = s.get("category", "other")
+        by_category.setdefault(cat, []).append(s)
+        by_name[s["name"].lower()] = s
+    return skills, by_category, by_name
 
 
 def search_skills(query, top_k=20):
     if not query:
         return []
-
     all_skills, _, _ = build_skills_cache()
     query_lower = query.lower()
     is_chinese = bool(re.search(r'[\u4e00-\u9fff]', query))
-
     results = []
-
     for skill in all_skills:
         score = 0
         name_lower = skill["name"].lower()
         desc_lower = skill.get("description", "").lower()
-
         if is_chinese:
             if query_lower in name_lower or query_lower in desc_lower:
                 score = 50
@@ -117,19 +104,15 @@ def search_skills(query, top_k=20):
                     score += 30
                 if word in desc_lower:
                     score += 15
-
         if score > 0:
             results.append((score, skill))
-
     results.sort(key=lambda x: -x[0])
     return [s for _, s in results[:top_k]]
 
 
 def search_github_repos(query: str, per_page: int = 10):
-    """Search GitHub repositories for skills"""
     url = "https://api.github.com/search/repositories"
     params = {"q": query, "per_page": per_page, "sort": "stars", "order": "desc"}
-
     try:
         resp = requests.get(url, headers=GITHUB_HEADERS, params=params, timeout=30)
         if resp.status_code == 200:
@@ -144,106 +127,30 @@ def search_github_repos(query: str, per_page: int = 10):
 
 
 def get_ai_recommendation(query: str, local_results: list):
-    """Get AI-powered recommendation based on query and local results"""
     if not query:
-        return {
-            "recommendation": "请输入关键词，我会为您推荐合适的 Skills",
-            "suggestions": []
-        }
-
+        return {"recommendation": "请输入关键词，我会为您推荐合适的 Skills", "suggestions": []}
     query_lower = query.lower()
-
     recommendations = {
-        "sprint": {
-            "name": "Sprint 规划与管理",
-            "emoji": "🏃",
-            "skills": ["sprint-planning", "backlog-refinement", "retrospective", "sprint-review"],
-            "reason": "您似乎在关注 Sprint 相关的工作流程"
-        },
-        "test": {
-            "name": "测试与质量保障",
-            "emoji": "🧪",
-            "skills": ["playwright-automation", "e2e-testing", "unit-testing", "test-strategy"],
-            "reason": "您似乎需要测试相关的技能"
-        },
-        "prd": {
-            "name": "产品需求文档",
-            "emoji": "📋",
-            "skills": ["prd-development", "user-story", "discovery-process"],
-            "reason": "您似乎在准备 PRD 或产品需求文档"
-        },
-        "api": {
-            "name": "API 设计",
-            "emoji": "🌐",
-            "skills": ["api-generator", "rest-api-design", "graphql-api"],
-            "reason": "您似乎在关注 API 设计与开发"
-        },
-        "ddd": {
-            "name": "领域驱动设计",
-            "emoji": "🏗️",
-            "skills": ["ddd-skills", "hexagonal-architecture", "domain-modeling"],
-            "reason": "您似乎在关注 DDD 架构设计"
-        },
-        "安全": {
-            "name": "AI 安全",
-            "emoji": "🚨",
-            "skills": ["prompt-injection-defense", "jailbreak-detection", "hallucination-detection"],
-            "reason": "您似乎在关注 AI 安全问题"
-        },
-        "ai": {
-            "name": "AI 产品开发",
-            "emoji": "🤖",
-            "skills": ["ai-product", "prompt-engineering", "llm-integration"],
-            "reason": "您似乎在开发 AI 相关产品"
-        },
-        "tdd": {
-            "name": "测试驱动开发",
-            "emoji": "⚡",
-            "skills": ["tdd-workflow", "test-driven-development", "red-green-refactor"],
-            "reason": "您似乎在实践 TDD 开发流程"
-        },
-        "mvp": {
-            "name": "快速 MVP 开发",
-            "emoji": "💰",
-            "skills": ["validate-idea", "mvp", "first-customers", "pricing"],
-            "reason": "您似乎在准备独立开发或创业"
-        },
-        "design": {
-            "name": "设计系统",
-            "emoji": "🎨",
-            "skills": ["design-system", "ui-ux-pro-max", "component-library"],
-            "reason": "您似乎在关注设计与用户体验"
-        }
+        "sprint": {"name": "Sprint 规划与管理", "emoji": "🏃", "skills": ["sprint-planning", "backlog-refinement", "retrospective"], "reason": "您似乎在关注 Sprint 相关的工作流程"},
+        "test": {"name": "测试与质量保障", "emoji": "🧪", "skills": ["playwright-automation", "e2e-testing"], "reason": "您似乎需要测试相关的技能"},
+        "prd": {"name": "产品需求文档", "emoji": "📋", "skills": ["prd-development", "user-story"], "reason": "您似乎在准备 PRD 或产品需求文档"},
+        "api": {"name": "API 设计", "emoji": "🌐", "skills": ["api-generator", "rest-api-design"], "reason": "您似乎在关注 API 设计与开发"},
+        "ddd": {"name": "领域驱动设计", "emoji": "🏗️", "skills": ["ddd-skills", "hexagonal-architecture"], "reason": "您似乎在关注 DDD 架构设计"},
+        "安全": {"name": "AI 安全", "emoji": "🚨", "skills": ["prompt-injection-defense", "jailbreak-detection"], "reason": "您似乎在关注 AI 安全问题"},
+        "ai": {"name": "AI 产品开发", "emoji": "🤖", "skills": ["ai-product", "prompt-engineering"], "reason": "您似乎在开发 AI 相关产品"},
+        "tdd": {"name": "测试驱动开发", "emoji": "⚡", "skills": ["tdd-workflow", "test-driven-development"], "reason": "您似乎在实践 TDD 开发流程"},
+        "mvp": {"name": "快速 MVP 开发", "emoji": "💰", "skills": ["validate-idea", "mvp"], "reason": "您似乎在准备独立开发或创业"},
+        "求是": {"name": "求是方法论", "emoji": "🎯", "skills": ["实事求是", "矛盾分析法", "调查研究"], "reason": "您似乎在关注求是方法论"},
+        "design": {"name": "设计系统", "emoji": "🎨", "skills": ["design-system", "ui-ux-pro-max"], "reason": "您似乎在关注设计与用户体验"}
     }
-
-    matched = []
-    for key, rec in recommendations.items():
-        if key in query_lower:
-            matched.append(rec)
-
+    matched = [rec for key, rec in recommendations.items() if key in query_lower]
     if matched:
         best_match = matched[0]
-        return {
-            "recommendation": f"🤖 {best_match['reason']}",
-            "category": best_match["name"],
-            "emoji": best_match["emoji"],
-            "suggestions": best_match["skills"],
-            "source": "ai_recommendation"
-        }
-
+        return {"recommendation": f"🤖 {best_match['reason']}", "category": best_match["name"], "emoji": best_match["emoji"], "suggestions": best_match["skills"], "source": "ai_recommendation"}
     if local_results:
         top_result = local_results[0]
-        return {
-            "recommendation": f"🤖 根据您的搜索 '{query}'，我们推荐 {top_result.get('category_name', '相关')} 类别的 Skills",
-            "suggestions": [s["name"] for s in local_results[:5]],
-            "source": "ai_recommendation"
-        }
-
-    return {
-        "recommendation": f"🤖 未能理解您的需求。请尝试：Sprint规划、测试策略、API设计、AI安全等关键词",
-        "suggestions": ["sprint-planning", "test-strategy", "api-generator", "prompt-injection-defense"],
-        "source": "ai_recommendation"
-    }
+        return {"recommendation": f"🤖 根据您的搜索 '{query}'，我们推荐 {top_result.get('category', '相关')} 类别的 Skills", "suggestions": [s["name"] for s in local_results[:5]], "source": "ai_recommendation"}
+    return {"recommendation": "🤖 未能理解您的需求。请尝试：Sprint规划、测试策略、API设计、AI安全等关键词", "suggestions": ["sprint-planning", "test-strategy"], "source": "ai_recommendation"}
 
 
 def get_skill_dir(skill):
@@ -259,285 +166,252 @@ def index():
 
 
 @app.route('/api/stats')
-def stats():
-    index = load_index()
-    total = index.get("total_count", 0)
-    by_category = index.get("by_category", {})
-
-    categories = []
-    for cat_key, cat_info in by_category.items():
-        emoji = CATEGORIES_EMOJI.get(cat_key, "⚪")
-        categories.append({
-            "key": cat_key,
-            "name": cat_info["name"],
-            "emoji": emoji,
-            "count": len(cat_info.get("skills", []))
-        })
-
-    categories.sort(key=lambda x: -x["count"])
-
-    return jsonify({
-        "total": total,
-        "categories": categories
-    })
+def api_stats():
+    _, by_category, _ = build_skills_cache()
+    total = sum(len(v) for v in by_category.values())
+    categories = [{"key": k, "name": CATEGORIES_EMOJI.get(k, "⚪") + " " + (SCENARIOS.get(k, {}).get("name", k.title()) if k in SCENARIOS else k.title()), "count": len(v), "emoji": CATEGORIES_EMOJI.get(k, "⚪")} for k, v in by_category.items()]
+    return jsonify({"total": total, "categories": categories})
 
 
 @app.route('/api/search')
 def api_search():
     query = request.args.get('q', '')
     results = search_skills(query)
-
-    return jsonify({
-        "query": query,
-        "count": len(results),
-        "results": results[:20]
-    })
+    return jsonify({"query": query, "count": len(results), "results": results[:20]})
 
 
 @app.route('/api/search/github')
 def api_search_github():
     query = request.args.get('q', '')
     per_page = request.args.get('per_page', 10, type=int)
-
     if not query:
         return jsonify({"error": "Query is required"}), 400
-
     enhanced_query = f"{query} skills site:github.com"
     repos = search_github_repos(enhanced_query, per_page)
-
     if isinstance(repos, dict) and "error" in repos:
         return jsonify(repos), 429 if repos["error"] == "rate_limited" else 400
-
-    formatted = []
-    for repo in repos:
-        formatted.append({
-            "name": repo.get("full_name", ""),
-            "description": repo.get("description", ""),
-            "stars": repo.get("stargazers_count", 0),
-            "url": repo.get("html_url", ""),
-            "language": repo.get("language", ""),
-            "updated": repo.get("updated_at", "")[:10]
-        })
-
-    return jsonify({
-        "query": query,
-        "count": len(formatted),
-        "repos": formatted
-    })
+    formatted = [{"name": r.get("full_name", ""), "description": r.get("description", ""), "stars": r.get("stargazers_count", 0), "url": r.get("html_url", ""), "language": r.get("language", ""), "updated": r.get("updated_at", "")[:10]} for r in repos]
+    return jsonify({"query": query, "count": len(formatted), "repos": formatted})
 
 
 @app.route('/api/search/ai')
 def api_search_ai():
     query = request.args.get('q', '')
-
     local_results = search_skills(query)
     recommendation = get_ai_recommendation(query, local_results)
-
-    return jsonify({
-        "query": query,
-        "recommendation": recommendation,
-        "local_results_count": len(local_results)
-    })
+    return jsonify({"query": query, "recommendation": recommendation, "local_results_count": len(local_results)})
 
 
 @app.route('/api/search/all')
 def api_search_all():
     query = request.args.get('q', '')
-
     if not query:
         return jsonify({"error": "Query is required"}), 400
-
     local_results = search_skills(query)
     recommendation = get_ai_recommendation(query, local_results)
-
     enhanced_query = f"{query} skills site:github.com"
     github_repos = search_github_repos(enhanced_query, 5)
-
-    github_data = []
-    if isinstance(github_repos, list):
-        for repo in github_repos[:5]:
-            github_data.append({
-                "name": repo.get("full_name", ""),
-                "description": repo.get("description", ""),
-                "stars": repo.get("stargazers_count", 0),
-                "url": repo.get("html_url", ""),
-            })
-
-    return jsonify({
-        "query": query,
-        "recommendation": recommendation,
-        "local": {
-            "count": len(local_results),
-            "results": local_results[:5]
-        },
-        "github": {
-            "count": len(github_data),
-            "repos": github_data
-        }
-    })
+    github_data = [{"name": r.get("full_name", ""), "description": r.get("description", ""), "stars": r.get("stargazers_count", 0), "url": r.get("html_url", "")} for r in (github_repos if isinstance(github_repos, list) else [])][:5]
+    return jsonify({"query": query, "recommendation": recommendation, "local": {"count": len(local_results), "results": local_results[:5]}, "github": {"count": len(github_data), "repos": github_data}})
 
 
 @app.route('/api/category/<cat_key>')
 def api_category(cat_key):
     _, _, skills_by_category = build_skills_cache()
     skills = skills_by_category.get(cat_key, [])
-    return jsonify({
-        "key": cat_key,
-        "count": len(skills),
-        "skills": skills
-    })
+    return jsonify({"key": cat_key, "count": len(skills), "skills": skills})
 
 
 @app.route('/api/scenario/<scenario_key>')
 def api_scenario(scenario_key):
-    scenario = SCENARIOS.get(scenario_key)
-    if not scenario:
-        return jsonify({"error": "Scenario not found"}), 404
+    scenario = SCENARIOS.get(scenario_key, {})
+    return jsonify({"key": scenario_key, "name": scenario.get("name", ""), "emoji": scenario.get("emoji", "")})
 
-    _, skills_by_name, skills_by_category = build_skills_cache()
 
-    scenario_skills_map = {
-        "pm_basics": ["discovery-process", "user-story", "prd-development", "prioritization-advisor", "product-strategy-session"],
-        "pm_advanced": ["business-health-diagnostic", "saas-economics-efficiency-metrics", "executive-onboarding-playbook"],
-        "customer_discovery": ["discovery-interview-prep", "discovery-process", "customer-journey-map", "problem-statement"],
-        "agile_dev": ["sprint-planning", "backlog-refinement", "retrospective", "definition-of-done-enforcer"],
-        "scrum_team": ["sprint-planning", "sprint-review", "retrospective", "backlog-refinement", "smoke-test"],
-        "qa_testing": ["test-strategy", "playwright-automation", "e2e-testing", "unit-testing"],
-        "architecture": ["ddd-skills", "api-generator"],
-        "dev_quality": ["clean-code", "debugger", "git-workflow", "coding-standards"],
-        "tdd_workflow": ["tdd-workflow", "test-driven-development", "systematic-debugging"],
-        "indie_hacker": ["validate-idea", "mvp", "first-customers", "pricing", "marketing-plan"],
-        "ai_product": ["ai-product", "prompt-injection-defense", "hallucination-detection"],
-        "design_system": ["design-system", "ui-ux-pro-max"],
-        "skill_creation": ["skill-creator"]
-    }
-
-    skill_names = scenario_skills_map.get(scenario_key, [])
-    skills = []
-    for name in skill_names:
-        if name in skills_by_name:
-            skills.append(skills_by_name[name])
-
+@app.route('/api/skill/<name>')
+def api_skill(name):
+    _, _, by_name = build_skills_cache()
+    skill = by_name.get(name.lower())
+    if not skill:
+        for k, v in by_name.items():
+            if name.lower() in k:
+                skill = v
+                break
+    if not skill:
+        return jsonify({"error": "Skill not found"}), 404
+    skill_dir = get_skill_dir(skill)
+    files = []
+    if skill_dir.exists() and skill_dir.is_dir():
+        for f in skill_dir.rglob("*"):
+            if f.is_file():
+                files.append({"path": str(f.relative_to(skill_dir)), "size": f.stat().st_size})
     return jsonify({
-        "key": scenario_key,
-        "name": scenario["name"],
-        "emoji": scenario["emoji"],
-        "count": len(skills),
-        "skills": skills
+        "name": skill.get("name", ""),
+        "description": skill.get("description", ""),
+        "category": skill.get("category", ""),
+        "path": skill.get("path", ""),
+        "files": files
     })
-
-
-@app.route('/api/skill/<path:skill_name>')
-def api_skill(skill_name):
-    _, skills_by_name, _ = build_skills_cache()
-
-    for name, skill in skills_by_name.items():
-        if skill_name in name or name in skill_name:
-            skill_dir = get_skill_dir(skill)
-            files = []
-            if skill_dir.exists():
-                for f in skill_dir.rglob("*"):
-                    if f.is_file():
-                        rel_path = f.relative_to(skill_dir)
-                        files.append({
-                            "name": rel_path.name,
-                            "path": str(rel_path),
-                            "size": f.stat().st_size
-                        })
-
-            return jsonify({
-                "name": skill["name"],
-                "description": skill.get("description", ""),
-                "category": skill.get("category_name", ""),
-                "emoji": skill.get("category_emoji", ""),
-                "path": str(skill_dir.relative_to(SKILLS_ROOT)),
-                "files": files
-            })
-
-    return jsonify({"error": "Skill not found"}), 404
 
 
 @app.route('/api/package', methods=['POST'])
 def api_package():
-    data = request.get_json()
+    data = request.get_json() or {}
     skill_names = data.get('skills', [])
-    package_type = data.get('type', 'custom')
-
-    _, skills_by_name, _ = build_skills_cache()
-
-    skills_to_package = []
-    for name in skill_names:
-        if name in skills_by_name:
-            skills_to_package.append(skills_by_name[name])
-
-    if not skills_to_package:
-        return jsonify({"error": "No valid skills to package"}), 400
-
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"skills_{package_type}_{timestamp}.zip"
-    output_path = SKILLS_ROOT / filename
-
-    with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for skill in skills_to_package:
-            skill_dir = get_skill_dir(skill)
-            if skill_dir.exists():
-                for file_path in skill_dir.rglob("*"):
-                    if file_path.is_file():
-                        arcname = f"{skill['name']}/{file_path.relative_to(skill_dir)}"
-                        zf.write(file_path, arcname)
-
-    return jsonify({
-        "success": True,
-        "filename": filename,
-        "size": output_path.stat().st_size,
-        "count": len(skills_to_package)
-    })
-
-
-@app.route('/download/<path:filename>')
-def download(filename):
-    if not filename.endswith('.zip'):
-        filename += '.zip'
-
-    file_path = SKILLS_ROOT / filename
-    if not file_path.exists():
-        return jsonify({"error": "File not found"}), 404
-
-    return send_file(
-        file_path,
-        mimetype='application/zip',
-        as_attachment=True,
-        download_name=filename
-    )
+    all_skills, _, _ = build_skills_cache()
+    if not skill_names:
+        return jsonify({"error": "No skills selected"}), 400
+    selected = [s for s in all_skills if s["name"] in skill_names]
+    return package_skills(selected, f"custom_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip")
 
 
 @app.route('/api/package-all', methods=['POST'])
 def api_package_all():
-    _, _, skills_by_category = build_skills_cache()
+    all_skills, _, _ = build_skills_cache()
+    return package_skills(all_skills, f"all_skills_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip")
 
-    all_skills = []
-    for skills in skills_by_category.values():
-        all_skills.extend(skills)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"all_skills_{timestamp}.zip"
-    output_path = SKILLS_ROOT / filename
-
+def package_skills(skills, filename):
+    output_dir = PROJECT_ROOT / "packages"
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / filename
     with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for skill in all_skills:
+        for skill in skills:
             skill_dir = get_skill_dir(skill)
-            if skill_dir.exists():
+            if skill_dir.exists() and skill_dir.is_dir():
                 for file_path in skill_dir.rglob("*"):
                     if file_path.is_file():
                         arcname = f"{skill['name']}/{file_path.relative_to(skill_dir)}"
                         zf.write(file_path, arcname)
+    return jsonify({"success": True, "filename": filename, "size": output_path.stat().st_size, "count": len(skills)})
 
-    return jsonify({
-        "success": True,
-        "filename": filename,
-        "size": output_path.stat().st_size,
-        "count": len(all_skills)
-    })
+
+@app.route('/download/<filename>')
+def download(filename):
+    filepath = PROJECT_ROOT / "packages" / filename
+    if not filepath.exists():
+        return "File not found", 404
+    return send_file(filepath, as_attachment=True)
+
+
+discoverer = None
+
+def get_discoverer():
+    global discoverer
+    if discoverer is None:
+        discoverer = SkillsDiscoverer(min_stars=50)
+    return discoverer
+
+
+@app.route('/api/discover/candidates')
+def api_discover_candidates():
+    d = get_discoverer()
+    pending = d.get_pending()
+    return jsonify({"count": len(pending), "candidates": [{"name": c.name, "full_name": c.full_name, "description": c.description, "stars": c.stars, "url": c.url, "language": c.language, "updated_at": c.updated_at, "category": c.category, "quality_score": c.quality_score, "skill_files": c.skill_files} for c in pending]})
+
+
+@app.route('/api/discover/stats')
+def api_discover_stats():
+    d = get_discoverer()
+    all_cands = d.candidates
+    by_status = {"pending": 0, "approved": 0, "rejected": 0}
+    by_category = {}
+    for c in all_cands:
+        by_status[c.status] = by_status.get(c.status, 0) + 1
+        by_category[c.category] = by_category.get(c.category, 0) + 1
+    return jsonify({"total": len(all_cands), "by_status": by_status, "by_category": by_category, "last_updated": str(CANDIDATES_FILE.stat().st_mtime) if CANDIDATES_FILE.exists() else None})
+
+
+@app.route('/api/discover/run', methods=['POST'])
+def api_discover_run():
+    data = request.get_json() or {}
+    categories = data.get("categories")
+    min_stars = data.get("min_stars", 50)
+    d = get_discoverer()
+    d.min_stars = min_stars
+    try:
+        new_candidates = d.discover(categories)
+        return jsonify({"success": True, "found": len(new_candidates), "candidates": [{"name": c.name, "full_name": c.full_name, "stars": c.stars, "category": c.category, "quality_score": c.quality_score} for c in new_candidates[:20]]})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route('/api/discover/ai', methods=['POST'])
+def api_discover_ai():
+    data = request.get_json() or {}
+    requirement = data.get("requirement", "")
+    min_stars = data.get("min_stars", 50)
+    d = get_discoverer()
+    d.min_stars = min_stars
+    try:
+        new_candidates = d.discover_with_ai(requirement)
+        return jsonify({
+            "success": True,
+            "found": len(new_candidates),
+            "candidates": [
+                {
+                    "name": c.name,
+                    "full_name": c.full_name,
+                    "stars": c.stars,
+                    "category": c.category,
+                    "quality_score": c.quality_score,
+                    "description": c.description
+                }
+                for c in new_candidates[:10]
+            ]
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route('/api/discover/approve', methods=['POST'])
+def api_discover_approve():
+    data = request.get_json()
+    full_name = data.get("full_name")
+    if not full_name:
+        return jsonify({"error": "full_name required"}), 400
+    d = get_discoverer()
+    result = d.approve(full_name)
+    if result:
+        return jsonify({"success": True, "message": f"Approved: {full_name}", "candidate": {"name": result.name, "full_name": result.full_name, "url": result.url}})
+    return jsonify({"error": "Not found"}), 404
+
+
+@app.route('/api/discover/reject', methods=['POST'])
+def api_discover_reject():
+    data = request.get_json()
+    full_name = data.get("full_name")
+    reason = data.get("reason", "")
+    if not full_name:
+        return jsonify({"error": "full_name required"}), 400
+    d = get_discoverer()
+    if d.reject(full_name, reason):
+        return jsonify({"success": True, "message": f"Rejected: {full_name}"})
+    return jsonify({"error": "Not found"}), 404
+
+
+@app.route('/api/discover/clone', methods=['POST'])
+def api_discover_clone():
+    data = request.get_json()
+    full_name = data.get("full_name")
+    if not full_name:
+        return jsonify({"error": "full_name required"}), 400
+    d = get_discoverer()
+    candidate = d.approve(full_name)
+    if not candidate:
+        return jsonify({"error": "Candidate not found"}), 404
+    try:
+        clone_dir = SKILLS_ROOT / "discovered" / full_name.replace("/", "_")
+        if not clone_dir.exists():
+            clone_url = f"https://github.com/{full_name}.git"
+            result = subprocess.run(["git", "clone", "--depth", "1", clone_url, str(clone_dir)], capture_output=True, text=True, timeout=60)
+            if result.returncode != 0:
+                return jsonify({"success": False, "error": f"Clone failed: {result.stderr}"}), 500
+        return jsonify({"success": True, "message": f"Cloned to {clone_dir.relative_to(PROJECT_ROOT)}", "path": str(clone_dir.relative_to(PROJECT_ROOT))})
+    except subprocess.TimeoutExpired:
+        return jsonify({"success": False, "error": "Clone timeout"}), 500
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
 
 
 if __name__ == '__main__':
@@ -547,5 +421,4 @@ if __name__ == '__main__':
     print(f"\nSkills 索引: {INDEX_PATH}")
     print(f"访问地址: http://127.0.0.1:5555")
     print("\n按 Ctrl+C 停止服务器\n")
-
     app.run(host='0.0.0.0', port=5555, debug=True)
