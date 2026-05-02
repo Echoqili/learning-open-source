@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-20T23:52:58.367495",
-  "total_count": 274,
+  "generated_at": "2026-05-02T13:15:37.248957",
+  "total_count": 315,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -1127,6 +1127,20 @@
           "path": "all-skills\\dev-quality-skills\\github\\SKILL.md",
           "description": "Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries.",
           "purpose": ""
+        },
+        {
+          "name": "react-best-practices",
+          "path": "all-skills\\skills\\react-best-practices\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "composition-patterns",
+          "path": "all-skills\\skills\\composition-patterns\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1290,6 +1304,13 @@
           "path": "all-skills\\qa-testing-skills\\e2e-testing\\references\\patterns-and-anti-patterns.md",
           "description": "",
           "purpose": ""
+        },
+        {
+          "name": "agent-browser",
+          "path": "all-skills\\skills\\agent-browser\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1316,6 +1337,34 @@
           "path": "all-skills\\ai-product-skills\\ai-product\\SKILL.md",
           "description": "You are an AI product engineer who has shipped LLM features to millions of users. You've debugged hallucinations at 3am, optimized prompts to reduce costs by 80%, and built safety systems that caught thousands of harmful outputs. You know that demos are easy and production is hard.",
           "purpose": ""
+        },
+        {
+          "name": "prompt-optimizer",
+          "path": "all-skills\\skills\\prompt-optimizer\\SKILL.md",
+          "description": "分析和优化 AI Prompt，识别模糊表达、角色缺失、约束不足等问题，输出经过验证的高质量提示词。",
+          "purpose": "分析和优化 AI Prompt，识别模糊表达、角色缺失、约束不足等问题，输出经过验证的高质量提示词。",
+          "source": "clawhub"
+        },
+        {
+          "name": "rag-search",
+          "path": "all-skills\\skills\\rag-search\\SKILL.md",
+          "description": "基于向量检索的本地知识库搜索技能，支持文档嵌入、语义搜索、混合检索和答案生成。",
+          "purpose": "基于向量检索的本地知识库搜索技能，支持文档嵌入、语义搜索、混合检索和答案生成。",
+          "source": "clawhub"
+        },
+        {
+          "name": "ai-code-review",
+          "path": "all-skills\\skills\\ai-code-review\\SKILL.md",
+          "description": "AI 驱动的代码审查技能，自动检测代码质量、性能瓶颈、安全漏洞和架构问题，给出可执行的改进建议。",
+          "purpose": "AI 驱动的代码审查技能，自动检测代码质量、性能瓶颈、安全漏洞和架构问题，给出可执行的改进建议。",
+          "source": "clawhub"
+        },
+        {
+          "name": "byted-seedream-image-generate",
+          "path": "all-skills\\skills\\byted-seedream-image-generate\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1468,6 +1517,146 @@
           "path": "all-skills\\superpowers-skills\\writing-plans\\plan-document-reviewer-prompt.md",
           "description": "Purpose:",
           "purpose": ""
+        },
+        {
+          "name": "tavily-search",
+          "path": "all-skills\\skills\\tavily-search\\SKILL.md",
+          "description": "Tavily AI 搜索引擎集成，专为 AI Agent 优化，支持实时网页搜索、摘要提取和来源引用。",
+          "purpose": "Tavily AI 搜索引擎集成，专为 AI Agent 优化，支持实时网页搜索、摘要提取和来源引用。",
+          "source": "clawhub"
+        },
+        {
+          "name": "web-search-pro",
+          "path": "all-skills\\skills\\web-search-pro\\SKILL.md",
+          "description": "多引擎聚合网页搜索技能，支持 DuckDuckGo/Bing/Google，无需 API key 即可使用，适合快速信息检索。",
+          "purpose": "多引擎聚合网页搜索技能，支持 DuckDuckGo/Bing/Google，无需 API key 即可使用，适合快速信息检索。",
+          "source": "clawhub"
+        },
+        {
+          "name": "deep-research",
+          "path": "all-skills\\skills\\deep-research\\SKILL.md",
+          "description": "自动化深度研究工具，针对任意主题进行多轮搜索、信息聚合、去重和结构化报告生成。",
+          "purpose": "自动化深度研究工具，针对任意主题进行多轮搜索、信息聚合、去重和结构化报告生成。",
+          "source": "clawhub"
+        },
+        {
+          "name": "bilibili-analytics",
+          "path": "all-skills\\skills\\bilibili-analytics\\SKILL.md",
+          "description": "Bilibili 视频搜索与数据分析，抓取关键词搜索结果，生成统计报告，支持多页抓取和可视化。",
+          "purpose": "Bilibili 视频搜索与数据分析，抓取关键词搜索结果，生成统计报告，支持多页抓取和可视化。",
+          "source": "clawhub"
+        },
+        {
+          "name": "google-search-console",
+          "path": "all-skills\\skills\\google-search-console\\SKILL.md",
+          "description": "Google Search Console API 集成，获取网站搜索表现数据、关键词排名、点击率分析和 SEO 优化建议。",
+          "purpose": "Google Search Console API 集成，获取网站搜索表现数据、关键词排名、点击率分析和 SEO 优化建议。",
+          "source": "clawhub"
+        },
+        {
+          "name": "excel-analyzer",
+          "path": "all-skills\\skills\\excel-analyzer\\SKILL.md",
+          "description": "Excel/CSV 数据智能分析技能，支持自然语言查询、自动图表生成、数据清洗和透视表操作。",
+          "purpose": "Excel/CSV 数据智能分析技能，支持自然语言查询、自动图表生成、数据清洗和透视表操作。",
+          "source": "clawhub"
+        },
+        {
+          "name": "notion-api",
+          "path": "all-skills\\skills\\notion-api\\SKILL.md",
+          "description": "Notion 完整 API 集成，支持数据库查询、页面创建、内容同步和自动化工作流，构建 Notion 驱动的知识系统。",
+          "purpose": "Notion 完整 API 集成，支持数据库查询、页面创建、内容同步和自动化工作流，构建 Notion 驱动的知识系统。",
+          "source": "clawhub"
+        },
+        {
+          "name": "todoist-api",
+          "path": "all-skills\\skills\\todoist-api\\SKILL.md",
+          "description": "Todoist API 集成，支持任务创建、项目管理、优先级设置、自然语言时间解析和跨工具同步。",
+          "purpose": "Todoist API 集成，支持任务创建、项目管理、优先级设置、自然语言时间解析和跨工具同步。",
+          "source": "clawhub"
+        },
+        {
+          "name": "slack-api",
+          "path": "all-skills\\skills\\slack-api\\SKILL.md",
+          "description": "Slack API 完整集成，支持消息发送、频道管理、Bot 创建、Slash 命令和工作流自动化通知。",
+          "purpose": "Slack API 完整集成，支持消息发送、频道管理、Bot 创建、Slash 命令和工作流自动化通知。",
+          "source": "clawhub"
+        },
+        {
+          "name": "youtube-analytics",
+          "path": "all-skills\\skills\\youtube-analytics\\SKILL.md",
+          "description": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。",
+          "purpose": "YouTube Analytics API 集成，分析频道/视频表现、受众画像、留存率和增长趋势，支持竞品对标。",
+          "source": "clawhub"
+        },
+        {
+          "name": "wechat-publisher",
+          "path": "all-skills\\skills\\wechat-publisher\\SKILL.md",
+          "description": "一键发布 Markdown 到微信公众号草稿箱，支持自动排版、代码高亮、图片上传和多主题渲染。",
+          "purpose": "一键发布 Markdown 到微信公众号草稿箱，支持自动排版、代码高亮、图片上传和多主题渲染。",
+          "source": "clawhub"
+        },
+        {
+          "name": "feishu-bitable-api",
+          "path": "all-skills\\skills\\feishu-bitable-api\\SKILL.md",
+          "description": "飞书多维表格(Bitable)API 技能，支持记录的增删改查、视图筛选、字段管理和数据同步自动化。",
+          "purpose": "飞书多维表格(Bitable)API 技能，支持记录的增删改查、视图筛选、字段管理和数据同步自动化。",
+          "source": "clawhub"
+        },
+        {
+          "name": "baidu-search",
+          "path": "all-skills\\skills\\baidu-search\\SKILL.md",
+          "description": "利用百度 AI 搜索引擎进行网页搜索，适合中文内容检索，支持新闻、学术、百科多源聚合。",
+          "purpose": "利用百度 AI 搜索引擎进行网页搜索，适合中文内容检索，支持新闻、学术、百科多源聚合。",
+          "source": "clawhub"
+        },
+        {
+          "name": "imap-email",
+          "path": "all-skills\\skills\\imap-email\\SKILL.md",
+          "description": "IMAP 邮件读取和处理技能，支持多账户邮件监控、规则过滤、内容提取和自动回复工作流。",
+          "purpose": "IMAP 邮件读取和处理技能，支持多账户邮件监控、规则过滤、内容提取和自动回复工作流。",
+          "source": "clawhub"
+        },
+        {
+          "name": "stock-analysis",
+          "path": "all-skills\\skills\\stock-analysis\\SKILL.md",
+          "description": "股票和金融数据分析技能，支持 A股/美股实时行情、技术指标计算、基本面数据获取和可视化报告。",
+          "purpose": "股票和金融数据分析技能，支持 A股/美股实时行情、技术指标计算、基本面数据获取和可视化报告。",
+          "source": "clawhub"
+        },
+        {
+          "name": "linkedin-lead-gen",
+          "path": "all-skills\\skills\\linkedin-lead-gen\\SKILL.md",
+          "description": "LinkedIn 潜在客户挖掘和分析技能，支持目标用户搜索、公司信息提取、联系人触达和销售线索管理。",
+          "purpose": "LinkedIn 潜在客户挖掘和分析技能，支持目标用户搜索、公司信息提取、联系人触达和销售线索管理。",
+          "source": "clawhub"
+        },
+        {
+          "name": "ga4-analytics",
+          "path": "all-skills\\skills\\ga4-analytics\\SKILL.md",
+          "description": "Google Analytics 4 API 集成，支持流量分析、用户行为追踪、转化漏斗、事件分析和自动化报告。",
+          "purpose": "Google Analytics 4 API 集成，支持流量分析、用户行为追踪、转化漏斗、事件分析和自动化报告。",
+          "source": "clawhub"
+        },
+        {
+          "name": "apify-scraper",
+          "path": "all-skills\\skills\\apify-scraper\\SKILL.md",
+          "description": "Apify 平台集成的网页抓取工具，支持 JavaScript 渲染、反爬绕过、数据提取和结构化存储，覆盖主流平台。",
+          "purpose": "Apify 平台集成的网页抓取工具，支持 JavaScript 渲染、反爬绕过、数据提取和结构化存储，覆盖主流平台。",
+          "source": "clawhub"
+        },
+        {
+          "name": "chart-visualization",
+          "path": "all-skills\\skills\\chart-visualization\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "data-analysis",
+          "path": "all-skills\\skills\\data-analysis\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1511,6 +1700,83 @@
           "path": "all-skills\\dev-workflow-skills\\tdd-workflow\\SKILL.md",
           "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.",
           "purpose": ""
+        },
+        {
+          "name": "github-api",
+          "path": "all-skills\\skills\\github-api\\SKILL.md",
+          "description": "完整的 GitHub API 集成技能，支持 Issues、PR、仓库管理、搜索和 GitHub Actions 操作。",
+          "purpose": "完整的 GitHub API 集成技能，支持 Issues、PR、仓库管理、搜索和 GitHub Actions 操作。",
+          "source": "clawhub"
+        },
+        {
+          "name": "git-commit-automation",
+          "path": "all-skills\\skills\\git-commit-automation\\SKILL.md",
+          "description": "智能 Git 提交助手，自动分析代码变更、生成规范的 Conventional Commits 提交消息并执行提交。",
+          "purpose": "智能 Git 提交助手，自动分析代码变更、生成规范的 Conventional Commits 提交消息并执行提交。",
+          "source": "clawhub"
+        },
+        {
+          "name": "copilot-cli",
+          "path": "all-skills\\skills\\copilot-cli\\SKILL.md",
+          "description": "通过 GitHub Copilot CLI 分析代码、探索项目结构、生成文档和自动化开发任务，提高开发效率。",
+          "purpose": "通过 GitHub Copilot CLI 分析代码、探索项目结构、生成文档和自动化开发任务，提高开发效率。",
+          "source": "clawhub"
+        },
+        {
+          "name": "security-audit-toolkit",
+          "path": "all-skills\\skills\\security-audit-toolkit\\SKILL.md",
+          "description": "代码安全审计工具，自动扫描 SQL 注入、XSS、硬编码密钥、不安全依赖等常见安全漏洞。",
+          "purpose": "代码安全审计工具，自动扫描 SQL 注入、XSS、硬编码密钥、不安全依赖等常见安全漏洞。",
+          "source": "clawhub"
+        },
+        {
+          "name": "web-deploy-github",
+          "path": "all-skills\\skills\\web-deploy-github\\SKILL.md",
+          "description": "一键部署静态网站到 GitHub Pages，支持自定义域名、HTTPS 配置和自动化 CI/CD 流水线。",
+          "purpose": "一键部署静态网站到 GitHub Pages，支持自定义域名、HTTPS 配置和自动化 CI/CD 流水线。",
+          "source": "clawhub"
+        },
+        {
+          "name": "n8n-workflow",
+          "path": "all-skills\\skills\\n8n-workflow\\SKILL.md",
+          "description": "n8n 无代码工作流自动化集成，支持 400+ 应用连接，构建自动化流水线，替代 Zapier/Make。",
+          "purpose": "n8n 无代码工作流自动化集成，支持 400+ 应用连接，构建自动化流水线，替代 Zapier/Make。",
+          "source": "clawhub"
+        },
+        {
+          "name": "sqlite-agent",
+          "path": "all-skills\\skills\\sqlite-agent\\SKILL.md",
+          "description": "SQLite 数据库操作技能，支持自然语言转 SQL 查询、数据分析、表结构探索和结果可视化。",
+          "purpose": "SQLite 数据库操作技能，支持自然语言转 SQL 查询、数据分析、表结构探索和结果可视化。",
+          "source": "clawhub"
+        },
+        {
+          "name": "jira-skill",
+          "path": "all-skills\\skills\\jira-skill\\SKILL.md",
+          "description": "Jira REST API 完整集成，支持 Issue 创建/更新/查询、Sprint 管理、工作流转换和自动化报告生成。",
+          "purpose": "Jira REST API 完整集成，支持 Issue 创建/更新/查询、Sprint 管理、工作流转换和自动化报告生成。",
+          "source": "clawhub"
+        },
+        {
+          "name": "changelog-generator",
+          "path": "all-skills\\skills\\changelog-generator\\SKILL.md",
+          "description": "分析 git 提交历史，按 Conventional Commits 规范自动生成格式化的更新日志，支持中英文输出。",
+          "purpose": "分析 git 提交历史，按 Conventional Commits 规范自动生成格式化的更新日志，支持中英文输出。",
+          "source": "clawhub"
+        },
+        {
+          "name": "pentest-skill",
+          "path": "all-skills\\skills\\pentest-skill\\SKILL.md",
+          "description": "渗透测试辅助技能，提供 OWASP Top 10 测试方法、常用工具命令、漏洞验证和报告模板。",
+          "purpose": "渗透测试辅助技能，提供 OWASP Top 10 测试方法、常用工具命令、漏洞验证和报告模板。",
+          "source": "clawhub"
+        },
+        {
+          "name": "git-commit",
+          "path": "all-skills\\skills\\git-commit\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1572,6 +1838,27 @@
           "path": "all-skills\\design-skills\\design-system\\references\\token-architecture.md",
           "description": "",
           "purpose": ""
+        },
+        {
+          "name": "figma-to-code",
+          "path": "all-skills\\skills\\figma-to-code\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "frontend-design",
+          "path": "all-skills\\skills\\frontend-design\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "canvas-design",
+          "path": "all-skills\\skills\\canvas-design\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },

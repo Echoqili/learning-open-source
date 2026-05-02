@@ -8,6 +8,12 @@ from datetime import datetime
 REPO_ROOT = Path("d:/pyworkplace/github/learning-open-source")
 INDEX_FILE = REPO_ROOT / "skills-index.json"
 ALL_SKILLS_DIR = REPO_ROOT / "all-skills" / "skills"
+EXTRA_SKILLS_DIRS = [
+    REPO_ROOT / "all-skills" / "dev-workflow-skills",
+    REPO_ROOT / "all-skills" / "dev-quality-skills",
+    REPO_ROOT / "all-skills" / "qa-testing-skills",
+    REPO_ROOT / "all-skills" / "design-skills",
+]
 
 # 新 skills 的分类映射
 NEW_SKILLS_CATEGORIES = {
@@ -42,6 +48,16 @@ NEW_SKILLS_CATEGORIES = {
     "linkedin-lead-gen":     ("superpowers", "Superpowers"),
     "ga4-analytics":         ("superpowers", "Superpowers"),
     "apify-scraper":         ("superpowers", "Superpowers"),
+    "git-commit":            ("dev-workflow", "Dev Workflow"),
+    "react-best-practices":  ("dev-quality", "Dev Quality"),
+    "composition-patterns":  ("dev-quality", "Dev Quality"),
+    "agent-browser":         ("qa-testing", "QA Testing"),
+    "figma-to-code":         ("design", "Design"),
+    "frontend-design":       ("design", "Design"),
+    "chart-visualization":   ("superpowers", "Superpowers"),
+    "data-analysis":         ("superpowers", "Superpowers"),
+    "canvas-design":         ("design", "Design"),
+    "byted-seedream-image-generate": ("ai-product", "AI Product"),
 }
 
 # 加载现有索引
@@ -59,6 +75,14 @@ for slug, (cat_key, cat_name) in NEW_SKILLS_CATEGORIES.items():
         continue
 
     skill_file = ALL_SKILLS_DIR / slug / "SKILL.md"
+    
+    if not skill_file.exists():
+        for extra_dir in EXTRA_SKILLS_DIRS:
+            candidate = extra_dir / slug / "SKILL.md"
+            if candidate.exists():
+                skill_file = candidate
+                break
+    
     if not skill_file.exists():
         print(f"  [SKIP] SKILL.md not found: {slug}")
         continue
