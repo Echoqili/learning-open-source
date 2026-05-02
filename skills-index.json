@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-05-02T13:15:37.248957",
-  "total_count": 315,
+  "generated_at": "2026-05-02T13:38:03.604683",
+  "total_count": 345,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -1365,6 +1365,41 @@
           "description": ">",
           "purpose": ">",
           "source": "clawhub"
+        },
+        {
+          "name": "deer-flow",
+          "path": "all-skills\\skills\\deer-flow\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "CowAgent",
+          "path": "all-skills\\skills\\CowAgent\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "graphify",
+          "path": "all-skills\\skills\\graphify\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "ai-guide",
+          "path": "all-skills\\skills\\ai-guide\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "ai-prompts",
+          "path": "all-skills\\skills\\ai-prompts\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1657,6 +1692,146 @@
           "description": ">",
           "purpose": ">",
           "source": "clawhub"
+        },
+        {
+          "name": "andrej-karpathy-skills",
+          "path": "all-skills\\skills\\andrej-karpathy-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-claude-skills",
+          "path": "all-skills\\skills\\awesome-claude-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "skills",
+          "path": "all-skills\\skills\\skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "caveman",
+          "path": "all-skills\\skills\\caveman\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-claude-code",
+          "path": "all-skills\\skills\\awesome-claude-code\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "career-ops",
+          "path": "all-skills\\skills\\career-ops\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-cursorrules",
+          "path": "all-skills\\skills\\awesome-cursorrules\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-copilot",
+          "path": "all-skills\\skills\\awesome-copilot\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "obsidian-skills",
+          "path": "all-skills\\skills\\obsidian-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "agent-skills",
+          "path": "all-skills\\skills\\agent-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "marketingskills",
+          "path": "all-skills\\skills\\marketingskills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "last30days-skill",
+          "path": "all-skills\\skills\\last30days-skill\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "scientific-agent-skills",
+          "path": "all-skills\\skills\\scientific-agent-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-agent-skills",
+          "path": "all-skills\\skills\\awesome-agent-skills\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "Claude-Code-Game-Studios",
+          "path": "all-skills\\skills\\Claude-Code-Game-Studios\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "humanizer",
+          "path": "all-skills\\skills\\humanizer\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "agent-rules",
+          "path": "all-skills\\skills\\agent-rules\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "awesome-cursor-rules-mdc",
+          "path": "all-skills\\skills\\awesome-cursor-rules-mdc\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "ruler",
+          "path": "all-skills\\skills\\ruler\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "RIPER-5",
+          "path": "all-skills\\skills\\RIPER-5\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1777,6 +1952,34 @@
           "description": ">",
           "purpose": ">",
           "source": "clawhub"
+        },
+        {
+          "name": "JeecgBoot",
+          "path": "all-skills\\skills\\JeecgBoot\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "cli",
+          "path": "all-skills\\skills\\cli\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "planning-with-files",
+          "path": "all-skills\\skills\\planning-with-files\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "hve-core",
+          "path": "all-skills\\skills\\hve-core\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
         }
       ]
     },
@@ -1856,6 +2059,13 @@
         {
           "name": "canvas-design",
           "path": "all-skills\\skills\\canvas-design\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "frontend-slides",
+          "path": "all-skills\\skills\\frontend-slides\\SKILL.md",
           "description": ">",
           "purpose": ">",
           "source": "clawhub"
