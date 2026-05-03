@@ -88,6 +88,13 @@ NEW_SKILLS_CATEGORIES = {
     "RIPER-5":               ("superpowers", "Superpowers"),
     "ai-prompts":            ("ai-product", "AI Product"),
     "hve-core":              ("dev-workflow", "Dev Workflow"),
+    "requirement-interview": ("superpowers", "Superpowers"),
+    "multi-scheme-review":   ("superpowers", "Superpowers"),
+    "staged-confirmation":   ("superpowers", "Superpowers"),
+    "risk-precheck":         ("superpowers", "Superpowers"),
+    "chinese-naming-conventions": ("superpowers", "Superpowers"),
+    "payment-sdk-guide":     ("superpowers", "Superpowers"),
+    "china-enterprise-env-setup": ("superpowers", "Superpowers"),
 }
 
 # 加载现有索引

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-05-02T13:38:03.604683",
-  "total_count": 345,
+  "generated_at": "2026-05-03T23:40:53.678056",
+  "total_count": 352,
   "by_category": {
     "product": {
       "name": "Product Manager",
@@ -1829,6 +1829,55 @@
         {
           "name": "RIPER-5",
           "path": "all-skills\\skills\\RIPER-5\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "requirement-interview",
+          "path": "all-skills\\skills\\requirement-interview\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "multi-scheme-review",
+          "path": "all-skills\\skills\\multi-scheme-review\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "staged-confirmation",
+          "path": "all-skills\\skills\\staged-confirmation\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "risk-precheck",
+          "path": "all-skills\\skills\\risk-precheck\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "chinese-naming-conventions",
+          "path": "all-skills\\skills\\chinese-naming-conventions\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "payment-sdk-guide",
+          "path": "all-skills\\skills\\payment-sdk-guide\\SKILL.md",
+          "description": ">",
+          "purpose": ">",
+          "source": "clawhub"
+        },
+        {
+          "name": "china-enterprise-env-setup",
+          "path": "all-skills\\skills\\china-enterprise-env-setup\\SKILL.md",
           "description": ">",
           "purpose": ">",
           "source": "clawhub"
