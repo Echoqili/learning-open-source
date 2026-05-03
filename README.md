@@ -2,6 +2,39 @@
 
 这是一个用于学习开源项目的仓库，收集了软件产品研发流程相关的优秀 Skills。
 
+## 🆕 最新更新 (2024-01)
+
+### 新增 20 个 Skills
+- `chinese-code-review` - 中文代码审查
+- `chinese-git-workflow` - 中文 Git 工作流
+- `chinese-commit-conventions` - 中文提交规范
+- `chinese-documentation` - 中文技术文档编写
+- `executing-plans` - 执行计划
+- `finishing-a-development-branch` - 完成开发分支
+- `using-git-worktrees` - Git Worktrees 使用
+- `receiving-code-review` - 接收代码审查
+- `requesting-code-review` - 请求代码审查
+- `writing-skills` - 编写 Skills
+- `using-superpowers` - 使用 Superpowers
+- `brainstorming` - 头脑风暴
+- `test-driven-development` - 测试驱动开发
+- `systematic-debugging` - 系统调试
+- `subagent-driven-development` - 子代理驱动开发
+- `mcp-builder` - MCP 构建器
+- `verification-before-completion` - 完成前验证
+- `workflow-runner` - 工作流运行器
+- `dispatching-parallel-agents` - 并行代理调度
+- `writing-plans` - 编写计划
+
+### 新增功能模块
+- `bin/superpowers-zh.js` - 一键安装脚本，支持 Claude Code、Cursor、Windsurf、Kiro
+- `agents/code-reviewer.md` - 专业代码审查代理
+- `hooks/` - Git Hooks 集成（pre-commit、commit-msg、pre-push）
+- `workflows/auto-workflow-engine.md` - 🚀 自动化工作流引擎
+- `workflows/smart-completion-engine.md` - 🚀 智能代码补全引擎
+
+---
+
 ## 仓库内容
 
 ### 1. Product Manager Skills
@@ -243,9 +276,51 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 
 ---
 
-## 快速导航
+## 🚀 创新功能
 
-| 目录 | 技能数 | 用途 | Stars |
+### 自动化工作流引擎 (Auto Workflow Engine)
+超越传统工作流管理，根据项目上下文和任务类型自动选择和执行最佳工作流程。
+
+**核心特性：**
+- **意图识别** - 理解用户输入，自动识别任务类型
+- **上下文感知** - 理解项目类型、技术栈、团队习惯
+- **智能推荐** - 基于历史成功案例推荐最佳工作流
+- **持续学习** - 记录执行结果，优化推荐算法
+
+```yaml
+# 示例：根据任务自动选择工作流
+用户: "添加用户登录功能"
+→ 识别为: feature_request
+→ 自动执行: requirement-interview → writing-plans → code-development → code-review
+```
+
+### 智能代码补全引擎 (Smart Completion Engine)
+基于 AI 语义理解的智能代码补全系统，支持中文注释驱动补全。
+
+**核心特性：**
+- **语义理解补全** - 理解代码上下文，不只是关键词匹配
+- **中文注释驱动** - 输入中文注释，自动生成代码
+- **模式化生成** - 根据常见模式快速生成代码
+- **学习优化** - 持续学习团队编码风格
+
+```javascript
+// 用户输入中文注释
+// 根据用户id查询用户信息并返回
+
+// AI 自动补全
+async function getUserById(id) {
+  return await database.query(
+    'SELECT * FROM users WHERE id = ?',
+    [id]
+  );
+}
+```
+
+---
+
+## 📚 Skills 目录
+
+| 分类 | 技能数 | 说明 | Stars |
 |------|--------|------|-------|
 | `skills/` | 47+31 | 产品经理技能 + 工具类技能 | - |
 | `agile-skills/` | 11 | 敏捷交付 | - |
@@ -261,12 +336,47 @@ Anthropic 官方 Skill 开发工具，含意图捕获→测试→优化全流程
 | `design-skills/` | 2 | 设计系统 | ⭐ 59k |
 | `skill-creation/` | 1 | Skill开发 | 🛠️ 官方 |
 | `indie-hacker-skills/` | 10 | 独立开发创业 | 💰 |
-| **新增：搜索 & 研究** | 5 | Tavily/深度研究/百度搜索/Apify | 🔍 |
-| **新增：开发工具** | 8 | GitHub/Jira/n8n/SQLite/安全扫描 | ⚙️ |
-| **新增：AI 工具** | 3 | Prompt优化/RAG检索/AI代码审查 | 🤖 |
-| **新增：数据 & 分析** | 5 | GA4/GSC/Excel/股票/B站 | 📊 |
-| **新增：生产力** | 10 | Notion/Slack/飞书/LinkedIn等 | ⚡ |
-| **总计** | **149** | | |
+| **新增：中文开发技能** | 20 | 代码审查/Git/文档/工作流 | 🆕 |
+| **搜索 & 研究** | 5 | Tavily/深度研究/百度搜索/Apify | 🔍 |
+| **开发工具** | 8 | GitHub/Jira/n8n/SQLite/安全扫描 | ⚙️ |
+| **AI 工具** | 3 | Prompt优化/RAG检索/AI代码审查 | 🤖 |
+| **数据 & 分析** | 5 | GA4/GSC/Excel/股票/B站 | 📊 |
+| **生产力** | 10 | Notion/Slack/飞书/LinkedIn等 | ⚡ |
+| **总计** | **169+** | | |
+
+---
+
+## 🛠️ 工具与脚本
+
+### 安装脚本
+```bash
+# 安装 Skills 到主流 IDE
+node bin/superpowers-zh.js --all
+
+# 安装到特定 IDE
+node bin/superpowers-zh.js --claude
+node bin/superpowers-zh.js --cursor
+node bin/superpowers-zh.js --windsurf
+node bin/superpowers-zh.js --kiro
+
+# 创建 Git Hooks
+node bin/superpowers-zh.js --hooks
+
+# 列出所有 Skills
+node bin/superpowers-zh.js --list
+```
+
+### 索引管理
+```bash
+# 更新 Skills 索引
+node scripts/update-index.js
+```
+
+### Agents
+- `agents/code-reviewer.md` - 专业代码审查代理，支持中文团队特色审查
+
+### Git Hooks
+- `hooks/README.md` - Git Hooks 集成指南（pre-commit、commit-msg、pre-push）
 
 ---
 
@@ -312,6 +422,22 @@ python scripts/skill_index_manager.py
 ```bash
 python scripts/skill_index_manager.py --scan
 ```
+
+---
+
+## 项目文档
+
+- [QUICK_START.md](QUICK_START.md) - 快速启动指南
+- [SKILLS_STRUCTURE.md](SKILLS_STRUCTURE.md) - Skills 仓库结构说明
+- [AI-AGENT-SKILLS.md](AI-AGENT-SKILLS.md) - AI Agent Skills 汇总
+- [CLAUDE.md](CLAUDE.md) - 开发指南
+- [skills-catalog.md](skills-catalog.md) - 完整 Skills 目录
+
+---
+
+## 贡献
+
+欢迎提交 PR 分享新的 Skills！
 
 ---
 
