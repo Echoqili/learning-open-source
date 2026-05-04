@@ -149,7 +149,7 @@ def parse_skill_md(skill_path: Path) -> Dict:
                                 "inputs": fm.get('inputs', []),
                                 "outputs": fm.get('outputs', [])
                             })
-                    except:
+                    except Exception:
                         pass
                     frontmatter = []
                     continue

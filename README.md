@@ -369,7 +369,7 @@ node bin/superpowers-zh.js --list
 ### 索引管理
 ```bash
 # 更新 Skills 索引
-node scripts/update-index.js
+python scripts/build_skills_index.py
 ```
 
 ### Agents
@@ -431,7 +431,7 @@ python scripts/skill_index_manager.py --scan
 - [SKILLS_STRUCTURE.md](SKILLS_STRUCTURE.md) - Skills 仓库结构说明
 - [AI-AGENT-SKILLS.md](AI-AGENT-SKILLS.md) - AI Agent Skills 汇总
 - [CLAUDE.md](CLAUDE.md) - 开发指南
-- [skills-catalog.md](skills-catalog.md) - 完整 Skills 目录
+- [skills-catalog.md](skills-catalog.md) - 完整 Skills 目录（自动更新）
 
 ---
 
