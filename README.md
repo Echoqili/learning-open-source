@@ -350,20 +350,32 @@ async function getUserById(id) {
 
 ### 安装脚本
 ```bash
-# 安装 Skills 到主流 IDE
-node bin/superpowers-zh.js --all
+# 安装 Skills 到所有 IDE (推荐)
+node bin/install-skills.js --all
 
 # 安装到特定 IDE
-node bin/superpowers-zh.js --claude
-node bin/superpowers-zh.js --cursor
-node bin/superpowers-zh.js --windsurf
-node bin/superpowers-zh.js --kiro
+node bin/install-skills.js --claude
+node bin/install-skills.js --cursor
+node bin/install-skills.js --windsurf
+node bin/install-skills.js --kiro
+node bin/install-skills.js --opencode
+node bin/install-skills.js --codex
+node bin/install-skills.js --continue
 
-# 创建 Git Hooks
-node bin/superpowers-zh.js --hooks
+# 使用符号链接模式（更新后自动同步）
+node bin/install-skills.js --link --all
 
 # 列出所有 Skills
-node bin/superpowers-zh.js --list
+node bin/install-skills.js --list
+
+# 查看帮助
+node bin/install-skills.js --help
+```
+
+### 旧版安装脚本 (保留兼容性)
+```bash
+# 原有的 superpowers-zh.js 脚本
+node bin/superpowers-zh.js --all
 ```
 
 ### 索引管理
