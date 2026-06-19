@@ -1,11 +1,14 @@
 ---
 name: "devlog"
-description: "Maintains per-project DEVLOG.md (chronological changes/plans) and LESSON.md (aggregated problems and solutions). Both stay local-only via .git/info/exclude. Invoke when starting/completing coding tasks, making architectural decisions, or fixing tricky bugs."
+description: "Use when the user wants to record a code change, plan, decision, bug fix, or library gotcha in a project. Maintains a per-project DEVLOG.md (chronological, append-only) and a LESSON.md (indexed knowledge base of problem → root cause → solution). Triggers on phrases like 'log this', '记一下', '记到 DEVLOG', '记到 LESSON', '做个总结', 'save a lesson', 'remember this gotcha', or after completing a coding task, making an architectural decision, or fixing a non-trivial bug. Both files stay local-only via .git/info/exclude. Do NOT use for short-lived TODOs (use the issue tracker) or for public notes (use a wiki)."
+license: MIT
+compatibility: "Requires git. No external dependencies. POSIX shell (bash/zsh) or PowerShell 5+ for the setup scripts."
+metadata:
+  version: "1.1.0"
+  author: "Trae IDE devlog skill"
 ---
 
 # DEVLOG Skill
-
-## Purpose
 
 Maintain **two** local-only project files that work together:
 
@@ -14,60 +17,59 @@ Maintain **two** local-only project files that work together:
 | `DEVLOG.md` | Chronological log of what was done, planned, and learned | Append-only, dated entries |
 | `LESSON.md` | Aggregated knowledge base of problems → root causes → solutions | Indexed, category-organized, reusable |
 
-Rule of thumb: **DEVLOG.md records the journey; LESSON.md records the wisdom**.
+Rule of thumb: **DEVLOG.md records the journey; LESSON.md records the wisdom.**
 
 Both files are **local-only** — they must never reach the remote repository, and
 the ignore rules for them must not be committed either. This is achieved with
 `.git/info/exclude` (a per-repo, never-tracked file), **not** `.gitignore`.
 
-## When to Invoke
+## When to Use
 
 Invoke this skill when any of the following happen:
 
-- Starting a new coding task in a project (initialize or refresh the log)
+- Starting a new coding task in a project
 - Completing a coding task or a significant sub-step
 - Making an architectural or design decision
-- Fixing a tricky bug
+- Fixing a non-trivial bug
 - Discovering a library / framework gotcha
-- User says things like "log this", "记一下", "记到日志里", "记录到 DEVLOG",
-  "做个总结", "加到 LESSON"
+- User says things like "log this", "记一下", "记到 DEVLOG", "记到 LESSON",
+  "做个总结", "加到 LESSON", "save a lesson", "remember this gotcha"
 
-## First-Run Setup (idempotent)
+## When NOT to Use
 
-When the files are missing in the project root:
+- **Short-lived TODOs** — use the project issue tracker or a local TODO file.
+- **Public-facing documentation** — use the project wiki or a shared doc.
+- **Free-form chat summaries** — use conversation search, not a log file.
+- **Secrets, credentials, or PII** — never store in either file, even though
+  they are local.
+- **One-line trivial commits** — skip; only log meaningful changes.
 
-1. Create both `DEVLOG.md` and `LESSON.md` from their **Templates** below.
-2. Make sure both are locally ignored, **without** touching `.gitignore`. Append
-   to `.git/info/exclude`:
-   - PowerShell:
-     ```powershell
-     Add-Content .git/info/exclude 'DEVLOG.md'
-     Add-Content .git/info/exclude 'LESSON.md'
-     ```
-   - POSIX:
-     ```bash
-     printf '%s\n' 'DEVLOG.md' >> .git/info/exclude
-     printf '%s\n' 'LESSON.md' >> .git/info/exclude
-     ```
-3. Verify with:
+## First-Run Setup
+
+On first invocation in a project (or if either file is missing):
+
+1. Run the platform-appropriate setup script — it creates both files from
+   templates and registers them in `.git/info/exclude`:
+
    ```bash
-   git check-ignore -v -- DEVLOG.md LESSON.md
+   # POSIX (bash, zsh, Git Bash, WSL)
+   ./.trae/skills/devlog/scripts/setup.sh
    ```
-   Expected: both lines reference `.git/info/exclude`.
-4. Tell the user both files are intentionally local-only.
+   ```powershell
+   # Windows PowerShell 5+
+   ./.trae/skills/devlog/scripts/setup.ps1
+   ```
 
-If the files already exist, just read them for context and append.
+   The script is **idempotent** — safe to re-run.
 
-### Why `.git/info/exclude` and not `.gitignore`?
+2. Verify with: `git check-ignore -v -- DEVLOG.md LESSON.md`
+   - Expected: both lines reference `.git/info/exclude`.
 
-| Mechanism | Versioned? | Scope | Use when |
-|---|---|---|---|
-| `.gitignore` | Yes (tracked) | Whole repo, all clones | Team-shared rules (e.g. `node_modules/`) |
-| `.git/info/exclude` | **No** (in `.git/`) | This repo, this machine | Personal notes / local-only files |
-| `core.excludesFile` | No | Global, all repos | Personal rules everywhere (e.g. `.DS_Store`) |
+3. Tell the user both files are intentionally local-only.
 
-The user explicitly wants the ignore rules to stay off the remote. The only
-correct location is `.git/info/exclude`.
+If the files already exist, just read them for context and append. Never
+recreate. For background on the ignore choice, see
+[references/git-exclude-explained.md](references/git-exclude-explained.md).
 
 ---
 
@@ -93,7 +95,7 @@ Conventions:
 - Bullets are fine inside any field.
 - Never edit or delete old entries — only append.
 - When a fix surfaces reusable knowledge, add a pointer:
-  `**Lesson:** see LESSON.md → <category> → <slug>`
+  `**Lesson:** see LESSON.md → <Category> → <slug>`
 
 ## Workflow
 
@@ -117,29 +119,6 @@ Conventions:
 - If the file grows past ~300 entries, split by year (`DEVLOG-2026.md`) and keep
   `DEVLOG.md` as an index.
 - Never include secrets — treat it as plain text even though it's local.
-
-## Template (used on first run)
-
-```markdown
-# DEVLOG
-
-> Local-only development log. Intentionally **not** tracked by git
-> (configured via `.git/info/exclude`, never via `.gitignore`).
-
-Conventions:
-
-- One `## [YYYY-MM-DD] Title` block per logical change.
-- Fields: **What**, **Why**, **How**, **Learned**.
-- Append-only — never rewrite history.
-
----
-
-## Planned
-
-- (in-progress or upcoming work goes here)
-
----
-```
 
 ---
 
@@ -167,7 +146,7 @@ Group by **category** (one `##` heading per category). Slugs are stable IDs you
 can link to.
 
 ```markdown
-## <Category, e.g. "Git / Branching">
+## <Category, e.g. "Library / React">
 
 ### <YYYY-MM-DD> short-slug
 
@@ -180,16 +159,17 @@ can link to.
   - upstream issue / docs link
 ```
 
+For the canonical category list and naming rules, see
+[references/categories.md](references/categories.md).
+
 Conventions:
 
-- Categories are broad and stable (`Git`, `Build`, `CI`, `Language / Python`,
-  `Library / <name>`, `OS / Windows`, `IDE / Trae`, `Performance`, `Security`).
+- `Problem` is the user-visible symptom. `Root cause` is the underlying reason.
+  Keep them separate — symptoms recur even when causes change.
 - Slug = lowercase-kebab, ≤ 5 words, action-oriented
   (e.g. `push-fails-on-spaces-in-path`).
 - Newest lesson at the **top** of its category, so the freshest knowledge is
   most visible.
-- `Problem` is the user-visible symptom. `Root cause` is the underlying reason.
-  Keep them separate — symptoms recur even when causes change.
 
 ## Workflow
 
@@ -197,7 +177,8 @@ Conventions:
 
 1. Open `LESSON.md` and pick (or create) the right category.
 2. Add a new entry at the top of that category with the template above.
-3. Cross-link from the matching `DEVLOG.md` entry (`**Lesson:** see LESSON.md → <category> → <slug>`).
+3. Cross-link from the matching `DEVLOG.md` entry
+   (`**Lesson:** see LESSON.md → <Category> → <slug>`).
 4. If this exact lesson already exists, **append** a new dated occurrence under
    it instead of creating a duplicate — frequency matters.
 
@@ -213,52 +194,148 @@ Conventions:
 - Keep entries terse — one screen each, ideally.
 - After ~50 lessons, add a top-of-file **Index** table grouped by category.
 
-## Template (used on first run)
+---
+
+## Examples
+
+The following worked examples show what a good log entry looks like for common
+trigger scenarios. Match the **shape** (fields, terseness, cross-links) — the
+exact wording can vary.
+
+### Example 1: logging a feature
+
+User: "Add a `/health` endpoint that returns 200 if the DB is reachable."
+
+Append to `DEVLOG.md`:
 
 ```markdown
-# LESSON
+## [2026-06-19] Add /health endpoint with DB ping
 
-> Local-only knowledge base. Aggregates problems → root causes → solutions
-> from `DEVLOG.md`. Intentionally **not** tracked by git
-> (configured via `.git/info/exclude`, never via `.gitignore`).
+**What:** Added GET /health that returns 200 with `{db: "ok"}` if the
+PostgreSQL connection works, 503 otherwise.
+**Why:** k8s liveness/readiness probes were killing the pod on transient
+DB hiccups — they need a real signal, not just "process is up".
+**How:** Used `pg.Pool.query('SELECT 1')` with a 1s timeout. Catches the
+error and returns 503. No body on failure to keep probes cheap.
+**Learned:** A common gotcha is to return 200 unconditionally after a
+catch — that hides the very problem probes exist to detect.
+```
 
-Conventions:
+### Example 2: logging a bug fix + promoting to LESSON
 
-- Grouped by category (`## <Category>`), newest lesson at the top of each.
-- Entry format: **Problem / Root cause / Solution / How to avoid / Related**.
-- Slugs are stable IDs — never rename an old slug, only add "Superseded by".
+User: "Why did `git push` fail with 'Authentication failed' even though my
+token is in the credential helper?"
 
----
+Append to `DEVLOG.md`:
 
-## Index
+```markdown
+## [2026-06-19] Fix GitHub push auth failure on Windows
 
-(to be generated once the file has more than ~10 lessons)
+**What:** Got `fatal: Authentication failed for https://github.com/...`
+on every push despite `gh auth login` succeeding.
+**Why:** `gh auth` writes the token to the GitHub CLI credential helper,
+but `git push` was reading the system Git credential helper (no token
+there). They don't share storage.
+**How:** Configured the system helper to delegate to the GitHub CLI
+helper: `git config --global credential.helper '!gh auth git-credential'`.
+**Lesson:** see LESSON.md → Git → gh-auth-vs-git-credential-mismatch
+**Learned:** `gh auth` ≠ git auth. Tools that wrap git often have their
+own credential store.
+```
 
----
+Then add to `LESSON.md` (top of the `## Git` section):
 
-## <Category>
+```markdown
+## Git
 
-### <YYYY-MM-DD> first-slug
+### 2026-06-19 gh-auth-vs-git-credential-mismatch
 
-- **Problem:**
-- **Root cause:**
-- **Solution:**
-- **How to avoid:**
+- **Problem:** `git push` fails with auth error after `gh auth login`
+  succeeded on the same machine.
+- **Root cause:** `gh auth` stores its token in its own credential
+  helper. Plain `git` uses whatever is configured in
+  `credential.helper` (often the system store or `manager-core` on
+  Windows). They don't share.
+- **Solution:** Delegate the git credential helper to gh:
+  `git config --global credential.helper '!gh auth git-credential'`
+- **How to avoid:** When you authenticate with `gh`, also re-run the
+  delegate command. Document this in the team onboarding README.
 - **Related:**
+  - DEVLOG.md → ## [2026-06-19] Fix GitHub push auth failure on Windows
+  - https://cli.github.com/manual/gh_auth
+```
 
----
+### Example 3: logging a tricky library gotcha
+
+User: "Python's `dict | dict` merge sometimes loses keys, why?"
+
+Append to `DEVLOG.md`:
+
+```markdown
+## [2026-06-19] Python `|` dict merge: dict-of-dict gotcha
+
+**What:** `a = {"x": {"a": 1}}; b = {"x": {"b": 2}}; merged = a | b`
+gives `{"x": {"b": 2}}` — `a.x.a` is gone.
+**Why:** PEP 584 `dict.__or__` replaces the *value* of each key, it does
+not recurse. So nested dicts at the same key overwrite, not merge.
+**How:** Use `{**a["x"], **b["x"]} | {"x": ...}` for the inner layer,
+or `deepmerge` / `pydantic` for arbitrary depth.
+**Lesson:** see LESSON.md → Language / Python → dict-or-merge-no-recurse
+**Learned:** `|` looks like `dict.update` but is shallow; matches
+`{**a, **b}` semantics, not `ChainMap`.
+```
+
+Then add to `LESSON.md` (top of `## Language / Python`):
+
+```markdown
+## Language / Python
+
+### 2026-06-19 dict-or-merge-no-recurse
+
+- **Problem:** `a | b` for nested dicts silently drops keys.
+- **Root cause:** `dict.__or__` is shallow — replaces values, doesn't
+  recurse into dicts.
+- **Solution:** Use `{**a["k"], **b["k"]} | ...` per layer, or a deep
+  merge library (`deepmerge`, `pydantic`).
+- **How to avoid:** In code review, flag any `|` on values that might
+  be dicts. Add a linter rule if your team uses dicts as config.
+- **Related:**
+  - DEVLOG.md → ## [2026-06-19] Python `|` dict merge: dict-of-dict gotcha
+  - https://peps.python.org/pep-0584/
 ```
 
 ---
 
 ## Anti-Patterns
 
-- Do **not** add `DEVLOG.md` or `LESSON.md` to `.gitignore` — that would push
-  the ignore rule to the remote, which the user explicitly does not want.
+- Do **not** add `DEVLOG.md` or `LESSON.md` to `.gitignore` — that pushes the
+  ignore rule to the remote, which the user explicitly does not want. Use
+  `.git/info/exclude`. *Consequence:* teammates would inherit a rule that only
+  protects *your* local notes.
 - Do **not** commit either file "just this once" — once tracked, ignore rules
-  no longer hide them. If that ever happens, use `git rm --cached <file>` and
-  warn the user.
-- Do **not** rewrite or delete past `DEVLOG.md` entries.
+  no longer hide them. Recover with `git rm --cached <file>` and warn the user.
+- Do **not** rewrite or delete past `DEVLOG.md` entries — they form the audit
+  trail that `LESSON.md` is distilled from.
 - Do **not** store secrets, tokens, or credentials in either file.
-- Do **not** duplicate information — pick one: chronological (DEVLOG) or
-  indexed (LESSON), and cross-link.
+- Do **not** duplicate information — pick one: chronological (`DEVLOG.md`) or
+  indexed (`LESSON.md`), and cross-link.
+- Do **not** use this skill for public docs, short-lived TODOs, or chat
+  summaries — see **When NOT to Use**.
+
+## File Layout
+
+```
+.trae/skills/devlog/
+├── SKILL.md                          # this file
+├── scripts/
+│   ├── setup.sh                      # POSIX one-shot init
+│   └── setup.ps1                     # PowerShell one-shot init
+└── references/
+    ├── git-exclude-explained.md      # why .git/info/exclude
+    └── categories.md                 # canonical LESSON.md categories
+```
+
+Generated files in the user's project (created by `scripts/setup.*`):
+
+- `DEVLOG.md` (local-only)
+- `LESSON.md` (local-only)
