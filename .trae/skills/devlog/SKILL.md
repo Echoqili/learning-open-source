@@ -304,6 +304,45 @@ Then add to `LESSON.md` (top of `## Language / Python`):
   - https://peps.python.org/pep-0584/
 ```
 
+### Categories at a glance
+
+Quick reference for picking a `## <Category>` heading in `LESSON.md`. The full
+table with naming rules is in [references/categories.md](references/categories.md).
+Inline version is for quick decision-making at the moment of writing a new
+lesson; load the reference when you need naming details.
+
+| Category | Use for |
+|---|---|
+| `Git` | Branching, history, ignore rules, hooks, submodules |
+| `Build` | Bundlers, compilers, packaging |
+| `CI` | GitHub Actions, GitLab CI, test runners in CI |
+| `Language / <name>` | Per-language quirks (`Language / Python`, `Language / TypeScript`, ...) |
+| `Library / <name>` | Specific third-party libraries (`Library / React`, `Library / FastAPI`, ...) |
+| `OS / Windows` | PowerShell, paths, line endings |
+| `OS / macOS` | Gatekeeper, codesign, BSD vs GNU tools |
+| `OS / Linux` | Distros, package managers, systemd |
+| `IDE / Trae` | Trae IDE, MCP servers, custom skills |
+| `Networking` | DNS, HTTP, proxies, CORS, certificates |
+| `Performance` | Profiling, optimization, memory, latency |
+| `Security` | Auth, secrets, vulnerabilities, secure defaults |
+| `Testing` | Test frameworks, mocks, fixtures, coverage |
+| `Debugging` | `strace`, `pdb`, profilers, observability tools |
+
+Trigger logic for choosing one:
+
+1. If the lesson is a **library / framework gotcha** → `Library / <name>` or
+   `Language / <name>`.
+2. If it's about the **OS shell or filesystem** → `OS / <platform>`.
+3. If it's about the **build / CI / test pipeline** → `Build` / `CI` / `Testing`.
+4. If it's about **this development environment** (Trae, IDEs, MCP) →
+   `IDE / Trae`.
+5. Otherwise → `Git` / `Networking` / `Performance` / `Security` /
+   `Debugging` — pick the closest.
+
+Rule: prefer the closest existing category. Add a new one only after ~3
+lessons accumulate that don't fit anywhere (see
+[references/categories.md](references/categories.md) for the policy).
+
 ---
 
 ## Anti-Patterns
