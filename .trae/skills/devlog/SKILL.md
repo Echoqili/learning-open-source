@@ -368,7 +368,9 @@ lessons accumulate that don't fit anywhere (see
 ├── SKILL.md                          # this file
 ├── scripts/
 │   ├── setup.sh                      # POSIX one-shot init
-│   └── setup.ps1                     # PowerShell one-shot init
+│   ├── setup.ps1                     # PowerShell one-shot init
+│   ├── verify-ignored.sh             # assert local-only files stay untracked
+│   └── verify-ignored.ps1            # PowerShell counterpart
 └── references/
     ├── git-exclude-explained.md      # why .git/info/exclude
     └── categories.md                 # canonical LESSON.md categories
@@ -378,3 +380,7 @@ Generated files in the user's project (created by `scripts/setup.*`):
 
 - `DEVLOG.md` (local-only)
 - `LESSON.md` (local-only)
+
+After setup, run `./scripts/verify-ignored.sh` (or `.ps1`) to confirm both
+files satisfy the local-only invariant (ignored, untracked, never committed).
+Re-run it any time you suspect the invariant has been broken.
