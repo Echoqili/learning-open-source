@@ -22,6 +22,7 @@ default workflow covers most cases.
 | `Security` | Auth, secrets, vulnerabilities, secure defaults |
 | `Testing` | Test frameworks, mocks, fixtures, coverage |
 | `Debugging` | Tools and techniques for finding bugs (strace, pdb, profilers) |
+| `Skill Authoring` | Lessons about this devlog skill itself (workflow, format, policy) |
 
 ## Naming rules
 

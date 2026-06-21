@@ -1,16 +1,16 @@
 ---
 name: "devlog"
-description: "Use when the user wants to record a code change, plan, decision, bug fix, or library gotcha in a project. Maintains a per-project DEVLOG.md (chronological, append-only) and a LESSON.md (indexed knowledge base of problem → root cause → solution). Triggers on phrases like 'log this', '记一下', '记到 DEVLOG', '记到 LESSON', '做个总结', 'save a lesson', 'remember this gotcha', or after completing a coding task, making an architectural decision, or fixing a non-trivial bug. Both files stay local-only via .git/info/exclude. Do NOT use for short-lived TODOs (use the issue tracker) or for public notes (use a wiki)."
+description: "Use when the user wants to record a code change, plan, decision, bug fix, or library gotcha in a project. Maintains a per-project DEVLOG.md (chronological, append-only) and a LESSON.md (indexed knowledge base of problem → root cause → solution), both tracked in git and shared with the team. Triggers on phrases like 'log this', '记一下', '记到 DEVLOG', '记到 LESSON', '做个总结', 'save a lesson', 'remember this gotcha', or after completing a coding task, making an architectural decision, or fixing a non-trivial bug. Do NOT use for short-lived TODOs (use the issue tracker) or for public notes (use a wiki)."
 license: MIT
 compatibility: "Requires git. No external dependencies. POSIX shell (bash/zsh) or PowerShell 5+ for the setup scripts."
 metadata:
-  version: "1.1.0"
+  version: "2.0.0"
   author: "Trae IDE devlog skill"
 ---
 
 # DEVLOG Skill
 
-Maintain **two** local-only project files that work together:
+Maintain **two** project-tracked files that work together:
 
 | File | Role | Style |
 |---|---|---|
@@ -19,9 +19,10 @@ Maintain **two** local-only project files that work together:
 
 Rule of thumb: **DEVLOG.md records the journey; LESSON.md records the wisdom.**
 
-Both files are **local-only** — they must never reach the remote repository, and
-the ignore rules for them must not be committed either. This is achieved with
-`.git/info/exclude` (a per-repo, never-tracked file), **not** `.gitignore`.
+Both files are **tracked in git and shared with the team**. The previous
+"local-only" design (v1.x) is deprecated — see LESSON.md →
+`Skill Authoring` → `policy-reversals-preserve-history` for the
+decision trail.
 
 ## When to Use
 
@@ -40,8 +41,8 @@ Invoke this skill when any of the following happen:
 - **Short-lived TODOs** — use the project issue tracker or a local TODO file.
 - **Public-facing documentation** — use the project wiki or a shared doc.
 - **Free-form chat summaries** — use conversation search, not a log file.
-- **Secrets, credentials, or PII** — never store in either file, even though
-  they are local.
+- **Secrets, credentials, or PII** — never store in either file. They are
+  tracked and pushed to remote, so treat them as **public**.
 - **One-line trivial commits** — skip; only log meaningful changes.
 
 ## First-Run Setup
@@ -49,7 +50,7 @@ Invoke this skill when any of the following happen:
 On first invocation in a project (or if either file is missing):
 
 1. Run the platform-appropriate setup script — it creates both files from
-   templates and registers them in `.git/info/exclude`:
+   templates and `git add`s them:
 
    ```bash
    # POSIX (bash, zsh, Git Bash, WSL)
@@ -62,14 +63,17 @@ On first invocation in a project (or if either file is missing):
 
    The script is **idempotent** — safe to re-run.
 
-2. Verify with: `git check-ignore -v -- DEVLOG.md LESSON.md`
-   - Expected: both lines reference `.git/info/exclude`.
+2. Verify both files are tracked:
 
-3. Tell the user both files are intentionally local-only.
+   ```bash
+   git ls-files -- DEVLOG.md LESSON.md
+   ```
+
+3. Commit them with the next code change (or as a standalone commit).
 
 If the files already exist, just read them for context and append. Never
-recreate. For background on the ignore choice, see
-[references/git-exclude-explained.md](references/git-exclude-explained.md).
+recreate. For the rationale and trade-offs of the tracked-vs-local choice,
+see [references/shared-mode.md](references/shared-mode.md).
 
 ---
 
@@ -118,7 +122,7 @@ Conventions:
 
 - If the file grows past ~300 entries, split by year (`DEVLOG-2026.md`) and keep
   `DEVLOG.md` as an index.
-- Never include secrets — treat it as plain text even though it's local.
+- Never include secrets — the file is tracked and pushed to remote.
 
 ---
 
@@ -327,6 +331,7 @@ lesson; load the reference when you need naming details.
 | `Security` | Auth, secrets, vulnerabilities, secure defaults |
 | `Testing` | Test frameworks, mocks, fixtures, coverage |
 | `Debugging` | `strace`, `pdb`, profilers, observability tools |
+| `Skill Authoring` | Lessons about this skill itself (workflow, format, policy) |
 
 Trigger logic for choosing one:
 
@@ -336,7 +341,9 @@ Trigger logic for choosing one:
 3. If it's about the **build / CI / test pipeline** → `Build` / `CI` / `Testing`.
 4. If it's about **this development environment** (Trae, IDEs, MCP) →
    `IDE / Trae`.
-5. Otherwise → `Git` / `Networking` / `Performance` / `Security` /
+5. If it's a lesson **about this devlog skill itself** (workflow change,
+   format change, policy reversal) → `Skill Authoring`.
+6. Otherwise → `Git` / `Networking` / `Performance` / `Security` /
    `Debugging` — pick the closest.
 
 Rule: prefer the closest existing category. Add a new one only after ~3
@@ -347,15 +354,15 @@ lessons accumulate that don't fit anywhere (see
 
 ## Anti-Patterns
 
-- Do **not** add `DEVLOG.md` or `LESSON.md` to `.gitignore` — that pushes the
-  ignore rule to the remote, which the user explicitly does not want. Use
-  `.git/info/exclude`. *Consequence:* teammates would inherit a rule that only
-  protects *your* local notes.
-- Do **not** commit either file "just this once" — once tracked, ignore rules
-  no longer hide them. Recover with `git rm --cached <file>` and warn the user.
+- Do **not** add `DEVLOG.md` or `LESSON.md` to `.gitignore` — they are
+  meant to be shared with the team. Per-user opt-out goes in
+  `.git/info/exclude` (see [references/shared-mode.md](references/shared-mode.md)).
 - Do **not** rewrite or delete past `DEVLOG.md` entries — they form the audit
   trail that `LESSON.md` is distilled from.
-- Do **not** store secrets, tokens, or credentials in either file.
+- Do **not** delete past `LESSON.md` entries. Strike them through and add
+  a "Superseded by" note instead.
+- Do **not** store secrets, tokens, or credentials in either file — they are
+  pushed to remote.
 - Do **not** duplicate information — pick one: chronological (`DEVLOG.md`) or
   indexed (`LESSON.md`), and cross-link.
 - Do **not** use this skill for public docs, short-lived TODOs, or chat
@@ -368,19 +375,13 @@ lessons accumulate that don't fit anywhere (see
 ├── SKILL.md                          # this file
 ├── scripts/
 │   ├── setup.sh                      # POSIX one-shot init
-│   ├── setup.ps1                     # PowerShell one-shot init
-│   ├── verify-ignored.sh             # assert local-only files stay untracked
-│   └── verify-ignored.ps1            # PowerShell counterpart
+│   └── setup.ps1                     # PowerShell one-shot init
 └── references/
-    ├── git-exclude-explained.md      # why .git/info/exclude
+    ├── shared-mode.md                # why tracked, not local-only
     └── categories.md                 # canonical LESSON.md categories
 ```
 
 Generated files in the user's project (created by `scripts/setup.*`):
 
-- `DEVLOG.md` (local-only)
-- `LESSON.md` (local-only)
-
-After setup, run `./scripts/verify-ignored.sh` (or `.ps1`) to confirm both
-files satisfy the local-only invariant (ignored, untracked, never committed).
-Re-run it any time you suspect the invariant has been broken.
+- `DEVLOG.md` (tracked, shared with the team)
+- `LESSON.md` (tracked, shared with the team)

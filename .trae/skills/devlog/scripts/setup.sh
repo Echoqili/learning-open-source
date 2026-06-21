@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # setup.sh — one-shot initialization for the devlog skill in the current project.
-# Creates DEVLOG.md and LESSON.md (if missing), registers them in
-# .git/info/exclude (idempotent), and verifies the ignore is working.
+# Creates DEVLOG.md and LESSON.md (if missing) and `git add`s them.
+# The files are tracked in git and shared with the team (v2.0+).
 #
 # Usage:  ./setup.sh
 #         (run from the project root; safe to re-run)
@@ -14,24 +14,12 @@ if [ ! -d .git ]; then
   exit 1
 fi
 
-mkdir -p .git/info
-touch .git/info/exclude
-
 # ---------- helpers ----------
-add_to_exclude() {
-  local pattern="$1"
-  local exclude_file=".git/info/exclude"
-  if ! grep -Fxq "$pattern" "$exclude_file"; then
-    printf '\n# Local-only devlog (see .trae/skills/devlog/SKILL.md)\n%s\n' "$pattern" >> "$exclude_file"
-  fi
-}
-
 write_devlog_template() {
   cat > DEVLOG.md <<'EOF'
 # DEVLOG
 
-> Local-only development log. Intentionally **not** tracked by git
-> (configured via `.git/info/exclude`, never via `.gitignore`).
+> Tracked project development log. Shared with the team via git.
 
 Conventions:
 
@@ -53,9 +41,8 @@ write_lesson_template() {
   cat > LESSON.md <<'EOF'
 # LESSON
 
-> Local-only knowledge base. Aggregates problems → root causes → solutions
-> from `DEVLOG.md`. Intentionally **not** tracked by git
-> (configured via `.git/info/exclude`, never via `.gitignore`).
+> Tracked project knowledge base. Aggregates problems → root causes →
+> solutions from `DEVLOG.md`. Shared with the team via git.
 
 Conventions:
 
@@ -80,17 +67,19 @@ if [ ! -f DEVLOG.md ]; then
   write_devlog_template
   echo "created: DEVLOG.md"
 fi
-add_to_exclude "DEVLOG.md"
 
 if [ ! -f LESSON.md ]; then
   write_lesson_template
   echo "created: LESSON.md"
 fi
-add_to_exclude "LESSON.md"
+
+# Stage both files (no-op if already tracked). `git add` is safe to re-run.
+git add DEVLOG.md LESSON.md 2>/dev/null || true
 
 echo "--- verification ---"
-git check-ignore -v DEVLOG.md LESSON.md
+git ls-files -- DEVLOG.md LESSON.md
 
 echo "--- done ---"
-echo "DEVLOG.md and LESSON.md are now local-only."
-echo "Both files live in this project but will never be pushed to remote."
+echo "DEVLOG.md and LESSON.md are now tracked and will be pushed with the next commit."
+echo "Per-user opt-out (e.g. for personal notes): add DEVLOG.md / LESSON.md"
+echo "to .git/info/exclude. See .trae/skills/devlog/references/shared-mode.md."
