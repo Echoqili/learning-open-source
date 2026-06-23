@@ -4,7 +4,7 @@ description: "把 Superpowers 的脑暴/TDD 能力与 OpenSpec(speckit) 的 chan
 license: MIT
 compatibility: "纯 Prompt 驱动，需配合 OpenSpec change 工作流使用；产物统一收敛到 openspec/changes/{change_name}/。"
 metadata:
-  version: "3.0.0"
+  version: "3.1.0"
   author: "自定义总控串联 Skill"
 ---
 
@@ -27,6 +27,38 @@ metadata:
 4. redline-check 优先调用真实扫描工具，LLM 自检只做兜底。
 5. 通过 archive 把每次 change 的约束沉淀到模块化 spec 基线，长期抑制 AI 漂移。
 6. 自动记录 AI 变更元数据，方便后续追溯、度量和审计。
+7. 用风险分级、增量更新、必要才生成等手段控制 token 消耗，避免约束过度膨胀。
+
+## 省 token 与流畅性原则
+
+约束越多，单次 Prompt 越长、多轮对话越多，token 消耗必然上升。本 Skill 通过以下设计把额外开销压到最小：
+
+1. **风险分级裁剪流程**  
+   低风险 change 跳过关卡①，redline 只跑 lint + 测试；只有高风险才走完整人工审核和 SAST。
+
+2. **明确需求时跳过 explore**  
+   用户一次把验收标准、范围、约束说清楚，直接进 `/opsx:propose`，省掉一轮脑暴。
+
+3. **产物按需生成**  
+   Gherkin feature、specs 增量、安全复核报告只在需要时生成，不默认全量输出。
+
+4. **阶段内使用摘要而非全文回传**  
+   `/opsx:apply` 每完成一个 task 只报告“任务 ID + 文件 + 测试结果摘要”，不重复贴出整份 `tasks.md`。
+
+5. **增量修改而非重写**  
+   需求中途变更时，只更新被改动的规范段落，不重新生成整份 `proposal.md` / `tasks.md`。
+
+6. **工具化 redline 替代 LLM 长自检**  
+   配置 `redline.yml` 让外部命令做扫描，LLM 只解析命令输出，比让 LLM 逐行读代码省大量 token。
+
+7. **低优先级信息折叠**  
+   详细的设计方案、依赖图、完整 redline 原始日志默认不显示，仅在有错误时才展开。
+
+8. **短期缓存避免重复读取**  
+   同一轮对话中已读取的规范文档、feature 文件缓存到上下文，不反复从磁盘读取。
+
+9. **用户可一键切“极速模式”**  
+   当用户说“快速模式” / “跳过 explore” / “low 风险”时，按最小流程执行：propose → apply → redline → archive。
 
 ## 执行总序
 
