@@ -234,7 +234,7 @@
   <div class="container">
     <header>
       <h1>Superpowers + OpenSpec 总控串联 Skill 使用手册</h1>
-      <p class="subtitle">对应 Skill 版本 v3.0.0 · 产物收敛目录 <code>openspec/</code></p>
+      <p class="subtitle">对应 Skill 版本 v3.2.1 · 产物收敛目录 <code>openspec/</code></p>
     </header>
 
     <h2>1. 这个 Skill 能做什么</h2>
@@ -254,20 +254,49 @@
     <p>保存后 Trae 会自动识别；如未生效，重启或刷新 Skills 面板。</p>
 
     <h2>3. 快速开始：输入需求</h2>
-    <p>最直接的方式是用一句话说出你想做什么。例如：</p>
-    <pre><code>帮我用 Superpowers + OpenSpec 流水线实现：用户登录后能看到自己的订单列表，支持按状态筛选。</code></pre>
-    <p>Skill 被激活后，会按以下顺序执行：</p>
-    <pre><code>/opsx:explore（如果需求模糊）
+    <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。激活后<strong>必须显式选择模式</strong>，没有默认模式。</p>
+
+    <h3>3.1 显式选择省 token 模式</h3>
+    <p>口令里带“快速模式”等关键词：</p>
+    <pre><code>快速模式：帮我用 Superpowers + OpenSpec 跑一遍订单列表状态筛选。</code></pre>
+    <p>Skill 被激活后，按<strong>省 token 模式</strong>执行：</p>
+    <pre><code>跳过 /opsx:explore
     ↓
-/opsx:propose  → 风险分级 + （中高风险）人工审核①
+/opsx:propose  → 极简 proposal/tasks + 极简 design（low 风险跳审核）
     ↓
-/opsx:apply    → TDD 编码 + 编译/测试门禁②
+/opsx:apply    → TDD 编码 + 编译/测试门禁②（批量聚合汇报）
     ↓
-/redline-check → 按风险调用扫描工具门禁③
+/redline-check → 仅 lint + 单元测试
     ↓
-人工功能验收关卡④
+人工功能验收关卡④（一问确认）
     ↓
-/opsx:archive  → 合并领域 spec 基线 + 生成元数据</code></pre>
+/opsx:archive  → 更新 META.md，不自动合并全局 spec 基线</code></pre>
+
+    <h3>3.2 显式选择思考模式</h3>
+    <p>口令里带“思考模式”等关键词：</p>
+    <pre><code>思考模式：帮我用 Superpowers + OpenSpec 完整实现订单列表状态筛选，要认真设计并沉淀规范。</code></pre>
+    <p>此时才执行：</p>
+    <pre><code>/opsx:explore（如需求模糊）
+    ↓
+/opsx:propose  → 完整 proposal/design/tasks/feature/specs + 风险分级 + （中高风险）人工审核①
+    ↓
+/opsx:apply    → TDD 编码 + 编译/测试门禁②（逐条详细报告）
+    ↓
+/redline-check → 完整扫描 + LLM 审计
+    ↓
+人工功能验收关卡④（逐项核对验收标准）
+    ↓
+/opsx:archive  → 合并领域 spec 基线 + 生成 AI 变更元数据</code></pre>
+
+    <h3>3.3 未选择模式时 Skill 会主动询问</h3>
+    <p>如果你只说：</p>
+    <pre><code>帮我用 Superpowers + OpenSpec 实现订单列表状态筛选。</code></pre>
+    <p>Skill 会停止并回复：</p>
+    <pre><code>请选择运行模式：
+1. 思考模式：完整需求/设计/验收标准 + 完整门禁（适合重要功能）
+2. 省 token 模式：最简任务列表 + 最轻门禁（适合原型/小改动）
+
+请回复“思考模式”或“快速模式”。</code></pre>
 
     <h2>4. 完整命令速查</h2>
     <div class="table-wrap">
@@ -321,8 +350,60 @@
       </table>
     </div>
 
-    <h2>5. 输入需求的正确姿势</h2>
-    <h3>5.1 需求越完整，AI 漂移越少</h3>
+    <h2>5. 两种运行模式</h2>
+    <p>本 Skill 只在用户明确触发时启用；普通编码请求不会自动走完整约束流程。触发后<strong>必须显式选择模式，没有默认模式</strong>，避免边界模糊。</p>
+
+    <div class="callout">
+      <strong>一句话区分</strong>
+      思考模式 = 先写完整需求/设计/验收标准，再编码，适合重要功能；省 token 模式 = 直接写代码，只留最简任务列表，适合原型或低风险小改动。
+    </div>
+
+    <h3>5.1 思考模式（完整门禁）</h3>
+    <p>用户表达中出现任意一个关键词即进入思考模式：</p>
+    <ul>
+      <li>“思考模式”、“think mode”</li>
+      <li>“完整流程”、“规范流程”、“完整走一遍”</li>
+      <li>“深度模式”、“认真设计”</li>
+      <li>“需要沉淀规范”、“写完整设计”</li>
+    </ul>
+    <p>行为特征：</p>
+    <ul>
+      <li>生成完整规范：proposal + design + tasks + features + specs</li>
+      <li>中/高风险必须走关卡①人工审核</li>
+      <li><code>/opsx:apply</code> 逐条详细报告 Red/Green/Refactor 状态</li>
+      <li><code>/redline-check</code> 完整扫描 + LLM 上下文审计</li>
+      <li><code>/opsx:archive</code> 合并对应领域 spec 基线</li>
+      <li>适合：核心功能、高风险模块、需要沉淀规范的项目</li>
+    </ul>
+
+    <h3>5.2 省 token 模式（精简门禁）</h3>
+    <p>用户表达中出现任意一个关键词即进入省 token 模式：</p>
+    <ul>
+      <li>“快速模式”、“极速模式”</li>
+      <li>“省 token”、“简单做”</li>
+      <li>“fast mode”、“quick mode”</li>
+      <li>“原型”、“先跑通”</li>
+    </ul>
+    <p>行为特征：</p>
+    <ul>
+      <li>默认跳过 <code>/opsx:explore</code>，除非用户明确说需求模糊</li>
+      <li><code>/opsx:propose</code> 只生成 proposal + tasks；design 极简（≤ 20 行）；不生成 features/specs</li>
+      <li>默认按 <strong>low 风险</strong>处理，跳过关卡①</li>
+      <li><code>/opsx:apply</code> 批量聚合汇报，只展示失败详情</li>
+      <li><code>/redline-check</code> 只跑 lint + 单元测试</li>
+      <li><code>/opsx:archive</code> 只更新 META.md，不自动合并全局 spec 基线</li>
+      <li>适合：原型、内部工具、低风险小功能、快速验证想法</li>
+    </ul>
+
+    <h3>5.3 冲突与缺省处理</h3>
+    <ul>
+      <li><strong>同时出现两类关键词</strong>：停止并询问用户“请选择 思考模式 还是 省 token 模式？”，不猜测。</li>
+      <li><strong>均未出现</strong>：停止并询问用户“请选择 思考模式（完整规范+门禁） 还是 省 token 模式（最省 token）？”。</li>
+      <li><strong>模式确定后写入 <code>META.md</code> 的 <code>mode</code> 字段</strong>，本 change 不再改变。</li>
+    </ul>
+
+    <h2>6. 输入需求的正确姿势</h2>
+    <h3>6.1 需求越完整，AI 漂移越少</h3>
     <p>一个好的需求输入至少包括：</p>
     <ul>
       <li><strong>用户场景</strong>：谁在什么情况下使用这个功能；</li>
@@ -332,7 +413,7 @@
       <li><strong>限制条件</strong>：技术栈、性能、安全、合规等约束。</li>
     </ul>
 
-    <h3>5.2 示例：好 vs 不够好</h3>
+    <h3>6.2 示例：好 vs 不够好</h3>
     <div class="callout warning">
       <strong>不够好的输入</strong>
       帮我做个订单列表。
@@ -342,16 +423,16 @@
       帮我用 Superpowers + OpenSpec 流水线实现：已登录用户在 Web 端查看自己的订单列表，默认按下单时间倒序，支持按订单状态（待付款/已付款/已发货/已完成）筛选，每页 20 条，前端用 React + TypeScript，后端 API 用 Node.js，数据存在 PostgreSQL。不计入后台管理、支付详情、物流跟踪。
     </div>
 
-    <h3>5.3 明确需求可跳过 explore</h3>
+    <h3>6.3 明确需求可跳过 explore</h3>
     <p>如果你直接给足了验收标准，Skill 会自动跳过 <code>/opsx:explore</code>，直接进入 <code>/opsx:propose</code>。</p>
 
-    <h2>6. 如何填充 redline 命令</h2>
+    <h2>7. 如何填充 redline 命令</h2>
     <p>红线检查是“机器门禁”里最值钱的一环。<strong>默认配置不存在时，Skill 只会用 LLM 自检；要真正发挥作用，必须配置真实扫描工具。</strong></p>
 
-    <h3>6.1 配置文件位置</h3>
+    <h3>7.1 配置文件位置</h3>
     <pre><code>openspec/config/redline.yml</code></pre>
 
-    <h3>6.2 配置示例（Node.js 项目）</h3>
+    <h3>7.2 配置示例（Node.js 项目）</h3>
     <pre><code># openspec/config/redline.yml
 low:
   - name: lint
@@ -395,7 +476,7 @@ high:
     cmd: npm audit --audit-level=high
     block_on_failure: true</code></pre>
 
-    <h3>6.3 按你的技术栈替换命令</h3>
+    <h3>7.3 按你的技术栈替换命令</h3>
     <div class="table-wrap">
       <table>
         <thead>
@@ -450,8 +531,8 @@ high:
       命令返回非 0 且 <code>block_on_failure: true</code> 时，Skill 会拦截流程。先从 lint + 测试开始，稳定后再加入 secret-scan、SAST、依赖审计。
     </div>
 
-    <h2>7. 风险分级与领域怎么填</h2>
-    <h3>7.1 风险等级</h3>
+    <h2>8. 风险分级与领域怎么填</h2>
+    <h3>8.1 风险等级</h3>
     <p>Skill 会根据需求描述自动判断，并询问你确认：</p>
     <div class="table-wrap">
       <table>
@@ -484,13 +565,13 @@ high:
     <p>你也可以主动覆盖，例如：</p>
     <pre><code>按高风险处理：帮我实现一个支持多租户隔离的订单导出接口。</code></pre>
 
-    <h3>7.2 领域（domain）</h3>
+    <h3>8.2 领域（domain）</h3>
     <p>领域决定 archive 时合并到哪份全局 spec 基线。Skill 会尝试从需求里提取，例如订单相关填 <code>order</code>，用户相关填 <code>user</code>。如果不确定，主动问用户。</p>
     <pre><code>openspec/specs/order.md
 openspec/specs/user.md
 openspec/specs/payment.md</code></pre>
 
-    <h2>8. 产物目录说明</h2>
+    <h2>9. 产物目录说明</h2>
     <div class="tree">
 <pre>openspec/
 ├── config/
@@ -508,19 +589,19 @@ openspec/specs/payment.md</code></pre>
             └── {change_name}.feature</pre>
     </div>
 
-    <h2>9. 典型工作流示例</h2>
-    <h3>9.1 低风险新功能</h3>
-    <pre><code>用户：帮我用 Superpowers + OpenSpec 流水线实现：后台运营页面新增一个“导出 CSV”按钮，只导出当前筛选结果，前端 React。
+    <h2>10. 典型工作流示例</h2>
+    <h3>10.1 显式快速实现（省 token 模式）</h3>
+    <pre><code>用户：快速模式：帮我用 Superpowers + OpenSpec 跑一遍后台导出 CSV 按钮，前端 React。
 
 Skill：
 1. 判定为 low 风险，跳过关卡①。
-2. /opsx:propose 生成 openspec/changes/20260623-export-csv/...
-3. /opsx:apply 写按钮组件 + 单元测试。
-4. /redline-check 跑 lint + 测试。
-5. 用户验收后 /opsx:archive，合并到 openspec/specs/admin.md。</code></pre>
+2. /opsx:propose 只生成 proposal.md + tasks.md + 极简 design.md。
+3. /opsx:apply 写按钮组件 + 单元测试（批量聚合汇报）。
+4. /redline-check 跑 lint + 单元测试。
+5. 用户验收后 /opsx:archive 更新 META.md，不自动合并全局 spec 基线。</code></pre>
 
-    <h3>9.2 高风险安全功能</h3>
-    <pre><code>用户：按高风险处理，帮我实现一个支持 RBAC 的订单批量退款接口。
+    <h3>10.2 高风险安全功能（思考模式）</h3>
+    <pre><code>用户：思考模式，按高风险处理：帮我实现一个支持 RBAC 的订单批量退款接口，要沉淀规范。
 
 Skill：
 1. /opsx:explore 梳理权限边界、退款幂等、审计日志要求。
@@ -530,7 +611,7 @@ Skill：
 5. /redline-check 跑 lint/测试/secret-scan/SAST/依赖审计。
 6. 用户验收后 /opsx:archive，合并到 openspec/specs/payment.md。</code></pre>
 
-    <h3>9.3 需求中途变更</h3>
+    <h3>10.3 需求中途变更</h3>
     <pre><code>用户：apply 到一半发现还需要支持按时间范围筛选。
 
 Skill：
@@ -539,7 +620,7 @@ Skill：
 3. 重新通过关卡①。
 4. 继续 /opsx:apply。</code></pre>
 
-    <h2>10. 常见问题</h2>
+    <h2>11. 常见问题</h2>
     <h4>Q1：Skill 没识别怎么办？</h4>
     <p>确认文件路径是 <code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code>，然后重启或刷新 Trae Skills 面板。</p>
 
@@ -555,8 +636,11 @@ Skill：
     <h4>Q5：这个 Skill 能替代 CI/CD 吗？</h4>
     <p>不能。它是 IDE 层的开发辅助，代码入库仍要走 PR/MR 和团队 CI。</p>
 
+    <h4>Q6：我只说“Superpowers + OpenSpec 跑一遍”，它怎么不直接开始？</h4>
+    <p>从 v3.2.1 起，触发 Skill 后必须显式选择“思考模式”或“快速模式”，没有默认模式。这样做是为了避免边界模糊：你说“跑一遍”时，AI 不知道你要重规范还是重速度，所以会让你确认。</p>
+
     <footer>
-      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.0.0。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
+      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.2.1。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
     </footer>
   </div>
 </body>
