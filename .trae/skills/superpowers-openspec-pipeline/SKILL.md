@@ -1,10 +1,10 @@
 ---
 name: "superpowers-openspec-pipeline"
-description: "把 Superpowers 的脑暴/TDD 能力与 OpenSpec(speckit) 的 change 工作流串成一条自动化 Skill：explore → propose（风险分级+人工审核）→ apply（TDD）→ 工具化 redline-check → 人工验收 → archive。支持 Gherkin 可执行规格、模块化 spec 基线、AI 变更追踪。"
+description: "把 Superpowers 的脑暴/TDD 能力与 OpenSpec(speckit) 的 change 工作流串成一条自动化 Skill：explore → propose（风险分级+门禁形态选择）→ apply（TDD）→ 工具化 redline-check → 人工/智能校验验收 → archive。门禁支持双形态：人工复核 与 智能校验（auto-review，思考模式默认）。支持 Gherkin 可执行规格、模块化 spec 基线、AI 变更追踪。"
 license: MIT
 compatibility: "纯 Prompt 驱动，需配合 OpenSpec change 工作流使用；产物统一收敛到 openspec/changes/{change_name}/。"
 metadata:
-  version: "3.2.1"
+  version: "3.3.0"
   author: "自定义总控串联 Skill"
 ---
 
@@ -41,14 +41,22 @@ metadata:
 - “fast mode”、“quick mode”
 - “原型”、“先跑通”
 
-### 冲突与缺省处理
+### 智能校验关键词（门禁形态，与模式正交）
 
-- **同时出现两类关键词**：停止并询问用户“请选择 思考模式 还是 省 token 模式？”，不猜测。
-- **均未出现**：停止并询问用户“请选择 思考模式（完整规范+门禁） 还是 省 token 模式（最省 token）？”。
-- **模式确定后写入 `META.md` 的 `mode` 字段**，本 change 不再改变。
+用户表达中出现任意一个即进入智能校验门禁：
 
-### 一句话区分
+- “智能校验”、“auto-review”
+- “智能复核”、“AI 审核”
 
+**默认行为**：
+
+- **思考模式**默认开启智能校验门禁；用户可显式说“关闭智能校验 / 走人工”切换为人工门禁。
+- **省 token 模式**默认**不开启**智能校验，走“人工 / low 跳过”原逻辑；用户可显式说“智能校验”开启。
+
+**一句话区分**：
+
+- **人工门禁**：必须等用户显式“通过 / approve”才能进入 apply。
+- **智能校验门禁**：AI 调用 redline 工具与 LLM 预审产出结构化报告，按风险等级与置信度决定是否升级人工；low 风险下直接进 apply。
 - **思考模式**：你要 AI 先写完整需求/设计/验收标准，再编码，适合重要功能。
 - **省 token 模式**：你直接让 AI 写代码，只留最简任务列表，适合原型或低风险小改动。
 
@@ -137,9 +145,9 @@ metadata:
     │                       │
     │                       否 或 脑暴完成
     │                       ▼
-    │            /opsx:propose（生成 change 规范文档 + 风险分级）
+    │            /opsx:propose（生成 change 规范文档 + 风险分级 + gate_mode）
     │                       │
-    │            人工审核关卡①（低风险可跳过，中/高风险必须 approve）
+    │            审核关卡①（按 gate_mode 选 ①-A 智能校验 / ①-B 人工；详见 §2.9）
     │                       ▼
     │            /opsx:apply（强制 TDD 模式执行 tasks）
     │                       │
@@ -150,7 +158,7 @@ metadata:
     │            存在阻断项？ ──是──> 修复后重新 redline-check
     │                       否
     │                       ▼
-    │            人工功能验收关卡④（必须显式 approve）
+    │            功能验收关卡④（人工/智能校验二选一，必须显式 approve）
     │                       ▼
     │            /opsx:archive（合并到对应领域 spec 基线 + 生成元数据）
     │                       ▼
@@ -202,13 +210,13 @@ openspec/
 
 生成规范的同时，根据以下维度自动判定风险等级，并询问用户确认：
 
-| 等级 | 判定条件 | 门禁策略 |
-|------|----------|----------|
-| low | 纯新增功能、不涉及敏感数据/权限/公共 API/性能瓶颈 | 跳过关卡①；redline 走轻量扫描 |
-| medium | 普通业务功能，涉及用户数据或内部 API | 默认流程：关卡① + 标准 redline |
-| high | 涉及权限/支付/安全/公共 API/数据迁移/跨服务/性能核心路径 | 关卡① + 额外安全复核 + 完整 redline |
+| 等级 | 判定条件 | 人工门禁策略 | 智能校验门禁策略 |
+|------|----------|--------------|------------------|
+| low | 纯新增功能、不涉及敏感数据/权限/公共 API/性能瓶颈 | 跳过关卡①；redline 走轻量扫描 | ①-A 智能校验通过 → 直接进 apply；产物附 `awaiting human opt-in` 标记 |
+| medium | 普通业务功能，涉及用户数据或内部 API | 默认流程：关卡① + 标准 redline | ①-A 智能校验 + 风险点摘要；高置信度通过则进 apply（产物附 `awaiting human opt-in`），存疑或 `block` 升级为 ①-B 人工 |
+| high | 涉及权限/支付/安全/公共 API/数据迁移/跨服务/性能核心路径 | 关卡① + 额外安全复核 + 完整 redline | ①-A 智能校验仅产出**预审报告**，**强制升级**为 ①-B 人工复核 + 安全复核 |
 
-用户可显式覆盖分级，例如“按高风险处理”。
+用户可显式覆盖分级，例如“按高风险处理”。门禁形态由上文“智能校验关键词 / 默认行为”决定，写入 `META.md` 的 `gate_mode` 字段。
 
 ### 2.3 生成文档
 
@@ -235,6 +243,7 @@ openspec/
 - created_at: YYYY-MM-DD
 - mode: think | fast
 - risk_level: low | medium | high
+- gate_mode: human | auto-review
 - ai_generated: true
 - domain: <领域，如 order/user/payment>
 - affected_files: []
@@ -361,18 +370,67 @@ Feature: <功能标题>
 
 如果项目已接入 Cucumber、Behave、SpecFlow 等框架，这些 scenarios 可直接绑定到自动化测试；未接入时，它们作为活文档与单元测试一一对应。
 
-### 2.9 人工审核关卡①
+### 2.9 审核关卡①（双形态：人工 / 智能校验）
+
+`gate_mode` 决定走哪条分支；流程图与下游 `/opsx:apply` 行为据此切换。
+
+#### 2.9.1 智能校验关卡 ①-A（`gate_mode: auto-review`）
+
+适用于：思考模式默认；省 token 模式用户显式开启。
+
+执行步骤：
+
+1. **工具化扫描**：按 `risk_level` 调用 `openspec/config/redline.yml` 中对应命令（与 `/redline-check` 同一套）。
+2. **规范一致性自检**（LLM 短摘要，不读全量代码）：
+   - `proposal.md` 验收标准 ↔ `tasks.md` 任务映射是否 1:N 覆盖；
+   - `design.md` 接口契约 ↔ `tasks.md` 实现计划是否一致；
+   - `features/*.feature` 与 `proposal.md` 验收清单是否一一对应；
+   - `META.md` `affected_files` 与 `tasks.md` 涉及文件是否一致。
+3. **启发式风险点**（仅在 medium / high 时启用）：越权、注入、N+1、敏感数据落盘、跨服务调用幂等性等模式匹配。
+4. **产出结构化预审报告** `openspec/changes/{change_name}/preflight-report.md`：
+
+   ```markdown
+   # Pre-flight Report
+
+   - gate_mode: auto-review
+   - risk_level: low | medium | high
+   - verdict: pass | warn | block
+   - confidence: 0.0-1.0
+   - tools: <已执行命令与退出码>
+   - findings:
+     - [severity] 描述 + 证据位置（文件:行号 / 命令输出片段）
+   - awaiting_human_opt_in: true | false
+   ```
+
+5. **决策矩阵**：
+
+   | 风险等级 | verdict | 行为 |
+   |----------|---------|------|
+   | low      | pass    | 直接进 apply；`awaiting_human_opt_in: true` 写入报告 |
+   | low      | warn / block | 升级为 ①-B 人工 |
+   | medium   | pass 且 confidence ≥ 0.8 | 进 apply；`awaiting_human_opt_in: true` |
+   | medium   | pass 但 confidence < 0.8 / warn / block | 升级为 ①-B 人工 |
+   | high     | 任意 | **强制** 升级为 ①-B 人工 + 安全复核；①-A 仅作预审 |
+
+6. 用户可在 apply 启动前任意时刻回复“暂停 / 我来看一下”接管为 ①-B 人工。
+
+#### 2.9.2 人工复核关卡 ①-B（`gate_mode: human` 或被 ①-A 升级）
 
 - **low 风险**：默认跳过本关卡，直接告诉用户“已按低风险进入 apply，如需审核可回复‘暂停’”。
 - **medium / high 风险**：主动停止并请求用户审核。仅当用户明确回复“通过” / “approve” / “ok” / “继续” / “进入 apply” 时，方可继续。
+- 若用户提出修改意见，按意见更新 `proposal.md` / `design.md` / `tasks.md` / `specs/` / `features/`，更新后再次请求审核，直至通过。
+- high 风险时还需附“额外安全复核”结论（SAST / 敏感操作 / 数据迁移回滚预案），方可放行。
 
-若用户提出修改意见，按意见更新 `proposal.md` / `design.md` / `tasks.md` / `specs/` / `features/`，更新后再次请求审核，直至通过。
+#### 2.9.3 切换规则
+
+- 用户在同一次会话中可说“关闭智能校验 / 走人工”或“开启智能校验”切换 `gate_mode`，需回写 `META.md` 并保留切换时间戳在 `preflight-report.md` 末尾的 `## Gate Switch Log` 段落。
+- 切换只允许向前（人工→智能校验或反向），不静默自动切换。
 
 ---
 
 ## 阶段三：受控实现 — `/opsx:apply`
 
-用户通过关卡①（或被低风险跳过）后，以 Superpowers TDD 能力执行。
+用户通过关卡①（①-A 智能校验通过且未升级，或 ①-B 人工显式通过；low 风险在人工门禁下可跳过）后，以 Superpowers TDD 能力执行。`preflight-report.md` 中的 `findings` 须随每个 task 的完成报告一并回传，便于 apply 阶段重点关照。
 
 ### 3.1 前置读取
 
@@ -495,13 +553,46 @@ high:
 
 ---
 
-## 阶段五：人工功能验收关卡④
+## 阶段五：功能验收关卡④（双形态：人工 / 智能校验）
 
-红线通过后请求用户验收：
+红线通过后请求验收。`gate_mode` 决定走哪条分支；与关卡①形态保持一致，便于审计。
+
+### 5.1 人工验收（`gate_mode: human`）
 
 - 思考模式：用户对照 `proposal.md` 和 `features/*.feature` 的验收标准逐项验证。仅当用户明确回复“通过” / “approve” / “ok” / “归档” 时，方可执行 `/opsx:archive`。
 - 省 token 模式：只问一句“功能是否符合需求？”；用户确认“是/通过/ok”即可归档。
 - 验收不通过时，回到 `/opsx:apply` 或 `/redline-check` 循环修复，直到通过。
+
+### 5.2 智能校验验收（`gate_mode: auto-review`）
+
+- 仅在思考模式（或省 token 模式用户显式开启）下生效。
+- 执行步骤：
+  1. 调起 `redline.yml` 中与 `risk_level` 对应的命令复跑一次（保险）。
+  2. LLM 逐项对照 `proposal.md` 验收清单与 `features/*.feature` 场景，给出 ✅/❌ 与证据（任务 ID、测试结果、相关文件:行号）。
+  3. 追加写入 `preflight-report.md` 的 `## Acceptance Check` 段落，字段：
+
+     ```markdown
+     ## Acceptance Check
+     - verdict: pass | warn | block
+     - confidence: 0.0-1.0
+     - ac_results:
+       - AC-1: pass | fail (evidence: ...)
+       - AC-2: ...
+     - awaiting_human_opt_in: true | false
+     ```
+
+  4. **决策矩阵**：
+
+     | 风险等级 | verdict | 行为 |
+     |----------|---------|------|
+     | low      | pass    | 直接进 archive；`awaiting_human_opt_in: true` |
+     | low      | warn / block | 升级为人工验收 |
+     | medium   | pass 且 confidence ≥ 0.8 | 进 archive；`awaiting_human_opt_in: true` |
+     | medium   | 其它 | 升级为人工验收 |
+     | high     | 任意 | **强制** 升级为人工验收 |
+
+- 用户可在归档前任意时刻回复“暂停 / 我来看一下”接管为人工验收。
+- 验收不通过时，回到 `/opsx:apply` 或 `/redline-check` 循环修复，并重跑本关卡。
 
 ---
 
