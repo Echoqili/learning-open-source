@@ -321,8 +321,40 @@
       </table>
     </div>
 
-    <h2>5. 输入需求的正确姿势</h2>
-    <h3>5.1 需求越完整，AI 漂移越少</h3>
+    <h2>5. 两种运行模式</h2>
+    <p>本 Skill 支持两种互斥模式，由触发时的口令决定。未指定时默认进入<strong>思考模式</strong>。</p>
+
+    <h3>5.1 思考模式（默认）</h3>
+    <ul>
+      <li>生成完整规范：proposal + design + tasks + features + specs</li>
+      <li>中/高风险必须走关卡①人工审核</li>
+      <li><code>/opsx:apply</code> 逐条详细报告 Red/Green/Refactor 状态</li>
+      <li><code>/redline-check</code> 完整扫描 + LLM 上下文审计</li>
+      <li><code>/opsx:archive</code> 合并到对应领域 spec 基线</li>
+      <li>适合：核心功能、高风险模块、需要沉淀规范的项目</li>
+    </ul>
+
+    <h3>5.2 省 token 模式</h3>
+    <p>触发词：<strong>“快速模式”、“极速模式”、“省 token”、“简单做”、“fast mode”、“原型”</strong>。</p>
+    <ul>
+      <li>默认跳过 <code>/opsx:explore</code>，除非用户明确说需求模糊</li>
+      <li><code>/opsx:propose</code> 只生成 proposal + tasks；design 极简（≤ 20 行）；不生成 features/specs</li>
+      <li>默认按 <strong>low 风险</strong>处理，跳过关卡①</li>
+      <li><code>/opsx:apply</code> 批量聚合汇报，只展示失败详情</li>
+      <li><code>/redline-check</code> 只跑 lint + 单元测试</li>
+      <li><code>/opsx:archive</code> 只更新 META.md，不自动合并全局 spec 基线</li>
+      <li>适合：原型、内部工具、低风险小功能、快速验证想法</li>
+    </ul>
+
+    <h3>5.3 模式切换</h3>
+    <ul>
+      <li>若用户未指定模式，按思考模式执行。</li>
+      <li>若同一次对话中切换模式（例如“刚才快速模式，现在重新深度设计”），需重新从 <code>/opsx:propose</code> 开始。</li>
+      <li>模式信息写入 <code>META.md</code> 的 <code>mode</code> 字段，便于追溯。</li>
+    </ul>
+
+    <h2>6. 输入需求的正确姿势</h2>
+    <h3>6.1 需求越完整，AI 漂移越少</h3>
     <p>一个好的需求输入至少包括：</p>
     <ul>
       <li><strong>用户场景</strong>：谁在什么情况下使用这个功能；</li>
@@ -332,7 +364,7 @@
       <li><strong>限制条件</strong>：技术栈、性能、安全、合规等约束。</li>
     </ul>
 
-    <h3>5.2 示例：好 vs 不够好</h3>
+    <h3>6.2 示例：好 vs 不够好</h3>
     <div class="callout warning">
       <strong>不够好的输入</strong>
       帮我做个订单列表。
@@ -342,16 +374,16 @@
       帮我用 Superpowers + OpenSpec 流水线实现：已登录用户在 Web 端查看自己的订单列表，默认按下单时间倒序，支持按订单状态（待付款/已付款/已发货/已完成）筛选，每页 20 条，前端用 React + TypeScript，后端 API 用 Node.js，数据存在 PostgreSQL。不计入后台管理、支付详情、物流跟踪。
     </div>
 
-    <h3>5.3 明确需求可跳过 explore</h3>
+    <h3>6.3 明确需求可跳过 explore</h3>
     <p>如果你直接给足了验收标准，Skill 会自动跳过 <code>/opsx:explore</code>，直接进入 <code>/opsx:propose</code>。</p>
 
-    <h2>6. 如何填充 redline 命令</h2>
+    <h2>7. 如何填充 redline 命令</h2>
     <p>红线检查是“机器门禁”里最值钱的一环。<strong>默认配置不存在时，Skill 只会用 LLM 自检；要真正发挥作用，必须配置真实扫描工具。</strong></p>
 
-    <h3>6.1 配置文件位置</h3>
+    <h3>7.1 配置文件位置</h3>
     <pre><code>openspec/config/redline.yml</code></pre>
 
-    <h3>6.2 配置示例（Node.js 项目）</h3>
+    <h3>7.2 配置示例（Node.js 项目）</h3>
     <pre><code># openspec/config/redline.yml
 low:
   - name: lint
@@ -395,7 +427,7 @@ high:
     cmd: npm audit --audit-level=high
     block_on_failure: true</code></pre>
 
-    <h3>6.3 按你的技术栈替换命令</h3>
+    <h3>7.3 按你的技术栈替换命令</h3>
     <div class="table-wrap">
       <table>
         <thead>
@@ -450,8 +482,8 @@ high:
       命令返回非 0 且 <code>block_on_failure: true</code> 时，Skill 会拦截流程。先从 lint + 测试开始，稳定后再加入 secret-scan、SAST、依赖审计。
     </div>
 
-    <h2>7. 风险分级与领域怎么填</h2>
-    <h3>7.1 风险等级</h3>
+    <h2>8. 风险分级与领域怎么填</h2>
+    <h3>8.1 风险等级</h3>
     <p>Skill 会根据需求描述自动判断，并询问你确认：</p>
     <div class="table-wrap">
       <table>
@@ -484,7 +516,7 @@ high:
     <p>你也可以主动覆盖，例如：</p>
     <pre><code>按高风险处理：帮我实现一个支持多租户隔离的订单导出接口。</code></pre>
 
-    <h3>7.2 领域（domain）</h3>
+    <h3>8.2 领域（domain）</h3>
     <p>领域决定 archive 时合并到哪份全局 spec 基线。Skill 会尝试从需求里提取，例如订单相关填 <code>order</code>，用户相关填 <code>user</code>。如果不确定，主动问用户。</p>
     <pre><code>openspec/specs/order.md
 openspec/specs/user.md
