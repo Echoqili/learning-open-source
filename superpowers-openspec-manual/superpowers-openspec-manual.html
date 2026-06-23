@@ -234,7 +234,7 @@
   <div class="container">
     <header>
       <h1>Superpowers + OpenSpec 总控串联 Skill 使用手册</h1>
-      <p class="subtitle">对应 Skill 版本 v3.2.0 · 产物收敛目录 <code>openspec/</code></p>
+      <p class="subtitle">对应 Skill 版本 v3.2.1 · 产物收敛目录 <code>openspec/</code></p>
     </header>
 
     <h2>1. 这个 Skill 能做什么</h2>
@@ -254,11 +254,11 @@
     <p>保存后 Trae 会自动识别；如未生效，重启或刷新 Skills 面板。</p>
 
     <h2>3. 快速开始：输入需求</h2>
-    <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。触发后<strong>默认走省 token 模式</strong>，需要完整规范时再加“思考模式”。</p>
+    <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。激活后<strong>必须显式选择模式</strong>，没有默认模式。</p>
 
-    <h3>3.1 默认快速实现</h3>
-    <p>例如：</p>
-    <pre><code>帮我用 Superpowers + OpenSpec 跑一遍：用户登录后能看到自己的订单列表，支持按状态筛选。</code></pre>
+    <h3>3.1 显式选择省 token 模式</h3>
+    <p>口令里带“快速模式”等关键词：</p>
+    <pre><code>快速模式：帮我用 Superpowers + OpenSpec 跑一遍订单列表状态筛选。</code></pre>
     <p>Skill 被激活后，按<strong>省 token 模式</strong>执行：</p>
     <pre><code>跳过 /opsx:explore
     ↓
@@ -272,8 +272,8 @@
     ↓
 /opsx:archive  → 更新 META.md，不自动合并全局 spec 基线</code></pre>
 
-    <h3>3.2 完整规范实现</h3>
-    <p>加上“思考模式”才会走完整门禁：</p>
+    <h3>3.2 显式选择思考模式</h3>
+    <p>口令里带“思考模式”等关键词：</p>
     <pre><code>思考模式：帮我用 Superpowers + OpenSpec 完整实现订单列表状态筛选，要认真设计并沉淀规范。</code></pre>
     <p>此时才执行：</p>
     <pre><code>/opsx:explore（如需求模糊）
@@ -287,6 +287,16 @@
 人工功能验收关卡④（逐项核对验收标准）
     ↓
 /opsx:archive  → 合并领域 spec 基线 + 生成 AI 变更元数据</code></pre>
+
+    <h3>3.3 未选择模式时 Skill 会主动询问</h3>
+    <p>如果你只说：</p>
+    <pre><code>帮我用 Superpowers + OpenSpec 实现订单列表状态筛选。</code></pre>
+    <p>Skill 会停止并回复：</p>
+    <pre><code>请选择运行模式：
+1. 思考模式：完整需求/设计/验收标准 + 完整门禁（适合重要功能）
+2. 省 token 模式：最简任务列表 + 最轻门禁（适合原型/小改动）
+
+请回复“思考模式”或“快速模式”。</code></pre>
 
     <h2>4. 完整命令速查</h2>
     <div class="table-wrap">
@@ -341,10 +351,22 @@
     </div>
 
     <h2>5. 两种运行模式</h2>
-    <p>本 Skill 只在用户明确触发时启用；普通编码请求不会自动走完整约束流程。触发后默认进入<strong>省 token 模式</strong>，只有明确要求“完整规范/深度思考”时才进入思考模式。</p>
+    <p>本 Skill 只在用户明确触发时启用；普通编码请求不会自动走完整约束流程。触发后<strong>必须显式选择模式，没有默认模式</strong>，避免边界模糊。</p>
+
+    <div class="callout">
+      <strong>一句话区分</strong>
+      思考模式 = 先写完整需求/设计/验收标准，再编码，适合重要功能；省 token 模式 = 直接写代码，只留最简任务列表，适合原型或低风险小改动。
+    </div>
 
     <h3>5.1 思考模式（完整门禁）</h3>
-    <p>触发词：<strong>“思考模式”、“完整流程”、“规范流程”、“深度模式”、“认真设计”</strong>。</p>
+    <p>用户表达中出现任意一个关键词即进入思考模式：</p>
+    <ul>
+      <li>“思考模式”、“think mode”</li>
+      <li>“完整流程”、“规范流程”、“完整走一遍”</li>
+      <li>“深度模式”、“认真设计”</li>
+      <li>“需要沉淀规范”、“写完整设计”</li>
+    </ul>
+    <p>行为特征：</p>
     <ul>
       <li>生成完整规范：proposal + design + tasks + features + specs</li>
       <li>中/高风险必须走关卡①人工审核</li>
@@ -354,8 +376,15 @@
       <li>适合：核心功能、高风险模块、需要沉淀规范的项目</li>
     </ul>
 
-    <h3>5.2 省 token 模式（默认）</h3>
-    <p>触发词：<strong>“Superpowers + OpenSpec 跑一遍”、“启动 change 流水线”、提到 <code>/opsx:</code> 命令</strong>，或“快速模式”、“极速模式”、“省 token”、“简单做”、“fast mode”、“原型”。</p>
+    <h3>5.2 省 token 模式（精简门禁）</h3>
+    <p>用户表达中出现任意一个关键词即进入省 token 模式：</p>
+    <ul>
+      <li>“快速模式”、“极速模式”</li>
+      <li>“省 token”、“简单做”</li>
+      <li>“fast mode”、“quick mode”</li>
+      <li>“原型”、“先跑通”</li>
+    </ul>
+    <p>行为特征：</p>
     <ul>
       <li>默认跳过 <code>/opsx:explore</code>，除非用户明确说需求模糊</li>
       <li><code>/opsx:propose</code> 只生成 proposal + tasks；design 极简（≤ 20 行）；不生成 features/specs</li>
@@ -366,11 +395,11 @@
       <li>适合：原型、内部工具、低风险小功能、快速验证想法</li>
     </ul>
 
-    <h3>5.3 模式切换</h3>
+    <h3>5.3 冲突与缺省处理</h3>
     <ul>
-      <li>若用户未指定模式，按省 token 模式执行。</li>
-      <li>若同一次对话中切换模式（例如“刚才快速模式，现在重新深度设计”），需重新从 <code>/opsx:propose</code> 开始。</li>
-      <li>模式信息写入 <code>META.md</code> 的 <code>mode</code> 字段，便于追溯。</li>
+      <li><strong>同时出现两类关键词</strong>：停止并询问用户“请选择 思考模式 还是 省 token 模式？”，不猜测。</li>
+      <li><strong>均未出现</strong>：停止并询问用户“请选择 思考模式（完整规范+门禁） 还是 省 token 模式（最省 token）？”。</li>
+      <li><strong>模式确定后写入 <code>META.md</code> 的 <code>mode</code> 字段</strong>，本 change 不再改变。</li>
     </ul>
 
     <h2>6. 输入需求的正确姿势</h2>
@@ -561,8 +590,8 @@ openspec/specs/payment.md</code></pre>
     </div>
 
     <h2>10. 典型工作流示例</h2>
-    <h3>10.1 默认快速实现（省 token 模式）</h3>
-    <pre><code>用户：帮我用 Superpowers + OpenSpec 跑一遍：后台运营页面新增一个“导出 CSV”按钮，只导出当前筛选结果，前端 React。
+    <h3>10.1 显式快速实现（省 token 模式）</h3>
+    <pre><code>用户：快速模式：帮我用 Superpowers + OpenSpec 跑一遍后台导出 CSV 按钮，前端 React。
 
 Skill：
 1. 判定为 low 风险，跳过关卡①。
@@ -607,8 +636,11 @@ Skill：
     <h4>Q5：这个 Skill 能替代 CI/CD 吗？</h4>
     <p>不能。它是 IDE 层的开发辅助，代码入库仍要走 PR/MR 和团队 CI。</p>
 
+    <h4>Q6：我只说“Superpowers + OpenSpec 跑一遍”，它怎么不直接开始？</h4>
+    <p>从 v3.2.1 起，触发 Skill 后必须显式选择“思考模式”或“快速模式”，没有默认模式。这样做是为了避免边界模糊：你说“跑一遍”时，AI 不知道你要重规范还是重速度，所以会让你确认。</p>
+
     <footer>
-      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.2.0。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
+      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.2.1。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
     </footer>
   </div>
 </body>
