@@ -269,6 +269,14 @@
     <pre><code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></pre>
     <p>保存后 Trae 会自动识别；如未生效，重启或刷新 Skills 面板。</p>
 
+    <h3>2.1 配套项目规则：CLAUDE.md</h3>
+    <p>项目根目录的 <code>CLAUDE.md</code> 是 <strong>AI 自动加载的项目规则书</strong>，与本 Skill 配合使用：</p>
+    <ul>
+      <li><strong>CLAUDE.md</strong> — 跨文件的硬约束、反模式、沉淀教训、编码规范（AI 启动即加载）</li>
+      <li><strong>SKILL.md（本文件）</strong> — 流水线操作手册（仅触发词激活后加载）</li>
+    </ul>
+    <p>维护时两文件同步更新：新增跨文件规则写 CLAUDE.md，新增流水线步骤写本 Skill。</p>
+
     <h2>3. 快速开始：输入需求</h2>
     <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。<strong>激活后默认进入快速模式</strong>，你可以显式选择其它两种模式。</p>
 
@@ -783,8 +791,11 @@ Skill：
     <h4>Q9：“省 token 模式”这个名字还在吗？</h4>
     <p>从 v3.6.0 起正式更名为“快速模式”，“省 token 模式”保留为别名触发词——你说“省 token 模式”仍会进入快速模式，行为一致。</p>
 
-    <footer>
-      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.6.0。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
+    <h4>Q10：CLAUDE.md 和这个 Skill 是什么关系？</h4>
+    <p><code>CLAUDE.md</code> 是 AI 启动时<strong>自动加载</strong>的项目规则书，本 Skill 是流水线操作手册。CLAUDE.md 管“不能做什么”（硬约束、反模式、编码规范），本 Skill 管“怎么做”（流程步骤、命令、模板）。新增跨文件规则先更新 CLAUDE.md，再在本 Skill 引用。</p>
+
+<footer>
+      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.6.0。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code>。项目规则书：<code>CLAUDE.md</code>（AI 启动自动加载）。</p>
       <p>变更摘要：v3.6.0 删除性价比模式，省 token 模式更名快速模式并成为默认；v3.5.1 曾默认进入性价比模式；v3.5.0 新增规划先行模式；v3.4.0 新增性价比模式与自适应门禁（v3.6.0 已移除）。</p>
     </footer>
   </div>
