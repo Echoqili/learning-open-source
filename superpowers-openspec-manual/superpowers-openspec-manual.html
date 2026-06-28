@@ -47,7 +47,7 @@
     }
 
     .container {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
       padding: 2rem 1.25rem 4rem;
     }
@@ -69,6 +69,22 @@
       color: var(--muted);
       font-size: 1rem;
       margin: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .badge.default {
+      background: #dbeafe;
+      color: var(--accent);
+      border: 1px solid #bfdbfe;
     }
 
     h2 {
@@ -234,18 +250,18 @@
   <div class="container">
     <header>
       <h1>Superpowers + OpenSpec 总控串联 Skill 使用手册</h1>
-      <p class="subtitle">对应 Skill 版本 v3.2.1 · 产物收敛目录 <code>openspec/</code></p>
+      <p class="subtitle">对应 Skill 版本 v3.6.0 · 三种模式 · 默认快速模式 · 产物收敛目录 <code>openspec/changes/</code></p>
     </header>
 
     <h2>1. 这个 Skill 能做什么</h2>
     <p>它把 AI 的“脑暴能力”和“TDD 编码能力”通过 OpenSpec 的 change 流程串成一条流水线，自动完成：</p>
     <ol>
       <li>需求模糊时先做脑暴（不写文件）；</li>
-      <li>生成规范文档 <code>proposal.md</code> / <code>design.md</code> / <code>tasks.md</code>；</li>
-      <li>按风险分级决定人工审核强度；</li>
-      <li>强制 TDD 模式写代码和测试；</li>
-      <li>调用真实扫描工具做红线检查；</li>
-      <li>人工验收后归档，更新领域 spec 基线。</li>
+      <li>按模式生成对应规范文档（思考模式全量 / 规划先行 plan+tasks / 快速 proposal+tasks+极简design）；</li>
+      <li>按风险分级 + 模式决定门禁强度（人工 / 智能校验）；</li>
+      <li>三种模式均强制 TDD；</li>
+      <li>按模式调用对应强度的 redline 扫描；</li>
+      <li>验收后归档，按模式决定是否合并领域 spec 基线。</li>
     </ol>
 
     <h2>2. 安装位置</h2>
@@ -254,28 +270,52 @@
     <p>保存后 Trae 会自动识别；如未生效，重启或刷新 Skills 面板。</p>
 
     <h2>3. 快速开始：输入需求</h2>
-    <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。激活后<strong>必须显式选择模式</strong>，没有默认模式。</p>
+    <p>本 Skill 不会在每个普通编码请求里自动启用；只有你说出触发词时才会激活。<strong>激活后默认进入快速模式</strong>，你可以显式选择其它两种模式。</p>
 
-    <h3>3.1 显式选择省 token 模式</h3>
-    <p>口令里带“快速模式”等关键词：</p>
-    <pre><code>快速模式：帮我用 Superpowers + OpenSpec 跑一遍订单列表状态筛选。</code></pre>
-    <p>Skill 被激活后，按<strong>省 token 模式</strong>执行：</p>
-    <pre><code>跳过 /opsx:explore
+    <div class="callout">
+      <strong>默认行为（v3.6.0 起变更）</strong>
+      只激活 Skill 但没显式选模式时，<strong>自动进入快速模式</strong>并继续执行，不再强制询问。如需切换，回复对应关键词即可。
+    </div>
+
+    <h3>3.1 默认：快速模式（不选模式时自动进入）<span class="badge default">默认</span></h3>
+    <p>口令只激活 Skill，不带模式关键词：</p>
+    <pre><code>帮我用 Superpowers + OpenSpec 写一个能把 CSV 转成 JSON 的脚本。</code></pre>
+    <p>Skill 自动按<strong>快速模式</strong>执行，并提示可切换：</p>
+    <pre><code>已默认进入「快速模式」（最简任务列表 + 轻量门禁）。
+如需切换，回复“思考模式” / “规划先行”即可。
+
+跳过 /opsx:explore
     ↓
 /opsx:propose  → 极简 proposal/tasks + 极简 design（low 风险跳审核）
     ↓
-/opsx:apply    → TDD 编码 + 编译/测试门禁②（批量聚合汇报）
+/opsx:apply    → TDD 编码 + 批量聚合汇报 + 编译/测试门禁②
     ↓
 /redline-check → 仅 lint + 单元测试
     ↓
-人工功能验收关卡④（一问确认）
+关卡④（一问确认）
     ↓
 /opsx:archive  → 更新 META.md，不自动合并全局 spec 基线</code></pre>
 
-    <h3>3.2 显式选择思考模式</h3>
-    <p>口令里带“思考模式”等关键词：</p>
+    <h3>3.2 显式选择规划先行模式</h3>
+    <p>口令里带“规划先行 / 先想清楚再做”等关键词：</p>
+    <pre><code>规划先行：帮我用 Superpowers + OpenSpec 实现订单列表状态筛选，先想清楚再做。</code></pre>
+    <p>走 plan-first 流程：</p>
+    <pre><code>/opsx:explore（如需求模糊）
+    ↓
+/opsx:propose  → 生成 plan.md + tasks.md（low 风险跳审核；中/高风险人工审核①）
+    ↓
+/opsx:apply    → TDD 编码（每任务 Red/Green/Refactor 摘要） + 编译/测试门禁②
+    ↓
+/redline-check → 按 risk_level 走 low 或 medium 命令集
+    ↓
+人工功能验收④（对照 plan.md 验收标准逐项确认）
+    ↓
+/opsx:archive  → 更新 META.md，spec 沉淀可选（用户说“沉淀”才合并）</code></pre>
+
+    <h3>3.3 显式选择思考模式</h3>
+    <p>口令里带“思考模式 / 认真设计”等关键词：</p>
     <pre><code>思考模式：帮我用 Superpowers + OpenSpec 完整实现订单列表状态筛选，要认真设计并沉淀规范。</code></pre>
-    <p>此时才执行：</p>
+    <p>走完整约束流程：</p>
     <pre><code>/opsx:explore（如需求模糊）
     ↓
 /opsx:propose  → 完整 proposal/design/tasks/feature/specs + 风险分级 + （中高风险）人工审核①
@@ -284,19 +324,9 @@
     ↓
 /redline-check → 完整扫描 + LLM 审计
     ↓
-人工功能验收关卡④（逐项核对验收标准）
+人工功能验收④（逐项核对验收标准）
     ↓
 /opsx:archive  → 合并领域 spec 基线 + 生成 AI 变更元数据</code></pre>
-
-    <h3>3.3 未选择模式时 Skill 会主动询问</h3>
-    <p>如果你只说：</p>
-    <pre><code>帮我用 Superpowers + OpenSpec 实现订单列表状态筛选。</code></pre>
-    <p>Skill 会停止并回复：</p>
-    <pre><code>请选择运行模式：
-1. 思考模式：完整需求/设计/验收标准 + 完整门禁（适合重要功能）
-2. 省 token 模式：最简任务列表 + 最轻门禁（适合原型/小改动）
-
-请回复“思考模式”或“快速模式”。</code></pre>
 
     <h2>4. 完整命令速查</h2>
     <div class="table-wrap">
@@ -319,25 +349,25 @@
           <tr>
             <td><code>/opsx:propose</code></td>
             <td>需求已明确，要生成规范</td>
-            <td>生成 change 目录、proposal/design/tasks/feature 文件，并自动风险分级</td>
+            <td>按模式生成 change 目录与规范文档，自动风险分级，写 META.md</td>
             <td>中高风险时审核并回复“通过”</td>
           </tr>
           <tr>
             <td><code>/opsx:apply</code></td>
             <td>规范审核通过后</td>
-            <td>按 tasks 逐条 TDD 编码，自动跑测试/编译</td>
+            <td>三种模式均按 tasks 逐条 TDD；快速模式批量聚合汇报</td>
             <td>等待每轮任务报告，必要时回答实现问题</td>
           </tr>
           <tr>
             <td><code>/redline-check</code></td>
             <td>apply 完成后</td>
-            <td>按风险等级调用 redline.yml 里的扫描命令，无配置时 LLM 自检</td>
+            <td>按模式/风险等级调用 redline.yml 里的扫描命令</td>
             <td>如有阻断项，按报告修复后再跑一次</td>
           </tr>
           <tr>
             <td><code>/opsx:archive</code></td>
-            <td>红线通过 + 人工验收后</td>
-            <td>合并领域 spec 基线，更新 META.md，输出 commit message 建议</td>
+            <td>红线通过 + 验收后</td>
+            <td>思考模式合并领域 spec 基线；规划先行可选沉淀；快速模式只更新 META</td>
             <td>确认归档，或按建议提交代码</td>
           </tr>
           <tr>
@@ -350,41 +380,46 @@
       </table>
     </div>
 
-    <h2>5. 两种运行模式</h2>
-    <p>本 Skill 只在用户明确触发时启用；普通编码请求不会自动走完整约束流程。触发后<strong>必须显式选择模式，没有默认模式</strong>，避免边界模糊。</p>
+    <h2>5. 三种运行模式</h2>
+    <p>本 Skill 只在用户明确触发时启用；触发后<strong>默认进入快速模式</strong>，用户可显式选择其它模式。</p>
 
     <div class="callout">
       <strong>一句话区分</strong>
-      思考模式 = 先写完整需求/设计/验收标准，再编码，适合重要功能；省 token 模式 = 直接写代码，只留最简任务列表，适合原型或低风险小改动。
+      <ul>
+        <li><strong>思考模式</strong>：先写完整需求/设计/验收标准，再编码，适合重要功能。</li>
+        <li><strong>规划先行模式</strong>：先写一份够用的 plan + 任务清单，再按 TDD 编码，适合日常功能开发。</li>
+        <li><strong>快速模式（默认）</strong>：直接让 AI 写代码，只留最简任务列表，适合原型或低风险小改动。</li>
+      </ul>
     </div>
 
     <h3>5.1 思考模式（完整门禁）</h3>
-    <p>用户表达中出现任意一个关键词即进入思考模式：</p>
-    <ul>
-      <li>“思考模式”、“think mode”</li>
-      <li>“完整流程”、“规范流程”、“完整走一遍”</li>
-      <li>“深度模式”、“认真设计”</li>
-      <li>“需要沉淀规范”、“写完整设计”</li>
-    </ul>
-    <p>行为特征：</p>
+    <p>触发词：“思考模式”、“think mode”、“完整流程”、“规范流程”、“深度模式”、“认真设计”、“需要沉淀规范”。</p>
     <ul>
       <li>生成完整规范：proposal + design + tasks + features + specs</li>
+      <li>默认 <code>gate_mode: auto-review</code>（智能校验）；可切人工</li>
       <li>中/高风险必须走关卡①人工审核</li>
       <li><code>/opsx:apply</code> 逐条详细报告 Red/Green/Refactor 状态</li>
-      <li><code>/redline-check</code> 完整扫描 + LLM 上下文审计</li>
+      <li><code>/redline-check</code> 按风险等级完整扫描 + LLM 上下文审计</li>
       <li><code>/opsx:archive</code> 合并对应领域 spec 基线</li>
       <li>适合：核心功能、高风险模块、需要沉淀规范的项目</li>
     </ul>
 
-    <h3>5.2 省 token 模式（精简门禁）</h3>
-    <p>用户表达中出现任意一个关键词即进入省 token 模式：</p>
+    <h3>5.2 规划先行模式（plan-first）</h3>
+    <p>触发词：“规划先行”、“plan-first”、“先规划再开发”、“先规划再行动”、“先想清楚再做”、“先想后做”、“标准模式”、“正常做”、“按标准流程”、“plan-then-code”。</p>
     <ul>
-      <li>“快速模式”、“极速模式”</li>
-      <li>“省 token”、“简单做”</li>
-      <li>“fast mode”、“quick mode”</li>
-      <li>“原型”、“先跑通”</li>
+      <li>需求模糊时执行 <code>/opsx:explore</code>（仅脑暴，不写文件）</li>
+      <li><code>/opsx:propose</code> 只生成 <code>plan.md</code>（中等长度，含目标/范围/方案/任务清单/验收标准） + <code>tasks.md</code>；<strong>不生成</strong> proposal/design/features/specs</li>
+      <li>产物目录沿用 <code>openspec/changes/{change_name}/</code>，便于后续升级到思考模式</li>
+      <li>默认按 low 风险跳过关卡①；中/高风险走人工复核</li>
+      <li><code>/opsx:apply</code> 强制 TDD；每个 task 报告 Red/Green/Refactor 摘要</li>
+      <li><code>/redline-check</code> 按 risk_level 走 low 或 medium 命令集（不跑 SAST / 依赖审计）</li>
+      <li>关卡④对照 <code>plan.md</code> 验收标准逐项确认</li>
+      <li><code>/opsx:archive</code> 更新 META.md；spec 沉淀<strong>可选</strong>（用户显式说“沉淀”才合并）</li>
+      <li>适合：日常功能开发、模块迭代、Bug 修复带小型重构</li>
     </ul>
-    <p>行为特征：</p>
+
+    <h3>5.3 快速模式（fast，默认模式）<span class="badge default">默认</span></h3>
+    <p>触发词：“快速模式”、“极速模式”、“省 token”、“省 token 模式”、“简单做”、“fast mode”、“quick mode”、“原型”、“先跑通”。<strong>不显式选模式时自动进入本模式。</strong></p>
     <ul>
       <li>默认跳过 <code>/opsx:explore</code>，除非用户明确说需求模糊</li>
       <li><code>/opsx:propose</code> 只生成 proposal + tasks；design 极简（≤ 20 行）；不生成 features/specs</li>
@@ -395,11 +430,88 @@
       <li>适合：原型、内部工具、低风险小功能、快速验证想法</li>
     </ul>
 
-    <h3>5.3 冲突与缺省处理</h3>
+    <h3>5.4 模式速查表</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>思考模式</th>
+            <th>规划先行模式</th>
+            <th>快速模式（默认）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>目标</td>
+            <td>质量、可维护、规范沉淀</td>
+            <td>平衡规划与速度</td>
+            <td>速度、最小 token</td>
+          </tr>
+          <tr>
+            <td>explore</td>
+            <td>需求模糊时执行</td>
+            <td>需求模糊时执行</td>
+            <td>默认跳过</td>
+          </tr>
+          <tr>
+            <td>规划产物</td>
+            <td>proposal + design + tasks + features + specs</td>
+            <td>plan + tasks</td>
+            <td>proposal + tasks + 极简 design</td>
+          </tr>
+          <tr>
+            <td>产物目录</td>
+            <td><code>openspec/changes/</code></td>
+            <td><code>openspec/changes/</code></td>
+            <td><code>openspec/changes/</code></td>
+          </tr>
+          <tr>
+            <td>门禁</td>
+            <td>智能校验（默认可切人工）</td>
+            <td>人工（默认可切智能校验）</td>
+            <td>人工（默认可切智能校验）</td>
+          </tr>
+          <tr>
+            <td>TDD</td>
+            <td>强制</td>
+            <td>强制</td>
+            <td>强制</td>
+          </tr>
+          <tr>
+            <td>redline</td>
+            <td>按风险等级完整扫描</td>
+            <td>low 或 medium 命令集</td>
+            <td>仅 low 级别</td>
+          </tr>
+          <tr>
+            <td>验收④</td>
+            <td>逐项 feature 核对</td>
+            <td>对照 plan 验收标准</td>
+            <td>一问确认</td>
+          </tr>
+          <tr>
+            <td>archive</td>
+            <td>合并领域 spec 基线</td>
+            <td>更新 META，可选沉淀</td>
+            <td>只更新 META.md</td>
+          </tr>
+          <tr>
+            <td>适用场景</td>
+            <td>核心模块、高风险、长期维护</td>
+            <td>日常功能开发、模块迭代、Bug 修复</td>
+            <td>原型、低风险小改动、快速验证想法</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5.5 冲突与缺省处理</h3>
     <ul>
-      <li><strong>同时出现两类关键词</strong>：停止并询问用户“请选择 思考模式 还是 省 token 模式？”，不猜测。</li>
-      <li><strong>均未出现</strong>：停止并询问用户“请选择 思考模式（完整规范+门禁） 还是 省 token 模式（最省 token）？”。</li>
+      <li><strong>同时出现多类模式关键词</strong>：停止并询问用户“请选择 思考模式 / 规划先行模式 / 快速模式？”，不猜测。</li>
+      <li><strong>均未出现</strong>：<strong>默认进入快速模式</strong>，并提示用户可切换。</li>
       <li><strong>模式确定后写入 <code>META.md</code> 的 <code>mode</code> 字段</strong>，本 change 不再改变。</li>
+      <li><strong>允许的升级路径</strong>：快速模式 → 规划先行 / 思考模式；规划先行 → 思考模式。</li>
     </ul>
 
     <h2>6. 输入需求的正确姿势</h2>
@@ -564,14 +676,19 @@ high:
     </div>
     <p>你也可以主动覆盖，例如：</p>
     <pre><code>按高风险处理：帮我实现一个支持多租户隔离的订单导出接口。</code></pre>
+    <div class="callout warning">
+      <strong>规划先行模式特殊处理</strong>
+      <code>medium</code> 风险时，关卡①只对 <code>plan.md</code> 的范围/方案/任务清单做人工确认，不强制安全复核；<code>high</code> 风险建议升级到思考模式重走 propose。
+    </div>
 
     <h3>8.2 领域（domain）</h3>
-    <p>领域决定 archive 时合并到哪份全局 spec 基线。Skill 会尝试从需求里提取，例如订单相关填 <code>order</code>，用户相关填 <code>user</code>。如果不确定，主动问用户。</p>
+    <p>领域决定 archive 时合并到哪份全局 spec 基线。Skill 会尝试从需求里提取，例如订单相关填 <code>order</code>，用户相关填 <code>user</code>。如果不确定，主动问用户。快速模式与规划先行模式不自动合并 spec，但仍会记录 domain 字段供后续沉淀使用。</p>
     <pre><code>openspec/specs/order.md
 openspec/specs/user.md
 openspec/specs/payment.md</code></pre>
 
     <h2>9. 产物目录说明</h2>
+    <p>三种模式统一收敛到 <code>openspec/changes/{change_name}/</code>，按模式裁剪生成不同文件：</p>
     <div class="tree">
 <pre>openspec/
 ├── config/
@@ -580,43 +697,57 @@ openspec/specs/payment.md</code></pre>
 │   └── &lt;domain&gt;.md                  # 按领域拆分的全局 spec 基线
 └── changes/
     └── {change_name}/
-        ├── META.md                  # change 元数据（风险、领域、AI 标记）
-        ├── proposal.md              # 需求提案
-        ├── design.md                # 设计方案
-        ├── tasks.md                 # 任务拆分
-        ├── specs/                   # 对全局 spec 的增量/变更
-        └── features/                # Gherkin 可执行规格
+        ├── META.md                  # change 元数据（含 mode 字段）
+        ├── proposal.md              # 需求提案（思考/快速模式）
+        ├── design.md                # 设计方案（思考完整；快速极简）
+        ├── tasks.md                 # 任务拆分（思考/快速/规划先行）
+        ├── plan.md                  # 规划先行模式专属：中等长度 plan
+        ├── specs/                   # 对全局 spec 的增量/变更（思考模式）
+        └── features/                # Gherkin 可执行规格（思考模式推荐）
             └── {change_name}.feature</pre>
     </div>
 
     <h2>10. 典型工作流示例</h2>
-    <h3>10.1 显式快速实现（省 token 模式）</h3>
-    <pre><code>用户：快速模式：帮我用 Superpowers + OpenSpec 跑一遍后台导出 CSV 按钮，前端 React。
+    <h3>10.1 默认进入快速模式（不选模式时）</h3>
+    <pre><code>用户：帮我用 Superpowers + OpenSpec 写一个能把 CSV 转成 JSON 的脚本。
+
+Skill：
+1. 默认进入快速模式，提示可切换。
+2. /opsx:propose 生成 openspec/changes/{change_name}/proposal.md + tasks.md + 极简 design.md。
+3. 判定为 low 风险，跳过关卡①。
+4. /opsx:apply TDD 编码，批量聚合汇报。
+5. /redline-check 跑 lint + 单元测试。
+6. 关卡④一问确认。
+7. /opsx:archive 更新 META.md，不自动合并全局 spec 基线。</code></pre>
+
+    <h3>10.2 规划先行模式（日常功能开发）</h3>
+    <pre><code>用户：规划先行：帮我用 Superpowers + OpenSpec 实现订单列表状态筛选，先想清楚再做。
 
 Skill：
 1. 判定为 low 风险，跳过关卡①。
-2. /opsx:propose 只生成 proposal.md + tasks.md + 极简 design.md。
-3. /opsx:apply 写按钮组件 + 单元测试（批量聚合汇报）。
-4. /redline-check 跑 lint + 单元测试。
-5. 用户验收后 /opsx:archive 更新 META.md，不自动合并全局 spec 基线。</code></pre>
+2. /opsx:propose 生成 plan.md + tasks.md（不生成 proposal/design/features/specs）。
+3. /opsx:apply 强制 TDD，每任务 Red/Green/Refactor 摘要。
+4. /redline-check 走 low 命令集（lint + 单元测试）。
+5. 关卡④对照 plan.md 验收标准逐项确认。
+6. /opsx:archive 更新 META.md；用户说“沉淀”才合并到 openspec/specs/order.md。</code></pre>
 
-    <h3>10.2 高风险安全功能（思考模式）</h3>
+    <h3>10.3 高风险安全功能（思考模式）</h3>
     <pre><code>用户：思考模式，按高风险处理：帮我实现一个支持 RBAC 的订单批量退款接口，要沉淀规范。
 
 Skill：
 1. /opsx:explore 梳理权限边界、退款幂等、审计日志要求。
-2. /opsx:propose 生成规范，风险等级 high，等待用户审核。
+2. /opsx:propose 生成完整 proposal/design/tasks/features/specs，风险等级 high，等待用户审核。
 3. 用户回复“通过”。
 4. /opsx:apply TDD 实现接口 + 权限测试。
-5. /redline-check 跑 lint/测试/secret-scan/SAST/依赖审计。
+5. /redline-check 跑 lint/测试/secret-scan/SAST/依赖审计 + LLM 审计。
 6. 用户验收后 /opsx:archive，合并到 openspec/specs/payment.md。</code></pre>
 
-    <h3>10.3 需求中途变更</h3>
+    <h3>10.4 需求中途变更</h3>
     <pre><code>用户：apply 到一半发现还需要支持按时间范围筛选。
 
 Skill：
 1. 暂停 apply。
-2. 回到 /opsx:propose，更新 proposal.md / tasks.md / features/*.feature。
+2. 回到 /opsx:propose，按当前模式更新对应规范文档（思考：proposal/tasks/features；规划先行：plan/tasks；快速：proposal/tasks/design）。
 3. 重新通过关卡①。
 4. 继续 /opsx:apply。</code></pre>
 
@@ -628,7 +759,7 @@ Skill：
     <p>修改 <code>openspec/config/redline.yml</code> 后重新跑 <code>/redline-check</code>，或在命令里把 <code>block_on_failure</code> 暂时设为 <code>false</code>，稳定后再改回 <code>true</code>。</p>
 
     <h4>Q3：可以不改既有代码吗？</h4>
-    <p>Skill 以新增为主，但允许最小范围修改既有代码以适配接口，且必须在报告中说明。规范文档（changes 目录下的 md/feature）始终禁止修改。</p>
+    <p>Skill 以新增为主，但允许最小范围修改既有代码以适配接口，且必须在报告中说明。规范文档（changes 目录下的 md/feature/plan）始终禁止修改。</p>
 
     <h4>Q4：archive 后还能改需求吗？</h4>
     <p>可以。需要新建一个 change 重新走完整流程，而不是直接改已归档的 spec 基线。</p>
@@ -636,11 +767,25 @@ Skill：
     <h4>Q5：这个 Skill 能替代 CI/CD 吗？</h4>
     <p>不能。它是 IDE 层的开发辅助，代码入库仍要走 PR/MR 和团队 CI。</p>
 
-    <h4>Q6：我只说“Superpowers + OpenSpec 跑一遍”，它怎么不直接开始？</h4>
-    <p>从 v3.2.1 起，触发 Skill 后必须显式选择“思考模式”或“快速模式”，没有默认模式。这样做是为了避免边界模糊：你说“跑一遍”时，AI 不知道你要重规范还是重速度，所以会让你确认。</p>
+    <h4>Q6：我只说“Superpowers + OpenSpec 跑一遍”，它会怎么走？</h4>
+    <p>从 v3.6.0 起，触发 Skill 后<strong>默认进入快速模式</strong>，不再强制询问。如果你想要更规范的流程，回复“思考模式” / “规划先行”切换即可。</p>
+
+    <h4>Q7：三种模式怎么选？</h4>
+    <ul>
+      <li><strong>原型 / 低风险小改动 / 快速验证想法</strong>：快速模式（默认，不用选）。</li>
+      <li><strong>日常功能开发 / 模块迭代 / Bug 修复带小型重构</strong>：规划先行模式。</li>
+      <li><strong>核心功能 / 高风险模块 / 需要沉淀规范</strong>：思考模式。</li>
+    </ul>
+
+    <h4>Q8：规划先行模式和快速模式有什么区别？</h4>
+    <p>规划先行模式生成 <code>plan.md</code>（中等长度，含目标/范围/方案/任务清单/验收标准）+ <code>tasks.md</code>，强制 TDD，spec 沉淀可选，redline 按 low/medium 命令集；快速模式生成 <code>proposal.md</code> + <code>tasks.md</code> + 极简 <code>design.md</code>，强制 TDD，不合并 spec，redline 只跑 low 级别。规划先行更聚焦“先想清楚再动手”，快速更聚焦“OpenSpec 流水线瘦身”。</p>
+
+    <h4>Q9：“省 token 模式”这个名字还在吗？</h4>
+    <p>从 v3.6.0 起正式更名为“快速模式”，“省 token 模式”保留为别名触发词——你说“省 token 模式”仍会进入快速模式，行为一致。</p>
 
     <footer>
-      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.2.1。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
+      <p>本手册对应 <code>superpowers-openspec-pipeline</code> Skill v3.6.0。Skill 文件路径：<code>.trae/skills/superpowers-openspec-pipeline/SKILL.md</code></p>
+      <p>变更摘要：v3.6.0 删除性价比模式，省 token 模式更名快速模式并成为默认；v3.5.1 曾默认进入性价比模式；v3.5.0 新增规划先行模式；v3.4.0 新增性价比模式与自适应门禁（v3.6.0 已移除）。</p>
     </footer>
   </div>
 </body>
